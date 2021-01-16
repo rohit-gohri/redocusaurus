@@ -1,0 +1,88 @@
+.redocusaurus .redoc-wrap {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* ------ Headings Overrides ------- */
+
+.redocusaurus h2,h3,h4 {
+  color: var(--ifm-font-color-base);
+}
+
+.redocusaurus h5 {
+  color: var(--ifm-font-color-secondary) !important;
+}
+
+.redocusaurus h5 > span {
+  color: var(--ifm-font-color-secondary) !important;
+}
+
+/* ------- Sidebar Overrides (Left Panel) ------- */
+
+.redocusaurus .menu-content {
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Hide Logo as already in navbar*/
+.redocusaurus .menu-content div:first-child {
+  display: none;
+}
+
+.redocusaurus .operation-type {
+  margin-top: 6px;
+  font-size: 8px;
+}
+
+/* ------- Right Panel Overrides ------- */
+
+.redocusaurus code {
+  color: var(--ifm-color-emphasis-100);
+  padding: 0px;
+  /* Fix weird overlay on curly braces */
+  background-color: transparent;
+}
+
+html[data-theme="dark"] .redocusaurus code {
+  color: var(--ifm-color-emphasis-900);
+}
+
+.redocusaurus ul > li.react-tabs__tab--selected:not(.tab-error):not(.tab-success) {
+  color: #303846 !important;
+}
+
+/* Background of server selection dropdown */
+html[data-theme="dark"] .redocusaurus div[id^="operation"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  background-color: rgb(27, 32, 40);
+  color: var(--ifm-font-color-secondary)
+}
+
+html[data-theme="dark"] .redocusaurus div[id^="operation"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div {
+  background-color: var(--ifm-background-color);
+}
+
+/* Padding above Response Samples heading */
+.redocusaurus .react-tabs__tab-panel--selected {
+  margin-bottom: 10px;
+}
+
+/* Code Samples */
+html:not([data-theme="dark"]) .redocusaurus div[id^="react-tabs"] > div:nth-child(1) > pre:nth-child(2) {
+  background-color: var(--ifm-background-color);
+}
+
+/* ------ Schema Styling Overrides ------- */
+
+.redocusaurus table th, table td {
+  border: none;
+}
+
+.redocusaurus table:not(.security-details) td {
+  border-bottom: none !important;
+}
+
+.redocusaurus table.security-details > tbody > tr  {
+  color: var(--ifm-font-color);
+}
+
+.redocusaurus table.security-details tr {
+  background-color: var(--ifm-background-color)
+}
