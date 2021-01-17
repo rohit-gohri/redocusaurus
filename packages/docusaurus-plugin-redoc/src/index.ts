@@ -47,7 +47,7 @@ export default function redocPlugin(
         );
         addRoute({
           path: options.routePath,
-          component: options.redocComponent,
+          component: options.apiDocComponent,
           modules: {
             spec: specObj,
           },
@@ -57,7 +57,7 @@ export default function redocPlugin(
       else {
         addRoute({
           path: options.routePath,
-          component: options.redocComponent,
+          component: options.apiDocComponent,
           modules: {
             specUrl: options.specUrl,
           },

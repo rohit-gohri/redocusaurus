@@ -17,7 +17,7 @@ export default function redocTheme(
       return path.join(__dirname, '..', 'src', 'theme');
     },
     getSwizzleComponentList() {
-      return ['Redoc'];
+      return ['Redoc', 'ApiDoc'];
     },
     getClientModules() {
       return [path.join(__dirname, 'custom.css')];

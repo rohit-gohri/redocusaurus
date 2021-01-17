@@ -1,6 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
-import { RedocStandalone } from 'redoc';
+import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import './styles.css';
 
@@ -19,8 +19,7 @@ const DOCUSAURUS = {
   }
 };
 
-/** @type {Partial<import('redoc').ResolvedThemeInterface>} */
-let LIGHT_THEME_OPTIONS = {
+let LIGHT_THEME_OPTIONS: Partial<ResolvedThemeInterface> = {
   typography: {
     fontFamily: DOCUSAURUS.fontFamily,
     fontSize: DOCUSAURUS.fontSize,
@@ -37,10 +36,7 @@ let LIGHT_THEME_OPTIONS = {
   }
 };
 
-/**
- * @type {Partial<import('redoc').ResolvedThemeInterface>}
- */
-let DARK_THEME_OPTIONS = {
+let DARK_THEME_OPTIONS: Partial<ResolvedThemeInterface> = {
   colors: {
     text: {
       primary: DOCUSAURUS.dark.primaryText,
@@ -69,7 +65,7 @@ let DARK_THEME_OPTIONS = {
   },
 };
 
-function getThemeOptions(isDarkMode: boolean): import('redoc').ResolvedThemeInterface {
+function getThemeOptions(isDarkMode: boolean): ResolvedThemeInterface {
   let baseTheme;
   try {
     const redocOptions = require('./.redoc.json');
