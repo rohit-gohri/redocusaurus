@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
+import YAML from 'yaml';
 import type {
   LoadContext,
   Plugin,
@@ -18,9 +19,14 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      const {spec, specUrl} = options;
+      const { spec } = options;
       if (spec) {
         const file = await fs.readFile(spec);
+
+        if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
+          const parsedSpec = YAML.parse(spec);
+          return JSON.stringify(parsedSpec);
+        }
         return file.toString();
       }
       return null;
