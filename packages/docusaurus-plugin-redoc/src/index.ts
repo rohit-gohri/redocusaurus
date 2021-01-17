@@ -11,6 +11,10 @@ import {ValidationError} from 'joi';
 
 import { PluginOptionSchema, PluginOptions } from './options';
 
+export {
+  PluginOptions
+};
+
 export default function redocPlugin(
   context: LoadContext,
   options: PluginOptions,
