@@ -8,7 +8,7 @@ export interface PluginOptions {
   apiDocComponent: string;
 };
 
-const DEFAULT_OPTIONS: PluginOptions = {
+export const DEFAULT_OPTIONS: PluginOptions = {
   specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
   routePath: '/api/', // URL Route.
   apiDocComponent: '@theme/ApiDoc',

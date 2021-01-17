@@ -5,11 +5,10 @@ import type {
   LoadContext,
   Plugin,
   OptionValidationContext,
-  ValidationResult,
 } from '@docusaurus/types';
-import {ValidationError} from 'joi';
+import { ValidationError } from 'joi';
 
-import { PluginOptionSchema, PluginOptions } from './options';
+import { PluginOptionSchema, PluginOptions, DEFAULT_OPTIONS } from './options';
 
 export {
   PluginOptions
@@ -17,8 +16,9 @@ export {
 
 export default function redocPlugin(
   context: LoadContext,
-  options: PluginOptions,
+  opts: PluginOptions,
 ): Plugin<string | null, typeof PluginOptionSchema> {
+  const options: PluginOptions = {...DEFAULT_OPTIONS, ...opts};
 
   return {
     name: 'docusaurus-plugin-redoc',
@@ -68,13 +68,9 @@ export default function redocPlugin(
   };
 };
 
-export function validateOptions({
+export async function validateOptions({
   validate,
   options,
-}: OptionValidationContext<PluginOptions, ValidationError>): ValidationResult<
-  PluginOptions,
-  ValidationError
-> {
-  const validatedOptions = validate(PluginOptionSchema, options);
-  return validatedOptions;
+}: OptionValidationContext<PluginOptions, ValidationError>): Promise<void> {
+  await PluginOptionSchema.validateAsync(options);
 }
