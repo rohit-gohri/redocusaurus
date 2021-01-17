@@ -38,10 +38,8 @@ export default function redocPlugin(
     async contentLoaded({content, actions}) {
       const {createData, addRoute} = actions;
 
-      let specObj;
-
       if (content) {
-        specObj = await createData(
+        const specObj = await createData(
           `redocApiSpec-${options.id || '1'}.json`,
           content,
         );
@@ -54,7 +52,7 @@ export default function redocPlugin(
           exact: true,
         });
       }
-      else {
+      else if (options.specUrl) {
         addRoute({
           path: options.routePath,
           component: options.apiDocComponent,
@@ -63,6 +61,9 @@ export default function redocPlugin(
           },
           exact: true,
         });
+      }
+      else {
+        console.error('[Redocusaurus] No spec provided');
       }
     },
   };
