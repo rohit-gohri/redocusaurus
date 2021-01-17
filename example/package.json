@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus-example",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": "true",
   "homepage": "https://github.com/rohit-gohri/redocusaurus",
   "bugs": {
@@ -20,8 +20,8 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.64",
-    "@docusaurus/preset-classic": "2.0.0-alpha.64",
+    "@docusaurus/core": "^2.0.0-alpha.64",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.64",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "redocusaurus": "^0.0.0"

@@ -1,5 +1,7 @@
 # [Redocusaurus](https://github.com/rohit-gohri/redocusaurus)
 
+![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
+
 [Redoc](https://github.com/redocly/redoc) for [Docusaurus v2](https://v2.docusaurus.io/).
 
 ## Usage
