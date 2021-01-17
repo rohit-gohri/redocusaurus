@@ -4,6 +4,13 @@ import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import './styles.css';
 
+type RecursivePartial<T> = {
+  [P in keyof T]?:
+    T[P] extends (infer U)[] ? RecursivePartial<U>[] :
+    T[P] extends object ? RecursivePartial<T[P]> :
+    T[P];
+};
+
 /**
  * NOTE: Colors taken from `node_modules/infima/styles/common/dark-mode.css`
  * and related files
@@ -19,13 +26,13 @@ const DOCUSAURUS = {
   }
 };
 
-let LIGHT_THEME_OPTIONS: Partial<ResolvedThemeInterface> = {
+let LIGHT_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
   typography: {
     fontFamily: DOCUSAURUS.fontFamily,
     fontSize: DOCUSAURUS.fontSize,
     headings: {
       fontFamily: DOCUSAURUS.fontFamily,
-      fontSize: DOCUSAURUS.fontSize,
+      // lineHeight: DOCUSAURUS.fontSize,
     },
   },
   sidebar: {
@@ -36,7 +43,7 @@ let LIGHT_THEME_OPTIONS: Partial<ResolvedThemeInterface> = {
   }
 };
 
-let DARK_THEME_OPTIONS: Partial<ResolvedThemeInterface> = {
+let DARK_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
   colors: {
     text: {
       primary: DOCUSAURUS.dark.primaryText,

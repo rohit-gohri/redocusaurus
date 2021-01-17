@@ -1,0 +1,1 @@
+import '@docusaurus/theme-classic'
