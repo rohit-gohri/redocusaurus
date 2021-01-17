@@ -17,12 +17,14 @@ export default function preset(context: LoadContext, opts: {specs: PluginOptions
     themes: [
       require.resolve('docusaurus-theme-redoc'),
     ],
-    plugins: specs.map((pluginOpts, index) => ([
-      require.resolve('docusaurus-plugin-redoc'),
-      {
-        id: `plugin-redoc-${index}`,
-        ...pluginOpts
-      },
-    ])),
+    plugins: [
+      ...specs.map((pluginOpts, index) => ([
+        require.resolve('docusaurus-plugin-redoc'),
+        {
+          ...pluginOpts,
+          id: `plugin-redoc-${index}`,
+        },
+      ])),
+    ],
   };
 };
