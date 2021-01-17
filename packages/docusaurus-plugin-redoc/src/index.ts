@@ -29,9 +29,9 @@ export default function redocPlugin(
 
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
           const parsedSpec = YAML.parse(spec);
-          return JSON.stringify(parsedSpec);
+          return parsedSpec;
         }
-        return file.toString();
+        return JSON.parse(file.toString());
       }
       return null;
     },
@@ -39,25 +39,29 @@ export default function redocPlugin(
       const {createData, addRoute} = actions;
 
       if (content) {
-        const specObj = await createData(
+        const spec = await createData(
           `redocApiSpec-${options.id || '1'}.json`,
-          content,
+          JSON.stringify({ type: 'object', content }),
         );
         addRoute({
           path: options.routePath,
           component: options.apiDocComponent,
           modules: {
-            spec: specObj,
+            spec,
           },
           exact: true,
         });
       }
       else if (options.specUrl) {
+        const spec = await createData(
+          `redocApiSpec-${options.id || '1'}.json`,
+          JSON.stringify({ type: 'url', content: options.specUrl }),
+        );
         addRoute({
           path: options.routePath,
           component: options.apiDocComponent,
           modules: {
-            specUrl: options.specUrl,
+            spec,
           },
           exact: true,
         });
