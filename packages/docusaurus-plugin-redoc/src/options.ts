@@ -1,6 +1,7 @@
 import * as Joi from 'joi';
 
 export interface PluginOptions {
+  id?: string;
   spec?: string;
   specUrl: string;
   routePath: string;
@@ -14,6 +15,7 @@ const DEFAULT_OPTIONS: PluginOptions = {
 };
 
 export const PluginOptionSchema = Joi.object({
+  id: Joi.string(),
   spec: Joi.string(),
   specUrl: Joi.string().uri().default(DEFAULT_OPTIONS.specUrl),
   routePath: Joi.string().default(DEFAULT_OPTIONS.routePath),

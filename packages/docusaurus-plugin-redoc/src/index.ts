@@ -38,7 +38,7 @@ export default function redocPlugin(
 
       if (content) {
         specObj = await createData(
-          'redocApiSpec.json',
+          `redocApiSpec-${options.id || '1'}.json`,
           content,
         );
         addRoute({
