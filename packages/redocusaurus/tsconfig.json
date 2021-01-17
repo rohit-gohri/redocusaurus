@@ -5,5 +5,5 @@
     "rootDir": "./src",
     "tsBuildInfoFile": "./.tsbuild.info"
   },
-  "exclude": ["plugin.js", "theme.js"]
+  "exclude": ["node_modules", "dist", "plugin.js", "theme.js"]
 }

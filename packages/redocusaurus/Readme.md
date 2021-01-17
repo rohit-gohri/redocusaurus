@@ -1,4 +1,4 @@
-# Redocusaurus
+# [Redocusaurus](https://github.com/rohit-gohri/redocusaurus)
 
 [Redoc](https://github.com/redocly/redoc) for [Docusaurus v2](https://v2.docusaurus.io/).
 

@@ -1,3 +1,3 @@
 const theme = require('./dist/theme');
 
-module.exports = theme;
+module.exports = theme.default;
