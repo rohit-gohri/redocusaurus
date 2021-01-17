@@ -14,16 +14,7 @@ const sections = [
       Test
       </>
     ),
-  },
-  {
-    title: <>API</>,
-    link: '/api/',
-    description: (
-      <>
-      API docs using Redoc
-      </>
-    ),
-  },
+  }
 ];
 
 /**

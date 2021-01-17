@@ -1,22 +1,25 @@
 const path = require('path');
 
 module.exports = {
-  presets: ['@docusaurus/preset-classic', [
-    'redocusaurus',
-    {
-      specs: [
-        {
-          specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-        },
-        {
-          spec: 'openapi.yaml',
-        },
-      ]
-    }
-  ]],
+  presets: [
+    '@docusaurus/preset-classic',
+    [
+      'redocusaurus',
+      {
+        specs: [
+          // {
+          //   specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+          // },
+          {
+            spec: 'openapi.yaml',
+          },
+        ]
+      }
+    ]
+  ],
 
   /** ************ Rest of your Docusaurus Config *********** */
-  title: 'Redocusaurus Spec URL Example',
+  title: 'Redocusaurus Example',
   tagline: 'Integrate Redoc easily into your Docusaurus Site',
   customFields: {
     meta: {
@@ -29,21 +32,11 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'Redocusaurus',
-      logo: {
-        alt: 'Redocusaurus Logo',
-        src: 'img/logo.png',
-        srcDark: 'img/logoDark.png',
-      },
       items: [
         {
           label: 'Docs',
           position: 'left',
           to: '/',
-        },
-        {
-          label: 'API',
-          position: 'left',
-          to: 'api',
         },
       ],
     },
@@ -54,24 +47,6 @@ module.exports = {
       },
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Introduction',
-              to: 'docs/api-docs/',
-            },
-          ],
-        },
-        {
-          title: 'API',
-          items: [
-            {
-              label: 'PetStore API',
-              to: 'api/pet-store/',
-            },
-          ]
-        },
         {
           title: 'More',
           items: [
@@ -88,8 +63,5 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Rohit Gohri. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a>.`,
     },
-    sidebarCollapsible: true,
-    ogImage: 'img/undraw_online.svg',
-    twitterImage: 'img/undraw_tweetstorm.svg',
   },
 };
