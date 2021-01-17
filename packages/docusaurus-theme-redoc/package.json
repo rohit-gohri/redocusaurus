@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "postbuild": "npx copyup -e \"./**/*.js\" -e \"./**/*.ts\" \"./src/**/*.*\" ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "dependencies": {
     "@docusaurus/types": "2.0.0-alpha.70",
     "clsx": "^1.1.1",
+    "copyfiles": "^2.4.1",
     "core-js": "^3.8.0",
     "lodash": "^4.17.19",
     "mobx": "^6.0.4",
