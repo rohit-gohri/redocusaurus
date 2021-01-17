@@ -1,26 +1,19 @@
 const path = require('path');
 
-const redocPlugin = path.resolve(__dirname, '..', '..', 'packages', 'docusaurus-plugin-redoc');
-const redocTheme = path.resolve(__dirname, '..', '..', 'packages', 'docusaurus-theme-redoc');
-
 module.exports = {
-  plugins: [
-    [
-      redocPlugin,
-      {
-        id: 'redocusaurus-with-spec-url',
-        specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-      }
-    ],
-    [
-      redocPlugin,
-      {
-        id: 'redocusaurus-with-spec',
-        specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-      }
-    ],
-  ],
-  themes: [redocTheme],
+  presets: ['@docusaurus/preset-classic', [
+    'redocusaurus',
+    {
+      specs: [
+        {
+          specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+        },
+        {
+          spec: 'openapi.yaml',
+        },
+      ]
+    }
+  ]],
 
   /** ************ Rest of your Docusaurus Config *********** */
   title: 'Redocusaurus Spec URL Example',
@@ -33,7 +26,6 @@ module.exports = {
   url: process.env.DEPLOY_PRIME_URL || 'http://localhost:5000', // Your website URL
   baseUrl: process.env.DEPLOY_BASE_URL || '/', // Base URL for your project */
   favicon: 'img/favicon.ico',
-  presets: ['@docusaurus/preset-classic'],
   themeConfig: {
     navbar: {
       title: 'Redocusaurus',
