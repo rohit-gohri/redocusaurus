@@ -4,28 +4,60 @@ import type {
 import type {
   PluginOptions
 } from 'docusaurus-plugin-redoc';
+import type {
+  ThemeOptions
+} from 'docusaurus-theme-redoc';
 
-export default function preset(context: LoadContext, opts: {specs: PluginOptions[] | PluginOptions} = {specs: []}) {
-  let specs: PluginOptions[] = [];
-  if (Array.isArray(opts.specs)) {
-    specs = opts.specs;
+export interface PresetOptions {
+  debug?: boolean;
+  specs: PluginOptions[] | PluginOptions;
+  theme?: ThemeOptions;
+}
+
+export default function preset(context: LoadContext, opts: PresetOptions = {
+  specs: [],
+  theme: {},
+}) {
+  let specsArray: PluginOptions[] = [];
+  const { debug = false, specs, theme } = opts;
+  if (debug) {
+    console.error('[REDOCUSAURUS] Options:', opts);
   }
-  else if (opts.specs) {
-    specs = [opts.specs];
+
+  if (Array.isArray(specs)) {
+    specsArray = specs;
   }
-  return {
+  else if (specs) {
+    specsArray = [specs];
+  }
+
+  if (debug) {
+    console.error('[REDOCUSAURUS] Specs:', specsArray);
+  }
+
+  const config = {
     themes: [
-      require.resolve('docusaurus-theme-redoc'),
+      [
+        require.resolve('docusaurus-theme-redoc'),
+        theme,
+      ],
     ],
     plugins: [
-      ...specs.map((pluginOpts, index) => ([
+      ...specsArray.map((pluginOpts, index) => ([
         require.resolve('docusaurus-plugin-redoc'),
         {
           ...pluginOpts,
           routePath: pluginOpts.routePath ?? `/api/${index}`,
+          debug,
           id: `plugin-redoc-${index}`,
         },
       ])),
     ],
   };
+
+  if (debug) {
+    console.error('[REDOCUSAURUS] Final:', JSON.stringify(config, null, 2));
+  }
+
+  return config;
 };

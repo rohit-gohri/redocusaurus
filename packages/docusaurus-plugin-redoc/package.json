@@ -25,6 +25,7 @@
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
     "@docusaurus/types": "^2.0.0-alpha.70",
+    "@docusaurus/utils": "^2.0.0-alpha.70",
     "joi": "^17.2.1",
     "yaml": "^1.10.0"
   },
