@@ -37,38 +37,32 @@ export default function redocPlugin(
     },
     async contentLoaded({content, actions}) {
       const {createData, addRoute} = actions;
+      let spec;
 
       if (content) {
-        const spec = await createData(
+        spec = await createData(
           `redocApiSpec-${options.id || '1'}.json`,
           JSON.stringify({ type: 'object', content }),
         );
-        addRoute({
-          path: options.routePath,
-          component: options.apiDocComponent,
-          modules: {
-            spec,
-          },
-          exact: true,
-        });
       }
       else if (options.specUrl) {
-        const spec = await createData(
+        spec = await createData(
           `redocApiSpec-${options.id || '1'}.json`,
           JSON.stringify({ type: 'url', content: options.specUrl }),
         );
-        addRoute({
-          path: options.routePath,
-          component: options.apiDocComponent,
-          modules: {
-            spec,
-          },
-          exact: true,
-        });
       }
       else {
         console.error('[Redocusaurus] No spec provided');
+        return;
       }
+      addRoute({
+        path: options.routePath,
+        component: options.apiDocComponent,
+        modules: {
+          spec,
+        },
+        exact: true,
+      });
     },
   };
 };
