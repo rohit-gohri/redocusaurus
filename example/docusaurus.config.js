@@ -19,7 +19,10 @@ module.exports = {
             spec: 'openapi.yaml',
             routePath: '/using-spec-yaml/'
           }
-        ]
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
       }
     ]
   ],
