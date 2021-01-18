@@ -72,12 +72,12 @@ let DARK_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
   },
 };
 
-function getThemeOptions(isDarkMode: boolean): ResolvedThemeInterface {
+function getThemeOptions(isDarkMode: boolean): RecursivePartial<ResolvedThemeInterface> {
   let baseTheme;
   try {
     // TODO: Replace with theme-data
-    const redocOptions = require('/.redoc.json');
-    baseTheme = redocOptions.theme;
+    // const redocOptions = require('/.redoc.json');
+    // baseTheme = redocOptions.theme;
   }
   catch(err) {
     baseTheme = {
