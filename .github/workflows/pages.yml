@@ -16,10 +16,27 @@ jobs:
         with:
           node-version: '12'
 
+      - name: Cache npm
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
       - name: Install
         run: |
           npm i -g lerna
           npm run bootstrap
+        env:
+          NPM_CONFIG_CACHE: ~/.npm
+          NPM_CONFIG_PREFER_OFFLINE: 'true'
+          NPM_CONFIG_SILENT: 'true'
+          NPM_CONFIG_NO_AUDIT: 'true'
 
       - name: Build 🔧
         run: npm run build
