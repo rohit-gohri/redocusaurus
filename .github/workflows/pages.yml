@@ -23,6 +23,9 @@ jobs:
 
       - name: Build 🔧
         run: npm run build
+        env:
+          DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
+          DEPLOY_BASE_URL: /redocusaurus/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -31,6 +34,3 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: example/build # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
-        env:
-          DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
-          DEPLOY_BASE_URL: /redocusaurus/
