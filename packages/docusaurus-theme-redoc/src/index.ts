@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 import type {
   LoadContext,
   Plugin,
@@ -14,6 +15,18 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
+    /**
+     * @see https://github.com/Redocly/redoc/issues/1257
+     */
+    configureWebpack(config, isServer, utils) {
+      return {
+        plugins: [
+          new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+          }),
+        ],
+      };
+    },
     async contentLoaded({content, actions}) {
       const {setGlobalData} = actions;
       // Create theme data global
@@ -21,7 +34,7 @@ export default function redocTheme(
         baseTheme: {
           colors: {
             primary: {
-              main: options.primaryColor || "#1890ff"
+              main: options.primaryColor || "#25c2a0"
             },
           },
         },
