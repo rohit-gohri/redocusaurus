@@ -1,6 +1,8 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
+// @ts-ignore
+import { usePluginData } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import './styles.css';
 
@@ -10,6 +12,8 @@ type RecursivePartial<T> = {
     T[P] extends object ? RecursivePartial<T[P]> :
     T[P];
 };
+
+type ThemeOverrides = RecursivePartial<ResolvedThemeInterface>;
 
 /**
  * NOTE: Colors taken from `node_modules/infima/styles/common/dark-mode.css`
@@ -26,7 +30,7 @@ const DOCUSAURUS = {
   }
 };
 
-let LIGHT_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
+let LIGHT_THEME_OPTIONS: ThemeOverrides = {
   typography: {
     fontFamily: DOCUSAURUS.fontFamily,
     fontSize: DOCUSAURUS.fontSize,
@@ -43,7 +47,7 @@ let LIGHT_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
   }
 };
 
-let DARK_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
+let DARK_THEME_OPTIONS: ThemeOverrides = {
   colors: {
     text: {
       primary: DOCUSAURUS.dark.primaryText,
@@ -72,22 +76,7 @@ let DARK_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
   },
 };
 
-function getThemeOptions(isDarkMode: boolean): RecursivePartial<ResolvedThemeInterface> {
-  let baseTheme;
-  try {
-    // TODO: Replace with theme-data
-    // const redocOptions = require('/.redoc.json');
-    // baseTheme = redocOptions.theme;
-  }
-  catch(err) {
-    baseTheme = {
-      colors: {
-        primary: {
-          main: "#1890ff"
-        },
-      },
-    }
-  }
+function getThemeOptions(baseTheme: ThemeOverrides, isDarkMode: boolean): ThemeOverrides {
   baseTheme = merge(baseTheme, LIGHT_THEME_OPTIONS);
 
   if (!isDarkMode) return baseTheme;
@@ -101,8 +90,9 @@ function Redoc(props: {
   specUrl: string,
 }) {
   const { isDarkTheme } = useThemeContext();
-  const theme = React.useMemo(() => getThemeOptions(isDarkTheme), [isDarkTheme]);
-  const {spec, specUrl} = props;
+  const { baseTheme } = usePluginData('docusaurus-theme-redoc');
+  const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [baseTheme, isDarkTheme]);
+  const { spec, specUrl } = props;
 
   return (
     <div className="redocusaurus">
