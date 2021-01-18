@@ -8,7 +8,7 @@ import type {
 import { normalizeUrl } from '@docusaurus/utils';
 import { ValidationError } from 'joi';
 
-import { PluginOptionSchema, PluginOptions, DEFAULT_OPTIONS } from './options';
+import { PluginOptionSchema, PluginOptions, PluginOptionsWithDefault, DEFAULT_OPTIONS } from './options';
 
 export {
   PluginOptions
@@ -19,7 +19,7 @@ export default function redocPlugin(
   opts: PluginOptions,
 ): Plugin<string | null, typeof PluginOptionSchema> {
   const { baseUrl } = context.siteConfig;
-  const options: PluginOptions = {...DEFAULT_OPTIONS, ...opts};
+  const options: PluginOptionsWithDefault = {...DEFAULT_OPTIONS, ...opts};
   const { debug, spec, specUrl } = options;
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
