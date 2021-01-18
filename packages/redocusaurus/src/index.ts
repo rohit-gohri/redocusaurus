@@ -10,7 +10,7 @@ export default function preset(context: LoadContext, opts: {specs: PluginOptions
   if (Array.isArray(opts.specs)) {
     specs = opts.specs;
   }
-  else {
+  else if (opts.specs) {
     specs = [opts.specs];
   }
   return {
