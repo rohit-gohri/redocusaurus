@@ -99,7 +99,7 @@ function Redoc(props: {
       <RedocStandalone
         {...(spec ? {spec} : {specUrl})}
         options={{
-          scrollYOffset: 'nav',
+          scrollYOffset: 'nav.navbar',
           hideDownloadButton: true,
           expandSingleSchemaField: true,
           menuToggle: true,
