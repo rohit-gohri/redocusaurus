@@ -6,7 +6,7 @@
   "command": {
     "publish": {
       "allowBranch": [
-        "master"
+        "main"
       ],
       "distTag": "latest",
       "ignoreChanges": [
