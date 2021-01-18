@@ -30,13 +30,13 @@ export default function redocPlugin(
     async loadContent() {
       let content: any = null;
       if (spec) {
-        const file = await fs.readFile(spec);
+        const file = (await fs.readFile(spec)).toString();
 
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
-          const parsedSpec = YAML.parse(spec);
+          const parsedSpec = YAML.parse(file);
           content = parsedSpec;
         }
-        else content = JSON.parse(file.toString());
+        else content = JSON.parse(file);
       }
       if (debug) {
         console.error('[REDOCUSAURUS_PLUGIN] Content:', content);
