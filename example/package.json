@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus-example",
-  "version": "0.0.0",
+  "version": "0.2.1",
   "private": "true",
   "homepage": "https://github.com/rohit-gohri/redocusaurus",
   "bugs": {
@@ -22,7 +22,7 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.70",
     "@docusaurus/preset-classic": "^2.0.0-alpha.70",
-    "redocusaurus": "^0.2.0"
+    "redocusaurus": "^0.2.1"
   },
   "browserslist": {
     "production": [
