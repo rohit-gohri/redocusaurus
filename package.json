@@ -4,7 +4,7 @@
   "private": "true",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist && lerna exec npm ci && lerna link",
+    "bootstrap": "lerna bootstrap --hoist && lerna exec npm i && lerna link",
     "build": "lerna run build",
     "clean": "lerna clean && lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "test": "echo \"Error: no test specified\" && exit 1",
