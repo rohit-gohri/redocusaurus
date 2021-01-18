@@ -1,5 +1,6 @@
 import React from 'react';
 import ApiDoc from '@theme/ApiDoc';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const STATIC_SPEC = '/openapi-page.yaml';
 
@@ -11,7 +12,7 @@ function CustomPage() {
       description={`Open API Reference Docs for API`}
       spec={{
         type: 'url',
-        content: STATIC_SPEC,
+        content: useBaseUrl(STATIC_SPEC),
       }}
     />
   );
