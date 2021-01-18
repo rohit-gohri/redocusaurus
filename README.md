@@ -12,11 +12,11 @@ See [Redocusaurus Package](./packages/redocusaurus).
 
 ## Packages
 
-### [Docusaurus Theme Redoc](./packages/docusarus-theme-redoc)
+### [Docusaurus Theme Redoc](./packages/docusaurus-theme-redoc)
 
 A wrapper around RedocStandalone to make it match the Dcousaurus Theme with added Dark Mode.
 
-### [Docusaurus Plugin Redoc](./packages/docusarus-plugin-redoc)
+### [Docusaurus Plugin Redoc](./packages/docusaurus-plugin-redoc)
 
 A content plugin that creates pages from your OpenAPI files or URLs and rendered using the Redoc component from the theme.
 
