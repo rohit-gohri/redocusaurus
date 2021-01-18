@@ -1,18 +1,24 @@
-const path = require('path');
-
 module.exports = {
   presets: [
-    '@docusaurus/preset-classic',
+    [
+      '@docusaurus/preset-classic',
+      {
+        debug: true,
+      }
+    ],
     [
       'redocusaurus',
       {
+        debug: process.env.DEBUG || process.env.CI,
         specs: [
-          // {
-          //   specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-          // },
+          {
+            specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+            routePath: '/using-spec-url/'
+          },
           {
             spec: 'openapi.yaml',
-          },
+            routePath: '/using-spec-yaml/'
+          }
         ]
       }
     ]
@@ -47,6 +53,23 @@ module.exports = {
       },
       style: 'dark',
       links: [
+        {
+          title: 'Modules',
+          items: [
+            {
+              label: 'Redocusaurus',
+              href: 'https://www.npmjs.com/package/redocusaurus/',
+            },
+            {
+              label: 'Docusaurus Theme',
+              href: 'https://www.npmjs.com/package/docusaurus-theme-redoc/',
+            },
+            {
+              label: 'Docusaurus Plugin',
+              href: 'https://www.npmjs.com/package/docusaurus-plugin-redoc/',
+            },
+          ],
+        },
         {
           title: 'More',
           items: [

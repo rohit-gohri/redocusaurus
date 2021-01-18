@@ -58,7 +58,7 @@ function Section({title, description, link}) {
       <h3>{title}</h3>
   );
   return (
-    <div className={clsx('col col--4', styles.feature, styles.featuresCol)}>
+    <div className={clsx('col col--6', styles.feature, styles.featuresCol)}>
       {link ? <Link to={useBaseUrl(link)}>{sectionComponent}</Link> : sectionComponent}
       <p>{description}</p>
     </div>
@@ -74,6 +74,7 @@ function Docs() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{"Redocusaurus Example"}</h1>
+          <p>{"Redoc for Docusaurus with Dark Mode Support"}</p>
         </div>
       </header>
       <main>
