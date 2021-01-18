@@ -101,7 +101,7 @@ function Redoc(props: {
 }) {
   const {spec, specUrl} = props;
   const { isDarkTheme } = useThemeContext();
-  const theme = getThemeOptions(isDarkTheme);
+  const theme = React.useMemo(() => getThemeOptions(isDarkTheme), [isDarkTheme]);
 
   return (
     <div className="redocusaurus">
