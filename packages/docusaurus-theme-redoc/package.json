@@ -4,7 +4,7 @@
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.jsx.json && tsc",
     "postbuild": "npx copyup -e \"./**/*.js\" -e \"./**/*.ts\" \"./src/**/*.*\" ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

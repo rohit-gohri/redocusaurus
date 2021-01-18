@@ -11,7 +11,7 @@ export default function redocTheme(
   return {
     name: 'docusaurus-theme-redoc',
     getThemePath() {
-      return path.join(__dirname, '..', 'dist', 'theme');
+      return path.join(__dirname, '..', 'dist-jsx', 'theme');
     },
     getTypeScriptThemePath() {
       return path.join(__dirname, '..', 'src', 'theme');
