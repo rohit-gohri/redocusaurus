@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Redoc for DocusaurusV2",
   "main": "dist/index.js",
   "exports": {
@@ -30,8 +30,8 @@
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
     "@docusaurus/types": "^2.0.0-alpha.70",
-    "docusaurus-plugin-redoc": "^0.0.0",
-    "docusaurus-theme-redoc": "^0.0.0"
+    "docusaurus-plugin-redoc": "^0.1.0",
+    "docusaurus-theme-redoc": "^0.1.0"
   },
   "engines": {
     "node": ">=10.15.1"
