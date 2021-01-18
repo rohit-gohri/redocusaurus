@@ -22,6 +22,7 @@ export default function preset(context: LoadContext, opts: {specs: PluginOptions
         require.resolve('docusaurus-plugin-redoc'),
         {
           ...pluginOpts,
+          routePath: pluginOpts.routePath ?? `/api/${index}`,
           id: `plugin-redoc-${index}`,
         },
       ])),
