@@ -30,11 +30,13 @@ This theme provides a `Redoc` and a `ApiDoc` theme component with a theme matchi
 
 ### Redoc
 
-RedocStandalone with dark mode support.
+RedocStandalone with dark mode support, matching docusaurus classic theme.
 
   ```js
   import Redoc from '@theme/Redoc';
   ```
+
+See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/main/example/src/pages/custom-layout/index.js)
 
 ### ApiDoc
 
@@ -43,5 +45,9 @@ RedocStandalone with dark mode support.
   ```js
   import ApiDoc from '@theme/ApiDoc';
   ```
+
+See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/main/example/src/pages/custom-page/index.js)
+
+## Related Preset
 
 Read More Here: <https://github.com/rohit-gohri/redocusaurus>

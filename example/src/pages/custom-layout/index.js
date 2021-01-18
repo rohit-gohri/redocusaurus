@@ -6,14 +6,14 @@ const STATIC_SPEC = '/openapi-component.yaml';
 
 function CustomPage() {
   return (
-  <Layout
-    title={`Open API Docs`}
-    description={`Open API Reference Docs for API`}
-  >
-    <Redoc
-      specUrl={STATIC_SPEC}
-    ></Redoc>
-  </Layout>
+    <Layout
+      title={`Open API Docs`}
+      description={`Open API Reference Docs for API`}
+    >
+      <Redoc
+        specUrl={STATIC_SPEC}
+      ></Redoc>
+    </Layout>
   );
 }
 

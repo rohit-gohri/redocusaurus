@@ -7,14 +7,42 @@ import styles from './styles.module.css';
 
 const sections = [
   {
-    title: <>Hello</>,
-    link: '/docs/hello/',
+    title: <>Using ApiDoc Component</>,
+    link: '/custom-layout/',
     description: (
       <>
-      Test
+      A page using ApiDoc component in <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">docusaurus-theme-redoc</a>
       </>
     ),
-  }
+  },
+  {
+    title: <>Using Redoc Component</>,
+    link: '/custom-page/',
+    description: (
+      <>
+      A page with custom Layout using Redoc component in <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">docusaurus-theme-redoc</a>
+      </>
+    ),
+  },
+  {
+    title: <>Using Spec URL</>,
+    link: '/using-spec-url/',
+    description: (
+      <>
+      A page made automatically with <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">docusaurus-plugin-redoc</a>
+      </>
+    ),
+  },
+  {
+    title: <>Using YAML Spec</>,
+    link: '/using-spec-yaml/',
+    description: (
+      <>
+      A page made automatically with <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">docusaurus-plugin-redoc</a>
+      </>
+    ),
+  },
+
 ];
 
 /**
@@ -27,14 +55,12 @@ const sections = [
   */
 function Section({title, description, link}) {
   const sectionComponent = (
-    <>
       <h3>{title}</h3>
-      <p>{description}</p>
-    </>
   );
   return (
     <div className={clsx('col col--4', styles.feature, styles.featuresCol)}>
       {link ? <Link to={useBaseUrl(link)}>{sectionComponent}</Link> : sectionComponent}
+      <p>{description}</p>
     </div>
   );
  }
