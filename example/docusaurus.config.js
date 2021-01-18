@@ -9,7 +9,7 @@ module.exports = {
     [
       'redocusaurus',
       {
-        debug: process.env.DEBUG || process.env.CI,
+        debug: Boolean(process.env.DEBUG || process.env.CI),
         specs: [
           {
             specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
