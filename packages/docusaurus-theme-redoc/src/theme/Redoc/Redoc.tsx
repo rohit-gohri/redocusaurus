@@ -75,7 +75,8 @@ let DARK_THEME_OPTIONS: RecursivePartial<ResolvedThemeInterface> = {
 function getThemeOptions(isDarkMode: boolean): ResolvedThemeInterface {
   let baseTheme;
   try {
-    const redocOptions = require('./.redoc.json');
+    // TODO: Replace with theme-data
+    const redocOptions = require('/.redoc.json');
     baseTheme = redocOptions.theme;
   }
   catch(err) {
@@ -99,9 +100,9 @@ function Redoc(props: {
   spec?: object,
   specUrl: string,
 }) {
-  const {spec, specUrl} = props;
   const { isDarkTheme } = useThemeContext();
   const theme = React.useMemo(() => getThemeOptions(isDarkTheme), [isDarkTheme]);
+  const {spec, specUrl} = props;
 
   return (
     <div className="redocusaurus">
