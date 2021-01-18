@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'fs';
 import YAML from 'yaml';
 import type {
   LoadContext,
@@ -30,7 +30,7 @@ export default function redocPlugin(
     async loadContent() {
       let content: any = null;
       if (spec) {
-        const file = (await fs.readFile(spec)).toString();
+        const file = fs.readFileSync(spec).toString();
 
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
           const parsedSpec = YAML.parse(file);
