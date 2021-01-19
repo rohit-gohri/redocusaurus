@@ -48,6 +48,14 @@ See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/ma
 
 See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/main/example/src/pages/custom-page/index.js)
 
+## Options
+
+### primaryColor:
+
+Hex code to be passed as the `main` color to [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component)
+
+
+
 ## Related Preset
 
 Read More Here: <https://github.com/rohit-gohri/redocusaurus>
