@@ -8,4 +8,22 @@ Read More Here: <https://github.com/rohit-gohri/redocusaurus>
 
 ## Options
 
-<!-- TODO: Add docs -->
+Either of `spec` or `specUrl` is required.
+
+### spec
+
+A path to a OpenAPI yaml or json file. Will be parsed and forwarded to Redoc component.
+
+### specUrl
+
+A url pointing to an OpenAPI spec.
+
+### routePath (default: `/api/`)
+
+Route URL at which docs would be available
+
+### apiDocComponent (default: `@theme/ApiDoc`)
+
+If you want to use a custom component to render the spec instead of the one with `docusaurus-theme-redoc` then overwrite this with a path to the component.
+It will be forwarded a single prop, see [ApiDoc](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/theme/ApiDoc/ApiDoc.tsx) for example.
+
