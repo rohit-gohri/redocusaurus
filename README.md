@@ -1,6 +1,6 @@
 # Redocusaurus
 
-![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
+[![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)](https://www.npmjs.com/package/redocusaurus/)
 [![lerna](https://img.shields.io/badge/Maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lerna.js.org/)
 [![Typed with TypeScript](https://img.shields.io/badge/Typed-555555.svg?style=flat-square&logo=typescript&labelColor=08C)](https://www.typescriptlang.org/)
 
