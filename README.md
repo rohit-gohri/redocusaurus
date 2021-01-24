@@ -30,6 +30,6 @@ Example project show casing the preset in action with multiple different OpenAPI
 
 ## Motivation
 
-To have the documentaion and API reference in the same site with the same headers/footers.
+To have the documentaion and API reference in the same site with the same headers/footers. Read more in the blog post, [OpenAPI for Docusaurs](https://rohit.page/blog/projects/openapi-for-docusaurus/?utm_source=github&utm_medium=repo&utm_campaign=hf).
 
 See this issue, <https://github.com/facebook/docusaurus/issues/638>, and this gist, <https://gist.github.com/rohit-gohri/b1a19f37702cfe4a6c5a47933a11785b> for more details and history.
