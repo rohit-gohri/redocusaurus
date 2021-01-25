@@ -60,6 +60,10 @@ The API Doc will be available by default at `/api/` path. To customize it see [f
 
 ### Options
 
-- For plugin options see [docusaurus-plugin-redoc](../docusaurus-plugin-redoc)
+#### specs
 
-- For theme options see [docusaurus-theme-redoc](../docusaurus-theme-redoc)
+Pass it an array of plugin options, see [docusaurus-plugin-redoc](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc) for individual option details.
+
+#### theme
+
+Pass options to customize the theme, see [docusaurus-theme-redoc](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-theme-redoc) for individual option details.
