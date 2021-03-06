@@ -4,9 +4,11 @@ import type {
   LoadContext,
   Plugin,
 } from '@docusaurus/types';
+import { RedocRawOptions } from 'redoc';
 
 export interface ThemeOptions {
   primaryColor?: string;
+  redocOptions?: Omit<RedocRawOptions, 'theme'>;
 };
 
 export default function redocTheme(
@@ -31,6 +33,7 @@ export default function redocTheme(
       const {setGlobalData} = actions;
       // Create theme data global
       setGlobalData({
+        redocOptions: options.redocOptions || {},
         baseTheme: {
           colors: {
             primary: {
