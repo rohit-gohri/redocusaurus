@@ -4,6 +4,7 @@ import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
 // @ts-ignore
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
+import type { Props } from "@theme/Redoc";
 import './styles.css';
 
 type RecursivePartial<T> = {
@@ -85,10 +86,7 @@ function getThemeOptions(baseTheme: ThemeOverrides, isDarkMode: boolean): ThemeO
 }
 
 
-function Redoc(props: {
-  spec?: object,
-  specUrl: string,
-}) {
+function Redoc(props: Props) {
   const { isDarkTheme } = useThemeContext();
   const { baseTheme, redocOptions = null } = usePluginData('docusaurus-theme-redoc');
   const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [baseTheme, isDarkTheme]);

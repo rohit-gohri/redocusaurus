@@ -1,16 +1,9 @@
 import React from "react";
-import Layout, {Props as LayoutProps } from "@theme/Layout";
+import Layout from "@theme/Layout";
 import Redoc from "@theme/Redoc";
+import type { Props } from "@theme/ApiDoc";
 
-interface Spec {
-  type: "url" | "object";
-  content: any;
-}
-
-function ApiDoc(props: {
-  layoutProps?: LayoutProps;
-  spec: Spec;
-}) {
+function ApiDoc(props: Props) {
   const { type, content } = props.spec;
   const {
     title = "API Docs",
