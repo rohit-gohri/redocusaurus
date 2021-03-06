@@ -50,9 +50,14 @@ See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/ma
 
 ## Options
 
-### primaryColor:
+### primaryColor
 
 Hex code to be passed as the `main` color to [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component)
+
+### redocOptions
+
+Override the default redoc options passed to the [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component) component.
+See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/theme/Redoc/Redoc.tsx#L101-L108).
 
 
 
