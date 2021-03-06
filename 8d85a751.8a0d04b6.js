@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{50:function(o){o.exports=JSON.parse('{"type":"url","content":"https://redocly.github.io/redoc/openapi.yaml"}')}}]);
