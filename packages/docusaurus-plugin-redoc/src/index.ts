@@ -53,6 +53,10 @@ export default function redocPlugin(
         `redocApiSpec-${options.id || '1'}.json`,
         JSON.stringify({ type: content ? 'object' : 'url', content: content || specUrl }),
       );
+      const layoutData = await createData(
+        `redocApiLayout-${options.id || '1'}.json`,
+        JSON.stringify(options.layout),
+      );
 
       const path = options.routePath.startsWith('/') ? options.routePath.slice(1) : options.routePath;
       const routeOptions = {
@@ -60,6 +64,7 @@ export default function redocPlugin(
         component: options.apiDocComponent,
         modules: {
           spec: specData,
+          layoutProps: layoutData,
         },
         exact: true,
       };
