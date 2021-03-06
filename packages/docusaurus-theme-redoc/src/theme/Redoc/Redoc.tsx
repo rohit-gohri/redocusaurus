@@ -90,7 +90,7 @@ function Redoc(props: {
   specUrl: string,
 }) {
   const { isDarkTheme } = useThemeContext();
-  const { baseTheme } = usePluginData('docusaurus-theme-redoc');
+  const { baseTheme, redocOptions = null } = usePluginData('docusaurus-theme-redoc');
   const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [baseTheme, isDarkTheme]);
   const { spec, specUrl } = props;
 
@@ -105,6 +105,7 @@ function Redoc(props: {
           menuToggle: true,
           // @ts-ignore
           suppressWarnings: true,
+          ...(redocOptions),
           theme,
         }}
       />

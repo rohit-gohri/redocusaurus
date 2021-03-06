@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
-    "@docusaurus/types": "2.0.0-alpha.70",
+    "@docusaurus/types": "^2.0.0-alpha.70",
     "clsx": "^1.1.1",
     "copyfiles": "^2.4.1",
     "core-js": "^3.8.0",
