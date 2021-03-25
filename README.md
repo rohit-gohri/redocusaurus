@@ -10,6 +10,10 @@
 
 See [Redocusaurus Package](./packages/redocusaurus).
 
+## Demo
+
+See: <https://rohit-gohri.github.io/redocusaurus/>
+
 ## Packages
 
 ### [Docusaurus Theme Redoc](./packages/docusaurus-theme-redoc)
@@ -32,4 +36,4 @@ Example project show casing the preset in action with multiple different OpenAPI
 
 To have the documentaion and API reference in the same site with the same headers/footers. Read more in the blog post, [OpenAPI for Docusaurus](https://rohit.page/blog/projects/openapi-for-docusaurus/?utm_source=github&utm_medium=repo&utm_campaign=hf).
 
-See this issue, <https://github.com/facebook/docusaurus/issues/638>, and this gist, <https://gist.github.com/rohit-gohri/b1a19f37702cfe4a6c5a47933a11785b> for more details and history.
+See this issue, [https://github.com/facebook/docusaurus/issues/638](https://github.com/facebook/docusaurus/issues/638#issuecomment-762502498), and this gist, <https://gist.github.com/rohit-gohri/b1a19f37702cfe4a6c5a47933a11785b> for more details and history.
