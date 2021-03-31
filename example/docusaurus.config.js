@@ -16,7 +16,7 @@ module.exports = {
             routePath: '/using-spec-url/'
           },
           {
-            specUrl: '/openapi-page.yaml',
+            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
             routePath: '/using-relative-url/'
           },
           {
@@ -26,6 +26,7 @@ module.exports = {
         ],
         theme: {
           primaryColor: '#1890ff',
+          redocOptions: { hideDownloadButton: false },
         },
       }
     ]
