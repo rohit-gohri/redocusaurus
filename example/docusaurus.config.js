@@ -16,6 +16,10 @@ module.exports = {
             routePath: '/using-spec-url/'
           },
           {
+            specUrl: '/openapi-page.yaml',
+            routePath: '/using-relative-url/'
+          },
+          {
             spec: 'openapi.yaml',
             routePath: '/using-spec-yaml/'
           }
