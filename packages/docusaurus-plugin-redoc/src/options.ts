@@ -40,7 +40,7 @@ export const DEFAULT_OPTIONS: PluginOptionsWithDefault = {
 export const PluginOptionSchema = Joi.object({
   id: Joi.string(),
   spec: Joi.string(),
-  specUrl: Joi.string().uri(),
+  specUrl: Joi.string().uri({ allowRelative: true }),
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
   routePath: Joi.string().default(DEFAULT_OPTIONS.routePath),
