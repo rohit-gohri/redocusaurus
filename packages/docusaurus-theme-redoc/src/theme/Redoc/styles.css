@@ -75,14 +75,10 @@ html:not([data-theme="dark"]) .redocusaurus div[id^="react-tabs"] > div:nth-chil
   border: none;
 }
 
-.redocusaurus table:not(.security-details) td {
-  border-bottom: none !important;
-}
-
-.redocusaurus table.security-details > tbody > tr  {
+.redocusaurus table > tbody > tr  {
   color: var(--ifm-font-color);
 }
 
-.redocusaurus table.security-details tr {
-  background-color: var(--ifm-background-color)
+.redocusaurus table tr {
+  background-color: var(--ifm-background-color) !important;
 }
