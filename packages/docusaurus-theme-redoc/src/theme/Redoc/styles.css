@@ -71,7 +71,7 @@ html:not([data-theme="dark"]) .redocusaurus div[id^="react-tabs"] > div:nth-chil
 
 /* ------ Schema Styling Overrides ------- */
 
-.redocusaurus table th, table td {
+.redocusaurus table th, .redocusaurus table td {
   border: none;
 }
 
