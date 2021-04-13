@@ -37,6 +37,7 @@ let LIGHT_THEME_OPTIONS: ThemeOverrides = {
     fontSize: DOCUSAURUS.fontSize,
     headings: {
       fontFamily: DOCUSAURUS.fontFamily,
+      fontWeight: "700",
       // lineHeight: DOCUSAURUS.fontSize,
     },
   },
