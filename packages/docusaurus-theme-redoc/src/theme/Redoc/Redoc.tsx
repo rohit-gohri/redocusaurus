@@ -23,6 +23,7 @@ type ThemeOverrides = RecursivePartial<ResolvedThemeInterface>;
 const DOCUSAURUS = {
   fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   fontSize: '16px',
+  fontWeight: '700',
   darkGray: '#303846',
   dark: {
     primaryText: '#f5f6f7',
@@ -37,6 +38,7 @@ let LIGHT_THEME_OPTIONS: ThemeOverrides = {
     fontSize: DOCUSAURUS.fontSize,
     headings: {
       fontFamily: DOCUSAURUS.fontFamily,
+      fontWeight: DOCUSAURUS.fontWeight,
       // lineHeight: DOCUSAURUS.fontSize,
     },
   },
