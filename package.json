@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.21",
