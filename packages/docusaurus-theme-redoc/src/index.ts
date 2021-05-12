@@ -14,8 +14,7 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    configureWebpack(config, isServer) {
-      if (isServer) return {};
+    configureWebpack() {
       return {
         plugins: [new NodePolyfillPlugin({})],
       };
