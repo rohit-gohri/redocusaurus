@@ -1,8 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 const sections = [
@@ -11,7 +11,10 @@ const sections = [
     link: '/custom-layout/',
     description: (
       <>
-      A page using ApiDoc component in <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">docusaurus-theme-redoc</a>
+        A page using ApiDoc component in{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
+          docusaurus-theme-redoc
+        </a>
       </>
     ),
   },
@@ -20,7 +23,10 @@ const sections = [
     link: '/custom-page/',
     description: (
       <>
-      A page with custom Layout using Redoc component in <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">docusaurus-theme-redoc</a>
+        A page with custom Layout using Redoc component in{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
+          docusaurus-theme-redoc
+        </a>
       </>
     ),
   },
@@ -29,7 +35,10 @@ const sections = [
     link: '/using-spec-url/',
     description: (
       <>
-      A page made automatically with <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">docusaurus-plugin-redoc</a>
+        A page made automatically with{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
+          docusaurus-plugin-redoc
+        </a>
       </>
     ),
   },
@@ -38,43 +47,41 @@ const sections = [
     link: '/using-spec-yaml/',
     description: (
       <>
-      A page made automatically with <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">docusaurus-plugin-redoc</a>
+        A page made automatically with{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
+          docusaurus-plugin-redoc
+        </a>
       </>
     ),
   },
-
 ];
 
 /**
  *
  * @param {{
-  *   title: string | React.ReactNode;
-  *   description: string | React.ReactNode;
-  *   link?: string;
-  * }} param0
-  */
-function Section({title, description, link}) {
-  const sectionComponent = (
-      <h3>{title}</h3>
-  );
+ *   title: string | React.ReactNode;
+ *   description: string | React.ReactNode;
+ *   link?: string;
+ * }} param0
+ */
+function Section({ title, description, link }) {
+  const sectionComponent = <h3>{title}</h3>;
+  const fullLink = useBaseUrl(link);
   return (
     <div className={clsx('col col--6', styles.feature, styles.featuresCol)}>
-      {link ? <Link to={useBaseUrl(link)}>{sectionComponent}</Link> : sectionComponent}
+      {link ? <Link to={fullLink}>{sectionComponent}</Link> : sectionComponent}
       <p>{description}</p>
     </div>
   );
- }
-
+}
 
 function Docs() {
   return (
-    <Layout
-      title={"Redocusaurus Example"}
-      description={"With different use-cases"}>
+    <Layout title="Redocusaurus Example" description="With different use-cases">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{"Redocusaurus Example"}</h1>
-          <p>{"Redoc for Docusaurus with Dark Mode Support"}</p>
+          <h1 className="hero__title">Redocusaurus Example</h1>
+          <p>Redoc for Docusaurus with Dark Mode Support</p>
         </div>
       </header>
       <main>
