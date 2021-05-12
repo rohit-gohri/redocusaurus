@@ -4,12 +4,10 @@
   "private": "true",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist && npm run setup",
-    "setup": "lerna exec npm i && lerna link",
     "build": "lerna run build",
     "clean": "lerna clean && lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preversion": "npm run build"
+    "preversion": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -40,5 +38,6 @@
   },
   "engines": {
     "node": ">=10.15.1"
-  }
+  },
+  "workspaces": ["example", "packages/*"]
 }
