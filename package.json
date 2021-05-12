@@ -6,6 +6,7 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean && lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
+    "lint": "eslint . --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preversion": "yarn build"
   },
@@ -33,11 +34,42 @@
   "devDependencies": {
     "@types/node": "^14.14.21",
     "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-i18n-json": "^3.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.2.5",
+    "jest": "^26.6.3",
     "lerna": "^3.20.2",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "ts-jest": "^26.5.4",
     "typescript": "^4.1.3"
   },
   "engines": {
     "node": ">=10.15.1"
   },
-  "workspaces": ["example", "packages/*"]
+  "workspaces": ["example", "packages/*"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx --fix"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2
+  }
 }
