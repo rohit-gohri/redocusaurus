@@ -8,7 +8,7 @@
     "clean": "lerna clean && lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "lint": "eslint . --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preversion": "yarn build"
+    "release": "yarn build & changeset publish"
   },
   "repository": {
     "type": "git",

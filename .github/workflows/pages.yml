@@ -32,7 +32,6 @@ jobs:
 
       - name: Install
         run: |
-          npm i -g lerna
           yarn
         env:
           NPM_CONFIG_PREFER_OFFLINE: 'true'
