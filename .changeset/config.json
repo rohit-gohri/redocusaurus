@@ -5,7 +5,9 @@
     { "repo": "rohit-gohri/redocusaurus" }
   ],
   "commit": true,
-  "linked": [],
+  "linked": [
+    ["redocusaurus", "docusaurus-theme-redoc", "docusaurus-plugin-redoc"]
+  ],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
