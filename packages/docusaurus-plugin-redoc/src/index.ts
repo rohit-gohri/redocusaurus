@@ -17,7 +17,7 @@ export {
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
-): Plugin<string | null, typeof PluginOptionSchema> {
+): Plugin<string | null> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = {...DEFAULT_OPTIONS, ...opts};
   const { debug, spec, specUrl } = options;
@@ -79,7 +79,7 @@ export default function redocPlugin(
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions, ValidationError>): Promise<void> {
+}: OptionValidationContext<PluginOptions>): Promise<void> {
   const {value, error} = PluginOptionSchema.validate(options);
   if (error) {
     throw error;

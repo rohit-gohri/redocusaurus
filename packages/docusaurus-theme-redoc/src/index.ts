@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack from 'webpack';
+import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
 import type {
   LoadContext,
   Plugin,
@@ -17,19 +17,15 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    /**
-     * @see https://github.com/Redocly/redoc/issues/1257
-     */
-    configureWebpack(config, isServer, utils) {
+    configureWebpack(config, isServer) {
+      if (isServer) return {};
       return {
         plugins: [
-          new webpack.ProvidePlugin({
-            Buffer: ['buffer', 'Buffer'],
-          }),
+          new NodePolyfillPlugin({ }),
         ],
       };
     },
-    async contentLoaded({content, actions}) {
+    async contentLoaded({actions}) {
       const {setGlobalData} = actions;
       // Create theme data global
       setGlobalData({
@@ -49,11 +45,16 @@ export default function redocTheme(
     getTypeScriptThemePath() {
       return path.join(__dirname, '..', 'src', 'theme');
     },
-    getSwizzleComponentList() {
-      return ['Redoc', 'ApiDoc'];
-    },
     getClientModules() {
       return [path.join(__dirname, 'custom.css')];
     },
   };
+};
+
+const getSwizzleComponentList = () => {
+  return ['Redoc', 'ApiDoc'];
+};
+
+export {
+  getSwizzleComponentList,
 };
