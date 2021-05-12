@@ -22,13 +22,13 @@ export interface PluginOptions {
   debug?: boolean;
   routePath?: string;
   apiDocComponent?: string;
-};
+}
 
 export interface PluginOptionsWithDefault extends PluginOptions {
   debug: boolean;
   routePath: string;
   apiDocComponent: string;
-};
+}
 
 export const DEFAULT_OPTIONS: PluginOptionsWithDefault = {
   layout: {},

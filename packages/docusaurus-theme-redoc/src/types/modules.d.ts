@@ -1,20 +1,21 @@
-declare module "@theme/Redoc" {
+declare module '@theme/Redoc' {
   export type Props = {
-    spec?: object,
-    specUrl: string,
+    spec?: Record<string, unknown>;
+    specUrl: string;
   };
   const Redoc: (props: Props) => JSX.Element;
   export default Redoc;
 }
 
-declare module "@theme/ApiDoc" {
-  import {Props as LayoutProps } from "@theme/Layout";
+declare module '@theme/ApiDoc' {
+  import { Props as LayoutProps } from '@theme/Layout';
+
   interface Spec {
-    type: "url" | "object";
-    content: any;
+    type: 'url' | 'object';
+    content: string | Record<string, unknown>;
   }
-  
-  export type Props =  {
+
+  export type Props = {
     layoutProps?: Omit<LayoutProps, 'children'>;
     spec: Spec;
   };

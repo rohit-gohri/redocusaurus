@@ -1,1 +1,1 @@
-import '@docusaurus/theme-classic'
+import '@docusaurus/theme-classic';

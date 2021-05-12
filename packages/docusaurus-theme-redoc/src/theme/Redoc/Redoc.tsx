@@ -1,17 +1,19 @@
 import React from 'react';
-import merge from 'lodash/merge';
-import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
 // @ts-ignore
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
-import type { Props } from "@theme/Redoc";
+import type { Props } from '@theme/Redoc';
+import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
+import merge from 'lodash/merge';
 import './styles.css';
 
 type RecursivePartial<T> = {
-  [P in keyof T]?:
-    T[P] extends (infer U)[] ? RecursivePartial<U>[] :
-    T[P] extends object ? RecursivePartial<T[P]> :
-    T[P];
+  [P in keyof T]?: T[P] extends (infer U)[]
+    ? RecursivePartial<U>[]
+    : // eslint-disable-next-line @typescript-eslint/ban-types
+    T[P] extends object
+    ? RecursivePartial<T[P]>
+    : T[P];
 };
 
 type ThemeOverrides = RecursivePartial<ResolvedThemeInterface>;
@@ -21,7 +23,8 @@ type ThemeOverrides = RecursivePartial<ResolvedThemeInterface>;
  * and related files
  */
 const DOCUSAURUS = {
-  fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontFamily:
+    'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   fontSize: '16px',
   fontWeight: '700',
   darkGray: '#303846',
@@ -29,10 +32,10 @@ const DOCUSAURUS = {
     primaryText: '#f5f6f7',
     secondaryText: 'rgba(255, 255, 255, 1)',
     backgroundColor: 'rgb(24, 25, 26)',
-  }
+  },
 };
 
-let LIGHT_THEME_OPTIONS: ThemeOverrides = {
+const LIGHT_THEME_OPTIONS: ThemeOverrides = {
   typography: {
     fontFamily: DOCUSAURUS.fontFamily,
     fontSize: DOCUSAURUS.fontSize,
@@ -47,10 +50,10 @@ let LIGHT_THEME_OPTIONS: ThemeOverrides = {
   },
   rightPanel: {
     backgroundColor: DOCUSAURUS.darkGray,
-  }
+  },
 };
 
-let DARK_THEME_OPTIONS: ThemeOverrides = {
+const DARK_THEME_OPTIONS: ThemeOverrides = {
   colors: {
     text: {
       primary: DOCUSAURUS.dark.primaryText,
@@ -79,33 +82,39 @@ let DARK_THEME_OPTIONS: ThemeOverrides = {
   },
 };
 
-function getThemeOptions(baseTheme: ThemeOverrides, isDarkMode: boolean): ThemeOverrides {
-  baseTheme = merge(baseTheme, LIGHT_THEME_OPTIONS);
+function getThemeOptions(
+  baseTheme: ThemeOverrides,
+  isDarkMode: boolean,
+): ThemeOverrides {
+  const mergedTheme = merge({}, baseTheme, LIGHT_THEME_OPTIONS);
 
-  if (!isDarkMode) return baseTheme;
+  if (!isDarkMode) return mergedTheme;
 
   return merge({}, baseTheme, DARK_THEME_OPTIONS);
 }
 
-
-function Redoc(props: Props) {
+function Redoc(props: Props): JSX.Element {
   const { isDarkTheme } = useThemeContext();
-  const { baseTheme, redocOptions = null } = usePluginData('docusaurus-theme-redoc');
-  const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [baseTheme, isDarkTheme]);
+  const { baseTheme, redocOptions = null } = usePluginData(
+    'docusaurus-theme-redoc',
+  );
+  const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [
+    baseTheme,
+    isDarkTheme,
+  ]);
   const { spec, specUrl } = props;
 
   return (
     <div className="redocusaurus">
       <RedocStandalone
-        {...(spec ? {spec} : {specUrl})}
+        {...(spec ? { spec } : { specUrl })}
         options={{
           scrollYOffset: 'nav.navbar',
           hideDownloadButton: true,
           expandSingleSchemaField: true,
           menuToggle: true,
-          // @ts-ignore
           suppressWarnings: true,
-          ...(redocOptions),
+          ...redocOptions,
           theme,
         }}
       />

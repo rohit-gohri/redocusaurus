@@ -4,7 +4,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         debug: true,
-      }
+      },
     ],
     [
       'redocusaurus',
@@ -13,23 +13,23 @@ module.exports = {
         specs: [
           {
             specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/using-spec-url/'
+            routePath: '/using-spec-url/',
           },
           {
             specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/using-relative-url/'
+            routePath: '/using-relative-url/',
           },
           {
             spec: 'openapi.yaml',
-            routePath: '/using-spec-yaml/'
-          }
+            routePath: '/using-spec-yaml/',
+          },
         ],
         theme: {
           primaryColor: '#1890ff',
           redocOptions: { hideDownloadButton: false },
         },
-      }
-    ]
+      },
+    ],
   ],
 
   /** ************ Rest of your Docusaurus Config *********** */
@@ -87,7 +87,7 @@ module.exports = {
             },
             {
               label: 'Blog',
-              href: 'https://rohit.page'
+              href: 'https://rohit.page',
             },
           ],
         },

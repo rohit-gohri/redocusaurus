@@ -1,15 +1,12 @@
 import path from 'path';
-import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
-import type {
-  LoadContext,
-  Plugin,
-} from '@docusaurus/types';
+import type { LoadContext, Plugin } from '@docusaurus/types';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import { RedocRawOptions } from 'redoc';
 
 export interface ThemeOptions {
   primaryColor?: string;
   redocOptions?: Omit<RedocRawOptions, 'theme'>;
-};
+}
 
 export default function redocTheme(
   context: LoadContext,
@@ -20,20 +17,18 @@ export default function redocTheme(
     configureWebpack(config, isServer) {
       if (isServer) return {};
       return {
-        plugins: [
-          new NodePolyfillPlugin({ }),
-        ],
+        plugins: [new NodePolyfillPlugin({})],
       };
     },
-    async contentLoaded({actions}) {
-      const {setGlobalData} = actions;
+    async contentLoaded({ actions }) {
+      const { setGlobalData } = actions;
       // Create theme data global
       setGlobalData({
         redocOptions: options.redocOptions || {},
         baseTheme: {
           colors: {
             primary: {
-              main: options.primaryColor || "#25c2a0"
+              main: options.primaryColor || '#25c2a0',
             },
           },
         },
@@ -49,12 +44,10 @@ export default function redocTheme(
       return [path.join(__dirname, 'custom.css')];
     },
   };
-};
+}
 
 const getSwizzleComponentList = () => {
   return ['Redoc', 'ApiDoc'];
 };
 
-export {
-  getSwizzleComponentList,
-};
+export { getSwizzleComponentList };
