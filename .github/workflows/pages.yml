@@ -16,30 +16,31 @@ jobs:
         with:
           node-version: '12'
 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Cache npm
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-yarn-
 
       - name: Install
         run: |
           npm i -g lerna
-          npm run bootstrap
+          yarn
         env:
-          NPM_CONFIG_CACHE: ~/.npm
           NPM_CONFIG_PREFER_OFFLINE: 'true'
           NPM_CONFIG_SILENT: 'true'
           NPM_CONFIG_NO_AUDIT: 'true'
 
       - name: Build 🔧
-        run: npm run build
+        run: yarn build
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
           DEPLOY_BASE_URL: /redocusaurus/
