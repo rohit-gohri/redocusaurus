@@ -1,0 +1,69 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "max-lines": ["error", 300],
+    "no-console": "off",
+    "no-plusplus": "off",
+    "import/no-cycle": "error",
+    "no-underscore-dangle": "off",
+    "react/destructuring-assignment": "warn",
+    "react/no-array-index-key": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "import/no-unresolved": ["off"],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "internal",
+          "external",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/ban-ts-comment": "warn"
+  },
+  "settings": {
+    "import/internal-regex": "^(@docusaurus|react|@theme)(/.+)?$"
+  },
+  "overrides": [
+    {
+      "files": ["*.test.{ts,tsx}", "./**/tests/*.*"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "max-lines": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    },
+    {
+      "files": ["*.{js,jsx}"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ]
+}
