@@ -24,7 +24,7 @@ function Redoc(props: Props): JSX.Element {
           hideDownloadButton: true,
           expandSingleSchemaField: true,
           menuToggle: true,
-          // @ts-expect-error
+          // @ts-expect-error not in types
           suppressWarnings: true,
           ...redocOptions,
           theme,
