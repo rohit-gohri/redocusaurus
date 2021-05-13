@@ -1,5 +1,6 @@
 name: Build and Deploy
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -51,3 +52,4 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: example/build # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
+        if: ${{ github.event_name == 'push' }}
