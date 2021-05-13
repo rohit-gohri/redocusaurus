@@ -4,6 +4,8 @@ import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import { ThemeOptions, GlobalData } from './types/common';
 import { getRedocThemes } from './redocTheme';
 
+export { ThemeOptions, GlobalData };
+
 export default function redocTheme(
   context: LoadContext,
   options: ThemeOptions,
