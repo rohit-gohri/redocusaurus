@@ -23,6 +23,7 @@
     "**/*.json",
     "**/dist/**/*",
     "**/dist-jsx/**/*",
-    "example/babel.config.js"
+    "example/babel.config.js",
+    "example/docusaurus.config.js"
   ]
 }
