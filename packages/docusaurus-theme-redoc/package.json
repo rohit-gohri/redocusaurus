@@ -1,12 +1,13 @@
 {
   "name": "docusaurus-theme-redoc",
-  "version": "0.3.4",
+  "version": "0.4.0-beta.0",
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
     "_copy": "npx copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
     "build": "tsc -p tsconfig.jsx.json && tsc",
     "postbuild": "npm run _copy -- ./dist && npm run _copy -- ./dist-jsx",
+    "prepublish": "rm .tsbuild.info .tsbuild.jsx.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
