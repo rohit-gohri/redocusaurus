@@ -1,9 +1,5 @@
 import merge from 'lodash/merge';
-import { RedocRawOptions } from 'redoc';
-import { GlobalData } from './types/common';
-import { RecursivePartial } from './types/util';
-
-type ThemeOverrides = RecursivePartial<NonNullable<RedocRawOptions['theme']>>;
+import { GlobalData, RedocThemeOverrides } from './types/common';
 
 /**
  * TODO: Update colors from infima
@@ -22,7 +18,7 @@ const DOCUSAURUS = {
  * NOTE: Variables taken from infima
  * @see https://github.com/facebookincubator/infima/blob/master/packages/core/styles/common/variables.pcss
  */
-const LIGHT_THEME_OPTIONS: ThemeOverrides = {
+const LIGHT_THEME_OPTIONS: RedocThemeOverrides = {
   typography: {
     fontFamily: 'var(--ifm-font-family-base)',
     fontSize: 'var(--ifm-font-size-base)',
@@ -53,7 +49,7 @@ const LIGHT_THEME_OPTIONS: ThemeOverrides = {
   },
 };
 
-const DARK_THEME_OPTIONS: ThemeOverrides = {
+const DARK_THEME_OPTIONS: RedocThemeOverrides = {
   colors: {
     text: {
       primary: DOCUSAURUS.dark.primaryText,
@@ -83,9 +79,9 @@ const DARK_THEME_OPTIONS: ThemeOverrides = {
 };
 
 function getThemeOptions(
-  baseTheme: ThemeOverrides,
+  baseTheme: RedocThemeOverrides,
   isDarkMode = false,
-): ThemeOverrides {
+): RedocThemeOverrides {
   const mergedTheme = merge({}, baseTheme, LIGHT_THEME_OPTIONS);
 
   if (!isDarkMode) return mergedTheme;
@@ -94,7 +90,7 @@ function getThemeOptions(
 }
 
 export function getRedocThemes(
-  baseTheme: ThemeOverrides,
+  baseTheme: RedocThemeOverrides,
 ): Pick<GlobalData, 'darkTheme' | 'lightTheme'> {
   return {
     lightTheme: getThemeOptions(baseTheme, false),
