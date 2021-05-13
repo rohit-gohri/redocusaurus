@@ -13,6 +13,7 @@
   "license": "MIT",
   "author": "Rohit Gohri <work@rohit.page>",
   "scripts": {
+    "clear": "docusaurus clear",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
