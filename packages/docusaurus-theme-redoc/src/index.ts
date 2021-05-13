@@ -4,6 +4,9 @@ import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import { ThemeOptions, GlobalData } from './types/common';
 import { getRedocThemes } from './redocTheme';
 
+// eslint-disable-next-line import/no-extraneous-dependencies, import/order
+import webpack from 'webpack';
+
 export { ThemeOptions, GlobalData };
 
 export default function redocTheme(
@@ -14,7 +17,14 @@ export default function redocTheme(
     name: 'docusaurus-theme-redoc',
     configureWebpack() {
       return {
-        plugins: [new NodePolyfillPlugin({})],
+        plugins: [
+          new webpack.DefinePlugin({
+            'process.versions.node': JSON.stringify(
+              process.versions.node || '0.0.0',
+            ),
+          }),
+          new NodePolyfillPlugin({}),
+        ],
       };
     },
     async contentLoaded({ actions }) {
