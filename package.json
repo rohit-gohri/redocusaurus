@@ -4,8 +4,9 @@
   "private": "true",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "build": "lerna run build",
-    "clean": "lerna clean && lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
+    "build": "lerna run build --ignore 'redocusaurus-example'",
+    "build:example": "lerna run build --scope 'redocusaurus-example'",
+    "clean": "lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "lint": "eslint . --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "yarn build & changeset publish"
@@ -49,7 +50,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.2.5",
     "jest": "^26.6.3",
-    "lerna": "^3.20.2",
+    "lerna": "^4.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "2.2.1",
     "ts-jest": "^26.5.4",
