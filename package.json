@@ -9,7 +9,7 @@
     "clean": "lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "yarn build & changeset publish"
+    "release": "yarn build && changeset publish"
   },
   "repository": {
     "type": "git",

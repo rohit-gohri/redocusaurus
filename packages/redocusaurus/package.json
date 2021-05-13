@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublish": "rm .tsbuild.info",
+    "prepublish": "rm -rf .tsbuild.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -7,7 +7,7 @@
     "_copy": "npx copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
     "build": "tsc -p tsconfig.jsx.json && tsc",
     "postbuild": "yarn _copy ./dist && yarn _copy ./dist-jsx",
-    "prepublish": "rm .tsbuild.info .tsbuild.jsx.info",
+    "prepublish": "rm -rf rm .tsbuild.info .tsbuild.jsx.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
