@@ -1,17 +1,20 @@
-name: Release
+name: Version
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   release:
-    name: Release
+    name: Version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
 
       - name: Setup Node.js 12.x
         uses: actions/setup-node@master
@@ -21,8 +24,7 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Release
-        run: yarn release
+      - name: Create Release Pull Request
+        uses: changesets/action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
