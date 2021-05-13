@@ -43,9 +43,7 @@ jobs:
         run: yarn build
 
       - name: Build Example 🔨
-        run: |
-          cd example
-          yarn build
+        run: yarn build:example
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
           DEPLOY_BASE_URL: /redocusaurus/
