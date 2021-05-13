@@ -49,10 +49,12 @@ jobs:
           DEPLOY_BASE_URL: /redocusaurus/
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: example/build # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: example/build
+          clean: true # Automatically remove deleted files from the deploy branch
+          git-config-email: drone@rohit.page
+          git-config-name: Drone User
         if: ${{ github.event_name == 'push' }}
