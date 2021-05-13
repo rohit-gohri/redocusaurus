@@ -17,14 +17,10 @@ type RecursivePartial<T> = {
 type ThemeOverrides = RecursivePartial<ResolvedThemeInterface>;
 
 /**
- * NOTE: Colors taken from `node_modules/infima/styles/common/dark-mode.css`
- * and related files
+ * TODO: Update colors from infima
+ * @see https://github.com/facebookincubator/infima/blob/master/packages/core/styles/common/variables.pcss
  */
 const DOCUSAURUS = {
-  fontFamily:
-    'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  fontSize: '16px',
-  fontWeight: '700',
   darkGray: '#303846',
   dark: {
     primaryText: '#f5f6f7',
@@ -33,17 +29,34 @@ const DOCUSAURUS = {
   },
 };
 
+/**
+ * NOTE: Variables taken from infima
+ * @see https://github.com/facebookincubator/infima/blob/master/packages/core/styles/common/variables.pcss
+ */
 const LIGHT_THEME_OPTIONS: ThemeOverrides = {
   typography: {
-    fontFamily: DOCUSAURUS.fontFamily,
-    fontSize: DOCUSAURUS.fontSize,
+    fontFamily: 'var(--ifm-font-family-base)',
+    fontSize: 'var(--ifm-font-size-base)',
+    lineHeight: 'var(--ifm-line-height-base)',
+    fontWeightLight: 'var(--ifm-font-weight-light)',
+    fontWeightRegular: 'var(--ifm-font-weight-base)',
+    fontWeightBold: 'var(--ifm-font-weight-bold)',
     headings: {
-      fontFamily: DOCUSAURUS.fontFamily,
-      fontWeight: DOCUSAURUS.fontWeight,
-      // lineHeight: DOCUSAURUS.fontSize,
+      fontFamily: 'var(--ifm-font-family-base)',
+      fontWeight: 'var(--ifm-font-weight-semibold)',
+      lineHeight: 'var(--ifm-line-height-base)',
+    },
+    code: {
+      fontFamily: 'var(--ifm-font-family-monospace)',
+      lineHeight: 'var(--ifm-pre-line-height)',
     },
   },
   sidebar: {
+    /**
+     * about the same as the sidebar in the docs area, for consistency
+     * @see https://davidgoss.co/blog/api-documentation-redoc-docusaurus/
+     */
+    width: '300px',
     backgroundColor: '#ffffff',
   },
   rightPanel: {
@@ -88,7 +101,7 @@ function getThemeOptions(
 
   if (!isDarkMode) return mergedTheme;
 
-  return merge({}, baseTheme, DARK_THEME_OPTIONS);
+  return merge({}, baseTheme, LIGHT_THEME_OPTIONS, DARK_THEME_OPTIONS);
 }
 
 function Redoc(props: Props): JSX.Element {
