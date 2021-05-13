@@ -4,7 +4,9 @@
 
 /* ------ Headings Overrides ------- */
 
-.redocusaurus h2,h3,h4 {
+.redocusaurus h2,
+h3,
+h4 {
   color: var(--ifm-font-color-base);
 }
 
@@ -17,12 +19,12 @@
 }
 
 /* Fixes https://github.com/rohit-gohri/redocusaurus/issues/18 */
-html[data-theme="dark"] .redocusaurus h1 > a:nth-child(1)::before {
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGcgY2xhc3M9ImxheWVyIj4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggZD0ibTQ1OS43LDIzMy40bC05MC41LDkwLjVjLTUwLDUwIC0xMzEsNTAgLTE4MSwwYy03LjksLTcuOCAtMTQsLTE2LjcgLTE5LjQsLTI1LjhsNDIuMSwtNDIuMWMyLC0yIDQuNSwtMy4yIDYuOCwtNC41YzIuOSw5LjkgOCwxOS4zIDE1LjgsMjcuMmMyNSwyNSA2NS42LDI0LjkgOTAuNSwwbDkwLjUsLTkwLjVjMjUsLTI1IDI1LC02NS42IDAsLTkwLjVjLTI0LjksLTI1IC02NS41LC0yNSAtOTAuNSwwbC0zMi4yLDMyLjJjLTI2LjEsLTEwLjIgLTU0LjIsLTEyLjkgLTgxLjYsLTguOWw2OC42LC02OC42YzUwLC01MCAxMzEsLTUwIDE4MSwwYzQ5LjgsNDkuOSA0OS44LDEzMSAtMC4xLDE4MXptLTIzOS40LDE0OC44bC0zMi4yLDMyLjJjLTI1LDI0LjkgLTY1LjYsMjQuOSAtOTAuNSwwYy0yNSwtMjUgLTI1LC02NS42IDAsLTkwLjVsOTAuNSwtOTAuNWMyNSwtMjUgNjUuNSwtMjUgOTAuNSwwYzcuOCw3LjggMTIuOSwxNy4yIDE1LjgsMjcuMWMyLjQsLTEuNCA0LjgsLTIuNSA2LjgsLTQuNWw0Mi4xLC00MmMtNS40LC05LjIgLTExLjYsLTE4IC0xOS40LC0yNS44Yy01MCwtNTAgLTEzMSwtNTAgLTE4MSwwbC05MC41LDkwLjVjLTUwLDUwIC01MCwxMzEgMCwxODFjNTAsNTAgMTMxLDUwIDE4MSwwbDY4LjYsLTY4LjZjLTI3LjQsNCAtNTUuNiwxLjIgLTgxLjcsLTguOXoiIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIvPgogPC9nPgo8L3N2Zz4=");
+html[data-theme='dark'] .redocusaurus h1 > a:nth-child(1)::before {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGcgY2xhc3M9ImxheWVyIj4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggZD0ibTQ1OS43LDIzMy40bC05MC41LDkwLjVjLTUwLDUwIC0xMzEsNTAgLTE4MSwwYy03LjksLTcuOCAtMTQsLTE2LjcgLTE5LjQsLTI1LjhsNDIuMSwtNDIuMWMyLC0yIDQuNSwtMy4yIDYuOCwtNC41YzIuOSw5LjkgOCwxOS4zIDE1LjgsMjcuMmMyNSwyNSA2NS42LDI0LjkgOTAuNSwwbDkwLjUsLTkwLjVjMjUsLTI1IDI1LC02NS42IDAsLTkwLjVjLTI0LjksLTI1IC02NS41LC0yNSAtOTAuNSwwbC0zMi4yLDMyLjJjLTI2LjEsLTEwLjIgLTU0LjIsLTEyLjkgLTgxLjYsLTguOWw2OC42LC02OC42YzUwLC01MCAxMzEsLTUwIDE4MSwwYzQ5LjgsNDkuOSA0OS44LDEzMSAtMC4xLDE4MXptLTIzOS40LDE0OC44bC0zMi4yLDMyLjJjLTI1LDI0LjkgLTY1LjYsMjQuOSAtOTAuNSwwYy0yNSwtMjUgLTI1LC02NS42IDAsLTkwLjVsOTAuNSwtOTAuNWMyNSwtMjUgNjUuNSwtMjUgOTAuNSwwYzcuOCw3LjggMTIuOSwxNy4yIDE1LjgsMjcuMWMyLjQsLTEuNCA0LjgsLTIuNSA2LjgsLTQuNWw0Mi4xLC00MmMtNS40LC05LjIgLTExLjYsLTE4IC0xOS40LC0yNS44Yy01MCwtNTAgLTEzMSwtNTAgLTE4MSwwbC05MC41LDkwLjVjLTUwLDUwIC01MCwxMzEgMCwxODFjNTAsNTAgMTMxLDUwIDE4MSwwbDY4LjYsLTY4LjZjLTI3LjQsNCAtNTUuNiwxLjIgLTgxLjcsLTguOXoiIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIvPgogPC9nPgo8L3N2Zz4=');
 }
 
-html[data-theme="dark"] .redocusaurus h2 > a:nth-child(1)::before {
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGcgY2xhc3M9ImxheWVyIj4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggZD0ibTQ1OS43LDIzMy40bC05MC41LDkwLjVjLTUwLDUwIC0xMzEsNTAgLTE4MSwwYy03LjksLTcuOCAtMTQsLTE2LjcgLTE5LjQsLTI1LjhsNDIuMSwtNDIuMWMyLC0yIDQuNSwtMy4yIDYuOCwtNC41YzIuOSw5LjkgOCwxOS4zIDE1LjgsMjcuMmMyNSwyNSA2NS42LDI0LjkgOTAuNSwwbDkwLjUsLTkwLjVjMjUsLTI1IDI1LC02NS42IDAsLTkwLjVjLTI0LjksLTI1IC02NS41LC0yNSAtOTAuNSwwbC0zMi4yLDMyLjJjLTI2LjEsLTEwLjIgLTU0LjIsLTEyLjkgLTgxLjYsLTguOWw2OC42LC02OC42YzUwLC01MCAxMzEsLTUwIDE4MSwwYzQ5LjgsNDkuOSA0OS44LDEzMSAtMC4xLDE4MXptLTIzOS40LDE0OC44bC0zMi4yLDMyLjJjLTI1LDI0LjkgLTY1LjYsMjQuOSAtOTAuNSwwYy0yNSwtMjUgLTI1LC02NS42IDAsLTkwLjVsOTAuNSwtOTAuNWMyNSwtMjUgNjUuNSwtMjUgOTAuNSwwYzcuOCw3LjggMTIuOSwxNy4yIDE1LjgsMjcuMWMyLjQsLTEuNCA0LjgsLTIuNSA2LjgsLTQuNWw0Mi4xLC00MmMtNS40LC05LjIgLTExLjYsLTE4IC0xOS40LC0yNS44Yy01MCwtNTAgLTEzMSwtNTAgLTE4MSwwbC05MC41LDkwLjVjLTUwLDUwIC01MCwxMzEgMCwxODFjNTAsNTAgMTMxLDUwIDE4MSwwbDY4LjYsLTY4LjZjLTI3LjQsNCAtNTUuNiwxLjIgLTgxLjcsLTguOXoiIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIvPgogPC9nPgo8L3N2Zz4=");
+html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGcgY2xhc3M9ImxheWVyIj4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggZD0ibTQ1OS43LDIzMy40bC05MC41LDkwLjVjLTUwLDUwIC0xMzEsNTAgLTE4MSwwYy03LjksLTcuOCAtMTQsLTE2LjcgLTE5LjQsLTI1LjhsNDIuMSwtNDIuMWMyLC0yIDQuNSwtMy4yIDYuOCwtNC41YzIuOSw5LjkgOCwxOS4zIDE1LjgsMjcuMmMyNSwyNSA2NS42LDI0LjkgOTAuNSwwbDkwLjUsLTkwLjVjMjUsLTI1IDI1LC02NS42IDAsLTkwLjVjLTI0LjksLTI1IC02NS41LC0yNSAtOTAuNSwwbC0zMi4yLDMyLjJjLTI2LjEsLTEwLjIgLTU0LjIsLTEyLjkgLTgxLjYsLTguOWw2OC42LC02OC42YzUwLC01MCAxMzEsLTUwIDE4MSwwYzQ5LjgsNDkuOSA0OS44LDEzMSAtMC4xLDE4MXptLTIzOS40LDE0OC44bC0zMi4yLDMyLjJjLTI1LDI0LjkgLTY1LjYsMjQuOSAtOTAuNSwwYy0yNSwtMjUgLTI1LC02NS42IDAsLTkwLjVsOTAuNSwtOTAuNWMyNSwtMjUgNjUuNSwtMjUgOTAuNSwwYzcuOCw3LjggMTIuOSwxNy4yIDE1LjgsMjcuMWMyLjQsLTEuNCA0LjgsLTIuNSA2LjgsLTQuNWw0Mi4xLC00MmMtNS40LC05LjIgLTExLjYsLTE4IC0xOS40LC0yNS44Yy01MCwtNTAgLTEzMSwtNTAgLTE4MSwwbC05MC41LDkwLjVjLTUwLDUwIC01MCwxMzEgMCwxODFjNTAsNTAgMTMxLDUwIDE4MSwwbDY4LjYsLTY4LjZjLTI3LjQsNCAtNTUuNiwxLjIgLTgxLjcsLTguOXoiIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIvPgogPC9nPgo8L3N2Zz4=');
 }
 
 /* ------- Sidebar Overrides (Left Panel) ------- */
@@ -50,27 +52,59 @@ html[data-theme="dark"] .redocusaurus h2 > a:nth-child(1)::before {
   background-color: transparent;
 }
 
-.redocusaurus ul > li.react-tabs__tab--selected:not(.tab-error):not(.tab-success) {
+.redocusaurus
+  ul
+  > li.react-tabs__tab--selected:not(.tab-error):not(.tab-success) {
   color: #303846 !important;
 }
 
 /* Background of server selection dropdown */
-html[data-theme="dark"] .redocusaurus div[id^="operation"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+html[data-theme='dark']
+  .redocusaurus
+  div[id^='operation']
+  > div
+  > div:nth-child(2)
+  > div:nth-child(1)
+  > div:nth-child(2) {
   background-color: rgb(27, 32, 40);
-  color: var(--ifm-font-color-secondary)
+  color: var(--ifm-font-color-secondary);
 }
 
-html[data-theme="dark"] .redocusaurus div[id^="operation"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div {
+html[data-theme='dark']
+  .redocusaurus
+  div[id^='operation']
+  > div
+  > div:nth-child(2)
+  > div:nth-child(1)
+  > div:nth-child(2)
+  > div
+  > div:nth-child(2)
+  > div {
   background-color: var(--ifm-background-color);
 }
 
 /* Fixes https://github.com/rohit-gohri/redocusaurus/issues/8 */
-html[data-theme="dark"] .redocusaurus div[id^="tag"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+html[data-theme='dark']
+  .redocusaurus
+  div[id^='tag']
+  > div
+  > div:nth-child(2)
+  > div:nth-child(1)
+  > div:nth-child(2) {
   background-color: rgb(27, 32, 40);
-  color: var(--ifm-font-color-secondary)
+  color: var(--ifm-font-color-secondary);
 }
 
-html[data-theme="dark"] .redocusaurus div[id^="tag"] > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div {
+html[data-theme='dark']
+  .redocusaurus
+  div[id^='tag']
+  > div
+  > div:nth-child(2)
+  > div:nth-child(1)
+  > div:nth-child(2)
+  > div
+  > div:nth-child(2)
+  > div {
   background-color: var(--ifm-background-color);
 }
 
@@ -80,17 +114,22 @@ html[data-theme="dark"] .redocusaurus div[id^="tag"] > div > div:nth-child(2) > 
 }
 
 /* Code Samples */
-html:not([data-theme="dark"]) .redocusaurus div[id^="react-tabs"] > div:nth-child(1) > pre:nth-child(2) {
+html:not([data-theme='dark'])
+  .redocusaurus
+  div[id^='react-tabs']
+  > div:nth-child(1)
+  > pre:nth-child(2) {
   background-color: var(--ifm-background-color);
 }
 
 /* ------ Schema Styling Overrides ------- */
 
-.redocusaurus table th, .redocusaurus table td {
+.redocusaurus table th,
+.redocusaurus table td {
   border: none;
 }
 
-.redocusaurus table > tbody > tr  {
+.redocusaurus table > tbody > tr {
   color: var(--ifm-font-color);
 }
 
