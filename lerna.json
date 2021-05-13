@@ -1,19 +1,11 @@
 {
-  "packages": [
-    "example",
-    "packages/*"
-  ],
+  "npmClient": "yarn",
+  "packages": ["example", "packages/*"],
   "command": {
     "publish": {
-      "allowBranch": [
-        "main"
-      ],
+      "allowBranch": ["main"],
       "distTag": "latest",
-      "ignoreChanges": [
-        "*.md",
-        "**/*.test.ts",
-        "**/*.test.js"
-      ],
+      "ignoreChanges": ["*.md", "**/*.test.ts", "**/*.test.js"],
       "message": "chore(release): publish %s"
     },
     "version": {

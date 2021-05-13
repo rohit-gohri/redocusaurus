@@ -30,13 +30,13 @@ This repository is structured as a [monorepo](https://blog.npmjs.org/post/186494
 1. Install all dependencies:
 
    ```sh
-   npm run bootstrap
+   yarn
    ```
 
 1. Build the projects
 
    ```sh
-   npm run build
+   yarn build && yarn build:example
    ```
 
 ### Useful Commands
