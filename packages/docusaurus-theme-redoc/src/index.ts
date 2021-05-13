@@ -1,12 +1,7 @@
 import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
-import { RedocRawOptions } from 'redoc';
-
-export interface ThemeOptions {
-  primaryColor?: string;
-  redocOptions?: Omit<RedocRawOptions, 'theme'>;
-}
+import { ThemeOptions, GlobalData } from './types/common';
 
 export default function redocTheme(
   context: LoadContext,
@@ -22,7 +17,7 @@ export default function redocTheme(
     async contentLoaded({ actions }) {
       const { setGlobalData } = actions;
       // Create theme data global
-      setGlobalData({
+      setGlobalData<GlobalData>({
         redocOptions: options.redocOptions || {},
         baseTheme: {
           colors: {
@@ -45,7 +40,7 @@ export default function redocTheme(
   };
 }
 
-const getSwizzleComponentList = () => {
+const getSwizzleComponentList = (): string[] => {
   return ['Redoc', 'ApiDoc'];
 };
 

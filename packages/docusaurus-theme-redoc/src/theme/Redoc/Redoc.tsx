@@ -1,17 +1,15 @@
 import React from 'react';
-// @ts-ignore
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
-import type { Props } from '@theme/Redoc';
 import { RedocStandalone, ResolvedThemeInterface } from 'redoc';
 import merge from 'lodash/merge';
+import { RedocProps as Props, GlobalData } from '../../types/common';
 import './styles.css';
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[]
-    : // eslint-disable-next-line @typescript-eslint/ban-types
-    T[P] extends object
+    ? RecursivePartial<U>[] // eslint-disable-next-line @typescript-eslint/ban-types
+    : T[P] extends object
     ? RecursivePartial<T[P]>
     : T[P];
 };
@@ -95,7 +93,7 @@ function getThemeOptions(
 
 function Redoc(props: Props): JSX.Element {
   const { isDarkTheme } = useThemeContext();
-  const { baseTheme, redocOptions = null } = usePluginData(
+  const { baseTheme, redocOptions = null } = usePluginData<GlobalData>(
     'docusaurus-theme-redoc',
   );
   const theme = React.useMemo(() => getThemeOptions(baseTheme, isDarkTheme), [
@@ -113,6 +111,7 @@ function Redoc(props: Props): JSX.Element {
           hideDownloadButton: true,
           expandSingleSchemaField: true,
           menuToggle: true,
+          // @ts-expect-error
           suppressWarnings: true,
           ...redocOptions,
           theme,
