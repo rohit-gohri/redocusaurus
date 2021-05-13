@@ -15,7 +15,14 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "@docusaurus/module-type-aliases"]
   },
-  "exclude": ["node_modules", "**/dist/**/*", "**/dist-jsx/**/*"]
+  "exclude": [
+    "node_modules",
+    "**/*.json",
+    "**/dist/**/*",
+    "**/dist-jsx/**/*",
+    "example/babel.config.js"
+  ]
 }

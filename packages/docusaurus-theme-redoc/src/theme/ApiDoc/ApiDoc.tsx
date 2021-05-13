@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Redoc from '@theme/Redoc';
-import type { Props } from '@theme/ApiDoc';
+import { ApiDocProps as Props } from '../../types/common';
 
 function ApiDoc({ layoutProps, spec: propSpec }: Props): JSX.Element {
   const {
