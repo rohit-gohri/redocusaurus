@@ -1,9 +1,12 @@
-module.exports = {
+/**
+ * @type {Partial<import('@docusaurus/types').DocusaurusConfig>}
+ */
+const config = {
   presets: [
     [
       '@docusaurus/preset-classic',
       {
-        debug: true,
+        debug: Boolean(process.env.DEBUG || process.env.CI),
       },
     ],
     [
@@ -33,7 +36,7 @@ module.exports = {
   ],
 
   /** ************ Rest of your Docusaurus Config *********** */
-  title: 'Redocusaurus Example',
+  title: 'Redocusaurus',
   tagline: 'Integrate Redoc easily into your Docusaurus Site',
   customFields: {
     meta: {
@@ -96,3 +99,5 @@ module.exports = {
     },
   },
 };
+
+module.exports = config;
