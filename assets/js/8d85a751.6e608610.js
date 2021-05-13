@@ -1,0 +1,1 @@
+(self.webpackChunkredocusaurus_example=self.webpackChunkredocusaurus_example||[]).push([[322],{32462:function(e){"use strict";e.exports=JSON.parse('{"type":"url","content":"https://redocly.github.io/redoc/openapi.yaml"}')}}]);

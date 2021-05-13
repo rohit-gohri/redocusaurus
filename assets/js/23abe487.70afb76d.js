@@ -1,0 +1,1 @@
+(self.webpackChunkredocusaurus_example=self.webpackChunkredocusaurus_example||[]).push([[627],{6054:function(e,u,t){"use strict";t.r(u);var l=t(27378),a=t(69765),n=t(61851),r=t(50353);u.default=function(){var e=(0,r.default)().siteConfig;return l.createElement(a.Z,null,l.createElement("h2",null,"Site config"),l.createElement(n.Z,{src:e,collapseDepth:"3"}))}}}]);
