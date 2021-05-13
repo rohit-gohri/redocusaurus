@@ -2,6 +2,7 @@ import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import { ThemeOptions, GlobalData } from './types/common';
+import { getRedocThemes } from './redocTheme';
 
 export default function redocTheme(
   context: LoadContext,
@@ -19,13 +20,13 @@ export default function redocTheme(
       // Create theme data global
       setGlobalData<GlobalData>({
         redocOptions: options.redocOptions || {},
-        baseTheme: {
+        ...getRedocThemes({
           colors: {
             primary: {
               main: options.primaryColor || '#25c2a0',
             },
           },
-        },
+        }),
       });
     },
     getThemePath() {

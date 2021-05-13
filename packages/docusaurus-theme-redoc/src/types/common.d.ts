@@ -28,11 +28,6 @@ export interface ThemeOptions {
 
 export type GlobalData = {
   redocOptions: NonNullable<ThemeOptions['redocOptions']>;
-  baseTheme: {
-    colors: {
-      primary: {
-        main: NonNullable<ThemeOptions['primaryColor']>;
-      };
-    };
-  };
+  darkTheme: Partial<RedocRawOptions['theme']>;
+  lightTheme: Partial<RedocRawOptions['theme']>;
 };
