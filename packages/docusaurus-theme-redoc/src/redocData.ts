@@ -1,5 +1,23 @@
 import merge from 'lodash/merge';
+import { RedocRawOptions } from 'redoc';
 import { GlobalData, RedocThemeOverrides } from './types/common';
+
+const defaultOptions: Partial<RedocRawOptions> = {
+  scrollYOffset: 'nav.navbar',
+  hideDownloadButton: true,
+  expandSingleSchemaField: true,
+  menuToggle: true,
+  // @ts-expect-error not available in types
+  suppressWarnings: true,
+};
+
+const getDefaultTheme = (primaryColor?: string): RedocThemeOverrides => ({
+  colors: {
+    primary: {
+      main: primaryColor || '#25c2a0',
+    },
+  },
+});
 
 /**
  * TODO: Update colors from infima
@@ -91,9 +109,27 @@ function getThemeOptions(
 
 export function getRedocThemes(
   baseTheme: RedocThemeOverrides,
-): Pick<GlobalData, 'darkTheme' | 'lightTheme'> {
+): { darkTheme: RedocThemeOverrides; lightTheme: RedocThemeOverrides } {
   return {
     lightTheme: getThemeOptions(baseTheme, false),
     darkTheme: getThemeOptions(baseTheme, true),
+  };
+}
+
+export function getGlobalData(
+  primaryColor?: string,
+  redocOptions?: Partial<RedocRawOptions>,
+): GlobalData {
+  const { lightTheme, darkTheme } = getRedocThemes(
+    getDefaultTheme(primaryColor),
+  );
+
+  return {
+    lightTheme,
+    darkTheme,
+    redocOptions: {
+      ...defaultOptions,
+      ...redocOptions,
+    },
   };
 }
