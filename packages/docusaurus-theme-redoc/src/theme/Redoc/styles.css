@@ -46,10 +46,14 @@ html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
 /* ------- Right Panel Overrides ------- */
 
 .redocusaurus code {
-  color: var(--ifm-color-emphasis-900);
   padding: 0px;
   /* Fix weird overlay on curly braces */
   background-color: transparent;
+}
+
+/** https://github.com/rohit-gohri/redocusaurus/issues/45 */
+html:not([data-theme='dark']) .redocusaurus code {
+  color: var(--ifm-color-emphasis-0);
 }
 
 .redocusaurus
