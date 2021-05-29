@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "release": "yarn build && changeset publish",
-    "start": "lerna run start --stream --scope 'redocusaurus-example'",
+    "start": "yarn build && lerna run start --stream --scope redocusaurus-example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
