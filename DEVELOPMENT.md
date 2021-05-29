@@ -63,4 +63,4 @@ Whenever you fix something or add a feature or open a PR, add a changeset file b
 
 When these are merged to `main` branch, the changeset/action in [`version` workflow](./.github/workflow/version.yml) will open a new PR with all the changes related to releasing done.
 
-Merge that PR and create a Github Release with the version number as the tag, and it will trigger the [release workflow](./.github/workflow/release.yml) that will publish these to npm.
+Merge that PR **with a merge commit** and version number as the commit message and create a Github Release with the version number as the tag, and it will trigger the [release workflow](./.github/workflow/release.yml) that will publish these to npm.
