@@ -124,15 +124,48 @@ html:not([data-theme='dark'])
 
 /* ------ Schema Styling Overrides ------- */
 
-.redocusaurus table th,
-.redocusaurus table td {
+.redocusaurus table th {
   border: none;
 }
 
-.redocusaurus table > tbody > tr {
-  color: var(--ifm-font-color);
+.redocusaurus table td {
+  border-top: none;
+  border-right: none;
+}
+
+.redocusaurus table td:nth-child(1) {
+  border-bottom: none;
+}
+
+.redocusaurus table td:nth-child(2) {
+  border-left: none;
 }
 
 .redocusaurus table tr {
+  background-color: var(--ifm-background-color);
+}
+
+.redocusaurus table > tbody > tr {
+  color: var(--ifm-font-color-base);
+}
+
+.redocusaurus table tbody tr table {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.redocusaurus table tbody tr table tbody tr {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.redocusaurus tr.last + tr > td > div {
   background-color: var(--ifm-background-color) !important;
+}
+
+.redocusaurus span.dropdown-selector-value {
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Authentication tables */
+.redocusaurus table.security-details tr:nth-child(2n + 1) {
+  background-color: var(--ifm-background-surface-color);
 }
