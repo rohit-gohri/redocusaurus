@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.4.2
+
+### Patch Changes
+
+- [`2ed7f67`](https://github.com/rohit-gohri/redocusaurus/commit/2ed7f670481033e65e96e9caf231ac9b1564df30) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix code samples in markdown being white - #45
+
 ## 0.4.1
 
 ### Patch Changes
