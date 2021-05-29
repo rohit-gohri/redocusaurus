@@ -1,13 +1,18 @@
 # redocusaurus
 
-## 0.4.0
+## 0.4.1
+
 ### Patch Changes
 
+- Updated dependencies [[`25c1f84`](https://github.com/rohit-gohri/redocusaurus/commit/25c1f8408e1775791ac652e6798d83d1508822df), [`92fced5`](https://github.com/rohit-gohri/redocusaurus/commit/92fced51b2dae0767376991526b9b13734d2f773)]:
+  - docusaurus-plugin-redoc@0.4.1
+  - docusaurus-theme-redoc@0.4.1
 
+## 0.4.0
+
+### Patch Changes
 
 - [`2c54f7a`](https://github.com/rohit-gohri/redocusaurus/commit/2c54f7a95c770e06cf1461d6471086f1d6ec03e9) [#38](https://github.com/rohit-gohri/redocusaurus/pull/38) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Lint and format code with Eslint/Prettier
-
-
 
 - [`1b729fe`](https://github.com/rohit-gohri/redocusaurus/commit/1b729febaff861956f56c06454a7a6c87b126f66) [#38](https://github.com/rohit-gohri/redocusaurus/pull/38) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Started maintaining changelogs and automated releases - #36
 
