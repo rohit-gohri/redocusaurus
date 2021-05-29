@@ -5,8 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "_copy": "npx copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
+    "copy": "yarn _copy ./dist && yarn _copy ./dist-jsx",
+    "copy:watch": "nodemon --watch ./src/**/*.css -e css --exec \"yarn copy\"",
     "build": "tsc -p tsconfig.jsx.json && tsc",
-    "postbuild": "yarn _copy ./dist && yarn _copy ./dist-jsx",
+    "postbuild": "yarn copy",
+    "dev": "concurrently 'tsc -w -p tsconfig.jsx.json' 'tsc -w' 'yarn copy:watch'",
     "prepublish": "rm -rf rm .tsbuild.info .tsbuild.jsx.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

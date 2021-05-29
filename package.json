@@ -7,9 +7,12 @@
     "build": "lerna run build --ignore 'redocusaurus-example'",
     "build:example": "lerna run build --scope 'redocusaurus-example'",
     "clean": "lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
+    "dev": "lerna run --parallel dev",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "yarn build && changeset publish"
+    "lint:fix": "yarn lint --fix",
+    "release": "yarn build && changeset publish",
+    "start": "lerna run start --stream --scope 'redocusaurus-example'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -39,6 +42,7 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
+    "concurrently": "^6.2.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",
