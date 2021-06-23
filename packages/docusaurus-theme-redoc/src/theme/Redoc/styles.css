@@ -5,8 +5,8 @@
 /* ------ Headings Overrides ------- */
 
 .redocusaurus h2,
-h3,
-h4 {
+.redocusaurus h3,
+.redocusaurus h4 {
   color: var(--ifm-font-color-base);
 }
 
