@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.4.3
+
+### Patch Changes
+
+- [`0636bbe`](https://github.com/rohit-gohri/redocusaurus/commit/0636bbe2714e199dc021b7058e118999bbb3800d) [#60](https://github.com/rohit-gohri/redocusaurus/pull/60) Thanks [@ArtFlag](https://github.com/ArtFlag)! - Fix: css selector
+
 ## 0.4.2
 
 ### Patch Changes
