@@ -1,5 +1,12 @@
 # redocusaurus
 
+## 0.4.3
+
+### Patch Changes
+
+- Updated dependencies [[`0636bbe`](https://github.com/rohit-gohri/redocusaurus/commit/0636bbe2714e199dc021b7058e118999bbb3800d)]:
+  - docusaurus-theme-redoc@0.4.3
+
 ## 0.4.1
 
 ### Patch Changes
