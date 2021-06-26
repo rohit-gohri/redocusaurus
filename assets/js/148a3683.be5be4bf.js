@@ -1,0 +1,1 @@
+(self.webpackChunkredocusaurus_example=self.webpackChunkredocusaurus_example||[]).push([[955],{1405:function(e){"use strict";e.exports=JSON.parse('{"type":"url","content":"/redocusaurus/openapi-page.yaml"}')}}]);
