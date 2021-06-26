@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.4.4
+
+### Patch Changes
+
+- [`f0c4db8`](https://github.com/rohit-gohri/redocusaurus/commit/f0c4db8822adf21e4627288ec3592f192600f805) [#62](https://github.com/rohit-gohri/redocusaurus/pull/62) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix webpack build. Closes #57 #58
+
 ## 0.4.3
 
 ### Patch Changes
