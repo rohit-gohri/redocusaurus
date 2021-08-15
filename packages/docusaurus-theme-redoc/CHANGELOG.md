@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.4.5
+
+### Patch Changes
+
+- [`de57957`](https://github.com/rohit-gohri/redocusaurus/commit/de579574f7e6e27d4faac93a3343569e556000ee) [#75](https://github.com/rohit-gohri/redocusaurus/pull/75) Thanks [@erickreutz](https://github.com/erickreutz)! - Updated Redoc to 2.0.0-rc.56
+
 ## 0.4.4
 
 ### Patch Changes
