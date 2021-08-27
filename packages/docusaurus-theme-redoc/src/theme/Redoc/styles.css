@@ -57,6 +57,16 @@ html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
   color: #303846 !important;
 }
 
+/** Fixes https://github.com/rohit-gohri/redocusaurus/issues/65 */
+html:not([data-theme='dark'])
+  .redocusaurus
+  div[id^='operation']
+  > div:nth-child(1)
+  > div:nth-child(2)
+  h3 {
+  color: var(--ifm-font-color-base-inverse);
+}
+
 /* Background of server selection dropdown */
 html[data-theme='dark']
   .redocusaurus
