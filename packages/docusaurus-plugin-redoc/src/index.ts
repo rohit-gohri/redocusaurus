@@ -61,6 +61,7 @@ export default function redocPlugin(
       const specData = await createData(
         `redocApiSpec-${options.id || '1'}.json`,
         JSON.stringify({
+          specUrl,
           type: content ? 'object' : 'url',
           content: content || specUrl,
         }),

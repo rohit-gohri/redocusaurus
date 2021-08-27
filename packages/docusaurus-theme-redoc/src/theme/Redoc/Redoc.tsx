@@ -18,7 +18,8 @@ function Redoc(props: Props): JSX.Element {
   return (
     <div className="redocusaurus">
       <RedocStandalone
-        {...(spec ? { spec } : { specUrl })}
+        spec={spec}
+        specUrl={specUrl}
         options={{
           scrollYOffset: 'nav.navbar',
           hideDownloadButton: true,
