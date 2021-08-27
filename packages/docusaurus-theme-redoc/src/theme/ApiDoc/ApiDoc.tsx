@@ -16,7 +16,7 @@ function ApiDoc({ layoutProps, spec: propSpec }: Props): JSX.Element {
 
   return (
     <Layout {...layoutProps} title={title} description={description}>
-      <Redoc spec={spec} specUrl={specUrl} />
+      <Redoc spec={spec} specUrl={specUrl || propSpec.specUrl} />
     </Layout>
   );
 }
