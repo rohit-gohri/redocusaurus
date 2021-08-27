@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-beta.0",
+    "@docusaurus/types": "^2.0.0-beta.5",
     "clsx": "^1.1.1",
     "copyfiles": "^2.4.1",
     "lodash": "^4.17.21",
@@ -41,8 +41,8 @@
     "to-arraybuffer": "^1.0.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.0",
-    "@docusaurus/theme-classic": "^2.0.0-beta.0",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.5",
+    "@docusaurus/theme-classic": "^2.0.0-beta.5",
     "@types/lodash": "^4.14.169",
     "@types/react-dom": "^17.0.5",
     "@types/react-router-dom": "^5.1.7",
