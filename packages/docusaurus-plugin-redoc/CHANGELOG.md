@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 0.4.6
+
+### Patch Changes
+
+- [`2b50a09`](https://github.com/rohit-gohri/redocusaurus/commit/2b50a09183f6fe6e589880a80ed28405b222e47e) [#78](https://github.com/rohit-gohri/redocusaurus/pull/78) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Allow passing both spec and specUrl to have custom yml as download button
+
 ## 0.4.1
 
 ### Patch Changes
