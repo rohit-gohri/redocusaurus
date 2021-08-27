@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import type {
   LoadContext,
   Plugin,
@@ -44,6 +45,13 @@ export default function redocPlugin(
       }
       return content;
     },
+    getPathsToWatch() {
+      if (!spec) {
+        return [];
+      }
+      const contentPath = path.resolve(context.siteDir, spec);
+      return [contentPath];
+    },
     async contentLoaded({ content, actions }) {
       const { createData, addRoute } = actions;
       if (!content && !specUrl) {
@@ -53,6 +61,7 @@ export default function redocPlugin(
       const specData = await createData(
         `redocApiSpec-${options.id || '1'}.json`,
         JSON.stringify({
+          specUrl,
           type: content ? 'object' : 'url',
           content: content || specUrl,
         }),
@@ -62,11 +71,11 @@ export default function redocPlugin(
         JSON.stringify(options.layout),
       );
 
-      const path = options.routePath.startsWith('/')
+      const routePath = options.routePath.startsWith('/')
         ? options.routePath.slice(1)
         : options.routePath;
       const routeOptions = {
-        path: normalizeUrl([baseUrl, path]),
+        path: normalizeUrl([baseUrl, routePath]),
         component: options.apiDocComponent,
         modules: {
           spec: specData,

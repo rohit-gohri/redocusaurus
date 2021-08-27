@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "Redoc for DocusaurusV2",
   "main": "dist/index.js",
   "exports": {
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "dev": "tsc -w",
     "prepublish": "rm -rf .tsbuild.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,8 +32,8 @@
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
     "@docusaurus/types": "^2.0.0-beta.0",
-    "docusaurus-plugin-redoc": "^0.4.0",
-    "docusaurus-theme-redoc": "^0.4.0"
+    "docusaurus-plugin-redoc": "^0.4.6",
+    "docusaurus-theme-redoc": "^0.4.6"
   },
   "engines": {
     "node": ">=10.15.1"

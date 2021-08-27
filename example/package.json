@@ -14,6 +14,7 @@
   "author": "Rohit Gohri <work@rohit.page>",
   "scripts": {
     "clear": "docusaurus clear",
+    "dev": "docusaurus start",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -25,7 +26,7 @@
     "clsx": "^1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "redocusaurus": "^0.4.0"
+    "redocusaurus": "^0.4.6"
   },
   "devDependencies": {
     "@types/react": "^17.0.0"

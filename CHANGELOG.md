@@ -1,0 +1,1 @@
+./packages/redocusaurus/CHANGELOG.md

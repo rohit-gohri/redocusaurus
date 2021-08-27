@@ -13,7 +13,7 @@ function Redoc(props: Props): JSX.Element {
   const theme = isDarkTheme ? darkTheme : lightTheme;
   const { spec, specUrl } = props;
   const store = useMemo(() => {
-    if (!spec || specUrl) return null;
+    if (!spec) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new AppStore(spec as any, specUrl, {
       ...redocOptions,
@@ -27,6 +27,7 @@ function Redoc(props: Props): JSX.Element {
         <RedocComponent store={store} />
       ) : (
         <RedocStandalone
+          spec={spec}
           specUrl={specUrl}
           options={{
             ...redocOptions,

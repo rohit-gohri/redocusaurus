@@ -39,20 +39,28 @@ This repository is structured as a [monorepo](https://blog.npmjs.org/post/186494
    yarn build && yarn build:example
    ```
 
+1. Run in Dev (Watch) Mode
+
+   ```sh
+   yarn dev
+   ```
+
 ### Useful Commands
 
-#### Add packages
+#### Add package to workspace
 
 ```sh
- lerna add <pkg> [package-globs..]
+ yarn add <pkg> -W
 ```
 
-Use this instead of `npm i --save <pkg>`
+Otherwise just go in each pacakge folder and use yarn normally.
 
-#### Clean
+## Releasing
 
-```sh
-lerna clean
-```
+Releases, versioning and Changelogs are handled by [changesets](./.changeset/README.md).
 
-Use this to remove all `node_modules` folders from all lerna managed packages.
+Whenever you fix something or add a feature or open a PR, add a changeset file by running `yarn changeset` and answer the prompts.
+
+When these are merged to `main` branch, the changeset/action in [`version` workflow](./.github/workflow/version.yml) will open a new PR with all the changes related to releasing done.
+
+Merge that PR **with a merge commit** and version number as the commit message and create a Github Release with the version number as the tag, and it will trigger the [release workflow](./.github/workflow/release.yml) that will publish these to npm.

@@ -1,10 +1,11 @@
 {
   "name": "docusaurus-plugin-redoc",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "Redoc Plugin for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "dev": "tsc -w",
     "prepublish": "rm -rf .tsbuild.info",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

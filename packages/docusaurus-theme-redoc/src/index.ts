@@ -17,13 +17,18 @@ export default function redocTheme(
     name: 'docusaurus-theme-redoc',
     configureWebpack() {
       return {
+        resolve: {
+          fallback: {
+            fs: false,
+          },
+        },
         plugins: [
           new webpack.DefinePlugin({
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
           }),
-          new NodePolyfillPlugin({}),
+          new NodePolyfillPlugin(),
         ],
       };
     },

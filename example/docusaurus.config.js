@@ -24,6 +24,8 @@ const config = {
           },
           {
             spec: 'openapi.yaml',
+            // This becomes the Download URL in this case
+            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
             routePath: '/using-spec-yaml/',
           },
         ],

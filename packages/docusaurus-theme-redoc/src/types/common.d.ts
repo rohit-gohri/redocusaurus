@@ -7,7 +7,9 @@ export type RedocProps = {
   specUrl?: string;
 };
 
-export type Spec =
+export type Spec = {
+  specUrl: string;
+} & (
   | {
       type: 'url';
       content: string;
@@ -15,7 +17,8 @@ export type Spec =
   | {
       type: 'object';
       content: Record<string, unknown>;
-    };
+    }
+);
 
 export type ApiDocProps = {
   layoutProps?: Omit<LayoutProps, 'children'>;

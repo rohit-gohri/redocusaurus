@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 const sections = [
   {
     title: <>Using ApiDoc Component</>,
-    link: '/custom-layout/',
+    link: '/custom-page/',
     description: (
       <>
         A page using ApiDoc component in{' '}
@@ -20,7 +20,7 @@ const sections = [
   },
   {
     title: <>Using Redoc Component</>,
-    link: '/custom-page/',
+    link: '/custom-layout/',
     description: (
       <>
         A page with custom Layout using Redoc component in{' '}
