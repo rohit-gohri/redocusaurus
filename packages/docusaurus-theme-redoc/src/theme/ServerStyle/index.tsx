@@ -3,7 +3,7 @@
  * @see https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743
  */
 import React from 'react';
-import DocusaurusContext from '@docusaurus/context';
+import DocusaurusContext from '@docusaurus/docusaurusContext';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
