@@ -16,6 +16,7 @@ export type ApiSchemaProps = Omit<
    * And pass the same here
    */
   id?: string;
+  hideExample?: boolean;
 };
 
 export type Spec = {
