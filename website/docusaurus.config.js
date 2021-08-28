@@ -4,15 +4,6 @@
 const config = {
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
-        debug: Boolean(process.env.DEBUG || process.env.CI),
-        docs: {
-          routeBasePath: '/docs',
-        },
-      },
-    ],
-    [
       'redocusaurus',
       {
         debug: Boolean(process.env.DEBUG || process.env.CI),
@@ -38,11 +29,22 @@ const config = {
         },
       },
     ],
-  ],
 
-  /** ************ Rest of your Docusaurus Config *********** */
+    /** ************ Rest of your Docusaurus Config *********** */
+    [
+      '@docusaurus/preset-classic',
+      {
+        debug: Boolean(process.env.DEBUG || process.env.CI),
+        theme: { customCss: [require.resolve('./src/custom.css')] },
+        docs: {
+          routeBasePath: '/docs',
+          editUrl: 'https://github.com/rohit-gohri/redocusaurus/edit/main/',
+        },
+      },
+    ],
+  ],
   title: 'Redocusaurus',
-  tagline: 'Integrate Redoc easily into your Docusaurus Site',
+  tagline: 'OpenAPI solution for Docusaurus docs with Redoc',
   customFields: {
     meta: {
       description: 'Integrate Redoc easily into your Docusaurus Site',
@@ -65,28 +67,34 @@ const config = {
           position: 'left',
           to: '/examples',
         },
+        {
+          href: 'https://github.com/rohit-gohri/redocusaurus',
+          position: 'right',
+          className: 'header-github-logo',
+          'aria-label': 'GitHub Repo',
+        },
       ],
     },
     footer: {
-      logo: {
-        alt: 'Redocusaurus Logo',
-        src: 'img/logoDark.png',
-      },
+      // logo: {
+      //   alt: 'Redocusaurus Logo',
+      //   src: 'img/logoDark.png',
+      // },
       style: 'dark',
       links: [
         {
-          title: 'Modules',
+          title: 'NPM Modules',
           items: [
             {
               label: 'Redocusaurus',
               href: 'https://www.npmjs.com/package/redocusaurus/',
             },
             {
-              label: 'Docusaurus Theme',
+              label: 'Docusaurus Theme Redoc',
               href: 'https://www.npmjs.com/package/docusaurus-theme-redoc/',
             },
             {
-              label: 'Docusaurus Plugin',
+              label: 'Docusaurus Plugin Redoc',
               href: 'https://www.npmjs.com/package/docusaurus-plugin-redoc/',
             },
           ],
@@ -99,13 +107,18 @@ const config = {
               href: 'https://github.com/rohit-gohri/redocusaurus/',
             },
             {
-              label: 'Blog',
-              href: 'https://rohit.page',
+              label: 'Blog Post',
+              href: 'https://rohit.page/blog/projects/openapi-for-docusaurus/',
+            },
+            {
+              label: 'Twitter Discussion',
+              href:
+                'https://twitter.com/rohit_gohri/status/1351589213565644801',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Rohit Gohri. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://rohit.page" target="_blank" rel="noopener noreferrer">Rohit Gohri</a>. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a>`,
     },
   },
 };

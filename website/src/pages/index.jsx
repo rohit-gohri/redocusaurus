@@ -58,7 +58,15 @@ function Docs() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Redocusaurus</h1>
-          <p>OpenAPI documentation solution made with Redoc</p>
+          <p>OpenAPI solution for Docusaurus docs using Redoc</p>
+          <span>
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=rohit-gohri&amp;repo=redocusaurus&amp;type=star&amp;count=true&amp;size=large"
+              width={160}
+              height={30}
+              title="GitHub Stars"
+            />
+          </span>
         </div>
       </header>
       <main>
