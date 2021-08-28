@@ -5,10 +5,10 @@
   "description": "Redoc for DocusaurusV2",
   "scripts": {
     "build": "lerna run build --ignore 'redocusaurus-example'",
-    "build:example": "lerna run build --scope 'redocusaurus-example'",
+    "build:website": "lerna run build --scope 'redocusaurus-example'",
     "clean": "lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
     "dev": "lerna run --parallel dev --ignore redocusaurus-example",
-    "dev:example": "lerna run --parallel dev --scope 'redocusaurus-example'",
+    "dev:website": "lerna run --parallel dev --scope 'redocusaurus-example'",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "release": "yarn build && changeset publish",
@@ -63,7 +63,7 @@
   },
   "workspaces": {
     "packages": [
-      "example",
+      "website",
       "packages/*"
     ]
   },

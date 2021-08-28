@@ -129,5 +129,5 @@ static/openapi
 .tsbuild.info
 .tsbuild.jsx.info
 
-example/docusaurus.config.js
-example/babel.config.js
+website/docusaurus.config.js
+website/babel.config.js

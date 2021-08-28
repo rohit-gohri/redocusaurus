@@ -43,7 +43,7 @@ jobs:
         run: yarn build
 
       - name: Build Example 🔨
-        run: yarn build:example
+        run: yarn build:website
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
           DEPLOY_BASE_URL: /redocusaurus/
@@ -53,7 +53,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: example/build
+          folder: website/build
           clean: true # Automatically remove deleted files from the deploy branch
           git-config-email: drone@rohit.page
           git-config-name: Drone User
