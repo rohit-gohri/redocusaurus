@@ -4,15 +4,15 @@
   "private": "true",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "build": "lerna run build --ignore 'redocusaurus-example'",
-    "build:website": "lerna run build --scope 'redocusaurus-example'",
+    "build": "lerna run build --ignore 'redocusaurus-website'",
+    "build:website": "lerna run build --scope 'redocusaurus-website'",
     "clean": "lerna exec -- \"rm -rf dist* .tsbuild*.info\"",
-    "dev": "lerna run --parallel dev --ignore redocusaurus-example",
-    "dev:website": "lerna run --parallel dev --scope 'redocusaurus-example'",
+    "dev": "lerna run --parallel dev --ignore redocusaurus-website",
+    "dev:website": "lerna run --parallel dev --scope 'redocusaurus-website'",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "release": "yarn build && changeset publish",
-    "start": "yarn build && lerna run start --stream --scope redocusaurus-example",
+    "start": "yarn build && lerna run start --stream --scope redocusaurus-website",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
