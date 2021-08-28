@@ -60,6 +60,11 @@ const config = {
           position: 'left',
           to: '/docs',
         },
+        {
+          label: 'Examples',
+          position: 'left',
+          to: '/examples',
+        },
       ],
     },
     footer: {
