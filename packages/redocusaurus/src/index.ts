@@ -4,9 +4,11 @@ import type { ThemeOptions } from 'docusaurus-theme-redoc';
 
 export interface PresetOptions {
   debug?: boolean;
-  specs: PluginOptions[] | PluginOptions;
+  specs: PluginOptions[];
   theme?: ThemeOptions;
 }
+
+export type PresetEntry = ['redocusaurus', PresetOptions];
 
 export default function preset(
   context: LoadContext,

@@ -1,6 +1,6 @@
-import { Props as LayoutProps } from '@theme/Layout';
-import { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
-import { RecursivePartial } from './util';
+import type { Props as LayoutProps } from '@theme/Layout';
+import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
+import type { RecursivePartial } from './util';
 
 export type RedocProps = {
   spec?: Record<string, unknown>;
