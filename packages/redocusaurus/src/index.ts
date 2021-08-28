@@ -37,10 +37,10 @@ export default function preset(
       ...specsArray.map((pluginOpts, index) => [
         require.resolve('docusaurus-plugin-redoc'),
         {
+          id: `plugin-redoc-${index}`,
           ...pluginOpts,
           routePath: pluginOpts.routePath ?? `/api/${index}`,
           debug,
-          id: `plugin-redoc-${index}`,
         },
       ]),
     ],
