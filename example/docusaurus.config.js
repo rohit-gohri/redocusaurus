@@ -19,17 +19,17 @@ const config = {
         specs: [
           {
             specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/using-spec-url/',
+            routePath: '/examples/using-spec-url/',
           },
           {
             specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/using-relative-url/',
+            routePath: '/examples/using-relative-url/',
           },
           {
             spec: 'openapi.yaml',
             // This becomes the Download URL in this case
             specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/using-spec-yaml/',
+            routePath: '/examples/using-spec-yaml/',
           },
         ],
         theme: {

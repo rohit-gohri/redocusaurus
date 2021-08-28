@@ -8,14 +8,12 @@ import styles from './styles.module.css';
 const sections = [
   {
     title: <>🌚 Dark Mode Support</>,
-    // link: '/custom-page/',
     description: (
       <>Inbuilt support for Docusaurus Classic Theme&apos;s Dark Mode!</>
     ),
   },
   {
     title: <>🧩 Customizable</>,
-    // link: '/custom-layout/',
     description: (
       <>
         Pass in your custom theme colors or options and it will be merged. All
@@ -25,14 +23,12 @@ const sections = [
   },
   {
     title: <>📑 Schema Definitions</>,
-    // link: '/using-spec-url/',
     description: (
       <>Use individual schema definitions directly in your MDX docs</>
     ),
   },
   {
     title: <>⚡️ Blazing Fast</>,
-    // link: '/using-spec-yaml/',
     description: <>Support for Server Side Rendering!</>,
   },
 ];
