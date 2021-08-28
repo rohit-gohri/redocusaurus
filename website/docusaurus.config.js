@@ -1,35 +1,48 @@
 /**
+ * @type {import('redocusaurus').PresetEntry}
+ */
+const redocusaurus = [
+  'redocusaurus',
+  {
+    debug: Boolean(process.env.DEBUG || process.env.CI),
+    specs: [
+      {
+        specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+        routePath: '/examples/using-spec-url/',
+      },
+      {
+        specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
+        routePath: '/examples/using-relative-url/',
+      },
+      {
+        spec: 'openapi.yaml',
+        /**
+         * This becomes the Download URL in this case, while docs are generated from `spec`
+         */
+        specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
+        routePath: '/examples/using-spec-yaml/',
+      },
+    ],
+    theme: {
+      /**
+       * Highlight color for docs
+       */
+      primaryColor: '#1890ff',
+      /**
+       * Options to pass to redoc
+       * @see https://github.com/redocly/redoc#redoc-options-object
+       */
+      redocOptions: { hideDownloadButton: false, disableSearch: true },
+    },
+  },
+];
+
+/**
  * @type {Partial<import('@docusaurus/types').DocusaurusConfig>}
  */
 const config = {
   presets: [
-    [
-      'redocusaurus',
-      {
-        debug: Boolean(process.env.DEBUG || process.env.CI),
-        specs: [
-          {
-            specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/examples/using-spec-url/',
-          },
-          {
-            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/examples/using-relative-url/',
-          },
-          {
-            spec: 'openapi.yaml',
-            // This becomes the Download URL in this case
-            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/examples/using-spec-yaml/',
-          },
-        ],
-        theme: {
-          primaryColor: '#1890ff',
-          redocOptions: { hideDownloadButton: false },
-        },
-      },
-    ],
-
+    redocusaurus,
     /** ************ Rest of your Docusaurus Config *********** */
     [
       '@docusaurus/preset-classic',
