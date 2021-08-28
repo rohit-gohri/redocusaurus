@@ -3,8 +3,7 @@
  * @see https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743
  */
 import React from 'react';
-import DocusaurusContext from '@docusaurus/docusaurusContext';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { DocusaurusContextProvider } from '@docusaurus/docusaurusContext';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import { StaticRouter, useLocation } from 'react-router-dom';
@@ -13,16 +12,13 @@ function ServerStyle({ from: children }: { from: React.Component }) {
   let style = null;
 
   const location = useLocation();
-  const context = useDocusaurusContext();
   const sheet = new ServerStyleSheet();
 
   try {
     renderToString(
       sheet.collectStyles(
         <StaticRouter location={location}>
-          <DocusaurusContext.Provider value={context}>
-            {children}
-          </DocusaurusContext.Provider>
+          <DocusaurusContextProvider>{children}</DocusaurusContextProvider>
         </StaticRouter>,
       ),
     );
