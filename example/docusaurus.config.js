@@ -7,6 +7,9 @@ const config = {
       '@docusaurus/preset-classic',
       {
         debug: Boolean(process.env.DEBUG || process.env.CI),
+        docs: {
+          routeBasePath: '/docs',
+        },
       },
     ],
     [
@@ -55,7 +58,7 @@ const config = {
         {
           label: 'Docs',
           position: 'left',
-          to: '/',
+          to: '/docs',
         },
       ],
     },
