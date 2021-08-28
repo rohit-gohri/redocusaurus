@@ -8,7 +8,7 @@ export type RedocProps = {
 };
 
 export type Spec = {
-  specUrl: string;
+  specUrl?: string;
 } & (
   | {
       type: 'url';
