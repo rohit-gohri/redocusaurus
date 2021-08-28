@@ -14,6 +14,19 @@ type LayoutProps = {
   };
 };
 
+export type Spec = {
+  specUrl?: string;
+} & (
+  | {
+      type: 'url';
+      content: string;
+    }
+  | {
+      type: 'object';
+      content: Record<string, unknown>;
+    }
+);
+
 export interface PluginOptions {
   id?: string;
   spec?: string;

@@ -1,10 +1,9 @@
 ---
-slug: /hello
-title: Hello
+slug: /
+title: Introduction
 author: Rohit Gohri
 author_title: Author of Redocusaurus
 author_url: https://rohit.page
-tags: [hello, docusaurus]
 ---
 
 This is a test post.

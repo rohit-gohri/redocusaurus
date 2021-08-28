@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
-import { RedocStandalone } from 'redoc';
+import { Redoc as RedocComponent, RedocStandalone, AppStore } from 'redoc';
 import { RedocProps as Props, GlobalData } from '../../types/common';
 import './styles.css';
 
 function Redoc(props: Props): JSX.Element {
   const { isDarkTheme } = useThemeContext();
-  const {
-    lightTheme,
-    darkTheme,
-    redocOptions = null,
-  } = usePluginData<GlobalData>('docusaurus-theme-redoc');
+  const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
+    'docusaurus-theme-redoc',
+  );
   const theme = isDarkTheme ? darkTheme : lightTheme;
   const { spec, specUrl } = props;
+  const store = useMemo(() => {
+    if (!spec) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return new AppStore(spec as any, specUrl, {
+      ...redocOptions,
+      theme,
+    });
+  }, [spec, specUrl, redocOptions, theme]);
 
   return (
     <div className="redocusaurus">
-      <RedocStandalone
-        spec={spec}
-        specUrl={specUrl}
-        options={{
-          scrollYOffset: 'nav.navbar',
-          hideDownloadButton: true,
-          expandSingleSchemaField: true,
-          menuToggle: true,
-          // @ts-expect-error not in types
-          suppressWarnings: true,
-          ...redocOptions,
-          theme,
-        }}
-      />
+      {store ? (
+        <RedocComponent store={store} />
+      ) : (
+        <RedocStandalone
+          spec={spec}
+          specUrl={specUrl}
+          options={{
+            ...redocOptions,
+            theme,
+          }}
+        />
+      )}
     </div>
   );
 }

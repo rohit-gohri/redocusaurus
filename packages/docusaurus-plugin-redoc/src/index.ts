@@ -9,6 +9,7 @@ import { normalizeUrl } from '@docusaurus/utils';
 import YAML from 'yaml';
 
 import {
+  Spec,
   PluginOptionSchema,
   PluginOptions,
   PluginOptionsWithDefault,
@@ -53,18 +54,21 @@ export default function redocPlugin(
       return [contentPath];
     },
     async contentLoaded({ content, actions }) {
-      const { createData, addRoute } = actions;
+      const { createData, addRoute, setGlobalData } = actions;
       if (!content && !specUrl) {
         console.error('[Redocusaurus] No spec provided');
         return;
       }
+      const data: Spec = {
+        specUrl,
+        type: content ? 'object' : 'url',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        content: (content || specUrl) as any,
+      };
+      setGlobalData(data);
       const specData = await createData(
         `redocApiSpec-${options.id || '1'}.json`,
-        JSON.stringify({
-          specUrl,
-          type: content ? 'object' : 'url',
-          content: content || specUrl,
-        }),
+        JSON.stringify(data),
       );
       const layoutData = await createData(
         `redocApiLayout-${options.id || '1'}.json`,

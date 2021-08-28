@@ -7,29 +7,52 @@ import styles from './styles.module.css';
 
 const sections = [
   {
-    title: <>🌚 Dark Mode Support</>,
-    description: (
-      <>Inbuilt support for Docusaurus Classic Theme&apos;s Dark Mode!</>
-    ),
-  },
-  {
-    title: <>🧩 Customizable</>,
+    title: <>Using ApiDoc Component</>,
+    link: '/examples/custom-page/',
     description: (
       <>
-        Pass in your custom theme colors or options and it will be merged. All
-        components can be swizzled to suit your needs (with Typescript support)
+        A page using ApiDoc component in{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
+          docusaurus-theme-redoc
+        </a>
       </>
     ),
   },
   {
-    title: <>📑 Schema Definitions</>,
+    title: <>Using Redoc Component</>,
+    link: '/examples/custom-layout/',
     description: (
-      <>Use individual schema definitions directly in your MDX docs</>
+      <>
+        A page with custom Layout using Redoc component in{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
+          docusaurus-theme-redoc
+        </a>
+      </>
     ),
   },
   {
-    title: <>⚡️ Blazing Fast</>,
-    description: <>Support for Server Side Rendering!</>,
+    title: <>Using Spec URL</>,
+    link: '/examples/using-spec-url/',
+    description: (
+      <>
+        A page made automatically with{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
+          docusaurus-plugin-redoc
+        </a>
+      </>
+    ),
+  },
+  {
+    title: <>Using YAML Spec</>,
+    link: '/examples/using-spec-yaml/',
+    description: (
+      <>
+        A page made automatically with{' '}
+        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
+          docusaurus-plugin-redoc
+        </a>
+      </>
+    ),
   },
 ];
 
@@ -54,11 +77,11 @@ function Section({ title, description, link }) {
 
 function Docs() {
   return (
-    <Layout title="Redocusaurus" description="OpenAPI documentation solution">
+    <Layout title="Redocusaurus Example" description="With different use-cases">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">Redocusaurus</h1>
-          <p>OpenAPI documentation solution made with Redoc</p>
+          <h1 className="hero__title">Redocusaurus Example</h1>
+          <p>Redoc for Docusaurus with Dark Mode Support</p>
         </div>
       </header>
       <main>
