@@ -32,6 +32,12 @@ A Docusaurus Preset that uses the above 2 plugins to easily add API docs to your
 
 Example project show casing the preset in action with multiple different OpenAPI specs.
 
+#### Who is using Redocusaurus
+
+Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)
+
+1. [Wechaty OpenAPI](https://wechaty.js.org/docs/openapi/)
+
 ## Motivation
 
 To have the documentation and API reference in the same site with the same headers/footers. Read more in the blog post, [OpenAPI for Docusaurus](https://rohit.page/blog/projects/openapi-for-docusaurus/?utm_source=github&utm_medium=repo&utm_campaign=redocusaurus).
