@@ -7,5 +7,9 @@
     "redocusaurus": "0.4.6",
     "redocusaurus-website": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "beige-phones-itch",
+    "eight-chairs-draw",
+    "olive-badgers-drive"
+  ]
 }
