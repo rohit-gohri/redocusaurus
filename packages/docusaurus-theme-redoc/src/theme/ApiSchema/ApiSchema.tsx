@@ -4,12 +4,14 @@ import {
   useAllPluginInstancesData,
 } from '@docusaurus/useGlobalData';
 import useThemeContext from '@theme/hooks/useThemeContext';
+import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import { SchemaDefinition, AppStore } from 'redoc';
 import { ApiSchemaProps as Props, GlobalData, Spec } from '../../types/common';
 import '../Redoc/styles.css';
+import './styles.css';
 
-function ApiSchema({ id, ...rest }: Props): JSX.Element {
+function ApiSchema({ id, hideExample, ...rest }: Props): JSX.Element {
   const { isDarkTheme } = useThemeContext();
   const allData = useAllPluginInstancesData<Spec>('docusaurus-plugin-redoc');
   const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
@@ -44,7 +46,13 @@ function ApiSchema({ id, ...rest }: Props): JSX.Element {
 
   return (
     <ThemeProvider theme={store.options.theme}>
-      <div className="redocusaurus redocusaurus-schema">
+      <div
+        className={clsx([
+          'redocusaurus',
+          'redocusaurus-schema',
+          hideExample ? 'hide-example' : null,
+        ])}
+      >
         <SchemaDefinition
           parser={store.spec.parser}
           options={store.options}

@@ -1,0 +1,6 @@
+.redocusaurus-schema.hide-example > div > div > div:nth-child(2) {
+  display: none;
+}
+.redocusaurus-schema.hide-example > div > div > div:nth-child(1) {
+  width: 100%;
+}

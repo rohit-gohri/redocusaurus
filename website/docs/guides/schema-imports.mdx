@@ -1,0 +1,29 @@
+---
+title: Schema Imports
+---
+
+import ApiSchema from '@theme/ApiSchema';
+
+# Import Schema Model in Docs
+
+```tsx
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema hideExample schemaRef="#/components/schemas/Pet" />;
+```
+
+## Results
+
+<ApiSchema hideExample schemaRef="#/components/schemas/Pet" />
+
+# Import Schema Model (with example) in Docs
+
+```tsx
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema schemaRef="#/components/schemas/Pet" />;
+```
+
+## Results
+
+<ApiSchema schemaRef="#/components/schemas/Pet" />

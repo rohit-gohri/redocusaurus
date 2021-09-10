@@ -36,7 +36,7 @@ This repository is structured as a [monorepo](https://blog.npmjs.org/post/186494
 1. Build the projects
 
    ```sh
-   yarn build && yarn build:example
+   yarn build && yarn build:website
    ```
 
 1. Run in Dev (Watch) Mode
