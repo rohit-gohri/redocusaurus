@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "docusaurus-plugin-redoc": "0.4.6",
+    "docusaurus-theme-redoc": "0.4.6",
+    "redocusaurus": "0.4.6",
+    "redocusaurus-website": "0.0.0"
+  },
+  "changesets": []
+}
