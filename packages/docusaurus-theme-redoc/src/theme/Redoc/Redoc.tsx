@@ -5,6 +5,13 @@ import { Redoc as RedocComponent, RedocStandalone, AppStore } from 'redoc';
 import { RedocProps as Props, GlobalData } from '../../types/common';
 import './styles.css';
 
+
+/*!
+ * Redocusaurus
+ * https://rohit-gohri.github.io/redocusaurus/
+ * (c) 2021 Rohit Gohri
+ * Released under the MIT License
+ */
 function Redoc(props: Props): JSX.Element {
   const { isDarkTheme } = useThemeContext();
   const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
