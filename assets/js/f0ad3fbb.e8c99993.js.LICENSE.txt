@@ -1,6 +1,0 @@
-/*!
- * Redocusaurus
- * https://rohit-gohri.github.io/redocusaurus/
- * (c) 2021 Rohit Gohri
- * Released under the MIT License
- */
