@@ -7,14 +7,17 @@ const redocusaurus = [
     debug: Boolean(process.env.DEBUG || process.env.CI),
     specs: [
       {
+        id: 'using-spec-url',
         specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
         routePath: '/examples/using-spec-url/',
       },
       {
+        id: 'using-relative-url',
         specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
         routePath: '/examples/using-relative-url/',
       },
       {
+        id: 'using-spec-yaml',
         spec: 'openapi.yaml',
         /**
          * This becomes the Download URL in this case, while docs are generated from `spec`

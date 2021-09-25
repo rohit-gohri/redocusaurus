@@ -9,14 +9,18 @@ export type RedocProps = {
 
 export type ApiSchemaProps = Omit<
   ObjectDescriptionProps,
-  'parser' | 'options'
+  'parser' | 'options' | 'schemaRef'
 > & {
   /**
    * If you have multiple apis, then add a `id` field in the specs array
    * And pass the same here
    */
   id?: string;
-  hideExample?: boolean;
+  pointer: ObjectDescriptionProps['schemaRef'];
+  /**
+   * Show the example or not
+   */
+  example?: boolean;
 };
 
 export type Spec = {
