@@ -32,6 +32,10 @@ A Docusaurus Preset that uses the above 2 plugins to easily add API docs to your
 
 Example project show casing the preset in action with multiple different OpenAPI specs.
 
+#### Who is using Redocusaurus?
+
+See [**Who is using Redocusaurus?** section in docs.](https://rohit-gohri.github.io/redocusaurus/docs/who-is-using-redocusaurus)
+
 ## Motivation
 
 To have the documentation and API reference in the same site with the same headers/footers. Read more in the blog post, [OpenAPI for Docusaurus](https://rohit.page/blog/projects/openapi-for-docusaurus/?utm_source=github&utm_medium=repo&utm_campaign=redocusaurus).
