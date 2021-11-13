@@ -128,3 +128,12 @@ static/openapi
 .redoc.json
 .tsbuild.info
 .tsbuild.jsx.info
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
