@@ -4,7 +4,7 @@
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
-    "_copy": "npx copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
+    "_copy": "yarn copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
     "copy": "yarn _copy ./dist && yarn _copy ./dist-jsx",
     "copy:watch": "nodemon --watch ./src/**/*.css -e css --exec \"yarn copy\"",
     "build": "tsc -p tsconfig.jsx.json && tsc",
