@@ -55,7 +55,7 @@ Hex code to be passed as the `main` color to [RedocStandalone](https://github.co
 ### redocOptions
 
 Override the default redoc options passed to the [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component) component.
-See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/theme/Redoc/Redoc.tsx#L101-L108).
+See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L39-L68).
 
 ## Related Preset
 

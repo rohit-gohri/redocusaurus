@@ -26,11 +26,14 @@ npm i --save redocusaurus
          [
            'redocusaurus',
            {
+             // Plugin Options
              specs: [
                {
                  specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
                },
              ],
+             // Theme Options
+             theme: {},
            },
          ],
        ],
@@ -49,11 +52,14 @@ npm i --save redocusaurus
          [
            'redocusaurus',
            {
+             // Plugin Options
              specs: [
                {
                  spec: 'openapi.yaml',
                },
              ],
+             // Theme Options
+             theme: {},
            },
          ],
        ],
@@ -61,4 +67,14 @@ npm i --save redocusaurus
      };
      ```
 
-The API Doc will be available by default at `/api/` path. To customize it see [full plugin options](#options).
+The API Doc will be available by default at `/api/` path.
+
+## Options
+
+### specs
+
+An array of plugin options, see [plugin options](./plugin-options.md) for individual option details.
+
+### theme
+
+Pass options to customize the theme, see [theme options](./theme-options.md) for individual option details.
