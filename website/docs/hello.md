@@ -1,5 +1,5 @@
 ---
-slug: hello
+slug: /hello
 title: Hello
 author: Rohit Gohri
 author_title: Author of Redocusaurus

@@ -1,14 +1,30 @@
-import { Props as LayoutProps } from '@theme/Layout';
-import { RedocRawOptions } from 'redoc';
-import { RecursivePartial } from './util';
+import type { Props as LayoutProps } from '@theme/Layout';
+import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
+import type { RecursivePartial } from './util';
 
 export type RedocProps = {
   spec?: Record<string, unknown>;
   specUrl?: string;
 };
 
+export type ApiSchemaProps = Omit<
+  ObjectDescriptionProps,
+  'parser' | 'options' | 'schemaRef'
+> & {
+  /**
+   * If you have multiple apis, then add a `id` field in the specs array
+   * And pass the same here
+   */
+  id?: string;
+  pointer: ObjectDescriptionProps['schemaRef'];
+  /**
+   * Show the example or not
+   */
+  example?: boolean;
+};
+
 export type Spec = {
-  specUrl: string;
+  specUrl?: string;
 } & (
   | {
       type: 'url';

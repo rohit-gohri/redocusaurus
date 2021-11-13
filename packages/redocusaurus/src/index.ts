@@ -4,9 +4,11 @@ import type { ThemeOptions } from 'docusaurus-theme-redoc';
 
 export interface PresetOptions {
   debug?: boolean;
-  specs: PluginOptions[] | PluginOptions;
+  specs: PluginOptions[];
   theme?: ThemeOptions;
 }
+
+export type PresetEntry = ['redocusaurus', PresetOptions];
 
 export default function preset(
   context: LoadContext,
@@ -37,10 +39,10 @@ export default function preset(
       ...specsArray.map((pluginOpts, index) => [
         require.resolve('docusaurus-plugin-redoc'),
         {
+          id: `plugin-redoc-${index}`,
           ...pluginOpts,
           routePath: pluginOpts.routePath ?? `/api/${index}`,
           debug,
-          id: `plugin-redoc-${index}`,
         },
       ]),
     ],

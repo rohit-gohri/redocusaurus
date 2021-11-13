@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - v0.5
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,21 +16,8 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '12'
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: '16'
+          cache: 'yarn'
 
       - name: Install Dependencies 📦
         run: |
@@ -43,7 +31,7 @@ jobs:
         run: yarn build
 
       - name: Build Example 🔨
-        run: yarn build:example
+        run: yarn build:website
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
           DEPLOY_BASE_URL: /redocusaurus/
@@ -53,7 +41,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: example/build
+          folder: website/build
           clean: true # Automatically remove deleted files from the deploy branch
           git-config-email: drone@rohit.page
           git-config-name: Drone User

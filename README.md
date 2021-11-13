@@ -28,7 +28,7 @@ A content plugin that creates pages from your OpenAPI files or URLs and rendered
 
 A Docusaurus Preset that uses the above 2 plugins to easily add API docs to your docs site.
 
-### [Example](./example)
+### [Example](./website)
 
 Example project show casing the preset in action with multiple different OpenAPI specs.
 

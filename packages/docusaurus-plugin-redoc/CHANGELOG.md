@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 0.5.0-next.0
+
+### Minor Changes
+
+- [`0fbefef`](https://github.com/rohit-gohri/redocusaurus/commit/0fbefef62247f1153102254613a120793a329861) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Allow importing single model defenition inside mdx files - #46
+
 ## 0.4.6
 
 ### Patch Changes
