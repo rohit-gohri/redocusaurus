@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @see https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743
  */
@@ -8,8 +7,12 @@ import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import { StaticRouter, useLocation } from 'react-router-dom';
 
-function ServerStyle({ from: children }: { from: React.Component }) {
-  let style = null;
+interface Props {
+  from: React.Component;
+}
+
+const ServerStyle: React.FC<Props> = ({ from: children }) => {
+  let style: any = null;
 
   const location = useLocation();
   const sheet = new ServerStyleSheet();
@@ -30,7 +33,7 @@ function ServerStyle({ from: children }: { from: React.Component }) {
   }
 
   return style;
-}
+};
 
 function ClientStyle() {
   return null;
