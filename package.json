@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "build": "yarn workspaces foreach --exclude 'redocusaurus-website' run build",
+    "build": "yarn workspaces foreach --exclude 'redocusaurus-website' -t run build",
     "build:website": "yarn workspace redocusaurus-website run build",
     "clean": "yarn workspaces foreach -A exec \"rm -rf dist* .tsbuild*.info\"",
     "dev": "yarn workspaces foreach --exclude redocusaurus-website -p run dev",

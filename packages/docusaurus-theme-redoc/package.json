@@ -4,11 +4,9 @@
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
-    "_copy": "yarn copyup -e \"./**/*.jsx\" -e \"./**/*.js\" -e \"./**/*.ts\" -e \"./**/*.tsx\" \"./src/**/*.*\"",
-    "copy": "yarn _copy ./dist && yarn _copy ./dist-jsx",
+    "copy": "sh copy.sh",
     "copy:watch": "nodemon --watch ./src/**/*.css -e css --exec \"yarn copy\"",
-    "build": "tsc -p tsconfig.jsx.json && tsc",
-    "postbuild": "yarn copy",
+    "build": "tsc -p tsconfig.jsx.json && tsc && yarn copy && echo \"built theme\"",
     "dev": "concurrently 'tsc -w -p tsconfig.jsx.json' 'tsc -w' 'yarn copy:watch'",
     "prepublish": "rm -rf rm .tsbuild.info .tsbuild.jsx.info",
     "test": "echo \"Error: no test specified\" && exit 1"
