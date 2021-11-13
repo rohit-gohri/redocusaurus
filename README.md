@@ -32,11 +32,9 @@ A Docusaurus Preset that uses the above 2 plugins to easily add API docs to your
 
 Example project show casing the preset in action with multiple different OpenAPI specs.
 
-#### Who is using Redocusaurus
+#### Who is using Redocusaurus?
 
-Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)
-
-1. [Wechaty OpenAPI](https://wechaty.js.org/docs/openapi/)
+See [**Who is using Redocusaurus?** section in docs.](https://rohit-gohri.github.io/redocusaurus/docs/who-is-using-redocusaurus)
 
 ## Motivation
 
