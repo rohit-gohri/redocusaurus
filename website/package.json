@@ -1,6 +1,7 @@
 {
   "name": "redocusaurus-website",
   "version": "0.0.1",
+  "private": true,
   "homepage": "https://github.com/rohit-gohri/redocusaurus",
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
