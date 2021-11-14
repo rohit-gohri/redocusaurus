@@ -20,6 +20,8 @@
   },
   "keywords": [
     "redoc",
+    "openapi",
+    "documentations",
     "api-doc",
     "docusaurus",
     "docusaurus-preset"
@@ -29,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
   },
-  "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
+  "homepage": "https://rohit-gohri.github.io/redocusaurus/",
   "dependencies": {
     "@docusaurus/types": "^2.0.0-beta.9",
     "docusaurus-plugin-redoc": "^0.5.0",

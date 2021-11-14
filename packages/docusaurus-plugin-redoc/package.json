@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
   },
-  "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
+  "homepage": "https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc#readme",
   "dependencies": {
     "@docusaurus/types": "^2.0.0-beta.9",
     "@docusaurus/utils": "^2.0.0-beta.9",
