@@ -79,7 +79,6 @@ const config = {
           to: '/docs',
         },
         {
-          type: 'dropdown',
           label: 'Examples',
           position: 'left',
           items: [
@@ -150,8 +149,7 @@ const config = {
             },
             {
               label: 'Twitter Discussion',
-              href:
-                'https://twitter.com/rohit_gohri/status/1351589213565644801',
+              href: 'https://twitter.com/rohit_gohri/status/1351589213565644801',
             },
           ],
         },
