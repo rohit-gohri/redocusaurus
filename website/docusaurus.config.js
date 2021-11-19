@@ -79,6 +79,33 @@ const config = {
           to: '/docs',
         },
         {
+          type: 'dropdown',
+          label: 'Examples',
+          position: 'left',
+          items: [
+            {
+              label: 'All',
+              to: '/examples',
+            },
+            {
+              label: 'Custom Page',
+              to: '/examples/custom-page/',
+            },
+            {
+              label: 'Custom Layout',
+              to: '/examples/custom-layout/',
+            },
+            {
+              label: 'Using Spec URL',
+              to: '/examples/using-spec-url/',
+            },
+            {
+              label: 'Using Spec YAML',
+              to: '/examples/using-spec-yaml/',
+            },
+          ],
+        },
+        {
           label: 'Examples',
           position: 'left',
           to: '/examples',
