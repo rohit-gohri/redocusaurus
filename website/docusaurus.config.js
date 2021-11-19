@@ -106,11 +106,6 @@ const config = {
           ],
         },
         {
-          label: 'Examples',
-          position: 'left',
-          to: '/examples',
-        },
-        {
           href: 'https://github.com/rohit-gohri/redocusaurus',
           position: 'right',
           className: 'header-github-logo',
