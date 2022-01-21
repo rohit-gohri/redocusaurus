@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.5.1
+
+### Patch Changes
+
+- [#112](https://github.com/rohit-gohri/redocusaurus/pull/112) [`c596463`](https://github.com/rohit-gohri/redocusaurus/commit/c596463993c229bee20ff76a6783b9203dc63b27) Thanks [@MichielDeMey](https://github.com/MichielDeMey)! - Fixed header style in right sidebar for light mode
+
 ## 0.5.0
 
 ### Minor Changes
