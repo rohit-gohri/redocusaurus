@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "build": "yarn workspaces foreach --exclude 'redocusaurus-website' -t run build",
+    "build": "yarn workspaces foreach --exclude 'redocusaurus-website' -tv run build",
     "build:website": "yarn workspace redocusaurus-website run build",
-    "clean": "yarn workspaces foreach -A exec \"rm -rf dist* .tsbuild*.info\"",
-    "dev": "yarn workspaces foreach --exclude redocusaurus-website -p run dev",
+    "clean": "yarn workspaces foreach -Atv exec \"rm -rf dist* .tsbuild*.info\"",
+    "dev": "yarn workspaces foreach --exclude redocusaurus-website -pv run dev",
     "dev:website": "yarn workspace redocusaurus-website run dev",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
