@@ -60,3 +60,7 @@ See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/pa
 ## Related Preset
 
 Read More Here: <https://github.com/rohit-gohri/redocusaurus>
+
+## Docs
+
+See: <https://rohit-gohri.github.io/redocusaurus/docs>

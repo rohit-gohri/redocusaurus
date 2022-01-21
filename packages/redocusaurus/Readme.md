@@ -67,3 +67,7 @@ Pass it an array of plugin options, see [docusaurus-plugin-redoc](https://github
 #### theme
 
 Pass options to customize the theme, see [docusaurus-theme-redoc](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-theme-redoc) for individual option details.
+
+## Docs
+
+See: <https://rohit-gohri.github.io/redocusaurus/docs>
