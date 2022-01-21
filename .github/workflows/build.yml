@@ -1,10 +1,16 @@
 name: Build and Deploy
+
 on:
   pull_request:
   push:
     branches:
       - main
       - v0.5
+
+env:
+  YARN_COMPRESSION_LEVEL: 0
+  YARN_ENABLE_GLOBAL_CACHE: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,7 +36,7 @@ jobs:
       - name: Build Packages 🔨
         run: yarn build
 
-      - name: Build Example 🔨
+      - name: Build Website 🔨
         run: yarn build:website
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/
