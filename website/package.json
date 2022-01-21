@@ -5,6 +5,7 @@
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
   },
+  "private": "true",
   "repository": {
     "type": "git",
     "url": "https://github.com/rohit-gohri/redocusaurus.git"
