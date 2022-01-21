@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus-website",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/rohit-gohri/redocusaurus",
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
@@ -25,7 +25,7 @@
     "clsx": "^1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "redocusaurus": "^0.5.0"
+    "redocusaurus": "^0.5.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.24"
