@@ -107,9 +107,10 @@ function getThemeOptions(
   return merge(mergedTheme, DARK_THEME_OPTIONS);
 }
 
-export function getRedocThemes(
-  baseTheme: RedocThemeOverrides,
-): { darkTheme: RedocThemeOverrides; lightTheme: RedocThemeOverrides } {
+export function getRedocThemes(baseTheme: RedocThemeOverrides): {
+  darkTheme: RedocThemeOverrides;
+  lightTheme: RedocThemeOverrides;
+} {
   return {
     lightTheme: getThemeOptions(baseTheme, false),
     darkTheme: getThemeOptions(baseTheme, true),
