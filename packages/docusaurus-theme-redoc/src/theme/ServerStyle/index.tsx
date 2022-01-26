@@ -2,7 +2,8 @@
  * @see https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743
  */
 import React from 'react';
-import DocusaurusContext from '@docusaurus/context';
+// @ts-ignore
+import {Context as DocusaurusContext} from '@docusaurus/docusaurusContext';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
