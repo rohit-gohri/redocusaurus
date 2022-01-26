@@ -8,6 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
+  "plugins": ["import", "jsx-a11y", "react"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -46,7 +47,10 @@
     "@typescript-eslint/ban-ts-comment": "warn"
   },
   "settings": {
-    "import/internal-regex": "^(@docusaurus|react|@theme)(/.+)?$"
+    "import/internal-regex": "^(@docusaurus|react|@theme)(/.+)?$",
+    "react": {
+      "version": "detect"
+    }
   },
   "overrides": [
     {
