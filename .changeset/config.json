@@ -8,6 +8,7 @@
   "linked": [
     ["redocusaurus", "docusaurus-theme-redoc", "docusaurus-plugin-redoc"]
   ],
+  "ignore": ["redocusaurus-website"],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

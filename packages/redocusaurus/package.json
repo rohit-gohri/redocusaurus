@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-beta.14",
+    "@docusaurus/types": "^2.0.0-beta.15",
     "docusaurus-plugin-redoc": "^0.5.0",
     "docusaurus-theme-redoc": "^0.5.1"
   },
