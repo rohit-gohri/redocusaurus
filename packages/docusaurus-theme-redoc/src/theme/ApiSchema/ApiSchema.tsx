@@ -3,7 +3,7 @@ import {
   usePluginData,
   useAllPluginInstancesData,
 } from '@docusaurus/useGlobalData';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import { SchemaDefinition, AppStore } from 'redoc';
@@ -17,7 +17,7 @@ const ApiSchema: React.FC<Props> = ({
   pointer,
   ...rest
 }: Props): JSX.Element => {
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
   const allData = useAllPluginInstancesData<Spec>('docusaurus-plugin-redoc');
   const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
     'docusaurus-theme-redoc',
