@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.6.0
+
+### Minor Changes
+
+- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15 and use "useColorMode" instead of theme context
+
 ## 0.5.1
 
 ### Patch Changes
