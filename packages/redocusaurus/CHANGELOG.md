@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15 and use "useColorMode" instead of theme context
+- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15
+
+- [#117](https://github.com/rohit-gohri/redocusaurus/pull/117) [`f285992f`](https://github.com/rohit-gohri/redocusaurus/commit/f285992f55edd968206452264993dd2bb4b7d3e7) Thanks [@homotechsual](https://github.com/homotechsual)! - Remove useThemeContext and switch to the new useColorMode
 
 ### Patch Changes
 

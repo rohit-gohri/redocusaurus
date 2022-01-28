@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15 and use "useColorMode" instead of theme context
+- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15
+
+- [#117](https://github.com/rohit-gohri/redocusaurus/pull/117) [`f285992f`](https://github.com/rohit-gohri/redocusaurus/commit/f285992f55edd968206452264993dd2bb4b7d3e7) Thanks [@homotechsual](https://github.com/homotechsual)! - Remove useThemeContext and switch to the new useColorMode
 
 ## 0.5.0
 
@@ -40,4 +42,4 @@
 
 - [`2c54f7a`](https://github.com/rohit-gohri/redocusaurus/commit/2c54f7a95c770e06cf1461d6471086f1d6ec03e9) [#38](https://github.com/rohit-gohri/redocusaurus/pull/38) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Lint and format code with Eslint/Prettier
 
-* [`1b729fe`](https://github.com/rohit-gohri/redocusaurus/commit/1b729febaff861956f56c06454a7a6c87b126f66) [#38](https://github.com/rohit-gohri/redocusaurus/pull/38) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Started maintaining changelogs and automated releases - #36
+- [`1b729fe`](https://github.com/rohit-gohri/redocusaurus/commit/1b729febaff861956f56c06454a7a6c87b126f66) [#38](https://github.com/rohit-gohri/redocusaurus/pull/38) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Started maintaining changelogs and automated releases - #36
