@@ -75,23 +75,25 @@ export default function redocPlugin(
         JSON.stringify(options.layout),
       );
 
-      const routePath = options.routePath.startsWith('/')
-        ? options.routePath.slice(1)
-        : options.routePath;
-      const routeOptions = {
-        path: normalizeUrl([baseUrl, routePath]),
-        component: options.apiDocComponent,
-        modules: {
-          spec: specData,
-          layoutProps: layoutData,
-        },
-        exact: true,
-      };
+      if (options.addRoute) {
+        const routePath = options.routePath.startsWith('/')
+          ? options.routePath.slice(1)
+          : options.routePath;
+        const routeOptions = {
+          path: normalizeUrl([baseUrl, routePath]),
+          component: options.apiDocComponent,
+          modules: {
+            spec: specData,
+            layoutProps: layoutData,
+          },
+          exact: true,
+        };
 
-      if (debug) {
-        console.error('[REDOCUSAURUS_PLUGIN] Route:', routeOptions);
+        if (debug) {
+          console.error('[REDOCUSAURUS_PLUGIN] Route:', routeOptions);
+        }
+        addRoute(routeOptions);
       }
-      addRoute(routeOptions);
     },
   };
 }
