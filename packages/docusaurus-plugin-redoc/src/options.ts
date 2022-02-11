@@ -33,12 +33,14 @@ export interface PluginOptions {
   specUrl?: string;
   layout?: LayoutProps;
   debug?: boolean;
+  addRoute?: boolean;
   routePath?: string;
   apiDocComponent?: string;
 }
 
 export interface PluginOptionsWithDefault extends PluginOptions {
   debug: boolean;
+  addRoute: boolean;
   routePath: string;
   apiDocComponent: string;
 }
@@ -46,6 +48,7 @@ export interface PluginOptionsWithDefault extends PluginOptions {
 export const DEFAULT_OPTIONS: PluginOptionsWithDefault = {
   layout: {},
   debug: false,
+  addRoute: true,
   routePath: '/api/', // URL Route.
   apiDocComponent: '@theme/ApiDoc',
 };
@@ -56,6 +59,7 @@ export const PluginOptionSchema = Joi.object({
   specUrl: Joi.string().uri({ allowRelative: true }),
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
+  addRoute: Joi.boolean().default(DEFAULT_OPTIONS.addRoute),
   routePath: Joi.string().default(DEFAULT_OPTIONS.routePath),
   apiDocComponent: Joi.string().default(DEFAULT_OPTIONS.apiDocComponent),
 });
