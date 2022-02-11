@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 0.7.0
+
+### Minor Changes
+
+- [#124](https://github.com/rohit-gohri/redocusaurus/pull/124) [`9e97e62`](https://github.com/rohit-gohri/redocusaurus/commit/9e97e62aeeeca1f53bc82801891495e44bc39624) Thanks [@awarrenlove](https://github.com/awarrenlove)! - Add addRoute option to create a route for the generated docs, default to true
+
 ## 0.6.0
 
 ### Minor Changes
