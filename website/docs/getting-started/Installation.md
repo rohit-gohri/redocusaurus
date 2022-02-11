@@ -61,4 +61,41 @@ npm i --save redocusaurus
      };
      ```
 
-The API Doc will be available by default at `/api/` path. To customize it see [full plugin options](#options).
+The API Doc will be available by default at `/api/` path. If you wish to
+override this path, you may set the `routePath` option. To skip adding a
+route altogether, set the `addRoute` option to false. You will still be
+able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports).
+
+```js
+// docusaurus.config.js
+
+module.exports = {
+  // ...
+  presets: [
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'default-route',
+            // routePath: '/api/',
+            // addRoute: true,
+          },
+          {
+            id: 'route-overridden',
+            routePath: '/different-path/',
+            // addRoute: true,
+          },
+          {
+            id: 'no-route',
+            addRoute: false,
+          },
+        ],
+      },
+    ],
+  ],
+  // ...
+};
+```
+
+To customize it see [full plugin options](#options).
