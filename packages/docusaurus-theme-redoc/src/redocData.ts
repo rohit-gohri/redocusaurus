@@ -11,13 +11,22 @@ const defaultOptions: Partial<RedocRawOptions> = {
   suppressWarnings: true,
 };
 
-const getDefaultTheme = (primaryColor?: string): RedocThemeOverrides => ({
-  colors: {
-    primary: {
-      main: primaryColor || '#25c2a0',
+const getDefaultTheme = (
+  primaryColor?: string,
+  customTheme?: RedocThemeOverrides,
+): RedocThemeOverrides => {
+  return merge(
+    {},
+    {
+      colors: {
+        primary: {
+          main: primaryColor || '#25c2a0',
+        },
+      },
     },
-  },
-});
+    customTheme,
+  );
+};
 
 /**
  * TODO: Update colors from infima
@@ -33,10 +42,9 @@ const DOCUSAURUS = {
 };
 
 /**
- * NOTE: Variables taken from infima
- * @see https://github.com/facebookincubator/infima/blob/master/packages/core/styles/common/variables.pcss
+ * Theme override that is independant of Light/Black themes
  */
-const LIGHT_THEME_OPTIONS: RedocThemeOverrides = {
+const COMMON_THEME: RedocThemeOverrides = {
   typography: {
     fontFamily: 'var(--ifm-font-family-base)',
     fontSize: 'var(--ifm-font-size-base)',
@@ -60,6 +68,15 @@ const LIGHT_THEME_OPTIONS: RedocThemeOverrides = {
      * @see https://davidgoss.co/blog/api-documentation-redoc-docusaurus/
      */
     width: '300px',
+  },
+};
+
+/**
+ * NOTE: Variables taken from infima
+ * @see https://github.com/facebookincubator/infima/blob/master/packages/core/styles/common/variables.pcss
+ */
+const LIGHT_THEME_OPTIONS: RedocThemeOverrides = {
+  sidebar: {
     backgroundColor: '#ffffff',
   },
   rightPanel: {
@@ -97,32 +114,33 @@ const DARK_THEME_OPTIONS: RedocThemeOverrides = {
 };
 
 function getThemeOptions(
-  baseTheme: RedocThemeOverrides,
+  customTheme: RedocThemeOverrides,
   isDarkMode = false,
 ): RedocThemeOverrides {
-  const mergedTheme = merge({}, baseTheme, LIGHT_THEME_OPTIONS);
-
-  if (!isDarkMode) return mergedTheme;
-
-  return merge(mergedTheme, DARK_THEME_OPTIONS);
+  if (isDarkMode) {
+    return merge({}, COMMON_THEME, DARK_THEME_OPTIONS, customTheme);
+  } else {
+    return merge({}, COMMON_THEME, LIGHT_THEME_OPTIONS, customTheme);
+  }
 }
 
-export function getRedocThemes(baseTheme: RedocThemeOverrides): {
+export function getRedocThemes(customTheme: RedocThemeOverrides): {
   darkTheme: RedocThemeOverrides;
   lightTheme: RedocThemeOverrides;
 } {
   return {
-    lightTheme: getThemeOptions(baseTheme, false),
-    darkTheme: getThemeOptions(baseTheme, true),
+    lightTheme: getThemeOptions(customTheme, false),
+    darkTheme: getThemeOptions(customTheme, true),
   };
 }
 
 export function getGlobalData(
   primaryColor?: string,
+  customTheme?: RedocThemeOverrides,
   redocOptions?: Partial<RedocRawOptions>,
 ): GlobalData {
   const { lightTheme, darkTheme } = getRedocThemes(
-    getDefaultTheme(primaryColor),
+    getDefaultTheme(primaryColor, customTheme),
   );
 
   return {

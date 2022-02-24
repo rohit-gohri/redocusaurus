@@ -3,7 +3,7 @@
  */
 import React from 'react';
 // @ts-ignore
-import {Context as DocusaurusContext} from '@docusaurus/docusaurusContext';
+import { Context as DocusaurusContext } from '@docusaurus/docusaurusContext';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';

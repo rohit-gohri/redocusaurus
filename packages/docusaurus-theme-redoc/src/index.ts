@@ -36,6 +36,7 @@ export default function redocTheme(
       const { setGlobalData } = actions;
       const globalData = getGlobalData(
         options.primaryColor,
+        options.redocTheme,
         options.redocOptions,
       );
 
