@@ -1,3 +1,12 @@
+/* ------ Hacky solution to display redoc in full size inside a doc page with an existing sidebar ------- */
+
+@media (min-width: 1600px) {
+  .redocusaurus-fullscreen-with-sidebar {
+    width: calc(97vw - var(--doc-sidebar-width));
+    margin-left: calc((98vw - (var(--doc-sidebar-width) + var(--ifm-container-width-xl))) / -2);
+  }
+}
+
 .redocusaurus .redoc-wrap {
   border-bottom: 1px solid var(--ifm-toc-border-color);
 }

@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
-import { usePluginData } from '@docusaurus/useGlobalData';
-import { useColorMode } from '@docusaurus/theme-common';
-import { Redoc as RedocComponent, RedocStandalone, AppStore } from 'redoc';
-import { RedocProps as Props, GlobalData } from '../../types/common';
+import React from 'react';
+import { Redoc as RedocComponent, RedocStandalone } from 'redoc';
+import { RedocProps } from '../../types/common';
+import useRedocHook from './RedocHook';
 import './styles.css';
 
 /*!
@@ -11,24 +10,11 @@ import './styles.css';
  * (c) 2021 Rohit Gohri
  * Released under the MIT License
  */
-function Redoc(props: Props): JSX.Element {
-  const { isDarkTheme } = useColorMode();
-  const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
-    'docusaurus-theme-redoc',
-  );
-  const theme = isDarkTheme ? darkTheme : lightTheme;
+function Redoc(props: RedocProps): JSX.Element {
   const { spec, specUrl } = props;
-  const store = useMemo(() => {
-    if (!spec) return null;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return new AppStore(spec as any, specUrl, {
-      ...redocOptions,
-      theme,
-    });
-  }, [spec, specUrl, redocOptions, theme]);
-
+  const { wrapperClassName, store, redocOptions, theme } = useRedocHook(props);
   return (
-    <div className="redocusaurus">
+    <div className={wrapperClassName}>
       {store ? (
         <RedocComponent store={store} />
       ) : (

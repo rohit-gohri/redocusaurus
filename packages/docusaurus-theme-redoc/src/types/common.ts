@@ -5,6 +5,7 @@ import type { RecursivePartial } from './util';
 export type RedocProps = {
   spec?: Record<string, unknown>;
   specUrl?: string;
+  fullscreenWithSidebar?: boolean;
 };
 
 export type ApiSchemaProps = Omit<
