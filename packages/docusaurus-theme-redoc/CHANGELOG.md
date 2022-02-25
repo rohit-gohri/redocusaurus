@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.8.0
+
+### Minor Changes
+
+- [#129](https://github.com/rohit-gohri/redocusaurus/pull/129) [`717d36b`](https://github.com/rohit-gohri/redocusaurus/commit/717d36b16e537c56fa5a5ceda6e7bde8558537cf) Thanks [@serut](https://github.com/serut)! - feat(theme): allow override redoc theme inside docusaurus.config file
+
 ## 0.6.0
 
 ### Minor Changes
