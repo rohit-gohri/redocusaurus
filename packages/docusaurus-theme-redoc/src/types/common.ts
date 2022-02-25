@@ -47,6 +47,7 @@ export type RedocThemeOverrides = RecursivePartial<
 
 export interface ThemeOptions {
   primaryColor?: string;
+  redocTheme?: Partial<RedocRawOptions['theme']>;
   redocOptions?: Partial<Omit<RedocRawOptions, 'theme'>>;
 }
 

@@ -36,6 +36,11 @@ const redocusaurus = [
        * @see https://github.com/redocly/redoc#redoc-options-object
        */
       redocOptions: { hideDownloadButton: false, disableSearch: true },
+      /**
+       * Options to pass to override RedocThemeObject
+       * @see https://github.com/Redocly/redoc#redoc-theme-object
+       */
+      redocTheme: {},
     },
   },
 ];
