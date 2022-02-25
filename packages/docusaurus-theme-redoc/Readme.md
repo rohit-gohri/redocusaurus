@@ -48,14 +48,40 @@ See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/ma
 
 ## Options
 
+```json
+/**
+   * Highlight color for docs
+   */
+primaryColor: '#1890ff',
+/**
+   * Options to pass to redoc
+   * @see https://github.com/redocly/redoc#redoc-options-object
+   */
+redocOptions: { hideDownloadButton: false, disableSearch: true },
+/**
+   * Options to pass to override RedocThemeObject
+   * @see https://github.com/Redocly/redoc#redoc-theme-object
+   */
+redocTheme: { typography: { fontSize: '16px' }},
+```
+
 ### primaryColor
 
-Hex code to be passed as the `main` color to [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component)
+Convenient way to provide the highlighted color used by Redoc.  
+This value will be used as `colors.primary.main` in the `redocTheme` option. Must be an hex value.
+
+### redocTheme
+
+Override the redoc theme object passed inside the `redocOptions`.  
+See the default [here](https://github.com/Redocly/redoc#redoc-theme-object).  
+Note: You should not provide any color using this property, as it will be the same value for dark and light themes.
 
 ### redocOptions
 
-Override the default redoc options passed to the [RedocStandalone](https://github.com/redocly/redoc#usage-as-a-react-component) component.
-See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/theme/Redoc/Redoc.tsx#L101-L108).
+Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component.  
+See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L6-L11).  
+Available properties [here](https://github.com/Redocly/redoc#redoc-options-object).  
+You cannot set theme property using this property, use `redocTheme` instead.
 
 ## Related Preset
 
