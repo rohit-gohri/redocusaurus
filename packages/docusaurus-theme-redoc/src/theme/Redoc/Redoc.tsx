@@ -17,7 +17,7 @@ function Redoc(props: Props): JSX.Element {
     'docusaurus-theme-redoc',
   );
   const theme = isDarkTheme ? darkTheme : lightTheme;
-  const { spec, specUrl } = props;
+  const { spec, specUrl, onLoaded } = props;
   const store = useMemo(() => {
     if (!spec) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,6 +39,7 @@ function Redoc(props: Props): JSX.Element {
             ...redocOptions,
             theme,
           }}
+          onLoaded={onLoaded}
         />
       )}
     </div>
