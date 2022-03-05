@@ -1,5 +1,15 @@
 # redocusaurus
 
+## 0.9.0
+
+### Patch Changes
+
+- [`0b5c464`](https://github.com/rohit-gohri/redocusaurus/commit/0b5c46483587209fa8adf5e7ad22673808a44ecd) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta-17
+
+- Updated dependencies [[`0b5c464`](https://github.com/rohit-gohri/redocusaurus/commit/0b5c46483587209fa8adf5e7ad22673808a44ecd), [`0e862a5`](https://github.com/rohit-gohri/redocusaurus/commit/0e862a5669d993b705d4c43e0c4a31327a21d865)]:
+  - docusaurus-plugin-redoc@0.9.0
+  - docusaurus-theme-redoc@0.9.0
+
 ## 0.8.0
 
 ### Patch Changes
