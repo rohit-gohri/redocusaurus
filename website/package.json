@@ -21,15 +21,15 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.15",
-    "@docusaurus/preset-classic": "^2.0.0-beta.15",
+    "@docusaurus/core": "^2.0.0-beta.17",
+    "@docusaurus/preset-classic": "^2.0.0-beta.17",
     "clsx": "^1.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "redocusaurus": "^0.8.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38"
+    "@types/react": "^17.0.39"
   },
   "browserslist": {
     "production": [
