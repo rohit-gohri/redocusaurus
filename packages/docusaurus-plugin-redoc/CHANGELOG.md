@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 0.9.0
+
+### Patch Changes
+
+- [`0b5c464`](https://github.com/rohit-gohri/redocusaurus/commit/0b5c46483587209fa8adf5e7ad22673808a44ecd) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta-17
+
 ## 0.7.0
 
 ### Minor Changes
