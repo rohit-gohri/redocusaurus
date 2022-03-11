@@ -4,3 +4,6 @@
 .redocusaurus-schema.hide-example > div > div > div:nth-child(1) {
   width: 100%;
 }
+.redocusaurus-schema > div:last-child {
+  min-height: 0;
+}
