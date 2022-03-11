@@ -1,5 +1,5 @@
 ---
-'docusaurus-theme-redoc': minor
+'docusaurus-theme-redoc': patch
 ---
 
 Reduce whitespace on the ApiSchema component
