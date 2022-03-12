@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 env:
   YARN_COMPRESSION_LEVEL: 0
   YARN_ENABLE_GLOBAL_CACHE: true
@@ -24,11 +26,16 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
+          registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn install --immutable
 
       - name: Create Release Pull Request
-        uses: changesets/action@master
+        uses: changesets/action@v1
+        with:
+          version: yarn changeset version && yarn
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
