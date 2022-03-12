@@ -1,3 +1,7 @@
+if (process.env.VERCEL_URL) {
+  process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
+}
+
 /**
  * @type {import('redocusaurus').PresetEntry}
  */
@@ -74,7 +78,7 @@ const config = {
       description: 'Integrate Redoc easily into your Docusaurus Site',
     },
   },
-  url: process.env.VERCEL_URL || process.env.DEPLOY_PRIME_URL || 'http://localhost:5000', // Your website URL
+  url: process.env.DEPLOY_PRIME_URL || 'http://localhost:5000', // Your website URL
   baseUrl: process.env.DEPLOY_BASE_URL || '/', // Base URL for your project */
   favicon: 'img/favicon.ico',
   themeConfig: {
