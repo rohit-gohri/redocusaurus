@@ -1,12 +1,12 @@
 import React from 'react';
-import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import { SchemaDefinition } from 'redoc';
-import { ApiSchemaProps as Props, Spec } from '../../types/common';
+import { useSpec } from '../../hooks/useSpec';
+import { useApiData } from '../useApiData';
+import { ApiSchemaProps as Props } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
-import { useSpec } from '../../hooks/useSpec';
 
 const ApiSchema: React.FC<Props> = ({
   id,
@@ -14,11 +14,8 @@ const ApiSchema: React.FC<Props> = ({
   pointer,
   ...rest
 }: Props): JSX.Element => {
-  const allData = useAllPluginInstancesData<Spec>('docusaurus-plugin-redoc');
-  const { specUrl, content } =
-    allData[id as string] || Object.values(allData)[0];
-
-  const { store, options } = useSpec(content, specUrl);
+  const apiData = useApiData(id);
+  const { store, options } = useSpec(apiData);
 
   return (
     <ThemeProvider theme={options.theme}>

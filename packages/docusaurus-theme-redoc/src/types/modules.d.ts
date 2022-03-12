@@ -10,15 +10,10 @@ declare module '@theme/Redoc' {
 declare module '@theme/ApiDoc' {
   import { Props as LayoutProps } from '@theme/Layout';
 
-  type Spec =
-    | {
-        type: 'url';
-        content: string;
-      }
-    | {
-        type: 'object';
-        content: Record<string, unknown>;
-      };
+  type Spec = {
+    content: Record<string, unknown>;
+    specUrl?: string;
+  };
 
   export type Props = {
     layoutProps?: Omit<LayoutProps, 'children'>;
@@ -27,4 +22,14 @@ declare module '@theme/ApiDoc' {
 
   const ApiDoc: (props: Props) => JSX.Element;
   export default ApiDoc;
+}
+
+declare module '@theme/useApiData' {
+  type Spec = {
+    content: Record<string, unknown>;
+    specUrl?: string;
+  };
+
+  const useApiData: (id?: string) => Spec;
+  export default useApiData;
 }
