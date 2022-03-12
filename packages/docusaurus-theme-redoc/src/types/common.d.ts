@@ -1,5 +1,6 @@
 import type { Props as LayoutProps } from '@theme/Layout';
-import type { ObjectDescriptionProps, OpenAPISpec } from 'redoc';
+import type { ObjectDescriptionProps } from 'redoc';
+import type { OpenAPISpec } from 'redoc/typings/types';
 
 export type ParsedSpec = OpenAPISpec;
 

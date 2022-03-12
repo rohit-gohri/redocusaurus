@@ -1,35 +1,36 @@
+interface SpecProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  spec: import('redoc/typings/types').OpenAPISpec;
+  url?: string;
+}
+
 declare module '@theme/Redoc' {
-  export type Props = {
-    spec?: Record<string, unknown>;
-    specUrl?: string;
-  };
-  const Redoc: (props: Props) => JSX.Element;
+  const Redoc: (props: SpecProps) => JSX.Element;
   export default Redoc;
 }
 
 declare module '@theme/ApiDoc' {
   import { Props as LayoutProps } from '@theme/Layout';
 
-  type Spec = {
-    content: Record<string, unknown>;
-    specUrl?: string;
-  };
-
-  export type Props = {
+  interface ApiDocProps {
+    /**
+     * Get this by using `@theme/useSpecData` hook
+     */
+    specProps: SpecProps;
+    /**
+     * Title/Description for layout is by default loaded from the API spec
+     */
     layoutProps?: Omit<LayoutProps, 'children'>;
-    spec: Spec;
-  };
+  }
 
-  const ApiDoc: (props: Props) => JSX.Element;
+  const ApiDoc: (props: ApiDocProps) => JSX.Element;
   export default ApiDoc;
 }
 
-declare module '@theme/useApiData' {
-  type Spec = {
-    content: Record<string, unknown>;
-    specUrl?: string;
-  };
-
-  const useApiData: (id?: string) => Spec;
-  export default useApiData;
+declare module '@theme/useSpecData' {
+  /**
+   * Load redocusaurus plugin data by ID
+   */
+  const useSpecData: (id?: string) => SpecProps;
+  export default useSpecData;
 }
