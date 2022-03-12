@@ -24,7 +24,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn install --immutable
 
       - name: Release
         run: yarn release
