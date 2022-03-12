@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.9.2
+
+### Patch Changes
+
+- [#140](https://github.com/rohit-gohri/redocusaurus/pull/140) [`13ae596`](https://github.com/rohit-gohri/redocusaurus/commit/13ae59674e30cd1f2c7129abd17cf2e146e3808a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add theme-common as a dependency
+
 ## 0.9.1
 
 ### Patch Changes
