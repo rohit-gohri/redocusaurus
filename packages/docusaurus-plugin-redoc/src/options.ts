@@ -32,11 +32,11 @@ export const DEFAULT_OPTIONS: Omit<PluginOptionsWithDefault, 'spec'> = {
   debug: false,
 };
 
-export const PluginOptionSchema = Joi.object({
+export const PluginOptionSchema = Joi.object<PluginOptions>({
   id: Joi.string(),
   spec: Joi.string(),
   url: Joi.string().uri({ allowRelative: true }).optional(),
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
-  path: Joi.string().uri({ relativeOnly: true }).optional(),
+  route: Joi.string().uri({ relativeOnly: true }).optional(),
 });
