@@ -10,7 +10,7 @@ export function useSpecData(id?: string): SpecProps {
   const allData = useAllPluginInstancesData<SpecProps>(
     'docusaurus-plugin-redoc',
   );
-  const apiData = allData[id as string] || Object.values(allData)[0];
+  const apiData = id ? allData[id as string] : Object.values(allData)[0];
 
   return apiData;
 }

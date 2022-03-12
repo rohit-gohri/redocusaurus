@@ -39,8 +39,8 @@ export default function preset(
       ...specsArray.map((pluginOpts, index) => [
         require.resolve('docusaurus-plugin-redoc'),
         {
-          id: `plugin-redoc-${index}`,
           ...pluginOpts,
+          id: pluginOpts.id || `plugin-redoc-${index}`,
           debug,
         },
       ]),
