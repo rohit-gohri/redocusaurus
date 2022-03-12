@@ -9,12 +9,8 @@ const urls = [
   { name: 'URL Spec', path: '/examples/using-spec-url/' },
 ];
 
-if (!process.env.VERCEL_URL?.startsWith('https')) {
-  process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
-}
-
 module.exports = () => {
-  const baseUrl = process.env.DEPLOY_PRIME_URL || process.env.VERCEL_URL || 'http://localhost:3000';
+  const baseUrl = process.env.TARGET_URL || 'http://localhost:3000';
   return urls.map(({name, path}) => {
     return {
       name,
