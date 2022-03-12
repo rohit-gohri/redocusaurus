@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import { SchemaDefinition } from 'redoc';
 import { useSpec } from '../../hooks/useSpec';
-import { useApiData } from '../useApiData';
+import { useSpecData } from '../useSpecData';
 import { ApiSchemaProps as Props } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
@@ -14,8 +14,8 @@ const ApiSchema: React.FC<Props> = ({
   pointer,
   ...rest
 }: Props): JSX.Element => {
-  const apiData = useApiData(id);
-  const { store } = useSpec(apiData);
+  const specProps = useSpecData(id);
+  const { store } = useSpec(specProps);
 
   return (
     <ThemeProvider theme={store.options.theme}>
