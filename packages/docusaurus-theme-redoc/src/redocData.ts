@@ -4,7 +4,6 @@ import { GlobalData, RedocThemeOverrides } from './types/common';
 
 const defaultOptions: Partial<RedocRawOptions> = {
   scrollYOffset: 'nav.navbar',
-  hideDownloadButton: true,
   expandSingleSchemaField: true,
   menuToggle: true,
   // @ts-expect-error not available in types

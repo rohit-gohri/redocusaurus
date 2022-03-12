@@ -62,7 +62,7 @@ const config = {
            * Options to pass to redoc
            * @see https://github.com/redocly/redoc#redoc-options-object
            */
-          redocOptions: { hideDownloadButton: false, disableSearch: true },
+          redocOptions: { disableSearch: true },
         },
       },
     ],
