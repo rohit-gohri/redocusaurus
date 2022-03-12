@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 0.9.1
+
+### Patch Changes
+
+- [#136](https://github.com/rohit-gohri/redocusaurus/pull/136) [`6b233fe`](https://github.com/rohit-gohri/redocusaurus/commit/6b233fe9b42e43dca4f13d5ed0e620c1da17d149) Thanks [@Brookke](https://github.com/Brookke)! - Reduce whitespace on the ApiSchema component
+
 ## 0.9.0
 
 ### Minor Changes
