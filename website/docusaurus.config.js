@@ -22,6 +22,12 @@ const redocusaurus = [
         specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
         routePath: '/examples/using-spec-url/',
       },
+      {
+        id: 'using-custom-layout',
+        spec: 'openapi.yaml',
+        specUrl: `/openapi-page.yaml`,
+        // NOTE: no `routePath` passed, instead data used in custom React Component ('custom-layout/index.jsx')
+      },
     ],
     theme: {
       /**
