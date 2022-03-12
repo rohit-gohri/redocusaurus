@@ -33,11 +33,28 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Create Release Pull Request
+      - name: Create Release Pull Request or Publish
+        id: changesets
         uses: changesets/action@v1
         with:
           version: yarn run version
           publish: yarn run release
+          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Published Packages includes redocusaurus?
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          yarn workspace redocusaurus exec "sh $PWD/scripts/release.sh" >> $GITHUB_ENV
+
+      - name: Create Github Release
+        if: ${{ env.github_release == 'yes' }}
+        uses: softprops/action-gh-release@master
+        with:
+          body_path: latest-CHANGELOG.md
+          tag_name: v${{ env.package_version }}
+          target_commitish: ${{ github.sha }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
