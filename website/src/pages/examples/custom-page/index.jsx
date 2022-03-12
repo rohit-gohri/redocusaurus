@@ -1,17 +1,17 @@
 import React from 'react';
 import ApiDoc from '@theme/ApiDoc';
-import useApiData from '@theme/useApiData';
+import useSpecData from '@theme/useSpecData';
 
 function CustomPage() {
-  const specData = useApiData('using-custom-layout');
+  const specData = useSpecData('using-custom-page');
 
   return (
     <ApiDoc
       layoutProps={{
-        title: 'Open API Docs',
-        description: `Open API Reference Docs for API`,
+        title: `Custom page for : ${specData.spec.info?.title}`,
+        description: 'Example showcasing custom page',
       }}
-      spec={specData}
+      specProps={specData}
     />
   );
 }

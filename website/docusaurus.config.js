@@ -1,14 +1,3 @@
-let version = "v0";
-try {
-  version = require('./version.json');
-}
-catch(err){
-}
-
-if (process.env.VERCEL_URL) {
-  process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
-}
-
 /**
  * @type {import('redocusaurus').PresetEntry}
  */
@@ -22,22 +11,28 @@ const redocusaurus = [
         // Local File
         spec: 'openapi.yaml',
         /**
-         * This becomes the Download URL in this case, while docs are generated from `spec` file
+         * Download URL while docs are generated from `spec` file
          */
-        specUrl: `/openapi-page.yaml`,
-        routePath: '/examples/using-spec-yaml/',
+        url: `/openapi-page.yaml`,
+        route: '/examples/using-spec-yaml/',
       },
       {
         id: 'using-spec-url',
         // Remote File
-        specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-        routePath: '/examples/using-spec-url/',
+        spec: 'https://redocly.github.io/redoc/openapi.yaml',
+        route: '/examples/using-spec-url/',
+      },
+      {
+        id: 'using-custom-page',
+        spec: 'openapi.yaml',
+        url: `/openapi-page.yaml`,
+        // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
       },
       {
         id: 'using-custom-layout',
         spec: 'openapi.yaml',
-        specUrl: `/openapi-page.yaml`,
-        // NOTE: no `routePath` passed, instead data used in custom React Component ('custom-layout/index.jsx')
+        url: `/openapi-page.yaml`,
+        // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
       },
     ],
     theme: {
@@ -49,15 +44,26 @@ const redocusaurus = [
        * Options to pass to redoc
        * @see https://github.com/redocly/redoc#redoc-options-object
        */
-      redocOptions: { disableSearch: true },
+      options: { disableSearch: true },
       /**
        * Options to pass to override RedocThemeObject
        * @see https://github.com/Redocly/redoc#redoc-theme-object
        */
-      redocTheme: {},
+      theme: {},
     },
   },
 ];
+
+let version = "v0";
+try {
+  version = require('./version.json');
+}
+catch(err){
+}
+
+if (process.env.VERCEL_URL) {
+  process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
+}
 
 /**
  * @type {Partial<import('@docusaurus/types').DocusaurusConfig>}

@@ -1,13 +1,16 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Redoc from '@theme/Redoc';
-import useApiData from '@theme/useApiData';
+import useSpecData from '@theme/useSpecData';
 
 function CustomPage() {
-  const specData = useApiData('using-custom-layout');
+  const specData = useSpecData('using-custom-layout');
   return (
-    <Layout title="Open API Docs" description="Open API Reference Docs for API">
-      <Redoc specUrl={specData.specUrl} spec={specData.content} />
+    <Layout
+      title="Custom Layout Docs"
+      description="Example showing custom layout"
+    >
+      <Redoc {...specData} />
     </Layout>
   );
 }
