@@ -2228,7 +2228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-common@npm:2.0.0-beta.17":
+"@docusaurus/theme-common@npm:2.0.0-beta.17, @docusaurus/theme-common@npm:^2.0.0-beta.17":
   version: 2.0.0-beta.17
   resolution: "@docusaurus/theme-common@npm:2.0.0-beta.17"
   dependencies:
@@ -5968,6 +5968,7 @@ __metadata:
   dependencies:
     "@docusaurus/module-type-aliases": ^2.0.0-beta.17
     "@docusaurus/theme-classic": ^2.0.0-beta.17
+    "@docusaurus/theme-common": ^2.0.0-beta.17
     "@docusaurus/types": ^2.0.0-beta.17
     "@types/lodash": ^4.14.179
     "@types/react-dom": ^17.0.13
