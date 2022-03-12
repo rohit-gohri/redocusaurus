@@ -70,7 +70,8 @@ export default function redocPlugin(
 
       const data: SpecProps = {
         url,
-        spec: content,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        spec: content as any,
       };
       setGlobalData(data);
 
@@ -110,10 +111,9 @@ export default function redocPlugin(
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions>): Promise<void> {
-  const { value, error } = PluginOptionSchema.validate(options);
+}: OptionValidationContext<PluginOptions>): void {
+  const { error } = PluginOptionSchema.validate(options);
   if (error) {
     throw error;
   }
-  return value;
 }
