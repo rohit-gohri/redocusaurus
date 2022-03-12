@@ -15,7 +15,7 @@ const ApiSchema: React.FC<Props> = ({
   ...rest
 }: Props): JSX.Element => {
   const apiData = useApiData(id);
-  const { store } = useSpec(apiData.content, apiData.specUrl);
+  const { store } = useSpec(apiData);
 
   return (
     <ThemeProvider theme={store.options.theme}>

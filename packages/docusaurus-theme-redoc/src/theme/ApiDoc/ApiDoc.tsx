@@ -3,15 +3,18 @@ import Layout from '@theme/Layout';
 import Redoc from '@theme/Redoc';
 import { ApiDocProps as Props } from '../../types/common';
 
-function ApiDoc({ layoutProps, spec }: Props): JSX.Element {
-  const {
-    title = 'API Docs',
-    description = 'Open API Reference Docs for the API',
-  } = layoutProps || {};
+function ApiDoc({ layoutProps, specProps }: Props): JSX.Element {
+  const defaultTitle = specProps.spec?.info?.title || 'API Docs';
+  const defaultDescription =
+    specProps.spec?.info?.description || 'Open API Reference Docs for the API';
 
   return (
-    <Layout {...layoutProps} title={title} description={description}>
-      <Redoc spec={spec.content} specUrl={spec.specUrl} />
+    <Layout
+      title={defaultTitle}
+      description={defaultDescription}
+      {...layoutProps}
+    >
+      <Redoc {...specProps} />
     </Layout>
   );
 }

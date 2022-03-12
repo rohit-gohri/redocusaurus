@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redoc as RedocComponent } from 'redoc';
-import { RedocProps as Props } from '../../types/common';
+import { SpecProps } from '../../types/common';
 import { useSpec } from '../../hooks/useSpec';
 import './styles.css';
 
@@ -10,9 +10,8 @@ import './styles.css';
  * (c) 2022 Rohit Gohri
  * Released under the MIT License
  */
-function Redoc(props: Props): JSX.Element {
-  const { spec, specUrl } = props;
-  const { store } = useSpec(spec, specUrl);
+function Redoc(props: SpecProps): JSX.Element {
+  const { store } = useSpec(props);
 
   return (
     <div className="redocusaurus">

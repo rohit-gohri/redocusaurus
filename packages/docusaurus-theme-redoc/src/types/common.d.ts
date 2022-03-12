@@ -1,7 +1,7 @@
 import type { Props as LayoutProps } from '@theme/Layout';
-import type { ObjectDescriptionProps } from 'redoc';
+import type { ObjectDescriptionProps, OpenAPISpec } from 'redoc';
 
-export type ParsedSpec = Record<string, unknown>;
+export type ParsedSpec = OpenAPISpec;
 
 export interface SpecProps {
   spec: ParsedSpec;
