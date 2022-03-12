@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
 import { AppStore } from 'redoc';
@@ -11,6 +12,7 @@ import { GlobalData, SpecProps } from '../types/common';
  * Released under the MIT License
  */
 export function useSpec(spec: SpecProps['spec'], specUrl?: string) {
+  const url = useBaseUrl(specUrl);
   const { isDarkTheme } = useColorMode();
   const themeOptions = usePluginData<GlobalData>('docusaurus-theme-redoc');
 
@@ -23,13 +25,13 @@ export function useSpec(spec: SpecProps['spec'], specUrl?: string) {
       theme,
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const store = new AppStore(spec as any, specUrl, options);
+    const store = new AppStore(spec as any, url, options);
 
     return {
       store,
       options,
     };
-  }, [spec, specUrl, themeOptions, isDarkTheme]);
+  }, [spec, url, themeOptions, isDarkTheme]);
 
   return result;
 }
