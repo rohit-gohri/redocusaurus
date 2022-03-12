@@ -15,10 +15,10 @@ const ApiSchema: React.FC<Props> = ({
   ...rest
 }: Props): JSX.Element => {
   const apiData = useApiData(id);
-  const { store, options } = useSpec(apiData);
+  const { store } = useSpec(apiData.content, apiData.specUrl);
 
   return (
-    <ThemeProvider theme={options.theme}>
+    <ThemeProvider theme={store.options.theme}>
       <div
         className={clsx([
           'redocusaurus',
