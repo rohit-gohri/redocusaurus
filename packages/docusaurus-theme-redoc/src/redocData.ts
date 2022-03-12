@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 import { RedocRawOptions } from 'redoc';
-import { GlobalData, RedocThemeOverrides } from './types/common';
+import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
 const defaultOptions: Partial<RedocRawOptions> = {
   scrollYOffset: 'nav.navbar',
@@ -15,11 +15,10 @@ const getDefaultTheme = (
   customTheme?: RedocThemeOverrides,
 ): RedocThemeOverrides => {
   return merge(
-    {},
     {
       colors: {
         primary: {
-          main: primaryColor || '#25c2a0',
+          main: primaryColor || 'var(--ifm-color-primary)',
         },
       },
     },
@@ -44,6 +43,11 @@ const DOCUSAURUS = {
  * Theme override that is independant of Light/Black themes
  */
 const COMMON_THEME: RedocThemeOverrides = {
+  colors: {
+    primary: {
+      main: 'var(--ifm-color-primary)',
+    },
+  },
   typography: {
     fontFamily: 'var(--ifm-font-family-base)',
     fontSize: 'var(--ifm-font-size-base)',
@@ -133,21 +137,24 @@ export function getRedocThemes(customTheme: RedocThemeOverrides): {
   };
 }
 
-export function getGlobalData(
-  primaryColor?: string,
-  customTheme?: RedocThemeOverrides,
-  redocOptions?: Partial<RedocRawOptions>,
-): GlobalData {
-  const { lightTheme, darkTheme } = getRedocThemes(
-    getDefaultTheme(primaryColor, customTheme),
-  );
+export function getGlobalData({
+  primaryColor,
+  theme: customTheme,
+  options,
+}: ThemeOptions): GlobalData {
+  const overrides =
+    primaryColor || customTheme
+      ? getDefaultTheme(primaryColor, customTheme)
+      : {};
+
+  const { lightTheme, darkTheme } = getRedocThemes(overrides);
 
   return {
     lightTheme,
     darkTheme,
-    redocOptions: {
+    options: {
       ...defaultOptions,
-      ...redocOptions,
+      ...options,
     },
   };
 }

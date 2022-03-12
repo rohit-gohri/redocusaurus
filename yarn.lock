@@ -5985,6 +5985,7 @@ __metadata:
     redoc: ^2.0.0-rc.64
     styled-components: ^5.3.3
     to-arraybuffer: ^1.0.1
+    typescript: ^4.6.2
   languageName: unknown
   linkType: soft
 
