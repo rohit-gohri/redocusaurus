@@ -1,5 +1,5 @@
-import merge from 'lodash/merge';
 import { RedocRawOptions } from 'redoc';
+import { merge } from './merge';
 import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
 const defaultOptions: Partial<RedocRawOptions> = {
