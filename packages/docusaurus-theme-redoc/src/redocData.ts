@@ -1,10 +1,9 @@
-import merge from 'lodash/merge';
 import { RedocRawOptions } from 'redoc';
-import { GlobalData, RedocThemeOverrides } from './types/common';
+import { merge } from './merge';
+import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
 const defaultOptions: Partial<RedocRawOptions> = {
   scrollYOffset: 'nav.navbar',
-  hideDownloadButton: true,
   expandSingleSchemaField: true,
   menuToggle: true,
   // @ts-expect-error not available in types
@@ -16,7 +15,6 @@ const getDefaultTheme = (
   customTheme?: RedocThemeOverrides,
 ): RedocThemeOverrides => {
   return merge(
-    {},
     {
       colors: {
         primary: {
@@ -134,21 +132,21 @@ export function getRedocThemes(customTheme: RedocThemeOverrides): {
   };
 }
 
-export function getGlobalData(
-  primaryColor?: string,
-  customTheme?: RedocThemeOverrides,
-  redocOptions?: Partial<RedocRawOptions>,
-): GlobalData {
-  const { lightTheme, darkTheme } = getRedocThemes(
-    getDefaultTheme(primaryColor, customTheme),
-  );
+export function getGlobalData({
+  primaryColor,
+  theme: customTheme,
+  options,
+}: ThemeOptions): GlobalData {
+  const overrides = getDefaultTheme(primaryColor, customTheme);
+
+  const { lightTheme, darkTheme } = getRedocThemes(overrides);
 
   return {
     lightTheme,
     darkTheme,
-    redocOptions: {
+    options: {
       ...defaultOptions,
-      ...redocOptions,
+      ...options,
     },
   };
 }

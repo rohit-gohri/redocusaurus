@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ServerStyle from '@theme/ServerStyle';
 
 function Root({ children }: { children: React.Component }): JSX.Element {

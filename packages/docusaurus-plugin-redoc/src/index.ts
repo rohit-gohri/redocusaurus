@@ -7,24 +7,26 @@ import type {
 } from '@docusaurus/types';
 import { normalizeUrl } from '@docusaurus/utils';
 import YAML from 'yaml';
+import { loadAndBundleSpec } from 'redoc';
 
 import {
-  Spec,
   PluginOptionSchema,
   PluginOptions,
   PluginOptionsWithDefault,
   DEFAULT_OPTIONS,
 } from './options';
+import { ParsedSpec, SpecProps, ApiDocProps } from './types/common';
 
 export { PluginOptions };
 
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
-): Plugin<Record<string, unknown> | null> {
+): Plugin<Record<string, unknown>> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, specUrl } = options;
+  const { debug, spec, url: downloadUrl } = options;
+  let url = downloadUrl;
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
     console.error('[REDOCUSAURUS_PLUGIN] Options:', options);
@@ -32,19 +34,30 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      let content: Record<string, unknown> | null = null;
-      if (spec) {
+      let parsedSpec: ParsedSpec | null = null;
+      // If local file
+      if (fs.existsSync(spec)) {
+        if (debug) {
+          console.log('[REDOCUSAURUS_PLUGIN] reading file: ', spec);
+        }
+
         const file = fs.readFileSync(spec).toString();
 
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
-          const parsedSpec = YAML.parse(file);
-          content = parsedSpec;
-        } else content = JSON.parse(file);
+          parsedSpec = YAML.parse(file);
+        } else parsedSpec = JSON.parse(file);
+      } else {
+        // If spec is a remote url then add it as download url
+        url = spec;
       }
+
       if (debug) {
-        console.error('[REDOCUSAURUS_PLUGIN] Content:', content);
+        console.log('[REDOCUSAURUS_PLUGIN] bundling spec');
       }
-      return content;
+      const content = await loadAndBundleSpec(parsedSpec || spec!);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return content as any;
     },
     getPathsToWatch() {
       if (!spec) {
@@ -55,38 +68,40 @@ export default function redocPlugin(
     },
     async contentLoaded({ content, actions }) {
       const { createData, addRoute, setGlobalData } = actions;
-      if (!content && !specUrl) {
-        console.error('[Redocusaurus] No spec provided');
-        return;
+      if (!content) {
+        throw new Error(`[Redocusaurus] Spec could not be parsed: ${spec}`);
       }
-      const data: Spec = {
-        specUrl,
-        type: content ? 'object' : 'url',
+
+      const data: SpecProps = {
+        url,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        content: (content || specUrl) as any,
+        spec: content as any,
       };
       setGlobalData(data);
-      const specData = await createData(
-        `redocApiSpec-${options.id || '1'}.json`,
-        JSON.stringify(data),
-      );
-      const layoutData = await createData(
-        `redocApiLayout-${options.id || '1'}.json`,
-        JSON.stringify(options.layout),
-      );
 
-      if (options.addRoute) {
-        const routePath = options.routePath.startsWith('/')
-          ? options.routePath.slice(1)
-          : options.routePath;
+      if (options.route) {
+        const specProps = await createData(
+          `redocApiSpecV1-${options.id || '1'}.json`,
+          JSON.stringify(data),
+        );
+        const layoutProps = await createData(
+          `redocApiLayoutV1-${options.id || '1'}.json`,
+          JSON.stringify(options.layout),
+        );
+        const routePath = options.route.startsWith('/')
+          ? options.route.slice(1)
+          : options.route;
+
+        const modules: Record<keyof ApiDocProps, string> = {
+          specProps,
+          layoutProps,
+        };
+
         const routeOptions = {
-          path: normalizeUrl([baseUrl, routePath]),
-          component: options.apiDocComponent,
-          modules: {
-            spec: specData,
-            layoutProps: layoutData,
-          },
+          modules,
+          component: '@theme/ApiDoc',
           exact: true,
+          path: normalizeUrl([baseUrl, routePath]),
         };
 
         if (debug) {
@@ -100,10 +115,10 @@ export default function redocPlugin(
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions>): Promise<void> {
+}: OptionValidationContext<PluginOptions>): PluginOptions {
   const { value, error } = PluginOptionSchema.validate(options);
   if (error) {
     throw error;
   }
-  return value;
+  return value!;
 }

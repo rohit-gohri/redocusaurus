@@ -14,52 +14,29 @@ type LayoutProps = {
   };
 };
 
-export type Spec = {
-  specUrl?: string;
-} & (
-  | {
-      type: 'url';
-      content: string;
-    }
-  | {
-      type: 'object';
-      content: Record<string, unknown>;
-    }
-);
-
 export interface PluginOptions {
   id?: string;
-  spec?: string;
-  specUrl?: string;
+  spec: string;
+  url?: string;
+  route?: string;
   layout?: LayoutProps;
   debug?: boolean;
-  addRoute?: boolean;
-  routePath?: string;
-  apiDocComponent?: string;
 }
 
 export interface PluginOptionsWithDefault extends PluginOptions {
   debug: boolean;
-  addRoute: boolean;
-  routePath: string;
-  apiDocComponent: string;
 }
 
-export const DEFAULT_OPTIONS: PluginOptionsWithDefault = {
+export const DEFAULT_OPTIONS: Omit<PluginOptionsWithDefault, 'spec'> = {
   layout: {},
   debug: false,
-  addRoute: true,
-  routePath: '/api/', // URL Route.
-  apiDocComponent: '@theme/ApiDoc',
 };
 
-export const PluginOptionSchema = Joi.object({
+export const PluginOptionSchema = Joi.object<PluginOptions>({
   id: Joi.string(),
   spec: Joi.string(),
-  specUrl: Joi.string().uri({ allowRelative: true }),
+  url: Joi.string().uri({ allowRelative: true }).optional(),
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
-  addRoute: Joi.boolean().default(DEFAULT_OPTIONS.addRoute),
-  routePath: Joi.string().default(DEFAULT_OPTIONS.routePath),
-  apiDocComponent: Joi.string().default(DEFAULT_OPTIONS.apiDocComponent),
+  route: Joi.string().uri({ relativeOnly: true }).optional(),
 });
