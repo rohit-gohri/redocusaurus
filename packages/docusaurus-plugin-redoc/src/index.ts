@@ -25,7 +25,8 @@ export default function redocPlugin(
 ): Plugin<Record<string, unknown>> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, url } = options;
+  const { debug, spec, url: downloadUrl } = options;
+  let url = downloadUrl;
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
     console.error('[REDOCUSAURUS_PLUGIN] Options:', options);
@@ -45,6 +46,9 @@ export default function redocPlugin(
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
           parsedSpec = YAML.parse(file);
         } else parsedSpec = JSON.parse(file);
+      } else {
+        // If spec is a remote url then add it as download url
+        url = spec;
       }
 
       if (debug) {
