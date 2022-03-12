@@ -6,7 +6,7 @@
     "build": "yarn workspaces foreach --exclude 'redocusaurus-website' -tv run build",
     "build:website": "yarn workspace redocusaurus-website run build",
     "clean": "yarn workspaces foreach -Atv exec \"rm -rf dist* .tsbuild*.info\"",
-    "dev": "yarn workspaces foreach --exclude redocusaurus-website -pv run dev",
+    "dev": "yarn workspaces foreach --exclude redocusaurus-website -piv run dev",
     "dev:website": "yarn workspace redocusaurus-website run dev",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
