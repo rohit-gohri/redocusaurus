@@ -1,15 +1,12 @@
-import React, { useMemo } from 'react';
-import {
-  usePluginData,
-  useAllPluginInstancesData,
-} from '@docusaurus/useGlobalData';
-import { useColorMode } from '@docusaurus/theme-common';
+import React from 'react';
+import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
-import { SchemaDefinition, AppStore } from 'redoc';
-import { ApiSchemaProps as Props, GlobalData, Spec } from '../../types/common';
+import { SchemaDefinition } from 'redoc';
+import { ApiSchemaProps as Props, Spec } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
+import { useSpec } from '../../hooks/useSpec';
 
 const ApiSchema: React.FC<Props> = ({
   id,
@@ -17,41 +14,14 @@ const ApiSchema: React.FC<Props> = ({
   pointer,
   ...rest
 }: Props): JSX.Element => {
-  const { isDarkTheme } = useColorMode();
   const allData = useAllPluginInstancesData<Spec>('docusaurus-plugin-redoc');
-  const { lightTheme, darkTheme, redocOptions } = usePluginData<GlobalData>(
-    'docusaurus-theme-redoc',
-  );
-  const theme = isDarkTheme ? darkTheme : lightTheme;
+  const { specUrl, content } =
+    allData[id as string] || Object.values(allData)[0];
 
-  const store = useMemo(() => {
-    const { specUrl, content, type } =
-      allData[id as string] ||
-      Object.values(allData).filter(
-        ({ type: dataType }) => dataType === 'object',
-      )?.[0];
-
-    if (type !== 'object' || !content) {
-      console.warn(
-        { allData },
-        '[Redocusaurus] ApiSchems needs a spec file to render',
-      );
-      return null;
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return new AppStore(content as any, specUrl, {
-      ...redocOptions,
-      theme,
-    });
-  }, [id, allData, redocOptions, theme]);
-
-  if (!store) {
-    // @ts-expect-error fix return type
-    return null;
-  }
+  const { store, options } = useSpec(content, specUrl);
 
   return (
-    <ThemeProvider theme={store.options.theme}>
+    <ThemeProvider theme={options.theme}>
       <div
         className={clsx([
           'redocusaurus',
