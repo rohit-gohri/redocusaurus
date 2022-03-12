@@ -1,17 +1,11 @@
 import type { Props as LayoutProps } from '@theme/Layout';
-import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
+import type { ObjectDescriptionProps } from 'redoc';
 
-export type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[] // eslint-disable-next-line @typescript-eslint/ban-types
-    : T[P] extends object
-    ? RecursivePartial<T[P]>
-    : T[P];
-};
+export type ParsedSpec = Record<string, unknown>;
 
 export interface SpecProps {
-  spec: Record<string, unknown>;
-  specUrl?: string;
+  spec: ParsedSpec;
+  url?: string;
 }
 
 export type RedocProps = SpecProps;
@@ -32,28 +26,7 @@ export type ApiSchemaProps = Omit<
   example?: boolean;
 };
 
-export type Spec = {
-  specUrl?: string;
-  content: Record<string, unknown>;
-};
-
 export type ApiDocProps = {
+  specProps: SpecProps;
   layoutProps?: Omit<LayoutProps, 'children'>;
-  spec: Spec;
-};
-
-export type RedocThemeOverrides = RecursivePartial<
-  NonNullable<RedocRawOptions['theme']>
->;
-
-export interface ThemeOptions {
-  primaryColor?: string;
-  redocTheme?: Partial<RedocRawOptions['theme']>;
-  redocOptions?: Partial<Omit<RedocRawOptions, 'theme'>>;
-}
-
-export type GlobalData = {
-  redocOptions: NonNullable<ThemeOptions['redocOptions']>;
-  darkTheme: Partial<RedocRawOptions['theme']>;
-  lightTheme: Partial<RedocRawOptions['theme']>;
 };

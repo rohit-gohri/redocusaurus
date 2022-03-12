@@ -41,7 +41,6 @@ export default function preset(
         {
           id: `plugin-redoc-${index}`,
           ...pluginOpts,
-          routePath: pluginOpts.routePath ?? `/api/${index}`,
           debug,
         },
       ]),
