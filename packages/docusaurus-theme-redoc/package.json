@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-theme-redoc",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
   "dependencies": {
+    "@docusaurus/theme-common": "^2.0.0-beta.17",
     "@docusaurus/types": "^2.0.0-beta.17",
     "clsx": "^1.1.1",
     "copyfiles": "^2.4.1",

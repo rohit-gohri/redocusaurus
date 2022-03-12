@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - main
-      - v0.5
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   YARN_COMPRESSION_LEVEL: 0
@@ -26,15 +29,10 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies 📦
-        run: |
-          yarn
-        env:
-          NPM_CONFIG_PREFER_OFFLINE: 'true'
-          NPM_CONFIG_SILENT: 'true'
-          NPM_CONFIG_NO_AUDIT: 'true'
+        run: yarn install --immutable
 
       - name: Build Packages 🔨
-        run: yarn build
+        run: yarn build:packages
 
       - name: Build Website 🔨
         run: yarn build:website

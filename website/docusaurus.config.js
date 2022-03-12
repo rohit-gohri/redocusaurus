@@ -1,3 +1,10 @@
+let version = "v0";
+try {
+  version = require('./version.json');
+}
+catch(err){
+}
+
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
 }
@@ -113,6 +120,20 @@ const config = {
             {
               label: 'Using Spec YAML',
               to: '/examples/using-spec-yaml/',
+            },
+          ],
+        },
+        {
+          label: version,
+          position: 'right',
+          items: [
+            {
+              label: 'v0',
+              href: 'https://redocusaurus-v0.vercel.app/',
+            },
+            {
+              label: 'v1',
+              href: 'https://redocusaurus.vercel.app',
             },
           ],
         },
