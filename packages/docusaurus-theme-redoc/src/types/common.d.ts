@@ -1,6 +1,13 @@
 import type { Props as LayoutProps } from '@theme/Layout';
 import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
-import type { RecursivePartial } from './util';
+
+export type RecursivePartial<T> = {
+  [P in keyof T]?: T[P] extends (infer U)[]
+    ? RecursivePartial<U>[] // eslint-disable-next-line @typescript-eslint/ban-types
+    : T[P] extends object
+    ? RecursivePartial<T[P]>
+    : T[P];
+};
 
 export interface SpecProps {
   spec: Record<string, unknown>;
