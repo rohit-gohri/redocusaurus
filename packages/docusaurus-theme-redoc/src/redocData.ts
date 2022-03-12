@@ -18,7 +18,7 @@ const getDefaultTheme = (
     {
       colors: {
         primary: {
-          main: primaryColor || 'var(--ifm-color-primary)',
+          main: primaryColor || '#25c2a0',
         },
       },
     },
@@ -43,11 +43,6 @@ const DOCUSAURUS = {
  * Theme override that is independant of Light/Black themes
  */
 const COMMON_THEME: RedocThemeOverrides = {
-  colors: {
-    primary: {
-      main: 'var(--ifm-color-primary)',
-    },
-  },
   typography: {
     fontFamily: 'var(--ifm-font-family-base)',
     fontSize: 'var(--ifm-font-size-base)',
@@ -142,10 +137,7 @@ export function getGlobalData({
   theme: customTheme,
   options,
 }: ThemeOptions): GlobalData {
-  const overrides =
-    primaryColor || customTheme
-      ? getDefaultTheme(primaryColor, customTheme)
-      : {};
+  const overrides = getDefaultTheme(primaryColor, customTheme);
 
   const { lightTheme, darkTheme } = getRedocThemes(overrides);
 
