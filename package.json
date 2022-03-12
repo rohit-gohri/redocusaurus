@@ -15,7 +15,7 @@
     "release": "yarn build && changeset publish",
     "start": "yarn build && yarn workspace redocusaurus-website run start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "changeset version && yarn",
+    "version": "changeset version && yarn install --no-immutable",
     "prepare": "husky install"
   },
   "repository": {
