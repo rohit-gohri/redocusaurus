@@ -7,6 +7,7 @@ import type {
 } from '@docusaurus/types';
 import { normalizeUrl } from '@docusaurus/utils';
 import YAML from 'yaml';
+import { loadAndBundleSpec } from 'redoc';
 
 import {
   Spec,
@@ -21,7 +22,7 @@ export { PluginOptions };
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
-): Plugin<Record<string, unknown> | null> {
+): Plugin<Record<string, unknown>> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
   const { debug, spec, specUrl } = options;
@@ -32,19 +33,20 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      let content: Record<string, unknown> | null = null;
+      let parsedSpec: Record<string, unknown> | null = null;
       if (spec) {
         const file = fs.readFileSync(spec).toString();
 
         if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
-          const parsedSpec = YAML.parse(file);
-          content = parsedSpec;
-        } else content = JSON.parse(file);
+          parsedSpec = YAML.parse(file);
+        } else parsedSpec = JSON.parse(file);
       }
+      const content = await loadAndBundleSpec(parsedSpec || specUrl!);
       if (debug) {
         console.error('[REDOCUSAURUS_PLUGIN] Content:', content);
       }
-      return content;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return content as any;
     },
     getPathsToWatch() {
       if (!spec) {
@@ -61,17 +63,15 @@ export default function redocPlugin(
       }
       const data: Spec = {
         specUrl,
-        type: content ? 'object' : 'url',
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        content: (content || specUrl) as any,
+        content,
       };
       setGlobalData(data);
       const specData = await createData(
-        `redocApiSpec-${options.id || '1'}.json`,
+        `redocApiSpecV1-${options.id || '1'}.json`,
         JSON.stringify(data),
       );
       const layoutData = await createData(
-        `redocApiLayout-${options.id || '1'}.json`,
+        `redocApiLayoutV1-${options.id || '1'}.json`,
         JSON.stringify(options.layout),
       );
 
@@ -79,6 +79,7 @@ export default function redocPlugin(
         const routePath = options.routePath.startsWith('/')
           ? options.routePath.slice(1)
           : options.routePath;
+
         const routeOptions = {
           path: normalizeUrl([baseUrl, routePath]),
           component: options.apiDocComponent,
