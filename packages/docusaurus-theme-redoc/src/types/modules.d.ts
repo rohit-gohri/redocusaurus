@@ -4,14 +4,6 @@ interface SpecProps {
   url?: string;
 }
 
-declare module '@theme/ServerStyle' {
-  /**
-   * @see https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743
-   */
-  const ServerStyle: (props: { from: React.ReactNode }) => JSX.Element;
-  export default ServerStyle;
-}
-
 declare module '@theme/Redoc' {
   const Redoc: (props: SpecProps) => JSX.Element;
   export default Redoc;
