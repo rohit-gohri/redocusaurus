@@ -29,7 +29,15 @@ const sections = [
   },
   {
     title: <>⚡️ Blazing Fast</>,
-    description: <>Support for Server Side Rendering!</>,
+    description: (
+      <>
+        Support for
+        <a href="/docs/guides/build-time-rendering">
+          {' '}
+          Build Time Rendering!
+        </a>
+      </>
+    ),
   },
 ];
 

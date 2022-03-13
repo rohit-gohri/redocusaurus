@@ -1,17 +1,22 @@
 # Redocusaurus
 
-[![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)](https://www.npmjs.com/package/redocusaurus/)
-[![Typed with TypeScript](https://img.shields.io/badge/Typed-555555.svg?style=flat-square&logo=typescript&labelColor=fff)](https://www.typescriptlang.org/)
+[![npm](https://img.shields.io/npm/v/redocusaurus)](https://www.npmjs.com/package/redocusaurus/)
+![npm](https://img.shields.io/npm/dw/redocusaurus)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/redocusaurus)
+[![Typed with TypeScript](https://img.shields.io/badge/Typed-555555.svg?logo=typescript&labelColor=fff)](https://www.typescriptlang.org/)
+[![Build and Deploy](https://github.com/rohit-gohri/redocusaurus/actions/workflows/build.yml/badge.svg)](https://github.com/rohit-gohri/redocusaurus/actions/workflows/build.yml)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/rohit-gohri/redocusaurus/main?logo=github)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/fef74697/redocusaurus)
 
 [Redoc](https://github.com/redocly/redoc) for [Docusaurus v2](https://v2.docusaurus.io/).
 
 ## Usage
 
-Check the [documentation on the website](https://rohit-gohri.github.io/redocusaurus/docs).
+Check the [documentation on the website](https://redocusaurus.vercel.app/docs).
 
 ## Demo
 
-See [Examples](https://rohit-gohri.github.io/redocusaurus/examples/)
+See [Examples](https://redocusaurus.vercel.app/examples/)
 
 ## Packages
 
@@ -33,7 +38,7 @@ Docs website and example project show casing the preset in action with multiple 
 
 #### Who is using Redocusaurus?
 
-See [**Who is using Redocusaurus?** section in docs.](https://rohit-gohri.github.io/redocusaurus/docs/who-is-using-redocusaurus)
+See [**Who is using Redocusaurus?** section in docs.](https://redocusaurus.vercel.app/docs/who-is-using-redocusaurus)
 
 ## Contributing
 

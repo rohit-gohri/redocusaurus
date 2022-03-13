@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/docs/guides/server-side-rendering",
+      "destination": "/docs/guides/build-time-rendering",
+      "permanent": true
+    }
+  ]
+}

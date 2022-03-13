@@ -26,4 +26,4 @@ An object to pass as layout props. Useful to set title/description of the page. 
 
 ## Docs
 
-See <https://rohit-gohri.github.io/redocusaurus/docs> for examples and programmatic usage.
+See <https://redocusaurus.vercel.app/docs> for examples and programmatic usage.

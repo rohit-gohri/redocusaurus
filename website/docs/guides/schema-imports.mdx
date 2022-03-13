@@ -46,16 +46,13 @@ const config = {
           {
             id: 'using-spec-yaml',
             spec: 'openapi.yaml',
-            /**
-             * This becomes the Download URL in this case, while docs are generated from `spec` file
-             */
-            specUrl: `/openapi-page.yaml`,
-            routePath: '/examples/using-spec-yaml/',
+            url: `/openapi-page.yaml`,
+            route: '/examples/using-spec-yaml/',
           },
           {
             id: 'using-spec-url',
-            specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/examples/using-spec-url/',
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/examples/using-spec-url/',
           },
         ],
         theme: {
@@ -67,7 +64,7 @@ const config = {
            * Options to pass to redoc
            * @see https://github.com/redocly/redoc#redoc-options-object
            */
-          redocOptions: { disableSearch: true },
+          options: { disableSearch: true },
         },
       },
     ],

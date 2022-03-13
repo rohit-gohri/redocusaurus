@@ -1,5 +1,6 @@
 ---
-title: Server Side Rendering
+title: Build Time Rendering
+description: Parse the OpenAPI schema at build time and skip the loading screen
 ---
 
 :::caution
@@ -8,15 +9,14 @@ title: Server Side Rendering
 
 ## Prerequisites
 
-To enable SSR you have to do 2 things:
+To enable Build Time rendering of docs you have to do 2 things:
 
 ### Updating your Root theme component
 
-Use the custom ServerStyle component in your [Theme Root](https://docusaurus.io/docs/using-themes#wrapper-your-site-with-root) (as mentioned in <https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743>) for SSR like below:
+Use the custom ServerStyle component in your [Theme Root](https://docusaurus.io/docs/using-themes#wrapper-your-site-with-root) (as mentioned in <https://github.com/facebook/docusaurus/issues/3236#issuecomment-788953743>) like below:
 
 ```tsx title="src/theme/Root/index.tsx"
 import React from 'react';
-
 import ServerStyle from '@theme/ServerStyle';
 
 function Root({ children }: { children: React.Component }): JSX.Element {
@@ -35,9 +35,9 @@ export default Root;
 
 ### Use yaml files rather than urls to load OpenAPI files
 
-To enable SSR we need to parse the schema at build time so it needs to passed on as a yaml and it will be processed to JSON. This has a side-effect of the download button pointing to the JSON, to fix this you can also provide a `specUrl` to the original url that will be used as the download link.
+To enable build time rendering we need to parse the schema at build time so it can be processed to JSON. For this it needs to passed on as a yaml file. This has a side-effect of the download button pointing to the processed JSON, to fix this you can also provide the original url as `specUrl` and it will be used as the download link.
 
-```js title="docusaurs.config.js"
+```js title="docusaurus.config.js"
 const config = {
   presets: [
     [
