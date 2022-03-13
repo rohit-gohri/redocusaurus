@@ -2,6 +2,7 @@ import React from 'react';
 import { Redoc as RedocComponent } from 'redoc';
 import { SpecProps } from '../../types/common';
 import { useSpec } from '../../hooks/useSpec';
+import { ServerStyles } from './Styles';
 import './styles.css';
 
 /*!
@@ -14,9 +15,12 @@ function Redoc(props: SpecProps): JSX.Element {
   const { store } = useSpec(props);
 
   return (
-    <div className="redocusaurus">
-      <RedocComponent store={store} />
-    </div>
+    <>
+      <ServerStyles store={store} />
+      <div className="redocusaurus">
+        <RedocComponent store={store} />
+      </div>
+    </>
   );
 }
 

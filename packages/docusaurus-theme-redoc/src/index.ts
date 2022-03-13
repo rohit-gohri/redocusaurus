@@ -15,7 +15,7 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    configureWebpack() {
+    configureWebpack(_config, isServer) {
       return {
         resolve: {
           fallback: {
@@ -29,6 +29,14 @@ export default function redocTheme(
             ),
           }),
           new NodePolyfillPlugin(),
+          ...(isServer
+            ? [
+                new webpack.NormalModuleReplacementPlugin(
+                  /theme\/Redoc\/Styles\.jsx/,
+                  path.join(__dirname, 'theme', 'Redoc', 'ServerStyles.js'),
+                ),
+              ]
+            : []),
         ],
       };
     },
