@@ -27,7 +27,7 @@
            {
              specs: [
                {
-                 specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
                },
              ],
            },

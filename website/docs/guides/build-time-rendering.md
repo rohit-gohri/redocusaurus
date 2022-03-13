@@ -4,12 +4,12 @@ description: Parse the OpenAPI schema at build time and skip the loading screen
 ---
 
 :::caution
-**NOTE:** This is in Beta. Please [add your feedback here](https://github.com/rohit-gohri/redocusaurus/discussions/88)
+**NOTE:** This is EXPERIMENTAL. Please [add your feedback here](https://github.com/rohit-gohri/redocusaurus/discussions/88)
 :::
 
 ## Prerequisites
 
-To enable Build Time rendering of docs you have to do 2 things:
+To enable Build Time rendering of docs you have to add a custom Root component
 
 ### Updating your Root theme component
 
@@ -31,43 +31,4 @@ function Root({ children }: { children: React.Component }): JSX.Element {
 }
 
 export default Root;
-```
-
-### Use yaml files rather than urls to load OpenAPI files
-
-To enable build time rendering we need to parse the schema at build time so it can be processed to JSON. For this it needs to passed on as a yaml file. This has a side-effect of the download button pointing to the processed JSON, to fix this you can also provide the original url as `specUrl` and it will be used as the download link.
-
-```js title="docusaurus.config.js"
-const config = {
-  presets: [
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            spec: 'openapi.yaml',
-            /**
-             * This becomes the Download URL in this case, while docs are generated from `spec`
-             */
-            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/examples/using-spec-yaml/',
-          },
-        ],
-        theme: {
-          /**
-           * Highlight color for docs
-           */
-          primaryColor: '#1890ff',
-          /**
-           * Options to pass to redoc
-           * @see https://github.com/redocly/redoc#redoc-options-object
-           */
-          redocOptions: { disableSearch: true },
-        },
-      },
-    ],
-    '@docusaurus/preset-classic',
-  ],
-  title: 'Redocusaurus',
-};
 ```

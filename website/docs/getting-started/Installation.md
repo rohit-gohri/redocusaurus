@@ -11,6 +11,8 @@ author_url: https://rohit.page
 
 ```sh
 npm i --save redocusaurus
+# OR
+yarn add redocusaurus
 ```
 
 1. Add it as a preset to your docusaurus config and pass options:
@@ -29,11 +31,15 @@ npm i --save redocusaurus
              // Plugin Options
              specs: [
                {
-                 specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
+                 route: '/api/',
                },
              ],
              // Theme Options
-             theme: {},
+             theme: {
+               // Change with your site colors
+               primaryColor: '#1890ff',
+             },
            },
          ],
        ],
@@ -56,10 +62,14 @@ npm i --save redocusaurus
              specs: [
                {
                  spec: 'openapi.yaml',
+                 route: '/api/',
                },
              ],
              // Theme Options
-             theme: {},
+             theme: {
+               // Change with your site colors
+               primaryColor: '#1890ff',
+             },
            },
          ],
        ],
@@ -67,42 +77,9 @@ npm i --save redocusaurus
      };
      ```
 
-The API Doc will be available by default at `/api/` path. If you wish to
-override this path, you may set the `routePath` option. To skip adding a
-route altogether, set the `addRoute` option to false. You will still be
-able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports).
-
-```js
-// docusaurus.config.js
-
-module.exports = {
-  // ...
-  presets: [
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'default-route',
-            // routePath: '/api/',
-            // addRoute: true,
-          },
-          {
-            id: 'route-overridden',
-            routePath: '/different-path/',
-            // addRoute: true,
-          },
-          {
-            id: 'no-route',
-            addRoute: false,
-          },
-        ],
-      },
-    ],
-  ],
-  // ...
-};
-```
+The API Doc will be available at the path specific by `route`. To skip adding a
+route altogether just don't set the `route` property. You will still be
+able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports) or through Custom Pages.
 
 ## Options
 
