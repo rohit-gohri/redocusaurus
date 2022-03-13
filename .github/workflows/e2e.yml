@@ -1,0 +1,46 @@
+name: E2E
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  YARN_COMPRESSION_LEVEL: 0
+  YARN_ENABLE_GLOBAL_CACHE: true
+
+jobs:
+  percy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      - name: Install Dependencies 📦
+        run: yarn install --immutable
+
+      - name: Wait for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        id: vercel-preview
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 200
+          check_interval: 5
+
+      - name: Run Percy
+        run: yarn test
+        working-directory: website
+        env:
+          TARGET_URL: ${{ steps.vercel-preview.outputs.url }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

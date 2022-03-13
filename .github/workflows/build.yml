@@ -1,10 +1,19 @@
 name: Build and Deploy
+
 on:
   pull_request:
   push:
     branches:
       - main
-      - docs/**
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  YARN_COMPRESSION_LEVEL: 0
+  YARN_ENABLE_GLOBAL_CACHE: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,17 +29,12 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies 📦
-        run: |
-          yarn
-        env:
-          NPM_CONFIG_PREFER_OFFLINE: 'true'
-          NPM_CONFIG_SILENT: 'true'
-          NPM_CONFIG_NO_AUDIT: 'true'
+        run: yarn install --immutable
 
       - name: Build Packages 🔨
-        run: yarn build
+        run: yarn build:packages
 
-      - name: Build Example 🔨
+      - name: Build Website 🔨
         run: yarn build:website
         env:
           DEPLOY_PRIME_URL: https://rohit-gohri.github.io/

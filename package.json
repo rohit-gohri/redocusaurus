@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "description": "Redoc for DocusaurusV2",
   "scripts": {
-    "build": "yarn workspaces foreach --exclude 'redocusaurus-website' -t run build",
-    "build:website": "yarn workspace redocusaurus-website run build",
-    "clean": "yarn workspaces foreach -A exec \"rm -rf dist* .tsbuild*.info\"",
-    "dev": "yarn workspaces foreach --exclude redocusaurus-website -p run dev",
+    "build": "yarn build:packages && yarn build:website",
+    "build:packages": "yarn workspaces foreach --exclude redocusaurus-website --exclude redocusaurus-monorepo -tpv run build",
+    "build:website": "yarn workspace redocusaurus exec 'echo \\\"$npm_package_version\\\" > $PROJECT_CWD/website/version.json' && yarn workspace redocusaurus-website run build",
+    "clean": "yarn workspaces foreach -Atv exec \"rm -rf dist* .tsbuild*.info\"",
+    "dev": "concurrently 'yarn dev:packages' 'yarn dev:website'",
+    "dev:packages": "yarn workspaces foreach --exclude redocusaurus-website --exclude redocusaurus-monorepo -piv run dev",
     "dev:website": "yarn workspace redocusaurus-website run dev",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
-    "release": "yarn build && changeset publish",
+    "release": "yarn build:packages && changeset publish --no-git-tag",
     "start": "yarn build && yarn workspace redocusaurus-website run start",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "changeset version && yarn install --no-immutable && sh scripts/combine-changelog.sh",
     "prepare": "husky install"
   },
   "repository": {
@@ -32,34 +35,27 @@
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus#readme",
-  "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
-  },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.1",
-    "@changesets/cli": "^2.18.0",
-    "@types/node": "^16.9.6",
-    "@types/react": "^17.0.24",
-    "@typescript-eslint/eslint-plugin": "^4.31.2",
-    "@typescript-eslint/parser": "^4.31.2",
-    "concurrently": "^6.4.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-typescript": "^14.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
+    "@changesets/changelog-github": "^0.4.3",
+    "@changesets/cli": "^2.21.1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-typescript": "^16.1.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
-    "lerna": "^4.0.0",
-    "lint-staged": "^11.2.6",
-    "prettier": "2.4.1",
-    "typescript": "^4.4.3"
+    "lint-staged": "^12.3.5",
+    "prettier": "2.5.1",
+    "typescript": "^4.6.2"
   },
   "engines": {
-    "node": ">=10.15.1"
+    "node": ">=14"
   },
   "workspaces": {
     "packages": [
@@ -82,5 +78,5 @@
     "printWidth": 80,
     "tabWidth": 2
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.2.0"
 }

@@ -1,3 +1,10 @@
+let version = "v0";
+try {
+  version = require('./version.json');
+}
+catch(err){
+}
+
 /**
  * @type {import('redocusaurus').PresetEntry}
  */
@@ -36,6 +43,11 @@ const redocusaurus = [
        * @see https://github.com/redocly/redoc#redoc-options-object
        */
       redocOptions: { hideDownloadButton: false, disableSearch: true },
+      /**
+       * Options to pass to override RedocThemeObject
+       * @see https://github.com/Redocly/redoc#redoc-theme-object
+       */
+      redocTheme: {},
     },
   },
 ];
@@ -81,7 +93,42 @@ const config = {
         {
           label: 'Examples',
           position: 'left',
-          to: '/examples',
+          items: [
+            {
+              label: 'All',
+              to: '/examples',
+            },
+            {
+              label: 'Custom Page',
+              to: '/examples/custom-page/',
+            },
+            {
+              label: 'Custom Layout',
+              to: '/examples/custom-layout/',
+            },
+            {
+              label: 'Using Spec URL',
+              to: '/examples/using-spec-url/',
+            },
+            {
+              label: 'Using Spec YAML',
+              to: '/examples/using-spec-yaml/',
+            },
+          ],
+        },
+        {
+          label: version,
+          position: 'right',
+          items: [
+            {
+              label: 'v0',
+              href: 'https://redocusaurus-v0.vercel.app/',
+            },
+            {
+              label: 'v1',
+              href: 'https://redocusaurus.vercel.app',
+            },
+          ],
         },
         {
           href: 'https://github.com/rohit-gohri/redocusaurus',
@@ -128,8 +175,7 @@ const config = {
             },
             {
               label: 'Twitter Discussion',
-              href:
-                'https://twitter.com/rohit_gohri/status/1351589213565644801',
+              href: 'https://twitter.com/rohit_gohri/status/1351589213565644801',
             },
           ],
         },

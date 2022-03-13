@@ -137,3 +137,5 @@ static/openapi
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+website/version.json

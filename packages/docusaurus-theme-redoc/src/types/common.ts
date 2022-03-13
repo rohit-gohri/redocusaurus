@@ -1,11 +1,16 @@
 import type { Props as LayoutProps } from '@theme/Layout';
-import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
+import type {
+  RedocRawOptions,
+  ObjectDescriptionProps,
+  RedocStandaloneProps,
+} from 'redoc';
 import type { RecursivePartial } from './util';
 
-export type RedocProps = {
+export interface RedocProps
+  extends Omit<RedocStandaloneProps, 'spec' | 'specUrl' | 'options'> {
   spec?: Record<string, unknown>;
   specUrl?: string;
-};
+}
 
 export type ApiSchemaProps = Omit<
   ObjectDescriptionProps,
@@ -47,6 +52,7 @@ export type RedocThemeOverrides = RecursivePartial<
 
 export interface ThemeOptions {
   primaryColor?: string;
+  redocTheme?: Partial<RedocRawOptions['theme']>;
   redocOptions?: Partial<Omit<RedocRawOptions, 'theme'>>;
 }
 

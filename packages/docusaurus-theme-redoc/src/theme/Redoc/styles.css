@@ -60,7 +60,9 @@ html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
 /** Fixes https://github.com/rohit-gohri/redocusaurus/issues/65 */
 html:not([data-theme='dark'])
   .redocusaurus
-  div[id^='operation']
+  .redoc-wrap
+  .api-content
+  > div
   > div:nth-child(1)
   > div:nth-child(2)
   h3 {

@@ -1,5 +1,64 @@
 # redocusaurus
 
+## 0.9.2
+
+### Patch Changes
+
+- Updated dependencies [[`13ae596`](https://github.com/rohit-gohri/redocusaurus/commit/13ae59674e30cd1f2c7129abd17cf2e146e3808a)]:
+  - docusaurus-theme-redoc@0.9.2
+
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies [[`6b233fe`](https://github.com/rohit-gohri/redocusaurus/commit/6b233fe9b42e43dca4f13d5ed0e620c1da17d149)]:
+  - docusaurus-theme-redoc@0.9.1
+
+## 0.9.0
+
+### Patch Changes
+
+- [`0b5c464`](https://github.com/rohit-gohri/redocusaurus/commit/0b5c46483587209fa8adf5e7ad22673808a44ecd) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta-17
+
+- Updated dependencies [[`0b5c464`](https://github.com/rohit-gohri/redocusaurus/commit/0b5c46483587209fa8adf5e7ad22673808a44ecd), [`0e862a5`](https://github.com/rohit-gohri/redocusaurus/commit/0e862a5669d993b705d4c43e0c4a31327a21d865)]:
+  - docusaurus-plugin-redoc@0.9.0
+  - docusaurus-theme-redoc@0.9.0
+
+## 0.8.0
+
+### Patch Changes
+
+- Updated dependencies [[`717d36b`](https://github.com/rohit-gohri/redocusaurus/commit/717d36b16e537c56fa5a5ceda6e7bde8558537cf)]:
+  - docusaurus-theme-redoc@0.8.0
+
+## 0.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`9e97e62`](https://github.com/rohit-gohri/redocusaurus/commit/9e97e62aeeeca1f53bc82801891495e44bc39624)]:
+  - docusaurus-plugin-redoc@0.7.0
+
+## 0.6.0
+
+### Minor Changes
+
+- [#119](https://github.com/rohit-gohri/redocusaurus/pull/119) [`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to beta.15
+
+- [#117](https://github.com/rohit-gohri/redocusaurus/pull/117) [`f285992f`](https://github.com/rohit-gohri/redocusaurus/commit/f285992f55edd968206452264993dd2bb4b7d3e7) Thanks [@homotechsual](https://github.com/homotechsual)! - Remove useThemeContext and switch to the new useColorMode
+
+### Patch Changes
+
+- Updated dependencies [[`ff8ba42`](https://github.com/rohit-gohri/redocusaurus/commit/ff8ba426131788b9f44699ef2ac3b23dfbed1149)]:
+  - docusaurus-plugin-redoc@0.6.0
+  - docusaurus-theme-redoc@0.6.0
+
+## 0.5.1
+
+### Patch Changes
+
+- Updated dependencies [[`c596463`](https://github.com/rohit-gohri/redocusaurus/commit/c596463993c229bee20ff76a6783b9203dc63b27)]:
+  - docusaurus-theme-redoc@0.5.1
+
 ## 0.5.0
 
 ### Patch Changes
