@@ -60,17 +60,17 @@
      };
      ```
 
-The API Doc will be available by default at `/api/` path. To customize it see [full plugin options](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc).
+The API Doc will be available by default at `/api/` path. To customize it see [full plugin options](../docusaurus-plugin-redoc/Readme.md).
 
 ### Options
 
 #### specs
 
-Pass it an array of plugin options, see [docusaurus-plugin-redoc](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc) for individual option details.
+Pass it an array of plugin options, see [docusaurus-plugin-redoc](../docusaurus-plugin-redoc/Readme.md) for individual option details.
 
 #### theme
 
-Pass options to customize the theme, see [docusaurus-theme-redoc](https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-theme-redoc) for individual option details.
+Pass options to customize the theme, see [docusaurus-theme-redoc](../docusaurus-theme-redoc/Readme.md) for individual option details.
 
 ## Docs
 
