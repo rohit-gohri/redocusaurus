@@ -1,11 +1,13 @@
 name: E2E
 
 on:
-  deployment_status:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   percy:
-    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +23,16 @@ jobs:
       - name: Install Dependencies 📦
         run: yarn install --immutable
 
+      - name: Wait for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        id: vercel-preview
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 200
+
       - name: Run Percy
         run: yarn test
         working-directory: website
         env:
-          TARGET_URL: ${{ github.event.deployment_status.target_url }}
+          TARGET_URL: ${{ steps.vercel-preview.outputs.url }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

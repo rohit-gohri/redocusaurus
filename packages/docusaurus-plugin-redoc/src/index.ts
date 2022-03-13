@@ -42,7 +42,7 @@ export default function redocPlugin(
         } else content = JSON.parse(file);
       }
       if (debug) {
-        console.error('[REDOCUSAURUS_PLUGIN] Content:', content);
+        console.error('[REDOCUSAURUS_PLUGIN] Content loaded');
       }
       return content;
     },
