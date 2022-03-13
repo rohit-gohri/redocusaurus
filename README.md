@@ -12,11 +12,11 @@
 
 ## Usage
 
-Check the [documentation on the website](https://rohit-gohri.github.io/redocusaurus/docs).
+Check the [documentation on the website](https://redocusaurus.vercel.app/docs).
 
 ## Demo
 
-See [Examples](https://rohit-gohri.github.io/redocusaurus/examples/)
+See [Examples](https://redocusaurus.vercel.app/examples/)
 
 ## Packages
 
@@ -38,7 +38,7 @@ Docs website and example project show casing the preset in action with multiple 
 
 #### Who is using Redocusaurus?
 
-See [**Who is using Redocusaurus?** section in docs.](https://rohit-gohri.github.io/redocusaurus/docs/who-is-using-redocusaurus)
+See [**Who is using Redocusaurus?** section in docs.](https://redocusaurus.vercel.app/docs/who-is-using-redocusaurus)
 
 ## Contributing
 

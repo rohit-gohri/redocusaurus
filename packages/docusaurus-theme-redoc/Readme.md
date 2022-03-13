@@ -89,4 +89,4 @@ Read More Here: <https://github.com/rohit-gohri/redocusaurus>
 
 ## Docs
 
-See: <https://rohit-gohri.github.io/redocusaurus/docs>
+See: <https://redocusaurus.vercel.app/docs>

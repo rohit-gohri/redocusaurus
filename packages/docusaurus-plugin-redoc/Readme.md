@@ -33,4 +33,4 @@ It will be forwarded a single prop, see [ApiDoc](../docusaurus-theme-redoc/src/t
 
 ## Docs
 
-See: <https://rohit-gohri.github.io/redocusaurus/doc>
+See: <https://redocusaurus.vercel.app/doc>
