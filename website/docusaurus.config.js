@@ -17,6 +17,12 @@ const redocusaurus = [
         route: '/examples/using-spec-yaml/',
       },
       {
+        id: 'using-multi-file-yaml',
+        // Local File
+        spec: 'examples/multi-yaml/index.yaml',
+        route: '/examples/using-multi-file-yaml/',
+      },
+      {
         id: 'using-spec-url',
         // Remote File
         spec: 'https://redocly.github.io/redoc/openapi.yaml',
@@ -118,6 +124,10 @@ const config = {
             {
               label: 'Custom Layout',
               to: '/examples/custom-layout/',
+            },
+            {
+              label: 'Using Multiple YAMLs',
+              to: '/examples/using-multi-file-yaml/',
             },
             {
               label: 'Using Spec URL',

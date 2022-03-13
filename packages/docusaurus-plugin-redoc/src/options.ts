@@ -1,4 +1,5 @@
 import * as Joi from 'joi';
+import { RawConfig } from '@redocly/openapi-core';
 
 type LayoutProps = {
   title?: string;
@@ -21,6 +22,11 @@ export interface PluginOptions {
   route?: string;
   layout?: LayoutProps;
   debug?: boolean;
+  /**
+   * Redocly config to bundle file
+   * @see https://redocly.com/docs/cli/configuration/configuration-file/
+   */
+  config?: string | Partial<RawConfig>;
 }
 
 export interface PluginOptionsWithDefault extends PluginOptions {
@@ -39,4 +45,5 @@ export const PluginOptionSchema = Joi.object<PluginOptions>({
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
   route: Joi.string().uri({ relativeOnly: true }).optional(),
+  config: Joi.any().optional(),
 });
