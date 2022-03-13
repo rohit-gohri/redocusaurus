@@ -1,0 +1,29 @@
+name: E2E
+
+on:
+  deployment_status:
+
+jobs:
+  percy:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          # FIXME: See https://github.com/actions/cache/issues/319
+          # cache: 'yarn'
+
+      - name: Install Dependencies 📦
+        run: yarn install --immutable
+
+      - name: Run Percy
+        run: yarn test
+        working-directory: website
+        env:
+          TARGET_URL: ${{ github.event.deployment_status.target_url }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
