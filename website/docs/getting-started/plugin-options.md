@@ -20,8 +20,4 @@ Route URL at which docs would be available, this will use the theme component `@
 
 ### layout (optional, object: layoutProps)
 
-An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](./src/options.ts#L3).
-
-### layout
-
 An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc/src/options.ts#L3).
