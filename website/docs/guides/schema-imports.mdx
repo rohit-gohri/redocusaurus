@@ -44,14 +44,10 @@ const config = {
       {
         specs: [
           {
-            id: 'using-spec-url',
+            id: 'using-spec-yaml',
+            spec: 'openapi.yaml',
             specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
             routePath: '/examples/using-spec-url/',
-          },
-          {
-            id: 'using-relative-url',
-            specUrl: `${process.env.DEPLOY_BASE_URL || '/'}openapi-page.yaml`,
-            routePath: '/examples/using-relative-url/',
           },
         ],
         theme: {
@@ -76,16 +72,11 @@ const config = {
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />;
-<ApiSchema id="using-relative-url" pointer="#/components/schemas/Pet" />;
+<ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />;
 ```
 
 ### Results
 
-#### For ID `id="using-spec-url"`
+#### For ID `id="using-spec-yaml"`
 
-<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />
-
-#### For ID `id="using-relative-url"`
-
-<ApiSchema id="using-relative-url" pointer="#/components/schemas/Pet" />
+<ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />
