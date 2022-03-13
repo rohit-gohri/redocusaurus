@@ -7,7 +7,7 @@ import './styles.css';
 
 /*!
  * Redocusaurus
- * https://rohit-gohri.github.io/redocusaurus/
+ * https://redocusaurus.vercel.app/
  * (c) 2021 Rohit Gohri
  * Released under the MIT License
  */

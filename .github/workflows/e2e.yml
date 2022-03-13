@@ -10,6 +10,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  YARN_COMPRESSION_LEVEL: 0
+  YARN_ENABLE_GLOBAL_CACHE: true
+  PERCY_POSTINSTALL_BROWSER: true
+
 jobs:
   percy:
     runs-on: ubuntu-latest

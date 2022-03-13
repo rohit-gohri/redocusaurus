@@ -78,8 +78,8 @@ Note: You should not provide any color using this property, as it will be the sa
 
 ### redocOptions
 
-Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component.  
-See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L6-L11).  
+Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](./src/redocData.ts#L5-L12).  
+
 Available properties [here](https://github.com/Redocly/redoc#redoc-options-object).  
 You cannot set theme property using this property, use `redocTheme` instead.
 
@@ -89,4 +89,4 @@ Read More Here: <https://github.com/rohit-gohri/redocusaurus>
 
 ## Docs
 
-See: <https://rohit-gohri.github.io/redocusaurus/docs>
+See: <https://redocusaurus.vercel.app/docs>

@@ -20,7 +20,7 @@ A url pointing to an OpenAPI spec. If both are present, then this will be used a
 
 ### layout
 
-An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc/src/options.ts#L3).
+An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](./src/options.ts#L3).
 
 ### routePath (default: `/api/`)
 
@@ -29,8 +29,8 @@ Route URL at which docs would be available
 ### apiDocComponent (default: `@theme/ApiDoc`)
 
 If you want to use a custom component to render the spec instead of the one with `docusaurus-theme-redoc` then overwrite this with a path to the component.
-It will be forwarded a single prop, see [ApiDoc](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/theme/ApiDoc/ApiDoc.tsx) for example.
+It will be forwarded a single prop, see [ApiDoc](../docusaurus-theme-redoc/src/theme/ApiDoc/ApiDoc.tsx) for example.
 
 ## Docs
 
-See: <https://rohit-gohri.github.io/redocusaurus/doc>
+See: <https://redocusaurus.vercel.app/doc>
