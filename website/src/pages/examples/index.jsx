@@ -47,7 +47,7 @@ const sections = [
     link: '/examples/using-spec-yaml/',
     description: (
       <>
-        A server side rendered page (no loading indicator on refresh), made
+        A build time rendered page (no loading indicator on refresh), made
         automatically with{' '}
         <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
           docusaurus-plugin-redoc
