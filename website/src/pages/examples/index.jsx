@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: <>Using Spec URL</>,
-    link: '/examples/using-spec-url/',
+    link: '/examples/using-remote-url/',
     description: (
       <>
         A page made automatically with{' '}
@@ -44,7 +44,7 @@ const sections = [
   },
   {
     title: <>Using YAML Spec</>,
-    link: '/examples/using-spec-yaml/',
+    link: '/examples/using-single-yaml/',
     description: (
       <>
         A build time rendered page (no loading indicator on refresh), made
