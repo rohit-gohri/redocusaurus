@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { Redoc as RedocComponent } from 'redoc';
 import { SpecProps } from '../../types/common';
-import { useSpec } from '../../hooks/useSpec';
+import { useSpec } from '../../utils/useSpec';
 import { ServerStyles } from './Styles';
 import './styles.css';
 
@@ -13,11 +13,11 @@ import './styles.css';
  * Released under the MIT License
  */
 function Redoc(props: SpecProps): JSX.Element {
-  const { store, hasLogo } = useSpec(props);
+  const { store, darkStore, lightStore, hasLogo } = useSpec(props);
 
   return (
     <>
-      <ServerStyles store={store} />
+      <ServerStyles lightStore={lightStore} darkStore={darkStore} />
       <div
         className={clsx(['redocusaurus', hasLogo && 'redocusaurus-has-logo'])}
       >

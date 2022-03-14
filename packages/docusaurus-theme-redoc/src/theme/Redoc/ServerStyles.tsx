@@ -3,18 +3,85 @@ import { AppStore, Redoc } from 'redoc';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
+import { OnlyOnClient } from '../../utils/OnlyOnClient';
 
-export function ServerStyles({ store }: { store: AppStore }) {
-  const sheet = new ServerStyleSheet();
-  renderToString(sheet.collectStyles(React.createElement(Redoc, { store })));
-  const css = sheet.getStyleTags();
+/**
+ * @see https://stackoverflow.com/a/54077142
+ */
+const prefixCssSelectors = function (rules: string, className: string) {
+  const classLen = className.length;
+  let char, nextChar, isAt, isIn;
+
+  // makes sure the className will not concatenate the selector
+  className += ' ';
+
+  // removes comments
+  rules = rules.replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, '');
+
+  // makes sure nextChar will not target a space
+  rules = rules.replace(/}(\s*)@/g, '}@');
+  rules = rules.replace(/}(\s*)}/g, '}}');
+
+  for (let i = 0; i < rules.length - 2; i++) {
+    char = rules[i];
+    nextChar = rules[i + 1];
+
+    if (char === '@' && nextChar !== 'f') isAt = true;
+    if (!isAt && char === '{') isIn = true;
+    if (isIn && char === '}') isIn = false;
+
+    if (
+      !isIn &&
+      nextChar !== '@' &&
+      nextChar !== '}' &&
+      (char === '}' || char === ',' || ((char === '{' || char === ';') && isAt))
+    ) {
+      rules = rules.slice(0, i + 1) + className + rules.slice(i + 1);
+      i += classLen;
+      isAt = false;
+    }
+  }
+
+  // prefix the first select if it is not `@media` and if it is not yet prefixed
+  if (rules.indexOf(className) !== 0 && rules.indexOf('@') !== 0)
+    rules = className + rules;
+
+  return rules;
+};
+
+const LIGHT_MODE_PREFIX = "html:not([data-theme='dark'])";
+const DARK_MODE_PREFIX = "html([data-theme='dark'])";
+
+export function ServerStyles({
+  lightStore,
+  darkStore,
+}: {
+  lightStore: AppStore;
+  darkStore: AppStore;
+}) {
+  const lightSheet = new ServerStyleSheet();
+  renderToString(
+    lightSheet.collectStyles(React.createElement(Redoc, { store: lightStore })),
+  );
+  const lightCss = lightSheet.getStyleTags();
+  const lightModeOnlyCss = prefixCssSelectors(
+    lightCss,
+    LIGHT_MODE_PREFIX,
+  ).slice(LIGHT_MODE_PREFIX.length + 1);
+
+  const darkSheet = new ServerStyleSheet();
+  renderToString(
+    darkSheet.collectStyles(React.createElement(Redoc, { store: darkStore })),
+  );
+  const darkCss = darkSheet.getStyleTags();
+  const darkModeOnlyCss = prefixCssSelectors(darkCss, DARK_MODE_PREFIX).slice(
+    DARK_MODE_PREFIX.length + 1,
+  );
 
   return (
-    <div
-      className="redocusaurus-styles"
-      dangerouslySetInnerHTML={{
-        __html: css,
-      }}
-    />
+    <div className="redocusaurus-styles">
+      <OnlyOnClient key="light-mode-styles" html={lightModeOnlyCss} />
+      <OnlyOnClient key="dark-mode-styles" html={darkModeOnlyCss} />
+    </div>
   );
 }
