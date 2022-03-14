@@ -164,10 +164,12 @@ export default function redocPlugin(
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
       }
-      console.error(
-        '[REDOCUSAURUS_PLUGIN] creating static bundle copy for download',
-        staticFile,
-      );
+      if (debug) {
+        console.error(
+          '[REDOCUSAURUS_PLUGIN] creating static bundle copy for download',
+          staticFile,
+        );
+      }
       // create bundled url
       const bundledYaml = stringifyYaml(content.bundle || content.converted);
       fs.writeFileSync(staticFile, bundledYaml);
