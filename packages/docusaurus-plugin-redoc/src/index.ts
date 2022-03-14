@@ -7,6 +7,7 @@ import type {
 } from '@docusaurus/types';
 import { normalizeUrl } from '@docusaurus/utils';
 import { loadAndBundleSpec } from 'redoc';
+import type { OpenAPISpec } from 'redoc/typings/types';
 import {
   formatProblems,
   getTotals,
@@ -31,7 +32,10 @@ export { PluginOptions };
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
-): Plugin<Record<string, unknown>> {
+): Plugin<{
+  converted: OpenAPISpec;
+  bundle?: Record<string, unknown>;
+}> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
   const { debug, spec, url: downloadUrl, config } = options;
@@ -56,7 +60,10 @@ export default function redocPlugin(
         if (debug) {
           console.log('[REDOCUSAURUS_PLUGIN] bundling spec from url', spec);
         }
-        return loadAndBundleSpec(spec!);
+        const converted = await loadAndBundleSpec(spec!);
+        return {
+          converted,
+        };
       }
 
       // If local file
@@ -93,21 +100,26 @@ export default function redocPlugin(
       if (debug) {
         console.log('[REDOCUSAURUS_PLUGIN] File Bundled');
       }
+      const converted = await loadAndBundleSpec(bundledSpec.parsed);
 
       // If download url is not provided then use bundled yaml as a static file (see `postBuild`)
       url = url || fileName;
-      return bundledSpec.parsed;
+
+      return {
+        converted,
+        bundle: bundledSpec.parsed,
+      };
     },
     async contentLoaded({ content, actions }) {
       const { createData, addRoute, setGlobalData } = actions;
-      if (!content) {
+      if (!content?.converted) {
         throw new Error(`[Redocusaurus] Spec could not be parsed: ${spec}`);
       }
 
       const data: SpecProps = {
         url,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        spec: content as any,
+        spec: content.converted as any,
       };
       setGlobalData(data);
 
@@ -142,19 +154,24 @@ export default function redocPlugin(
         addRoute(routeOptions);
       }
     },
-    async postBuild(props) {
+    async postBuild({ content }) {
       if (!isSpecFile || downloadUrl) {
         return;
       }
       // Create a static file from bundled spec
       const staticFile = path.join(context.outDir, fileName);
-      fs.mkdirSync(path.dirname(staticFile));
-      console.error(
-        '[REDOCUSAURUS_PLUGIN] creating static bundle copy for download',
-        staticFile,
-      );
+      const dir = path.dirname(staticFile);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+      }
+      if (debug) {
+        console.error(
+          '[REDOCUSAURUS_PLUGIN] creating static bundle copy for download',
+          staticFile,
+        );
+      }
       // create bundled url
-      const bundledYaml = stringifyYaml(props.content);
+      const bundledYaml = stringifyYaml(content.bundle || content.converted);
       fs.writeFileSync(staticFile, bundledYaml);
     },
     getPathsToWatch() {

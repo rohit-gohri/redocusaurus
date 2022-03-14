@@ -33,7 +33,7 @@ export interface ThemeOptions {
 }
 
 export type GlobalData = {
-  options: NonNullable<ThemeOptions['redocOptions']>;
+  options: NonNullable<ThemeOptions['options']>;
   darkTheme: Partial<RedocRawOptions['theme']>;
   lightTheme: Partial<RedocRawOptions['theme']>;
 };
