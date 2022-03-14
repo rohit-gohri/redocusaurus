@@ -60,13 +60,6 @@ const redocusaurus = [
   },
 ];
 
-let version = "v0";
-try {
-  version = require('./version.json');
-}
-catch(err){
-}
-
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
 }
@@ -140,7 +133,7 @@ const config = {
           ],
         },
         {
-          label: version,
+          label: 'v1',
           position: 'right',
           items: [
             {
