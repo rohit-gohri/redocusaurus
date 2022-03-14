@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
-import { AppStore } from 'redoc';
+import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
 import { GlobalData } from '../types/options';
 
@@ -21,9 +21,12 @@ export function useSpec({ spec, url }: SpecProps) {
     const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
     const theme = isDarkTheme ? darkTheme : lightTheme;
 
-    const options = {
+    const options: RedocRawOptions = {
       ...redocOptions,
       theme,
+      // Disable offset when server rendering
+      scrollYOffset:
+        typeof window === 'undefined' ? 0 : redocOptions.scrollYOffset,
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const store = new AppStore(spec as any, fullUrl, options);
