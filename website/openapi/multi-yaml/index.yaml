@@ -199,10 +199,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'pets.yaml#/components/schemas/Pet'
+                $ref: 'components/pets.yaml#/components/schemas/Pet'
             application/xml:
               schema:
-                $ref: 'pets.yaml#/components/schemas/Pet'
+                $ref: 'components/pets.yaml#/components/schemas/Pet'
         '400':
           description: Invalid ID supplied
         '404':
@@ -333,12 +333,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: 'pets.yaml#/components/schemas/Pet'
+                  $ref: 'components/pets.yaml#/components/schemas/Pet'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: 'pets.yaml#/components/schemas/Pet'
+                  $ref: 'components/pets.yaml#/components/schemas/Pet'
         '400':
           description: Invalid status value
       security:
@@ -373,12 +373,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: 'pets.yaml#/components/schemas/Pet'
+                  $ref: 'components/pets.yaml#/components/schemas/Pet'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: 'pets.yaml#/components/schemas/Pet'
+                  $ref: 'components/pets.yaml#/components/schemas/Pet'
         '400':
           description: Invalid tag value
       security:
@@ -910,11 +910,11 @@ components:
         id:
           description: Order ID
           allOf:
-            - $ref: 'pets.yaml#/components/schemas/Id'
+            - $ref: 'components/pets.yaml#/components/schemas/Id'
         petId:
           description: Pet ID
           allOf:
-            - $ref: 'pets.yaml#/components/schemas/Id'
+            - $ref: 'components/pets.yaml#/components/schemas/Id'
         quantity:
           type: integer
           format: int32
@@ -946,11 +946,11 @@ components:
       type: object
       properties:
         id:
-          $ref: 'pets.yaml#/components/schemas/Id'
+          $ref: 'components/pets.yaml#/components/schemas/Id'
         pet:
           oneOf:
-            - $ref: 'pets.yaml#/components/schemas/Pet'
-            - $ref: 'pets.yaml#/components/schemas/Tag'
+            - $ref: 'components/pets.yaml#/components/schemas/Pet'
+            - $ref: 'components/pets.yaml#/components/schemas/Tag'
         username:
           description: User supplied username
           type: string
@@ -999,7 +999,7 @@ components:
             allOf:
               - description: My Pet
                 title: Pettie
-              - $ref: 'pets.yaml#/components/schemas/Pet'
+              - $ref: 'components/pets.yaml#/components/schemas/Pet'
         application/xml:
           schema:
             type: 'object'
@@ -1056,7 +1056,7 @@ x-webhooks:
         content:
           application/json:
             schema:
-              $ref: 'pets.yaml#/components/schemas/Pet'
+              $ref: 'components/pets.yaml#/components/schemas/Pet'
       responses:
         '200':
           description: Return a 200 status to indicate that the data was received successfully

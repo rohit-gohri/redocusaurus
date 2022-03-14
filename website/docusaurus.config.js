@@ -19,7 +19,7 @@ const redocusaurus = [
       {
         id: 'using-multi-file-yaml',
         // Local File
-        spec: 'examples/multi-yaml/index.yaml',
+        spec: 'openapi/multi-yaml/index.yaml',
         route: '/examples/using-multi-file-yaml/',
       },
       {
