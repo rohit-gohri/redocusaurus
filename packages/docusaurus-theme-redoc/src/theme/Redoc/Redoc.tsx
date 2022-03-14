@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Redoc as RedocComponent } from 'redoc';
 import { SpecProps } from '../../types/common';
 import { useSpec } from '../../hooks/useSpec';
@@ -12,12 +13,14 @@ import './styles.css';
  * Released under the MIT License
  */
 function Redoc(props: SpecProps): JSX.Element {
-  const { store } = useSpec(props);
+  const { store, hasLogo } = useSpec(props);
 
   return (
     <>
       <ServerStyles store={store} />
-      <div className="redocusaurus">
+      <div
+        className={clsx(['redocusaurus', hasLogo && 'redocusaurus-has-logo'])}
+      >
         <RedocComponent store={store} />
       </div>
     </>
