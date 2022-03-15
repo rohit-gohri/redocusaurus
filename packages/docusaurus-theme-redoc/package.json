@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
+    "dist-jsx",
     "src"
   ],
   "scripts": {

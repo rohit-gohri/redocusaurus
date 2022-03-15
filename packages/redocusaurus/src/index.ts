@@ -18,7 +18,7 @@ export default function preset(
   },
 ) {
   let specsArray: PluginOptions[] = [];
-  const { debug = false, specs, theme } = opts;
+  const { debug = false, specs, theme = {} } = opts;
   if (debug) {
     console.error('[REDOCUSAURUS] Options:', opts);
   }
