@@ -26,7 +26,7 @@
     "docusaurus",
     "docusaurus-theme"
   ],
-  "author": "Rohit Gohri <work@rohit.page>",
+  "author": "Rohit Gohri <code@rohit.page>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"

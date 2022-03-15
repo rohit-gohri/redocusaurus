@@ -11,7 +11,7 @@
     "url": "https://github.com/rohit-gohri/redocusaurus.git"
   },
   "license": "MIT",
-  "author": "Rohit Gohri <work@rohit.page>",
+  "author": "Rohit Gohri <code@rohit.page>",
   "scripts": {
     "clear": "docusaurus clear",
     "dev": "docusaurus start",
