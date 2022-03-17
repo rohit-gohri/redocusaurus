@@ -6151,7 +6151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-redoc@^0.9.0, docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc":
+"docusaurus-plugin-redoc@0.9.0, docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc"
   dependencies:
@@ -6163,7 +6163,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"docusaurus-theme-redoc@^0.9.2, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
+"docusaurus-theme-redoc@0.9.2, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc"
   dependencies:
@@ -12215,8 +12215,8 @@ __metadata:
   resolution: "redocusaurus@workspace:packages/redocusaurus"
   dependencies:
     "@docusaurus/types": ^2.0.0-beta.17
-    docusaurus-plugin-redoc: ^0.9.0
-    docusaurus-theme-redoc: ^0.9.2
+    docusaurus-plugin-redoc: 0.9.0
+    docusaurus-theme-redoc: 0.9.2
   languageName: unknown
   linkType: soft
 
