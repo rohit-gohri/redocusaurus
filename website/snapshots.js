@@ -13,6 +13,20 @@ module.exports = () => {
     return {
       name,
       url: `${baseUrl}${path}`,
+      additionalSnapshots: [
+        {
+          suffix: ' (Dark Mode)',
+          execute: {
+            // toggle dark-mode
+            afterNavigation() {
+              document
+                .querySelector('[title^="Switch between dark and light mode"]')
+                // @ts-ignore
+                ?.click();
+            },
+          },
+        },
+      ],
     };
   });
 };
