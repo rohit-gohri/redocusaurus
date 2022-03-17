@@ -1,5 +1,17 @@
 # redocusaurus
 
+## 1.0.0
+
+### Major Changes
+
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
+
+### Patch Changes
+
+- Updated dependencies [[`70ced20`](https://github.com/rohit-gohri/redocusaurus/commit/70ced208484dd9b517ce00aeaa9eb42caded673b), [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7), [`e80c03a`](https://github.com/rohit-gohri/redocusaurus/commit/e80c03a2f0e6d1bc02926d0720913eeb2a5dddaf), [`ad66f92`](https://github.com/rohit-gohri/redocusaurus/commit/ad66f92aedd27d4b25a3c902f197e6c6b3c271bb), [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7), [`25fada0`](https://github.com/rohit-gohri/redocusaurus/commit/25fada00ec31a22723190affb324c754f41e3ad0), [`8c26b35`](https://github.com/rohit-gohri/redocusaurus/commit/8c26b35d822d17e279aa12410bffbe5a2ac330aa), [`d2438dd`](https://github.com/rohit-gohri/redocusaurus/commit/d2438ddc7901be1f3d3fb89e68460524592ba087), [`21d76a4`](https://github.com/rohit-gohri/redocusaurus/commit/21d76a45f2827967d35803b0b03773b7709afeca), [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308)]:
+  - docusaurus-theme-redoc@1.0.0
+  - docusaurus-plugin-redoc@1.0.0
+
 ## 0.9.2
 
 ### Patch Changes
