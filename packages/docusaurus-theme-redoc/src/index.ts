@@ -1,7 +1,7 @@
 import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
-import { ThemeOptions, GlobalData } from './types/common';
+import { ThemeOptions, GlobalData } from './types/options';
 import { getGlobalData } from './redocData';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/order
@@ -15,7 +15,7 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    configureWebpack() {
+    configureWebpack(_config, isServer) {
       return {
         resolve: {
           fallback: {
@@ -29,16 +29,20 @@ export default function redocTheme(
             ),
           }),
           new NodePolyfillPlugin(),
+          ...(isServer
+            ? [
+                new webpack.NormalModuleReplacementPlugin(
+                  /theme\/Redoc\/Styles\.jsx/,
+                  path.join(__dirname, 'theme', 'Redoc', 'ServerStyles.js'),
+                ),
+              ]
+            : []),
         ],
       };
     },
     async contentLoaded({ actions }) {
       const { setGlobalData } = actions;
-      const globalData = getGlobalData(
-        options.primaryColor,
-        options.redocTheme,
-        options.redocOptions,
-      );
+      const globalData = getGlobalData(options);
 
       setGlobalData<GlobalData>(globalData);
     },

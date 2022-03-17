@@ -46,8 +46,13 @@ const config = {
           {
             id: 'using-spec-yaml',
             spec: 'openapi.yaml',
-            specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/examples/using-spec-url/',
+            url: `/openapi-page.yaml`,
+            route: '/examples/using-spec-yaml/',
+          },
+          {
+            id: 'using-spec-url',
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/examples/using-spec-url/',
           },
         ],
         theme: {
@@ -59,7 +64,7 @@ const config = {
            * Options to pass to redoc
            * @see https://github.com/redocly/redoc#redoc-options-object
            */
-          redocOptions: { hideDownloadButton: false, disableSearch: true },
+          options: { disableSearch: true },
         },
       },
     ],
@@ -73,6 +78,7 @@ const config = {
 import ApiSchema from '@theme/ApiSchema';
 
 <ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />;
+<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />;
 ```
 
 ### Results
@@ -80,3 +86,7 @@ import ApiSchema from '@theme/ApiSchema';
 #### For ID `id="using-spec-yaml"`
 
 <ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />
+
+#### For ID `id="using-spec-url"`
+
+<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />

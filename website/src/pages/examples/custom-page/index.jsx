@@ -1,20 +1,17 @@
 import React from 'react';
 import ApiDoc from '@theme/ApiDoc';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-const STATIC_SPEC = '/openapi-page.yaml';
+import useSpecData from '@theme/useSpecData';
 
 function CustomPage() {
+  const specData = useSpecData('using-custom-page');
+
   return (
     <ApiDoc
       layoutProps={{
-        title: 'Open API Docs',
-        description: `Open API Reference Docs for API`,
+        title: `Custom page for : ${specData.spec.info?.title}`,
+        description: 'Example showcasing custom page',
       }}
-      spec={{
-        type: 'url',
-        content: useBaseUrl(STATIC_SPEC),
-      }}
+      specProps={specData}
     />
   );
 }

@@ -2,35 +2,28 @@
 
 ![npm](https://img.shields.io/npm/v/docusaurus-plugin-redoc?style=flat-square)
 
-This plugin parses your OpenAPI spec files and creates pages using the `ApiDoc` component from your theme. Use with `docusaurus-theme-redoc`.
+This plugin parses your OpenAPI spec files and makes them available as plugin data. Can use to creates pages using the `@theme/ApiDoc` component from your theme, or render it through custom react pages.
 
-Read More Here: <https://github.com/rohit-gohri/redocusaurus>
+⚠️⚠️⚠️ NOTE: Not recommended for direct use. Use through main package instead: [`redocusaurus`](https://github.com/rohit-gohri/redocusaurus)
 
 ## Options
 
-Either of `spec` or `specUrl` is required (both can also be provided).
+### spec (required, string: file path or remote absolute url)
 
-### spec
+Either a file path to an OpenAPI YAML/JSON file, or a url to one hosted on some website (not the same docusaurus website). Will be **parsed** at build time and forwarded to Redoc component.
 
-A path to a OpenAPI yaml or json file. Will be parsed and forwarded to Redoc component. This has higher priority over specUrl.
+### url (optional, string: download url)
 
-### specUrl
+A url pointing to an OpenAPI spec. This will be used as download url and `spec` will be used for rendering. This is needed because by default the download url will point to a processed and parsed JSON file.
 
-A url pointing to an OpenAPI spec. If both are present, then this will be used as download url and `spec` for rendering.
+### route (optional, string: relative uri)
 
-### layout
+Route URL at which docs would be available, this will use the theme component `@theme/ApiDoc` from `docusaurus-theme-redoc` to render the page. You can also skip this option and render the docs as you wish using a custom page.
+
+### layout (optional, object: layoutProps)
 
 An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](./src/options.ts#L3).
 
-### routePath (default: `/api/`)
-
-Route URL at which docs would be available
-
-### apiDocComponent (default: `@theme/ApiDoc`)
-
-If you want to use a custom component to render the spec instead of the one with `docusaurus-theme-redoc` then overwrite this with a path to the component.
-It will be forwarded a single prop, see [ApiDoc](../docusaurus-theme-redoc/src/theme/ApiDoc/ApiDoc.tsx) for example.
-
 ## Docs
 
-See: <https://redocusaurus.vercel.app/doc>
+See <https://redocusaurus.vercel.app/docs> for examples and programmatic usage.

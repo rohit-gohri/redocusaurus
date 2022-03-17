@@ -6,25 +6,47 @@ import type {
   OptionValidationContext,
 } from '@docusaurus/types';
 import { normalizeUrl } from '@docusaurus/utils';
-import YAML from 'yaml';
+import { loadAndBundleSpec } from 'redoc';
+import type { OpenAPISpec } from 'redoc/typings/types';
+import {
+  formatProblems,
+  getTotals,
+  Config,
+  bundle,
+  loadConfig,
+  stringifyYaml,
+} from '@redocly/openapi-core';
 
 import {
-  Spec,
   PluginOptionSchema,
   PluginOptions,
   PluginOptionsWithDefault,
   DEFAULT_OPTIONS,
 } from './options';
+import { SpecProps, ApiDocProps } from './types/common';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const version = require('../package.json').version;
 
 export { PluginOptions };
 
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
-): Plugin<Record<string, unknown> | null> {
+): Plugin<{
+  converted: OpenAPISpec;
+  bundle?: Record<string, unknown>;
+}> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, specUrl } = options;
+  const { debug, spec, url: downloadUrl, config } = options;
+
+  let url = downloadUrl;
+  const isSpecFile = fs.existsSync(spec);
+  const fileName = path.join(
+    'redocusaurus',
+    `${options.id || 'api-spec'}.yaml`,
+  );
+
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
     console.error('[REDOCUSAURUS_PLUGIN] Options:', options);
@@ -32,61 +54,98 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      let content: Record<string, unknown> | null = null;
-      if (spec) {
-        const file = fs.readFileSync(spec).toString();
+      if (!isSpecFile) {
+        // If spec is a remote url then add it as download url also as a default
+        url = url || spec;
+        if (debug) {
+          console.log('[REDOCUSAURUS_PLUGIN] bundling spec from url', spec);
+        }
+        const converted = await loadAndBundleSpec(spec!);
+        return {
+          converted,
+        };
+      }
 
-        if (spec.endsWith('.yaml') || spec.endsWith('.yml')) {
-          const parsedSpec = YAML.parse(file);
-          content = parsedSpec;
-        } else content = JSON.parse(file);
-      }
+      // If local file
       if (debug) {
-        console.error('[REDOCUSAURUS_PLUGIN] Content loaded');
+        console.log('[REDOCUSAURUS_PLUGIN] reading file: ', spec);
       }
-      return content;
-    },
-    getPathsToWatch() {
-      if (!spec) {
-        return [];
+
+      let redoclyConfig: Config;
+
+      if (config) {
+        if (typeof config === 'string') {
+          redoclyConfig = await loadConfig(config);
+        } else {
+          redoclyConfig = new Config(config);
+        }
+      } else {
+        redoclyConfig = await loadConfig();
       }
-      const contentPath = path.resolve(context.siteDir, spec);
-      return [contentPath];
+
+      const { bundle: bundledSpec, problems } = await bundle({
+        ref: spec,
+        config: redoclyConfig,
+      });
+
+      if (problems?.length) {
+        console.error('[REDOCUSAURUS_PLUGIN] errors while bundling spec', spec);
+
+        formatProblems(problems, {
+          totals: getTotals(problems),
+          version,
+        });
+      }
+
+      if (debug) {
+        console.log('[REDOCUSAURUS_PLUGIN] File Bundled');
+      }
+      const converted = await loadAndBundleSpec(bundledSpec.parsed);
+
+      // If download url is not provided then use bundled yaml as a static file (see `postBuild`)
+      url = url || fileName;
+
+      return {
+        converted,
+        bundle: bundledSpec.parsed,
+      };
     },
     async contentLoaded({ content, actions }) {
       const { createData, addRoute, setGlobalData } = actions;
-      if (!content && !specUrl) {
-        console.error('[Redocusaurus] No spec provided');
-        return;
+      if (!content?.converted) {
+        throw new Error(`[Redocusaurus] Spec could not be parsed: ${spec}`);
       }
-      const data: Spec = {
-        specUrl,
-        type: content ? 'object' : 'url',
+
+      const data: SpecProps = {
+        url,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        content: (content || specUrl) as any,
+        spec: content.converted as any,
       };
       setGlobalData(data);
-      const specData = await createData(
-        `redocApiSpec-${options.id || '1'}.json`,
-        JSON.stringify(data),
-      );
-      const layoutData = await createData(
-        `redocApiLayout-${options.id || '1'}.json`,
-        JSON.stringify(options.layout),
-      );
 
-      if (options.addRoute) {
-        const routePath = options.routePath.startsWith('/')
-          ? options.routePath.slice(1)
-          : options.routePath;
+      if (options.route) {
+        const specProps = await createData(
+          `redocApiSpecV1-${options.id || '1'}.json`,
+          JSON.stringify(data),
+        );
+        const layoutProps = await createData(
+          `redocApiLayoutV1-${options.id || '1'}.json`,
+          JSON.stringify(options.layout),
+        );
+        const routePath = options.route.startsWith('/')
+          ? options.route.slice(1)
+          : options.route;
+
+        const modules: Record<keyof ApiDocProps, string> = {
+          specProps,
+          layoutProps,
+        };
+
         const routeOptions = {
-          path: normalizeUrl([baseUrl, routePath]),
-          component: options.apiDocComponent,
-          modules: {
-            spec: specData,
-            layoutProps: layoutData,
-          },
+          modules,
+          component: '@theme/ApiDoc',
           exact: true,
+          path: normalizeUrl([baseUrl, routePath]),
         };
 
         if (debug) {
@@ -95,15 +154,41 @@ export default function redocPlugin(
         addRoute(routeOptions);
       }
     },
+    async postBuild({ content }) {
+      if (!isSpecFile || downloadUrl) {
+        return;
+      }
+      // Create a static file from bundled spec
+      const staticFile = path.join(context.outDir, fileName);
+      const dir = path.dirname(staticFile);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+      }
+      if (debug) {
+        console.error(
+          '[REDOCUSAURUS_PLUGIN] creating static bundle copy for download',
+          staticFile,
+        );
+      }
+      // create bundled url
+      const bundledYaml = stringifyYaml(content.bundle || content.converted);
+      fs.writeFileSync(staticFile, bundledYaml);
+    },
+    getPathsToWatch() {
+      if (!isSpecFile) {
+        return [];
+      }
+      return [path.resolve(spec)];
+    },
   };
 }
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions>): Promise<void> {
+}: OptionValidationContext<PluginOptions>): PluginOptions {
   const { value, error } = PluginOptionSchema.validate(options);
   if (error) {
     throw error;
   }
-  return value;
+  return value!;
 }

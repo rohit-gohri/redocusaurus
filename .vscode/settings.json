@@ -1,43 +1,42 @@
 {
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "graphql"
-    ],
-    "eslint.options": {
-      "extentions": [".js", ".jsx", ".ts", ".tsx", ".graphql"]
-    },
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-      "editor.formatOnSave": false,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      }
-    },
-    "[javascriptreact]": {
-      "editor.formatOnSave": false,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      }
-    },
-    "[typescript]": {
-      "editor.formatOnSave": false,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      }
-    },
-    "[typescriptreact]": {
-      "editor.formatOnSave": false,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      }
-    },
-    "editor.tabCompletion": "on",
-    "editor.tabSize": 2,
-    "editor.rulers": [80, 120],
-    "typescript.tsdk": "node_modules/typescript/lib"
-  }
-  
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".graphql"]
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.rulers": [80, 120],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
