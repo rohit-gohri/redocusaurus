@@ -3,6 +3,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
+import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
 import { GlobalData } from '../types/options';

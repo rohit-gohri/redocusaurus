@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../global';
 import { AppStore, Redoc } from 'redoc';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';

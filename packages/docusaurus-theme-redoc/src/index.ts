@@ -53,7 +53,10 @@ export default function redocTheme(
       return path.join(__dirname, '..', 'src', 'theme');
     },
     getClientModules() {
-      return [path.join(__dirname, 'custom.css')];
+      return [
+        path.join(__dirname, 'custom.css'),
+        path.join(__dirname, 'global.js'),
+      ];
     },
   };
 }
