@@ -3,7 +3,6 @@ import { AppStore, Redoc } from 'redoc';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
-import { OnlyOnClient } from '../../utils/OnlyOnClient';
 
 /**
  * @see https://stackoverflow.com/a/54077142
@@ -59,29 +58,38 @@ export function ServerStyles({
   lightStore: AppStore;
   darkStore: AppStore;
 }) {
+  const css = {
+    light: '',
+    dark: '',
+  };
   const lightSheet = new ServerStyleSheet();
   renderToString(
     lightSheet.collectStyles(React.createElement(Redoc, { store: lightStore })),
   );
   const lightCss = lightSheet.getStyleTags();
-  const lightModeOnlyCss = prefixCssSelectors(
-    lightCss,
-    LIGHT_MODE_PREFIX,
-  ).slice(LIGHT_MODE_PREFIX.length + 1);
+  css.light = prefixCssSelectors(lightCss, LIGHT_MODE_PREFIX).slice(
+    LIGHT_MODE_PREFIX.length + 1,
+  );
 
   const darkSheet = new ServerStyleSheet();
   renderToString(
     darkSheet.collectStyles(React.createElement(Redoc, { store: darkStore })),
   );
   const darkCss = darkSheet.getStyleTags();
-  const darkModeOnlyCss = prefixCssSelectors(darkCss, DARK_MODE_PREFIX).slice(
+  css.dark = prefixCssSelectors(darkCss, DARK_MODE_PREFIX).slice(
     DARK_MODE_PREFIX.length + 1,
   );
 
   return (
     <div className="redocusaurus-styles">
-      <OnlyOnClient key="light-mode-styles" html={lightModeOnlyCss} />
-      <OnlyOnClient key="dark-mode-styles" html={darkModeOnlyCss} />
+      <div
+        key="light-mode-styles"
+        dangerouslySetInnerHTML={{ __html: css.light }}
+      />
+      <div
+        key="dark-mode-styles"
+        dangerouslySetInnerHTML={{ __html: css.dark }}
+      />
     </div>
   );
 }
