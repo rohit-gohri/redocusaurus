@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
+import '../../global';
 import { SchemaDefinition } from 'redoc';
 import { useSpec } from '../../utils/useSpec';
 import { useSpecData } from '../useSpecData';

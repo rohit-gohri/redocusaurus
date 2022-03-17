@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import '../../global';
 import { Redoc as RedocComponent } from 'redoc';
 import { SpecProps } from '../../types/common';
 import { useSpec } from '../../utils/useSpec';

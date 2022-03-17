@@ -1,4 +1,4 @@
-import { RedocRawOptions } from 'redoc';
+import type { RedocRawOptions } from 'redoc';
 import merge from 'lodash/merge';
 import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
