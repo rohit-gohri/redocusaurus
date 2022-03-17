@@ -8,6 +8,12 @@
     "./plugin": "./dist/plugin.js",
     "./theme": "./dist/theme.js"
   },
+  "files": [
+    "dist",
+    "src",
+    "plugin.js",
+    "theme.js"
+  ],
   "scripts": {
     "build": "tsc && echo \"built preset\"",
     "dev": "tsc -w",

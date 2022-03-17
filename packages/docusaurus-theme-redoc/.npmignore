@@ -1,0 +1,6 @@
+.tsbuild.info
+.tsbuild.jsx.info
+tsconfig.json
+tsconfig.jsx.json
+CHANGELOG.md
+copy.sh
