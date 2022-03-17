@@ -75,7 +75,7 @@ const config = {
         theme: { customCss: [require.resolve('./src/custom.css')] },
         docs: {
           routeBasePath: '/docs',
-          editUrl: 'https://github.com/rohit-gohri/redocusaurus/edit/main/',
+          editUrl: 'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
         },
       },
     ],
