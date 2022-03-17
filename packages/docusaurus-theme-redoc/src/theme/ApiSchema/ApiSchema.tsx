@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import { SchemaDefinition } from 'redoc';
-import { useSpec } from '../../hooks/useSpec';
+import { useSpec } from '../../utils/useSpec';
 import { useSpecData } from '../useSpecData';
 import { ApiSchemaProps as Props } from '../../types/common';
 import '../Redoc/styles.css';

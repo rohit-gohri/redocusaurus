@@ -1,3 +1,7 @@
+.redocusaurus-styles {
+  display: none;
+}
+
 .redocusaurus .redoc-wrap {
   border-bottom: 1px solid var(--ifm-toc-border-color);
 }
@@ -33,8 +37,11 @@ html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
   border-right: 1px solid var(--ifm-toc-border-color);
 }
 
-/* Hide Logo as already in navbar*/
-.redocusaurus .menu-content div:first-child {
+/**
+ * Hide Logo as already in navbar
+ * @see https://github.com/rohit-gohri/redocusaurus/issues/123
+ */
+.redocusaurus-has-logo .menu-content div:first-child {
   display: none;
 }
 
