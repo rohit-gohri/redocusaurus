@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: <>Using Spec URL</>,
-    link: '/examples/using-spec-url/',
+    link: '/examples/using-remote-url/',
     description: (
       <>
         A page made automatically with{' '}
@@ -44,10 +44,10 @@ const sections = [
   },
   {
     title: <>Using YAML Spec</>,
-    link: '/examples/using-spec-yaml/',
+    link: '/examples/using-single-yaml/',
     description: (
       <>
-        A server side rendered page (no loading indicator on refresh), made
+        A build time rendered page (no loading indicator on refresh), made
         automatically with{' '}
         <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
           docusaurus-plugin-redoc

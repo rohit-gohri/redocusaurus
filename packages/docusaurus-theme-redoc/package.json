@@ -3,6 +3,12 @@
   "version": "0.9.2",
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "dist-jsx",
+    "src"
+  ],
   "scripts": {
     "copy": "sh copy.sh",
     "copy:watch": "nodemon --watch ./src/**/*.css -e css --exec \"yarn copy\"",
@@ -21,7 +27,7 @@
     "docusaurus",
     "docusaurus-theme"
   ],
-  "author": "Rohit Gohri <work@rohit.page>",
+  "author": "Rohit Gohri <code@rohit.page>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"

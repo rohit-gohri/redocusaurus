@@ -7,37 +7,34 @@ const redocusaurus = [
     debug: Boolean(process.env.DEBUG || process.env.CI),
     specs: [
       {
-        id: 'using-spec-yaml',
-        // Local File
-        spec: 'openapi.yaml',
-        /**
-         * Download URL while docs are generated from `spec` file
-         */
-        url: `/openapi-page.yaml`,
-        route: '/examples/using-spec-yaml/',
+        id: 'using-single-yaml',
+        spec: 'openapi/single-file/openapi.yaml',
+        route: '/examples/using-single-yaml/',
       },
       {
         id: 'using-multi-file-yaml',
-        // Local File
-        spec: 'openapi/multi-yaml/index.yaml',
+        spec: 'openapi/multi-file/openapi.yaml',
         route: '/examples/using-multi-file-yaml/',
       },
       {
-        id: 'using-spec-url',
+        id: 'using-swagger-json',
+        spec: 'openapi/swagger/swagger.json',
+        route: '/examples/using-swagger-json/',
+      },
+      {
+        id: 'using-remote-url',
         // Remote File
         spec: 'https://redocly.github.io/redoc/openapi.yaml',
-        route: '/examples/using-spec-url/',
+        route: '/examples/using-remote-url/',
       },
       {
         id: 'using-custom-page',
-        spec: 'openapi.yaml',
-        url: `/openapi-page.yaml`,
+        spec: 'openapi/single-file/openapi.yaml',
         // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
       },
       {
         id: 'using-custom-layout',
-        spec: 'openapi.yaml',
-        url: `/openapi-page.yaml`,
+        spec: 'openapi/single-file/openapi.yaml',
         // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
       },
     ],
@@ -59,13 +56,6 @@ const redocusaurus = [
     },
   },
 ];
-
-let version = "v0";
-try {
-  version = require('./version.json');
-}
-catch(err){
-}
 
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
@@ -118,6 +108,22 @@ const config = {
               to: '/examples',
             },
             {
+              label: 'Using Single YAML',
+              to: '/examples/using-single-yaml/',
+            },
+            {
+              label: 'Using Remote URL',
+              to: '/examples/using-remote-url/',
+            },
+            {
+              label: 'Using Multiple YAMLs',
+              to: '/examples/using-multi-file-yaml/',
+            },
+            {
+              label: 'Using Swagger',
+              to: '/examples/using-swagger-json/',
+            },
+            {
               label: 'Custom Page',
               to: '/examples/custom-page/',
             },
@@ -125,22 +131,10 @@ const config = {
               label: 'Custom Layout',
               to: '/examples/custom-layout/',
             },
-            {
-              label: 'Using Multiple YAMLs',
-              to: '/examples/using-multi-file-yaml/',
-            },
-            {
-              label: 'Using Spec URL',
-              to: '/examples/using-spec-url/',
-            },
-            {
-              label: 'Using Spec YAML',
-              to: '/examples/using-spec-yaml/',
-            },
           ],
         },
         {
-          label: version,
+          label: 'v1',
           position: 'right',
           items: [
             {

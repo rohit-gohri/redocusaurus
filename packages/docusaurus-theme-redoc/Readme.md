@@ -2,7 +2,9 @@
 
 ![npm](https://img.shields.io/npm/v/docusaurus-theme-redoc?style=flat-square)
 
-This theme provides a `Redoc` and a `ApiDoc` theme component with a theme matching the default docusaurus classic theme and dark mode support.
+This theme provides a `Redoc` and a `ApiDoc` theme component with a theme matching the default docusaurus classic theme and with dark mode support.
+
+⚠️⚠️⚠️ NOTE: Not recommended for direct use. Use through main package instead: [`redocusaurus`](https://github.com/rohit-gohri/redocusaurus)
 
 ## Usage
 
@@ -28,13 +30,13 @@ This theme provides a `Redoc` and a `ApiDoc` theme component with a theme matchi
 
 ### Redoc
 
-RedocStandalone with dark mode support, matching docusaurus classic theme.
+`RedocStandalone` with dark mode support, matching docusaurus classic theme.
 
 ```js
 import Redoc from '@theme/Redoc';
 ```
 
-See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/main/website/src/pages/examples/custom-layout/index.js)
+See [here for full example.](../../website/src/pages/examples/custom-layout/index.js)
 
 ### ApiDoc
 
@@ -44,48 +46,46 @@ Includes a `@theme/Layout` wrapper over Redoc.
 import ApiDoc from '@theme/ApiDoc';
 ```
 
-See [here for full example.](https://github.com/rohit-gohri/redocusaurus/tree/main/website/src/pages/examples/custom-page/index.js)
+See [here for full example.](../../website/src/pages/examples/custom-page/index.js)
 
 ## Options
 
-```json
-/**
+```js
+{
+   /**
    * Highlight color for docs
    */
-primaryColor: '#1890ff',
-/**
+   primaryColor: '#1890ff',
+   /**
    * Options to pass to redoc
    * @see https://github.com/redocly/redoc#redoc-options-object
    */
-redocOptions: { disableSearch: true },
-/**
+   options: { disableSearch: true },
+   /**
    * Options to pass to override RedocThemeObject
    * @see https://github.com/Redocly/redoc#redoc-theme-object
    */
-redocTheme: { typography: { fontSize: '16px' }},
+   theme: { typography: { fontSize: '16px' }},
+}
 ```
 
-### primaryColor
+### primaryColor (string, hex/rgba value)
 
 Convenient way to provide the highlighted color used by Redoc.  
-This value will be used as `colors.primary.main` in the `redocTheme` option. Must be an hex value.
+This value will be used as `colors.primary.main` in the `themes` option. Must be an actual color value and not a css variable.
 
-### redocTheme
-
-Override the redoc theme object passed inside the `redocOptions`.  
-See the default [here](https://github.com/Redocly/redoc#redoc-theme-object).  
-Note: You should not provide any color using this property, as it will be the same value for dark and light themes.
-
-### redocOptions
+### options (optional, object)
 
 Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](./src/redocData.ts#L5-L12).  
 
 Available properties [here](https://github.com/Redocly/redoc#redoc-options-object).  
-You cannot set theme property using this property, use `redocTheme` instead.
+You cannot set theme property using this property, use `theme` option below instead.
 
-## Related Preset
+### theme (optional, object)
 
-Read More Here: <https://github.com/rohit-gohri/redocusaurus>
+Override the redoc theme object passed to Redoc. See the default [here](https://github.com/Redocly/redoc#redoc-theme-object).
+
+> Note: You should not provide any color using this property, as it will be the same value for dark and light themes.
 
 ## Docs
 

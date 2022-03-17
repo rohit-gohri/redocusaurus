@@ -3,6 +3,7 @@
   "version": "0.9.0",
   "description": "Redoc Plugin for DocusaurusV2",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && echo \"built plugin\"",
     "dev": "tsc -w",
@@ -13,13 +14,17 @@
     "type": "git",
     "url": "git+https://github.com/rohit-gohri/redocusaurus.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "keywords": [
     "redoc",
     "api-doc",
     "docusaurus",
     "docusaurus-plugin"
   ],
-  "author": "Rohit Gohri <work@rohit.page>",
+  "author": "Rohit Gohri <code@rohit.page>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rohit-gohri/redocusaurus/issues"

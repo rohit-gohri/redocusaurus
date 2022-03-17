@@ -44,15 +44,14 @@ const config = {
       {
         specs: [
           {
-            id: 'using-spec-yaml',
-            spec: 'openapi.yaml',
-            url: `/openapi-page.yaml`,
-            route: '/examples/using-spec-yaml/',
+            id: 'using-single-yaml',
+            spec: 'openapi/single-file/openapi.yaml',
+            route: '/examples/using-single-yaml/',
           },
           {
-            id: 'using-spec-url',
+            id: 'using-remote-url',
             spec: 'https://redocly.github.io/redoc/openapi.yaml',
-            route: '/examples/using-spec-url/',
+            route: '/examples/using-remote-url/',
           },
         ],
         theme: {
@@ -77,16 +76,16 @@ const config = {
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />;
-<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />;
+<ApiSchema id="using-single-yaml" pointer="#/components/schemas/Pet" />;
+<ApiSchema id="using-remote-url" pointer="#/components/schemas/Pet" />;
 ```
 
 ### Results
 
-#### For ID `id="using-spec-yaml"`
+#### For ID `id="using-single-yaml"`
 
-<ApiSchema id="using-spec-yaml" pointer="#/components/schemas/Pet" />
+<ApiSchema id="using-single-yaml" pointer="#/components/schemas/Pet" />
 
-#### For ID `id="using-spec-url"`
+#### For ID `id="using-remote-url"`
 
-<ApiSchema id="using-spec-url" pointer="#/components/schemas/Pet" />
+<ApiSchema id="using-remote-url" pointer="#/components/schemas/Pet" />

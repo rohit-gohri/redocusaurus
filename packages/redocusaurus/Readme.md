@@ -14,30 +14,7 @@
 
 1. Add it as a preset to your docusaurus config and pass options:
 
-   - Pass it a OpenAPI spec URL
-
-     ```js
-     // docusaurus.config.js
-
-     module.exports = {
-       // ...
-       presets: [
-         [
-           'redocusaurus',
-           {
-             specs: [
-               {
-                 specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-               },
-             ],
-           },
-         ],
-       ],
-       // ...
-     };
-     ```
-
-   - Pass it a OpenAPI spec local path
+   - Pass it a path to a local OpenAPI YAML file
 
      ```js
      // docusaurus.config.js
@@ -51,6 +28,29 @@
              specs: [
                {
                  spec: 'openapi.yaml',
+               },
+             ],
+           },
+         ],
+       ],
+       // ...
+     };
+     ```
+
+   - Pass it a OpenAPI spec URL
+
+     ```js
+     // docusaurus.config.js
+
+     module.exports = {
+       // ...
+       presets: [
+         [
+           'redocusaurus',
+           {
+             specs: [
+               {
+                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
                },
              ],
            },
