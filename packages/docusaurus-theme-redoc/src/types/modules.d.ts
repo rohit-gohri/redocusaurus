@@ -5,7 +5,7 @@ interface SpecProps {
 }
 
 declare module '@theme/Redoc' {
-  const Redoc: (props: SpecProps) => JSX.Element;
+  const Redoc: (props: SpecProps & { className?: string }) => JSX.Element;
   export default Redoc;
 }
 
