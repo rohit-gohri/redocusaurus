@@ -1,5 +1,29 @@
 # docusaurus-theme-redoc
 
+## 1.0.0
+
+### Major Changes
+
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`e80c03a`](https://github.com/rohit-gohri/redocusaurus/commit/e80c03a2f0e6d1bc02926d0720913eeb2a5dddaf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Parse schema at build time for urls too, remove support for relative urls
+
+* [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`25fada0`](https://github.com/rohit-gohri/redocusaurus/commit/25fada00ec31a22723190affb324c754f41e3ad0) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Change default redoc options, download button not hidden by default
+
+- [#149](https://github.com/rohit-gohri/redocusaurus/pull/149) [`d2438dd`](https://github.com/rohit-gohri/redocusaurus/commit/d2438ddc7901be1f3d3fb89e68460524592ba087) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Enable server style sheet collection by default, fixes style issues on fresh load
+
+* [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
+
+### Minor Changes
+
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`8c26b35`](https://github.com/rohit-gohri/redocusaurus/commit/8c26b35d822d17e279aa12410bffbe5a2ac330aa) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add new `useSpecData` hook for programmatic use of plugin data
+
+### Patch Changes
+
+- [#152](https://github.com/rohit-gohri/redocusaurus/pull/152) [`70ced20`](https://github.com/rohit-gohri/redocusaurus/commit/70ced208484dd9b517ce00aeaa9eb42caded673b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix nav sometimes hidden when logo is not present
+
+* [#151](https://github.com/rohit-gohri/redocusaurus/pull/151) [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix scrollYOffset warning in server build
+
+- [#153](https://github.com/rohit-gohri/redocusaurus/pull/153) [`21d76a4`](https://github.com/rohit-gohri/redocusaurus/commit/21d76a45f2827967d35803b0b03773b7709afeca) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix prism re-highlighting all code on load
+
 ## 0.9.2
 
 ### Patch Changes
