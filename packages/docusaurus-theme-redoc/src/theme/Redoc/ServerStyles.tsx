@@ -66,27 +66,29 @@ export function ServerStyles({
   renderToString(
     lightSheet.collectStyles(React.createElement(Redoc, { store: lightStore })),
   );
-  const lightCss = lightSheet.getStyleTags();
-  css.light = prefixCssSelectors(lightCss, LIGHT_MODE_PREFIX).slice(
-    LIGHT_MODE_PREFIX.length + 1,
-  );
+  const lightStyleTag = lightSheet.getStyleTags();
+  let lightCss = lightStyleTag.slice(lightStyleTag.indexOf('>') + 1);
+  lightCss = lightCss.slice(0, lightCss.indexOf('<style'));
+  css.light = prefixCssSelectors(lightCss, LIGHT_MODE_PREFIX);
 
   const darkSheet = new ServerStyleSheet();
   renderToString(
     darkSheet.collectStyles(React.createElement(Redoc, { store: darkStore })),
   );
-  const darkCss = darkSheet.getStyleTags();
+  const darkStyleTag = darkSheet.getStyleTags();
+  let darkCss = darkStyleTag.slice(darkStyleTag.indexOf('>') + 1);
+  darkCss = darkCss.slice(0, darkCss.indexOf('<style'));
   css.dark = prefixCssSelectors(darkCss, DARK_MODE_PREFIX).slice(
     DARK_MODE_PREFIX.length + 1,
   );
 
   return (
     <div className="redocusaurus-styles">
-      <div
+      <style
         key="light-mode-styles"
         dangerouslySetInnerHTML={{ __html: css.light }}
       />
-      <div
+      <style
         key="dark-mode-styles"
         dangerouslySetInnerHTML={{ __html: css.dark }}
       />
