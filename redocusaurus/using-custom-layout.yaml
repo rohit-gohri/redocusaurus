@@ -5,57 +5,91 @@ servers:
   - url: //petstore.swagger.io/sandbox
     description: Sandbox server
 info:
-  description: |
+  description: >
     This is a sample server Petstore server.
+
     You can find out more about Swagger at
-    [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
-    For this sample, you can use the api key `special-key` to test the authorization filters.
+
+    [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
+    #swagger](http://swagger.io/irc/).
+
+    For this sample, you can use the api key `special-key` to test the
+    authorization filters.
+
 
     # Introduction
+
     This API is documented in **OpenAPI format** and is based on
-    [Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.
-    It was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
-    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard
-    OpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
+    [Petstore sample](http://petstore.swagger.io/) provided by
+    [swagger.io](http://swagger.io) team.
+
+    It was **extended** to illustrate features of
+    [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
+
+    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In
+    addition to standard
+
+    OpenAPI syntax we use a few [vendor
+    extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
 
     # OpenAPI Specification
+
     This API is documented in **OpenAPI format** and is based on
-    [Petstore sample](http://petstore.swagger.io/) provided by [swagger.io](http://swagger.io) team.
-    It was **extended** to illustrate features of [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
-    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard
-    OpenAPI syntax we use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
+    [Petstore sample](http://petstore.swagger.io/) provided by
+    [swagger.io](http://swagger.io) team.
+
+    It was **extended** to illustrate features of
+    [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo)
+
+    tool and [ReDoc](https://github.com/Redocly/redoc) documentation. In
+    addition to standard
+
+    OpenAPI syntax we use a few [vendor
+    extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
 
     # Cross-Origin Resource Sharing
-    This API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+
+    This API features Cross-Origin Resource Sharing (CORS) implemented in
+    compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+
     And that allows cross-domain communication from the browser.
-    All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
+
+    All responses have a wildcard same-origin which makes them completely public
+    and accessible to everyone, including any code on any site.
+
 
     # Authentication
+
 
     Petstore offers two forms of authentication:
       - API Key
       - OAuth2
     OAuth2 - an open protocol to allow secure authorization in a simple
+
     and standard method from web, mobile and desktop applications.
 
-    <SecurityDefinitions />
 
+    <SecurityDefinitions />
   version: 1.0.0
-  title: Swagger Petstore [Custom Page made with ApiDoc Theme Component]
-  termsOfService: 'http://swagger.io/terms/'
+  title: Swagger Petstore [Automatic Page From File]
+  termsOfService: http://swagger.io/terms/
   contact:
     name: API Support
     email: apiteam@swagger.io
     url: https://github.com/Redocly/redoc
   x-logo:
-    url: 'https://redocly.github.io/redoc/petstore-logo.png'
+    url: https://redocly.github.io/redoc/petstore-logo.png
     altText: Petstore logo
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
 externalDocs:
   description: Find out how to create Github repo for your OpenAPI spec.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
+  url: https://github.com/Rebilly/generator-openapi-repo
 tags:
   - name: pet
     description: Everything about your Pets
@@ -69,8 +103,10 @@ tags:
       <SchemaDefinition schemaRef="#/components/schemas/Pet" />
   - name: store_model
     x-displayName: The Order Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/Order" exampleRef="#/components/examples/Order" showReadOnly={true} showWriteOnly={true} />
+    description: >
+      <SchemaDefinition schemaRef="#/components/schemas/Order"
+      exampleRef="#/components/examples/Order" showReadOnly={true}
+      showWriteOnly={true} />
 x-tagGroups:
   - name: General
     tags:
@@ -88,7 +124,9 @@ paths:
     parameters:
       - name: Accept-Language
         in: header
-        description: "The language you prefer for messages. Supported values are en-AU, en-CA, en-GB, en-US"
+        description: >-
+          The language you prefer for messages. Supported values are en-AU,
+          en-CA, en-GB, en-US
         example: en-US
         required: false
         schema:
@@ -112,10 +150,10 @@ paths:
           description: Invalid input
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
       x-codeSamples:
-        - lang: 'C#'
+        - lang: C#
           source: |
             PetStore.v1.Pet pet = new PetStore.v1.Pet();
             pet.setApiKey("your api key");
@@ -160,8 +198,8 @@ paths:
           description: Validation exception
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
       x-codeSamples:
         - lang: PHP
           source: |
@@ -177,7 +215,7 @@ paths:
             }
       requestBody:
         $ref: '#/components/requestBodies/Pet'
-  '/pet/{petId}':
+  /pet/{petId}:
     get:
       tags:
         - pet
@@ -228,8 +266,8 @@ paths:
           description: Invalid input
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -254,7 +292,7 @@ paths:
           required: false
           schema:
             type: string
-          example: "Bearer <TOKEN>"
+          example: Bearer <TOKEN>
         - name: petId
           in: path
           description: Pet id to delete
@@ -267,9 +305,9 @@ paths:
           description: Invalid pet value
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
-  '/pet/{petId}/uploadImage':
+            - write:pets
+            - read:pets
+  /pet/{petId}/uploadImage:
     post:
       tags:
         - pet
@@ -293,8 +331,8 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
       requestBody:
         content:
           application/octet-stream:
@@ -343,8 +381,8 @@ paths:
           description: Invalid status value
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
   /pet/findByTags:
     get:
       tags:
@@ -383,8 +421,8 @@ paths:
           description: Invalid tag value
       security:
         - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
+            - write:pets
+            - read:pets
   /store/inventory:
     get:
       tags:
@@ -427,7 +465,7 @@ paths:
             application/json:
               example:
                 status: 400
-                message: "Invalid Order"
+                message: Invalid Order
       requestBody:
         content:
           application/json:
@@ -435,7 +473,7 @@ paths:
               $ref: '#/components/schemas/Order'
         description: order placed for purchasing the pet
         required: true
-  '/store/order/{orderId}':
+  /store/order/{orderId}:
     get:
       tags:
         - store
@@ -504,7 +542,9 @@ paths:
                 callbackUrl:
                   type: string
                   format: uri
-                  description: This URL will be called by the server when the desired event will occur
+                  description: >-
+                    This URL will be called by the server when the desired event
+                    will occur
                   example: https://myserver.com/send/callback/here
                 eventName:
                   type: string
@@ -538,10 +578,12 @@ paths:
                 description: Path level server 2
             post:
               summary: Order in Progress (Summary)
-              description: A callback triggered every time an Order is updated status to "inProgress" (Description)
+              description: >-
+                A callback triggered every time an Order is updated status to
+                "inProgress" (Description)
               externalDocs:
                 description: Find out more
-                url: 'https://more-details.com/demo'
+                url: https://more-details.com/demo
               requestBody:
                 content:
                   application/json:
@@ -557,7 +599,7 @@ paths:
                           example: '2018-10-19T16:46:45Z'
                         status:
                           type: string
-                          example: 'inProgress'
+                          example: inProgress
                   application/xml:
                     schema:
                       type: object
@@ -574,7 +616,9 @@ paths:
                       </root>
               responses:
                 '200':
-                  description: Callback successfully processed and no retries will be performed
+                  description: >-
+                    Callback successfully processed and no retries will be
+                    performed
                   content:
                     application/json:
                       schema:
@@ -588,7 +632,7 @@ paths:
                 '500':
                   description: Callback processing failed and retries will be performed
               x-codeSamples:
-                - lang: 'C#'
+                - lang: C#
                   source: |
                     PetStore.v1.Pet pet = new PetStore.v1.Pet();
                     pet.setApiKey("your api key");
@@ -638,7 +682,7 @@ paths:
                           example: '2018-10-19T16:46:45Z'
                         status:
                           type: string
-                          example: 'inProgress'
+                          example: inProgress
                   application/xml:
                     schema:
                       type: object
@@ -655,7 +699,9 @@ paths:
                       </root>
               responses:
                 '200':
-                  description: Callback successfully processed and no retries will be performed
+                  description: >-
+                    Callback successfully processed and no retries will be
+                    performed
                   content:
                     application/json:
                       schema:
@@ -667,13 +713,24 @@ paths:
         orderShipped:
           '{$request.body#/callbackUrl}?event={$request.body#/eventName}':
             post:
-              description: |
+              description: >
                 Very long description
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor
+
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis
+
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu
+
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in
+
                 culpa qui officia deserunt mollit anim id est laborum.
               requestBody:
                 content:
@@ -694,13 +751,17 @@ paths:
                           example: '2018-11-11T16:00:00Z'
               responses:
                 '200':
-                  description: Callback successfully processed and no retries will be performed
+                  description: >-
+                    Callback successfully processed and no retries will be
+                    performed
         orderDelivered:
-          'http://notificationServer.com?url={$request.body#/callbackUrl}&event={$request.body#/eventName}':
+          http://notificationServer.com?url={$request.body#/callbackUrl}&event={$request.body#/eventName}:
             post:
               deprecated: true
               summary: Order delivered
-              description: A callback triggered every time an Order is delivered to the recipient
+              description: >-
+                A callback triggered every time an Order is delivered to the
+                recipient
               requestBody:
                 content:
                   application/json:
@@ -716,7 +777,9 @@ paths:
                           example: '2018-10-19T16:46:45Z'
               responses:
                 '200':
-                  description: Callback successfully processed and no retries will be performed
+                  description: >-
+                    Callback successfully processed and no retries will be
+                    performed
   /user:
     post:
       tags:
@@ -734,7 +797,7 @@ paths:
               $ref: '#/components/schemas/User'
         description: Created user object
         required: true
-  '/user/{username}':
+  /user/{username}:
     get:
       tags:
         - user
@@ -875,11 +938,11 @@ paths:
                 type: string
               examples:
                 response:
-                  value:  <Message> OK </Message>
+                  value: <Message> OK </Message>
             text/plain:
               examples:
                 response:
-                  value:  OK
+                  value: OK
         '400':
           description: Invalid username/password supplied
   /user/logout:
@@ -966,7 +1029,7 @@ components:
               type: number
               description: Average amount of honey produced per day in ounces
               example: 3.14
-              multipleOf: .01
+              multipleOf: 0.01
           required:
             - honeyPerDay
     Id:
@@ -1025,8 +1088,8 @@ components:
       properties:
         id:
           externalDocs:
-            description: "Find more info here"
-            url: "https://example.com"
+            description: Find more info here
+            url: https://example.com
           description: Pet ID
           allOf:
             - $ref: '#/components/schemas/Id'
@@ -1121,12 +1184,12 @@ components:
             as well as digits
           format: password
           minLength: 8
-          pattern: '/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/'
+          pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
           example: drowssaP123
         phone:
           description: User phone number in international format
           type: string
-          pattern: '/^\+(?:[0-9]-?){6,14}[0-9]$/'
+          pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
           example: +1-202-555-0192
         userStatus:
           description: User status
@@ -1145,7 +1208,7 @@ components:
               - $ref: '#/components/schemas/Pet'
         application/xml:
           schema:
-            type: 'object'
+            type: object
             properties:
               name:
                 type: string
@@ -1169,10 +1232,10 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: 'http://petstore.swagger.io/api/oauth/dialog'
+          authorizationUrl: http://petstore.swagger.io/api/oauth/dialog
           scopes:
-            'write:pets': modify pets in your account
-            'read:pets': read your pets
+            write:pets: modify pets in your account
+            read:pets: read your pets
     api_key:
       description: >
         For this sample, you can use the api key `special-key` to test the
@@ -1199,7 +1262,9 @@ x-webhooks:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Pet"
+              $ref: '#/components/schemas/Pet'
       responses:
-        "200":
-          description: Return a 200 status to indicate that the data was received successfully
+        '200':
+          description: >-
+            Return a 200 status to indicate that the data was received
+            successfully
