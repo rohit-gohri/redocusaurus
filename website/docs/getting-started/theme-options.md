@@ -21,4 +21,6 @@ You cannot set theme property using this property, use `theme` option below inst
 
 Override the redoc theme object passed to Redoc. See the default [here](https://github.com/Redocly/redoc#redoc-theme-object).
 
-> Note: You should not provide any color using this property, as it will be the same value for dark and light themes.
+:::caution
+Note: You should not override any color using this property, as it will be the same value for dark and light themes.
+:::

@@ -8,11 +8,7 @@ author_url: https://rohit.page
 
 ### spec (required, string: file path or remote absolute url)
 
-Either a file path to an OpenAPI YAML/JSON file, or a url to one hosted on some website (not the same docusaurus website). Will be **parsed** at build time and forwarded to Redoc component.
-
-### url (optional, string: download url)
-
-A url pointing to an OpenAPI spec. This will be used as download url and `spec` will be used for rendering. This is needed because by default the download url will point to a processed and parsed JSON file.
+Either a file path to an OpenAPI YAML/JSON file, or a url to one hosted on some website (not the same docusaurus website). Will be **parsed** at build time and forwarded to Redoc component. We will also automatically generate a single downloadable YAML and add it as a static asset to be used as the download url.
 
 ### route (optional, string: relative uri)
 

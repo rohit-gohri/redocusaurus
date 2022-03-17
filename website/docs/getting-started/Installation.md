@@ -17,7 +17,7 @@ yarn add redocusaurus
 
 1. Add it as a preset to your docusaurus config and pass options:
 
-   - Pass it a OpenAPI spec URL
+   - Pass it a path to a local OpenAPI YAML file
 
      ```js
      // docusaurus.config.js
@@ -28,14 +28,14 @@ yarn add redocusaurus
          [
            'redocusaurus',
            {
-             // Plugin Options
+             // Plugin Options for loading OpenAPI files
              specs: [
                {
-                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
+                 spec: 'openapi/openapi.yaml',
                  route: '/api/',
                },
              ],
-             // Theme Options
+             // Theme Options for modifying how redoc renders them
              theme: {
                // Change with your site colors
                primaryColor: '#1890ff',
@@ -47,7 +47,7 @@ yarn add redocusaurus
      };
      ```
 
-   - Pass it a OpenAPI spec local path
+   - Pass it a OpenAPI spec URL
 
      ```js
      // docusaurus.config.js
@@ -58,14 +58,14 @@ yarn add redocusaurus
          [
            'redocusaurus',
            {
-             // Plugin Options
+             // Plugin Options for loading OpenAPI files
              specs: [
                {
-                 spec: 'openapi.yaml',
+                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
                  route: '/api/',
                },
              ],
-             // Theme Options
+             // Theme Options for modifying how redoc renders them
              theme: {
                // Change with your site colors
                primaryColor: '#1890ff',
@@ -79,13 +79,13 @@ yarn add redocusaurus
 
 The API Doc will be available at the path specific by `route`. To skip adding a
 route altogether just don't set the `route` property. You will still be
-able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports) or through Custom Pages.
+able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports) or create Custom React Pages using the data and theme components.
 
 ## Options
 
 ### specs
 
-An array of plugin options, see [plugin options](./plugin-options.md) for individual option details.
+An **array** of plugin options, see [plugin options](./plugin-options.md) for individual option details.
 
 ### theme
 
