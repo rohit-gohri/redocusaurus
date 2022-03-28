@@ -1,5 +1,18 @@
 # Redocusaurus
 
+## redocusaurus@1.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`9d35116`](https://github.com/rohit-gohri/redocusaurus/commit/9d351166c3e648c134cb99cca41129a2c6007a28)]:
+  - docusaurus-theme-redoc@1.0.1
+
+## docusaurus-theme-redoc@1.0.1
+
+### Patch Changes
+
+- [#158](https://github.com/rohit-gohri/redocusaurus/pull/158) [`9d35116`](https://github.com/rohit-gohri/redocusaurus/commit/9d351166c3e648c134cb99cca41129a2c6007a28) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Disable anchor tracking on scroll in ApiSchema component
+
 ## redocusaurus@1.0.0
 
 ### Major Changes
