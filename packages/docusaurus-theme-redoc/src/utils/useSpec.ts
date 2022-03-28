@@ -20,7 +20,7 @@ export function useSpec({ spec, url }: SpecProps) {
   const { isDarkTheme } = useColorMode();
   const themeOptions = usePluginData<GlobalData>('docusaurus-theme-redoc');
 
-  const result = useMemo(() => {
+  const stores = useMemo(() => {
     const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
 
     const commonOptions: Partial<RedocRawOptions> = {
@@ -42,13 +42,19 @@ export function useSpec({ spec, url }: SpecProps) {
     });
 
     return {
-      // @ts-expect-error extra prop
-      hasLogo: !!spec.info?.['x-logo'],
       lightStore,
       darkStore,
-      store: isBrowser && isDarkTheme ? darkStore : lightStore,
     };
-  }, [isBrowser, spec, fullUrl, themeOptions, isDarkTheme]);
+  }, [isBrowser, spec, fullUrl, themeOptions]);
+
+  const result = useMemo(() => {
+    return {
+      ...stores,
+      // @ts-expect-error extra prop
+      hasLogo: !!spec.info?.['x-logo'],
+      store: isBrowser && isDarkTheme ? stores.darkStore : stores.lightStore,
+    };
+  }, [isBrowser, isDarkTheme, spec, stores]);
 
   return result;
 }
