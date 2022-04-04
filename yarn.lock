@@ -6163,7 +6163,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"docusaurus-theme-redoc@1.0.1, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
+"docusaurus-theme-redoc@1.0.2, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc"
   dependencies:
@@ -12206,17 +12206,17 @@ __metadata:
     clsx: ^1.1.1
     react: ^17.0.2
     react-dom: ^17.0.2
-    redocusaurus: ^1.0.1
+    redocusaurus: ^1.0.2
   languageName: unknown
   linkType: soft
 
-"redocusaurus@^1.0.1, redocusaurus@workspace:packages/redocusaurus":
+"redocusaurus@^1.0.2, redocusaurus@workspace:packages/redocusaurus":
   version: 0.0.0-use.local
   resolution: "redocusaurus@workspace:packages/redocusaurus"
   dependencies:
     "@docusaurus/types": ^2.0.0-beta.17
     docusaurus-plugin-redoc: 1.0.0
-    docusaurus-theme-redoc: 1.0.1
+    docusaurus-theme-redoc: 1.0.2
   languageName: unknown
   linkType: soft
 
