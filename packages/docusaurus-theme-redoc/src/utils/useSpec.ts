@@ -24,8 +24,11 @@ export function useSpec({ spec, url }: SpecProps) {
     const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
 
     const commonOptions: Partial<RedocRawOptions> = {
-      // Disable offset when server rendering
-      scrollYOffset: isBrowser ? redocOptions.scrollYOffset : 0,
+      // Disable offset when server rendering and set to selector
+      scrollYOffset:
+        !isBrowser && typeof redocOptions.scrollYOffset === 'string'
+          ? 0
+          : redocOptions.scrollYOffset,
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
