@@ -1,5 +1,18 @@
 # Redocusaurus
 
+## redocusaurus@1.0.2
+
+### Patch Changes
+
+- Updated dependencies [[`420c404`](https://github.com/rohit-gohri/redocusaurus/commit/420c4044316611048d16a1e43442c5f15a81e2e1)]:
+  - docusaurus-theme-redoc@1.0.2
+
+## docusaurus-theme-redoc@1.0.2
+
+### Patch Changes
+
+- [#163](https://github.com/rohit-gohri/redocusaurus/pull/163) [`420c404`](https://github.com/rohit-gohri/redocusaurus/commit/420c4044316611048d16a1e43442c5f15a81e2e1) Thanks [@jeff1010322](https://github.com/jeff1010322)! - fix scrollYOffset disable when not using selector
+
 ## redocusaurus@1.0.1
 
 ### Patch Changes

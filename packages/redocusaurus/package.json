@@ -1,6 +1,6 @@
 {
   "name": "redocusaurus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redoc for DocusaurusV2",
   "main": "dist/index.js",
   "exports": {
@@ -41,7 +41,7 @@
   "dependencies": {
     "@docusaurus/types": "^2.0.0-beta.17",
     "docusaurus-plugin-redoc": "1.0.0",
-    "docusaurus-theme-redoc": "1.0.1"
+    "docusaurus-theme-redoc": "1.0.2"
   },
   "engines": {
     "node": ">=14"
