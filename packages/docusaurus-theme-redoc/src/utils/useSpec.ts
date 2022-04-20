@@ -17,7 +17,7 @@ import { GlobalData } from '../types/options';
 export function useSpec({ spec, url }: SpecProps) {
   const fullUrl = useBaseUrl(url);
   const isBrowser = useIsBrowser();
-  const { isDarkTheme } = useColorMode();
+  const isDarkTheme = useColorMode().colorMode === "dark";
   const themeOptions = usePluginData<GlobalData>('docusaurus-theme-redoc');
 
   const stores = useMemo(() => {
