@@ -13,8 +13,9 @@ const snapshots = urls.map(({ name, path }) => {
   return {
     name,
     url: `${baseUrl}${path}`,
+    waitForTimeout: 400,
     execute: {
-      beforeSnapshot() {
+      afterNavigation() {
         // Switch to light mode if currently dark mode
         document
           .querySelector(
