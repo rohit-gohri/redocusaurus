@@ -17,11 +17,6 @@ export default function redocTheme(
     name: 'docusaurus-theme-redoc',
     configureWebpack(_config, isServer) {
       return {
-        resolve: {
-          fallback: {
-            tty: false,
-          },
-        },
         plugins: [
           new webpack.DefinePlugin({
             'process.versions.node': JSON.stringify(
