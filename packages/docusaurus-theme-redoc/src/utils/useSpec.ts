@@ -15,7 +15,7 @@ import { GlobalData } from '../types/options';
  * Released under the MIT License
  */
 export function useSpec({ spec, url }: SpecProps) {
-  const fullUrl = useBaseUrl(url);
+  const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
   const themeOptions = usePluginData('docusaurus-theme-redoc') as GlobalData;
