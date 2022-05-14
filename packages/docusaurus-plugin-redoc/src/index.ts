@@ -185,10 +185,11 @@ export default function redocPlugin(
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions>): PluginOptions {
-  const { value, error } = PluginOptionSchema.validate(options);
-  if (error) {
-    throw error;
-  }
-  return value!;
+  validate,
+}: OptionValidationContext<
+  typeof PluginOptionSchema,
+  PluginOptions
+>): PluginOptions {
+  const validatedOptions = validate(PluginOptionSchema, options);
+  return validatedOptions;
 }

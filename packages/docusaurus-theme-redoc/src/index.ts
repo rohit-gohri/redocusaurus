@@ -44,7 +44,7 @@ export default function redocTheme(
       const { setGlobalData } = actions;
       const globalData = getGlobalData(options);
 
-      setGlobalData<GlobalData>(globalData);
+      setGlobalData(globalData);
     },
     getThemePath() {
       return path.join(__dirname, '..', 'dist-jsx', 'theme');
