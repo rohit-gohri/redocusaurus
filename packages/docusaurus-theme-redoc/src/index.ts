@@ -20,15 +20,15 @@ export default function redocTheme(
           fallback: {
             tty: false,
           },
-          alias: {
-            process: 'process/browser',
-          },
         },
         plugins: [
           new webpack.DefinePlugin({
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
+          }),
+          new webpack.ProvidePlugin({
+            process: 'process/browser',
           }),
           ...(isServer
             ? [
