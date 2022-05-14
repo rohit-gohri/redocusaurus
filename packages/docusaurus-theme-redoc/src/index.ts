@@ -26,9 +26,7 @@ export default function redocTheme(
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
-          }),
-          new webpack.ProvidePlugin({
-            process: 'process/browser',
+            'process.env': JSON.stringify({}),
           }),
           ...(isServer
             ? [
