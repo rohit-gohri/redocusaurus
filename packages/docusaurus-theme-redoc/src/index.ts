@@ -26,6 +26,7 @@ export default function redocTheme(
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
+            'process.platform': JSON.stringify(''),
             'process.env': JSON.stringify({}),
           }),
           ...(isServer
