@@ -39,7 +39,7 @@
   },
   "homepage": "https://redocusaurus.vercel.app/",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-beta.17",
+    "@docusaurus/types": "^2.0.0-beta.20",
     "docusaurus-plugin-redoc": "1.0.0",
     "docusaurus-theme-redoc": "1.0.2"
   },
