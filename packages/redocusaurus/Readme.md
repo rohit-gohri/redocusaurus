@@ -1,4 +1,4 @@
-# [Redocusaurus](https://github.com/rohit-gohri/redocusaurus)
+# [Redocusaurus](https://redocusaurus.vercel.app/)
 
 ![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
 
@@ -8,69 +8,85 @@
 
 1. Install redocusaurus:
 
-   ```sh
-   npm i --save redocusaurus
-   ```
+  ```sh
+  npm i --save redocusaurus
+  # OR
+  yarn add redocusaurus
+  ```
 
 1. Add it as a preset to your docusaurus config and pass options:
 
    - Pass it a path to a local OpenAPI YAML file
 
-     ```js
-     // docusaurus.config.js
+    ```js
+    // docusaurus.config.js
 
-     module.exports = {
-       // ...
-       presets: [
-         [
-           'redocusaurus',
-           {
-             specs: [
-               {
-                 spec: 'openapi.yaml',
-               },
-             ],
-           },
-         ],
-       ],
-       // ...
-     };
-     ```
+    module.exports = {
+      // ...
+      presets: [
+        [
+          'redocusaurus',
+          {
+            // Plugin Options for loading OpenAPI files
+            specs: [
+              {
+                spec: 'openapi/openapi.yaml',
+                route: '/api/',
+              },
+            ],
+            // Theme Options for modifying how redoc renders them
+            theme: {
+              // Change with your site colors
+              primaryColor: '#1890ff',
+            },
+          },
+        ],
+      ],
+      // ...
+    };
+    ```
 
-   - Pass it a OpenAPI spec URL
+- OR Pass it a OpenAPI spec URL
 
-     ```js
-     // docusaurus.config.js
+    ```js
+    // docusaurus.config.js
 
-     module.exports = {
-       // ...
-       presets: [
-         [
-           'redocusaurus',
-           {
-             specs: [
-               {
-                 spec: 'https://redocly.github.io/redoc/openapi.yaml',
-               },
-             ],
-           },
-         ],
-       ],
-       // ...
-     };
-     ```
+    module.exports = {
+      // ...
+      presets: [
+        [
+          'redocusaurus',
+          {
+            // Plugin Options for loading OpenAPI files
+            specs: [
+              {
+                spec: 'https://redocly.github.io/redoc/openapi.yaml',
+                route: '/api/',
+              },
+            ],
+            // Theme Options for modifying how redoc renders them
+            theme: {
+              // Change with your site colors
+              primaryColor: '#1890ff',
+            },
+          },
+        ],
+      ],
+      // ...
+    };
+    ```
 
-The API Doc will be available by default at `/api/` path. To customize it see [full plugin options](../docusaurus-plugin-redoc/Readme.md).
+The API Doc will be available at the route specified (`/api/` in the example above). To customize it see [full plugin options](https://redocusaurus.vercel.app/docs/getting-started/plugin-options).
 
 ### Options
 
 #### specs
 
-Pass it an array of plugin options, see [docusaurus-plugin-redoc](../docusaurus-plugin-redoc/Readme.md) for individual option details.
+Pass it an array of plugin options, see [docusaurus-plugin-redoc](https://redocusaurus.vercel.app/docs/getting-started/plugin-options) for individual option details.
 
 #### theme
 
-Pass options to customize the theme, see [docusaurus-theme-redoc](../docusaurus-theme-redoc/Readme.md) for individual option details.
+Pass options to customize the theme, see [docusaurus-theme-redoc](https://redocusaurus.vercel.app/docs/getting-started/theme-options) for individual option details.
 
 ## Docs
 
