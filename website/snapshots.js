@@ -1,9 +1,9 @@
 const urls = [
+  { name: 'URL Spec', path: '/examples/using-remote-url/' },
   {
     name: 'YAML Spec',
     path: '/examples/using-single-yaml/',
   },
-  { name: 'URL Spec', path: '/examples/using-remote-url/' },
   { name: 'Schema Imports', path: '/docs/guides/schema-imports' },
 ];
 
