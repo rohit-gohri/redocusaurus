@@ -17,6 +17,9 @@ export default function redocTheme(
     configureWebpack(_config, isServer) {
       return {
         resolve: {
+          fallback: {
+            tty: false,
+          },
           alias: {
             process: 'process/browser',
           },
