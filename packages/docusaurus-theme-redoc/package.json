@@ -39,8 +39,7 @@
     "lodash": "^4.17.21",
     "mobx": "^6.3.13",
     "redoc": "2.0.0-rc.69",
-    "styled-components": "^5.3.3",
-    "to-arraybuffer": "^1.0.1"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.20",

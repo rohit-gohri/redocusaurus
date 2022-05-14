@@ -13,7 +13,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "release": "yarn build:packages && changeset publish --no-git-tag",
-    "start": "yarn build && yarn workspace redocusaurus-website run start",
+    "serve": "yarn workspace redocusaurus-website run serve",
+    "start": "yarn build:packages && yarn workspace redocusaurus-website run start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "changeset version && yarn install --no-immutable && sh scripts/combine-changelog.sh",
     "prepare": "husky install"
