@@ -19,8 +19,6 @@
     "src"
   ],
   "keywords": [
-    "redoc",
-    "api-doc",
     "docusaurus",
     "docusaurus-plugin"
   ],

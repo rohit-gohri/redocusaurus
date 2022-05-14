@@ -16,21 +16,18 @@ export default function redocTheme(
     name: 'docusaurus-theme-redoc',
     configureWebpack(_config, isServer) {
       return {
-        resolve: {
-          fallback: {
-            tty: false,
-          },
-        },
         plugins: [
+          new webpack.NormalModuleReplacementPlugin(
+            /^tty$/,
+            require.resolve('./tty'),
+          ),
           new webpack.DefinePlugin({
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
+            'process.platform': JSON.stringify(''),
+            'process.env': JSON.stringify({}),
           }),
-          new webpack.NormalModuleReplacementPlugin(
-            /^redoc$/,
-            require.resolve('redoc/bundles/redoc.browser.lib'),
-          ),
           ...(isServer
             ? [
                 new webpack.NormalModuleReplacementPlugin(
