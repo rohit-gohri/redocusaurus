@@ -1,5 +1,15 @@
 # redocusaurus
 
+## 1.0.3
+
+### Patch Changes
+
+- [#176](https://github.com/rohit-gohri/redocusaurus/pull/176) [`6695ba6`](https://github.com/rohit-gohri/redocusaurus/commit/6695ba6b3851c906951577b69c6d6d59b57e956b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to docusaurus-beta.20 and fix Invalid URL errors
+
+- Updated dependencies [[`6695ba6`](https://github.com/rohit-gohri/redocusaurus/commit/6695ba6b3851c906951577b69c6d6d59b57e956b), [`3c3d4bd`](https://github.com/rohit-gohri/redocusaurus/commit/3c3d4bda3bee61a6c9937825a5d4d46ffb32033c)]:
+  - docusaurus-plugin-redoc@1.0.3
+  - docusaurus-theme-redoc@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

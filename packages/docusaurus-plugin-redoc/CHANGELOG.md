@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 1.0.3
+
+### Patch Changes
+
+- [#176](https://github.com/rohit-gohri/redocusaurus/pull/176) [`6695ba6`](https://github.com/rohit-gohri/redocusaurus/commit/6695ba6b3851c906951577b69c6d6d59b57e956b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to docusaurus-beta.20 and fix Invalid URL errors
+
 ## 1.0.0
 
 ### Major Changes
