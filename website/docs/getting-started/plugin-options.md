@@ -17,3 +17,9 @@ Route URL at which docs would be available, this will use the theme component `@
 ### layout (optional, object: layoutProps)
 
 An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc/src/options.ts#L3).
+
+### config (optional, string or object: redoclyConfig)
+
+Redocly config to bundle file. You can provide a custom path to a `redocly.yaml` file, if not provided then it will try to load it from the root of your project if it exists.
+
+See: <https://redocly.com/docs/cli/configuration/configuration-file/>

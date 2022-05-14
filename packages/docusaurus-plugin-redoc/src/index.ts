@@ -77,7 +77,8 @@ export default function redocPlugin(
         if (typeof config === 'string') {
           redoclyConfig = await loadConfig(config);
         } else {
-          redoclyConfig = new Config(config);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          redoclyConfig = new Config(config as any);
         }
       } else {
         redoclyConfig = await loadConfig();
@@ -185,10 +186,11 @@ export default function redocPlugin(
 
 export function validateOptions({
   options,
-}: OptionValidationContext<PluginOptions>): PluginOptions {
-  const { value, error } = PluginOptionSchema.validate(options);
-  if (error) {
-    throw error;
-  }
-  return value!;
+  validate,
+}: OptionValidationContext<
+  typeof PluginOptionSchema,
+  PluginOptions
+>): PluginOptions {
+  const validatedOptions = validate(PluginOptionSchema, options);
+  return validatedOptions;
 }

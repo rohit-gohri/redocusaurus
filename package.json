@@ -6,7 +6,7 @@
     "build": "yarn build:packages && yarn build:website",
     "build:packages": "yarn workspaces foreach --exclude redocusaurus-website --exclude redocusaurus-monorepo -tpv run build",
     "build:website": "yarn workspace redocusaurus exec 'echo \\\"$npm_package_version\\\" > $PROJECT_CWD/website/version.json' && yarn workspace redocusaurus-website run build",
-    "clean": "yarn workspaces foreach -Atv exec \"rm -rf dist* .tsbuild*.info\"",
+    "clean": "yarn workspaces foreach --exclude redocusaurus-monorepo -Atv exec \"rm -rf build .docusaurus dist dist-jsx .tsbuild.info .tsbuild.jsx.info\"",
     "dev": "yarn build:packages && yarn workspaces foreach --exclude redocusaurus-monorepo -piv run dev",
     "dev:packages": "yarn workspaces foreach --exclude redocusaurus-website --exclude redocusaurus-monorepo -piv run dev",
     "dev:website": "yarn workspace redocusaurus-website run dev",
