@@ -9,16 +9,30 @@ const urls = [
 
 const baseUrl = process.env.TARGET_URL || 'http://localhost:3000';
 
-module.exports = urls.map(({ name, path }) => {
+const snapshots = urls.map(({ name, path }) => {
   return {
     name,
     url: `${baseUrl}${path}`,
+    execute: {
+      beforeSnapshot() {
+        // Switch to light mode if currently dark mode
+        document
+          .querySelector(
+            '[title^="Switch between dark and light mode (currently dark mode)"]',
+          )
+          // @ts-ignore
+          ?.click();
+      },
+    },
     additionalSnapshots: [
       {
         suffix: ' (Dark Mode)',
         execute() {
+          // Switch to dark mode if currently light mode
           document
-            .querySelector('[title^="Switch between dark and light mode"]')
+            .querySelector(
+              '[title^="Switch between dark and light mode (currently light mode)"]',
+            )
             // @ts-ignore
             ?.click();
         },
@@ -26,3 +40,5 @@ module.exports = urls.map(({ name, path }) => {
     ],
   };
 });
+
+module.exports = snapshots;
