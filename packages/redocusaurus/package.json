@@ -27,7 +27,9 @@
   "keywords": [
     "redoc",
     "openapi",
-    "documentations",
+    "api",
+    "swagger",
+    "documentation",
     "api-doc",
     "docusaurus",
     "docusaurus-preset"

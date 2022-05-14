@@ -1,5 +1,6 @@
 import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import { ThemeOptions, GlobalData } from './types/options';
 import { getGlobalData } from './redocData';
 
@@ -27,10 +28,7 @@ export default function redocTheme(
               process.versions.node || '0.0.0',
             ),
           }),
-          new webpack.NormalModuleReplacementPlugin(
-            /^redoc$/,
-            require.resolve('redoc/bundles/redoc.browser.lib'),
-          ),
+          new NodePolyfillPlugin(),
           ...(isServer
             ? [
                 new webpack.NormalModuleReplacementPlugin(
