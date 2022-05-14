@@ -40,8 +40,7 @@
     "copyfiles": "^2.4.1",
     "lodash": "^4.17.21",
     "mobx": "^6.3.13",
-    "node-polyfill-webpack-plugin": "^1.1.4",
-    "redoc": "^2.0.0-rc.64",
+    "redoc": "2.0.0-rc.69",
     "styled-components": "^5.3.3",
     "to-arraybuffer": "^1.0.1"
   },

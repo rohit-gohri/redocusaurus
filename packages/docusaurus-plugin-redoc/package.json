@@ -33,9 +33,9 @@
   "dependencies": {
     "@docusaurus/types": "^2.0.0-beta.20",
     "@docusaurus/utils": "^2.0.0-beta.20",
-    "@redocly/openapi-core": "^1.0.0-beta.87",
+    "@redocly/openapi-core": "1.0.0-beta.97",
     "joi": "^17.5.0",
-    "redoc": "^2.0.0-rc.64"
+    "redoc": "2.0.0-rc.69"
   },
   "engines": {
     "node": ">=14"

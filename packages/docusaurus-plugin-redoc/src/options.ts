@@ -1,5 +1,5 @@
 import * as Joi from 'joi';
-import { RawConfig } from '@redocly/openapi-core';
+import type { RawConfig } from '@redocly/openapi-core';
 
 type LayoutProps = {
   title?: string;
@@ -26,7 +26,7 @@ export interface PluginOptions {
    * Redocly config to bundle file
    * @see https://redocly.com/docs/cli/configuration/configuration-file/
    */
-  config?: string | Partial<RawConfig>;
+  config?: string | RawConfig;
 }
 
 export interface PluginOptionsWithDefault extends PluginOptions {
