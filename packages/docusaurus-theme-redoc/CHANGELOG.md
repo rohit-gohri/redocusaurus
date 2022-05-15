@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.1.0
+
+### Minor Changes
+
+- [#180](https://github.com/rohit-gohri/redocusaurus/pull/180) [`eb69763`](https://github.com/rohit-gohri/redocusaurus/commit/eb69763362c436657a991b31a0e9a9f43f5e874e) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for multiple apis in MDX
+
 ## 1.0.4
 
 ### Patch Changes
