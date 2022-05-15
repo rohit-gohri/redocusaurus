@@ -11,21 +11,28 @@ export interface SpecProps {
 
 export type RedocProps = SpecProps;
 
-export type ApiSchemaProps = Omit<
-  ObjectDescriptionProps,
-  'parser' | 'options' | 'schemaRef'
-> & {
+export interface MdxProps {
   /**
    * If you have multiple apis, then add a `id` field in the specs array
    * And pass the same here
    */
   id?: string;
-  pointer: ObjectDescriptionProps['schemaRef'];
-  /**
-   * Show the example or not
-   */
-  example?: boolean;
-};
+}
+
+export type ApiSchemaProps = Omit<
+  ObjectDescriptionProps,
+  'parser' | 'options' | 'schemaRef'
+> &
+  MdxProps & {
+    /**
+     * Show the example or not
+     */
+    example?: boolean;
+    /**
+     * Ref to the schema
+     */
+    pointer: ObjectDescriptionProps['schemaRef'];
+  };
 
 export type ApiDocProps = {
   specProps: SpecProps;

@@ -27,6 +27,41 @@ declare module '@theme/ApiDoc' {
   export default ApiDoc;
 }
 
+declare module '@theme/ApiDocMdx' {
+  interface MdxProps {
+    /**
+     * If you have multiple apis, then add a `id` field in the specs array
+     * And pass the same here
+     */
+    id?: string;
+  }
+
+  const ApiDocMdx: (props: MdxProps) => JSX.Element;
+  export default ApiDocMdx;
+}
+
+declare module '@theme/ApiSchema' {
+  interface ApiSchemaProps {
+    /**
+     * If you have multiple apis, then add a `id` field in the specs array
+     * And pass the same here
+     */
+    id?: string;
+    /**
+     * Show the example or not
+     */
+    example?: boolean;
+
+    /**
+     * Ref to the schema
+     */
+    pointer: string;
+  }
+
+  const ApiSchema: (props: ApiSchemaProps) => JSX.Element;
+  export default ApiSchema;
+}
+
 declare module '@theme/useSpecData' {
   /**
    * Load redocusaurus plugin data by ID

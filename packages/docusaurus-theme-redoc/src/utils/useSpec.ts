@@ -3,6 +3,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
+import merge from 'lodash/merge';
 import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
@@ -14,7 +15,10 @@ import { GlobalData } from '../types/options';
  * (c) 2022 Rohit Gohri
  * Released under the MIT License
  */
-export function useSpec({ spec, url }: SpecProps) {
+export function useSpec(
+  { spec, url }: SpecProps,
+  optionsOverrides?: RedocRawOptions,
+) {
   const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
@@ -31,24 +35,39 @@ export function useSpec({ spec, url }: SpecProps) {
           : redocOptions.scrollYOffset,
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lightStore = new AppStore(spec as any, fullUrl, {
-      ...redocOptions,
-      ...commonOptions,
-      theme: lightTheme,
-    });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const darkStore = new AppStore(spec as any, fullUrl, {
-      ...redocOptions,
-      ...commonOptions,
-      theme: darkTheme,
-    });
+    const lightStore = new AppStore(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      spec as any,
+      fullUrl,
+      merge(
+        {
+          ...redocOptions,
+          ...commonOptions,
+          theme: lightTheme,
+        },
+        optionsOverrides,
+      ),
+    );
+
+    const darkStore = new AppStore(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      spec as any,
+      fullUrl,
+      merge(
+        {
+          ...redocOptions,
+          ...commonOptions,
+          theme: darkTheme,
+        },
+        optionsOverrides,
+      ),
+    );
 
     return {
       lightStore,
       darkStore,
     };
-  }, [isBrowser, spec, fullUrl, themeOptions]);
+  }, [isBrowser, spec, fullUrl, themeOptions, optionsOverrides]);
 
   const result = useMemo(() => {
     return {
