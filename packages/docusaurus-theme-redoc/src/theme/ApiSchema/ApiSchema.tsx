@@ -13,10 +13,11 @@ const ApiSchema: React.FC<Props> = ({
   id,
   example,
   pointer,
+  optionsOverrides,
   ...rest
 }: Props): JSX.Element => {
   const specProps = useSpecData(id);
-  const { store, darkStore, lightStore } = useSpec(specProps);
+  const { store, darkStore, lightStore } = useSpec(specProps, optionsOverrides);
 
   useEffect(() => {
     /**

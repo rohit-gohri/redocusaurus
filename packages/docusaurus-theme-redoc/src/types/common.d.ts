@@ -1,5 +1,5 @@
 import type { Props as LayoutProps } from '@theme/Layout';
-import type { ObjectDescriptionProps } from 'redoc';
+import type { RedocRawOptions, ObjectDescriptionProps } from 'redoc';
 import type { OpenAPISpec } from 'redoc/typings/types';
 
 export type ParsedSpec = OpenAPISpec;
@@ -24,6 +24,7 @@ export type ApiSchemaProps = Omit<
   'parser' | 'options' | 'schemaRef'
 > &
   MdxProps & {
+    optionsOverrides?: RedocRawOptions;
     /**
      * Show the example or not
      */
