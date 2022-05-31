@@ -50,7 +50,9 @@ jobs:
           yarn workspace redocusaurus exec "sh $PWD/scripts/release.sh" >> $GITHUB_ENV
 
       - name: Create Github Release
-        if: ${{ env.github_release == 'yes' }}
+        if: |
+          steps.changesets.outputs.published == 'true' && 
+          env.github_release == 'yes'
         uses: softprops/action-gh-release@master
         with:
           body_path: latest-CHANGELOG.md
