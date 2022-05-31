@@ -21,6 +21,11 @@ const getDefaultTheme = (
           main: primaryColor || '#25c2a0',
         },
       },
+      theme: {
+        prism: {
+          additionalLanguages: ['scala'],
+        },
+      },
     },
     customTheme,
   );
