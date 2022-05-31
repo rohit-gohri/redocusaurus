@@ -66,8 +66,7 @@ if (process.env.VERCEL_URL) {
  */
 const config = {
   presets: [
-    redocusaurus,
-    /** ************ Rest of your Docusaurus Config *********** */
+    /** ************ Your other presets' config  *********** */
     [
       '@docusaurus/preset-classic',
       {
@@ -77,8 +76,10 @@ const config = {
           routeBasePath: '/docs',
           editUrl: 'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
         },
-      },
+      },  
     ],
+    // Redocusaurus Config
+    redocusaurus,
   ],
   title: 'Redocusaurus',
   tagline: 'OpenAPI solution for Docusaurus docs with Redoc',

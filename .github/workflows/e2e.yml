@@ -31,6 +31,9 @@ jobs:
       - name: Install Dependencies 📦
         run: yarn install --immutable
 
+      - name: Sleep
+        run: sleep 60
+
       - name: Wait for Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
         id: vercel-preview

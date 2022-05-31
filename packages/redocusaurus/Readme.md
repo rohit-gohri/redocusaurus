@@ -14,7 +14,7 @@
   yarn add redocusaurus
   ```
 
-1. Add it as a preset to your docusaurus config and pass options:
+1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:
 
    - Pass it a path to a local OpenAPI YAML file
 
@@ -24,6 +24,9 @@
     module.exports = {
       // ...
       presets: [
+         // .. Your other presets' config 
+         '@docusaurus/preset-classic',
+         // Redocusaurus config
         [
           'redocusaurus',
           {
@@ -54,6 +57,9 @@
     module.exports = {
       // ...
       presets: [
+         // .. Your other presets' config 
+         '@docusaurus/preset-classic',
+         // Redocusaurus config
         [
           'redocusaurus',
           {
