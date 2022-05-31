@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import Redoc from '../Redoc';
-import { useSpecData } from '../useSpecData';
+import Redoc from '@theme/Redoc';
+import useSpecData from '@theme/useSpecData';
 import { MdxProps as Props } from '../../types/common';
 import '../ApiSchema/styles.css';
 

@@ -34,13 +34,14 @@ export default function preset(
     console.error('[REDOCUSAURUS] Specs:', specsArray);
   }
   const id = opts.id ? `-${opts.id}` : '';
+  const themeId = `theme-redoc${id}`;
 
   const config = {
     themes: [
       [
         require.resolve('docusaurus-theme-redoc'),
         {
-          id: `theme-redoc${id}`,
+          id: themeId,
           ...theme,
         },
       ],
@@ -50,6 +51,7 @@ export default function preset(
         require.resolve('docusaurus-plugin-redoc'),
         {
           ...pluginOpts,
+          themeId,
           id: pluginOpts.id || `plugin-redoc${id}-${index}`,
           debug,
         },
