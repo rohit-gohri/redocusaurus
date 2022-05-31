@@ -51,6 +51,8 @@ export default function redocPlugin(
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
     console.error('[REDOCUSAURUS_PLUGIN] Options:', options);
   }
+
+  const { themeId } = options;
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
@@ -119,23 +121,25 @@ export default function redocPlugin(
 
       const data: SpecProps = {
         url,
+        themeId,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         spec: content.converted as any,
       };
       setGlobalData(data);
 
       if (options.route) {
+        const routePath = options.route.startsWith('/')
+          ? options.route.slice(1)
+          : options.route;
+
         const specProps = await createData(
-          `redocApiSpecV1-${options.id || '1'}.json`,
+          `redocApiSpecV1.1-${options.id || '1'}.json`,
           JSON.stringify(data),
         );
         const layoutProps = await createData(
           `redocApiLayoutV1-${options.id || '1'}.json`,
           JSON.stringify(options.layout),
         );
-        const routePath = options.route.startsWith('/')
-          ? options.route.slice(1)
-          : options.route;
 
         const modules: Record<keyof ApiDocProps, string> = {
           specProps,

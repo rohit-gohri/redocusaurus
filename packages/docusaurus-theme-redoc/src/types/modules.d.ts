@@ -2,10 +2,17 @@ interface SpecProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   spec: import('redoc/typings/types').OpenAPISpec;
   url?: string;
+  themeId?: string;
 }
 
 declare module '@theme/Redoc' {
-  const Redoc: (props: SpecProps & { className?: string }) => JSX.Element;
+  import type { RedocRawOptions } from 'redoc';
+  const Redoc: (
+    props: SpecProps & {
+      className?: string;
+      optionsOverrides?: RedocRawOptions;
+    },
+  ) => JSX.Element;
   export default Redoc;
 }
 

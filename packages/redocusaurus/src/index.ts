@@ -3,6 +3,7 @@ import type { PluginOptions } from 'docusaurus-plugin-redoc';
 import type { ThemeOptions } from 'docusaurus-theme-redoc';
 
 export interface PresetOptions {
+  id?: string;
   debug?: boolean;
   specs: PluginOptions[];
   theme?: ThemeOptions;
@@ -32,15 +33,26 @@ export default function preset(
   if (debug) {
     console.error('[REDOCUSAURUS] Specs:', specsArray);
   }
+  const id = opts.id ? `-${opts.id}` : '';
+  const themeId = `theme-redoc${id}`;
 
   const config = {
-    themes: [[require.resolve('docusaurus-theme-redoc'), theme]],
+    themes: [
+      [
+        require.resolve('docusaurus-theme-redoc'),
+        {
+          id: themeId,
+          ...theme,
+        },
+      ],
+    ],
     plugins: [
       ...specsArray.map((pluginOpts, index) => [
         require.resolve('docusaurus-plugin-redoc'),
         {
           ...pluginOpts,
-          id: pluginOpts.id || `plugin-redoc-${index}`,
+          themeId,
+          id: pluginOpts.id || `plugin-redoc${id}-${index}`,
           debug,
         },
       ]),

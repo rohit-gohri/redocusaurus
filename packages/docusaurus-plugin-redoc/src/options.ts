@@ -22,6 +22,7 @@ export interface PluginOptions {
   route?: string;
   layout?: LayoutProps;
   debug?: boolean;
+  themeId?: string;
   /**
    * Redocly config to bundle file
    * @see https://redocly.com/docs/cli/configuration/configuration-file/
@@ -46,4 +47,5 @@ export const PluginOptionSchema = Joi.object<PluginOptions>({
   debug: Joi.boolean().default(DEFAULT_OPTIONS.debug),
   route: Joi.string().uri({ relativeOnly: true }).optional(),
   config: Joi.any().optional(),
+  themeId: Joi.string().optional(),
 });
