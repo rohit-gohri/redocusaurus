@@ -40,6 +40,7 @@ If you have multiple APIs loaded with redocusaurus, then it is recommended to ad
 ```js title="docusaurus.config.js"
 const config = {
   presets: [
+    '@docusaurus/preset-classic',
     [
       'redocusaurus',
       {
@@ -68,7 +69,6 @@ const config = {
         },
       },
     ],
-    '@docusaurus/preset-classic',
   ],
   title: 'Redocusaurus',
 };
