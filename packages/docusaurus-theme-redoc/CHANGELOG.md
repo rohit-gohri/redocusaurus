@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.1.1
+
+### Patch Changes
+
+- [#187](https://github.com/rohit-gohri/redocusaurus/pull/187) [`3d7dfeb`](https://github.com/rohit-gohri/redocusaurus/commit/3d7dfeb199b31ceb0e1770bfe1161a4fffe7d2c9) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix error due to missing prism language
+
 ## 1.1.0
 
 ### Minor Changes
