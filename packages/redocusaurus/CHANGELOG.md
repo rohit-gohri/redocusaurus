@@ -1,5 +1,15 @@
 # redocusaurus
 
+## 1.1.2
+
+### Patch Changes
+
+- [#189](https://github.com/rohit-gohri/redocusaurus/pull/189) [`c18827e`](https://github.com/rohit-gohri/redocusaurus/commit/c18827e2e0d6d054e86e17c78f971e6101e8a73b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Pass through a themeId to load multiple presets at the same time
+
+- Updated dependencies [[`c18827e`](https://github.com/rohit-gohri/redocusaurus/commit/c18827e2e0d6d054e86e17c78f971e6101e8a73b)]:
+  - docusaurus-plugin-redoc@1.1.2
+  - docusaurus-theme-redoc@1.1.2
+
 ## 1.1.1
 
 ### Patch Changes
