@@ -56,9 +56,9 @@ const COMMON_THEME: RedocThemeOverrides = {
     fontWeightRegular: 'var(--ifm-font-weight-base)',
     fontWeightBold: 'var(--ifm-font-weight-bold)',
     headings: {
-      fontFamily: 'var(--ifm-font-family-base)',
-      fontWeight: 'var(--ifm-font-weight-semibold)',
-      lineHeight: 'var(--ifm-line-height-base)',
+      fontFamily: 'var(--ifm-heading-font-family)',
+      fontWeight: 'var(--ifm-heading-font-weight)',
+      lineHeight: 'var(--ifm-heading-line-height)',
     },
     code: {
       fontFamily: 'var(--ifm-font-family-monospace)',
