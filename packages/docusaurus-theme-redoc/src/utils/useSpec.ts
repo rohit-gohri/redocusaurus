@@ -27,7 +27,7 @@ export function useSpec(
     themeId,
   ) as GlobalData;
 
-  const stores = useMemo(() => {
+  const result = useMemo(() => {
     const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
 
     const commonOptions: Partial<RedocRawOptions> = {
@@ -38,48 +38,39 @@ export function useSpec(
           : redocOptions.scrollYOffset,
     };
 
-    const lightStore = new AppStore(
+    const lightThemeOptions: RedocRawOptions = merge(
+      {
+        ...redocOptions,
+        ...commonOptions,
+        theme: lightTheme,
+      },
+      optionsOverrides,
+    );
+
+    const darkThemeOptions: RedocRawOptions = merge(
+      {
+        ...redocOptions,
+        ...commonOptions,
+        theme: darkTheme,
+      },
+      optionsOverrides,
+    );
+
+    const store = new AppStore(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       spec as any,
       fullUrl,
-      merge(
-        {
-          ...redocOptions,
-          ...commonOptions,
-          theme: lightTheme,
-        },
-        optionsOverrides,
-      ),
-    );
-
-    const darkStore = new AppStore(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      spec as any,
-      fullUrl,
-      merge(
-        {
-          ...redocOptions,
-          ...commonOptions,
-          theme: darkTheme,
-        },
-        optionsOverrides,
-      ),
+      isBrowser && isDarkTheme ? darkThemeOptions : lightThemeOptions,
     );
 
     return {
-      lightStore,
-      darkStore,
-    };
-  }, [isBrowser, spec, fullUrl, themeOptions, optionsOverrides]);
-
-  const result = useMemo(() => {
-    return {
-      ...stores,
+      darkThemeOptions,
+      lightThemeOptions,
       // @ts-expect-error extra prop
       hasLogo: !!spec.info?.['x-logo'],
-      store: isBrowser && isDarkTheme ? stores.darkStore : stores.lightStore,
+      store,
     };
-  }, [isBrowser, isDarkTheme, spec, stores]);
+  }, [isBrowser, isDarkTheme, spec, fullUrl, themeOptions, optionsOverrides]);
 
   return result;
 }
