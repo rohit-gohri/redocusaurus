@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../global';
-import { AppStore, Redoc } from 'redoc';
+import { AppStore, Redoc, RedocRawOptions, RedocNormalizedOptions } from 'redoc';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
@@ -53,19 +53,22 @@ const LIGHT_MODE_PREFIX = "html:not([data-theme='dark'])";
 const DARK_MODE_PREFIX = "html([data-theme='dark'])";
 
 export function ServerStyles({
-  lightStore,
-  darkStore,
+  store,
+  lightThemeOptions,
+  darkThemeOptions,
 }: {
-  lightStore: AppStore;
-  darkStore: AppStore;
+  store: AppStore,
+  lightThemeOptions: RedocRawOptions,
+  darkThemeOptions: RedocRawOptions,
 }) {
   const css = {
     light: '',
     dark: '',
   };
   const lightSheet = new ServerStyleSheet();
+  store.options = new RedocNormalizedOptions(lightThemeOptions);
   renderToString(
-    lightSheet.collectStyles(React.createElement(Redoc, { store: lightStore })),
+    lightSheet.collectStyles(React.createElement(Redoc, { store })),
   );
   const lightStyleTag = lightSheet.getStyleTags();
   let lightCss = lightStyleTag.slice(lightStyleTag.indexOf('>') + 1);
@@ -73,8 +76,9 @@ export function ServerStyles({
   css.light = prefixCssSelectors(lightCss, LIGHT_MODE_PREFIX);
 
   const darkSheet = new ServerStyleSheet();
+  store.options = new RedocNormalizedOptions(darkThemeOptions);
   renderToString(
-    darkSheet.collectStyles(React.createElement(Redoc, { store: darkStore })),
+    darkSheet.collectStyles(React.createElement(Redoc, { store })),
   );
   const darkStyleTag = darkSheet.getStyleTags();
   let darkCss = darkStyleTag.slice(darkStyleTag.indexOf('>') + 1);
