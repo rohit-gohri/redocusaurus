@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { usePluginData } from '@docusaurus/useGlobalData';
@@ -8,6 +8,9 @@ import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
 import { GlobalData } from '../types/options';
+
+// the current store singleton in the app's instance
+let currentStore: AppStore | null = null;
 
 /**
  * Redocusaurus
@@ -56,7 +59,10 @@ export function useSpec(
       optionsOverrides,
     );
 
-    const store = new AppStore(
+    if (currentStore !== null) {
+      currentStore.dispose();
+    }
+    currentStore = new AppStore(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       spec as any,
       fullUrl,
@@ -68,9 +74,15 @@ export function useSpec(
       lightThemeOptions,
       // @ts-expect-error extra prop
       hasLogo: !!spec.info?.['x-logo'],
-      store,
+      store: currentStore,
     };
-  }, [isBrowser, isDarkTheme, spec, fullUrl, themeOptions, optionsOverrides]);
+  }, [isBrowser, spec, fullUrl, isDarkTheme, themeOptions, optionsOverrides]);
+
+  useEffect(() => {
+    // to ensure that menu is properly loaded when theme gets changed
+    // or when first load
+    result.store.onDidMount();
+  }, [result, isBrowser, isDarkTheme]);
 
   return result;
 }
