@@ -53,7 +53,7 @@
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "*"
+    "@docusaurus/theme-common": "^2.0.0-beta.18"
   },
   "engines": {
     "node": ">=14"
