@@ -41,9 +41,12 @@
   },
   "homepage": "https://redocusaurus.vercel.app/",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-beta.21",
     "docusaurus-plugin-redoc": "1.1.2",
     "docusaurus-theme-redoc": "1.1.3"
+  },
+  "peerDependencies": {
+    "@docusaurus/theme-common": "^2.0.0-beta.21",
+    "@docusaurus/utils": "^2.0.0-beta.21"
   },
   "engines": {
     "node": ">=14"
