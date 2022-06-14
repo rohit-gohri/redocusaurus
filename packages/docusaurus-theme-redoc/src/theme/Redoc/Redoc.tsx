@@ -20,14 +20,18 @@ function Redoc(
   },
 ): JSX.Element {
   const { className, optionsOverrides, ...specProps } = props;
-  const { store, darkStore, lightStore, hasLogo } = useSpec(
+  const { store, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
     specProps,
     optionsOverrides,
   );
 
   return (
     <>
-      <ServerStyles lightStore={lightStore} darkStore={darkStore} />
+      <ServerStyles
+        specProps={specProps}
+        lightThemeOptions={lightThemeOptions}
+        darkThemeOptions={darkThemeOptions}
+      />
       <div
         className={clsx([
           'redocusaurus',
