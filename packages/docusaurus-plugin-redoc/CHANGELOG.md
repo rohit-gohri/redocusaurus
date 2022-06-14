@@ -18,13 +18,13 @@
 
 - [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`e80c03a`](https://github.com/rohit-gohri/redocusaurus/commit/e80c03a2f0e6d1bc02926d0720913eeb2a5dddaf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Parse schema at build time for urls too, remove support for relative urls
 
-* [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
 
 ### Minor Changes
 
 - [#151](https://github.com/rohit-gohri/redocusaurus/pull/151) [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add swagger support, create 2 bundles - original and converted
 
-* [#148](https://github.com/rohit-gohri/redocusaurus/pull/148) [`ad66f92`](https://github.com/rohit-gohri/redocusaurus/commit/ad66f92aedd27d4b25a3c902f197e6c6b3c271bb) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for bundling multiple yamls that reference each other
+- [#148](https://github.com/rohit-gohri/redocusaurus/pull/148) [`ad66f92`](https://github.com/rohit-gohri/redocusaurus/commit/ad66f92aedd27d4b25a3c902f197e6c6b3c271bb) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for bundling multiple yamls that reference each other
 
 ## 0.9.0
 

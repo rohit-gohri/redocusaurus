@@ -1,5 +1,20 @@
 # Redocusaurus
 
+## redocusaurus@1.1.3
+
+### Patch Changes
+
+- Updated dependencies [[`57ad685`](https://github.com/rohit-gohri/redocusaurus/commit/57ad6857b795799d4040a4e7e2631810d1a619f2), [`04f9015`](https://github.com/rohit-gohri/redocusaurus/commit/04f901596c33e4a23132a5aa416b175fe626b35a)]:
+  - docusaurus-theme-redoc@1.1.3
+
+## docusaurus-theme-redoc@1.1.3
+
+### Patch Changes
+
+- [#194](https://github.com/rohit-gohri/redocusaurus/pull/194) [`57ad685`](https://github.com/rohit-gohri/redocusaurus/commit/57ad6857b795799d4040a4e7e2631810d1a619f2) Thanks [@baptisteArno](https://github.com/baptisteArno)! - fix(theme): Use heading specific CSS variables
+
+- [#198](https://github.com/rohit-gohri/redocusaurus/pull/198) [`f3cca29`](https://github.com/rohit-gohri/redocusaurus/commit/f3cca29b7567a5d29f66589466ca33ab13af7d98) Thanks [@mauris](https://github.com/mauris )! - Dark and light AppStore menu fix
+
 ## redocusaurus@1.1.2
 
 ### Patch Changes

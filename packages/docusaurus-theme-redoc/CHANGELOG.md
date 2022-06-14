@@ -1,5 +1,13 @@
 # docusaurus-theme-redoc
 
+## 1.1.3
+
+### Patch Changes
+
+- [#194](https://github.com/rohit-gohri/redocusaurus/pull/194) [`57ad685`](https://github.com/rohit-gohri/redocusaurus/commit/57ad6857b795799d4040a4e7e2631810d1a619f2) Thanks [@baptisteArno](https://github.com/baptisteArno)! - fix(theme): Use heading specific CSS variables
+
+- [#198](https://github.com/rohit-gohri/redocusaurus/pull/198) [`f3cca29`](https://github.com/rohit-gohri/redocusaurus/commit/f3cca29b7567a5d29f66589466ca33ab13af7d98) Thanks [@mauris](https://github.com/mauris )! - Dark and light AppStore menu fix
+
 ## 1.1.2
 
 ### Patch Changes
@@ -30,7 +38,7 @@
 
 - [#176](https://github.com/rohit-gohri/redocusaurus/pull/176) [`6695ba6`](https://github.com/rohit-gohri/redocusaurus/commit/6695ba6b3851c906951577b69c6d6d59b57e956b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade to docusaurus-beta.20 and fix Invalid URL errors
 
-* [#176](https://github.com/rohit-gohri/redocusaurus/pull/176) [`3c3d4bd`](https://github.com/rohit-gohri/redocusaurus/commit/3c3d4bda3bee61a6c9937825a5d4d46ffb32033c) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix usage of color mode
+- [#176](https://github.com/rohit-gohri/redocusaurus/pull/176) [`3c3d4bd`](https://github.com/rohit-gohri/redocusaurus/commit/3c3d4bda3bee61a6c9937825a5d4d46ffb32033c) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix usage of color mode
 
 ## 1.0.2
 
@@ -50,11 +58,11 @@
 
 - [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`e80c03a`](https://github.com/rohit-gohri/redocusaurus/commit/e80c03a2f0e6d1bc02926d0720913eeb2a5dddaf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Parse schema at build time for urls too, remove support for relative urls
 
-* [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`25fada0`](https://github.com/rohit-gohri/redocusaurus/commit/25fada00ec31a22723190affb324c754f41e3ad0) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Change default redoc options, download button not hidden by default
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`25fada0`](https://github.com/rohit-gohri/redocusaurus/commit/25fada00ec31a22723190affb324c754f41e3ad0) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Change default redoc options, download button not hidden by default
 
 - [#149](https://github.com/rohit-gohri/redocusaurus/pull/149) [`d2438dd`](https://github.com/rohit-gohri/redocusaurus/commit/d2438ddc7901be1f3d3fb89e68460524592ba087) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Enable server style sheet collection by default, fixes style issues on fresh load
 
-* [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
+- [#138](https://github.com/rohit-gohri/redocusaurus/pull/138) [`117563e`](https://github.com/rohit-gohri/redocusaurus/commit/117563e0b5177819a206c7609f25b68260050308) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Simplify plugin/theme options
 
 ### Minor Changes
 
@@ -64,7 +72,7 @@
 
 - [#152](https://github.com/rohit-gohri/redocusaurus/pull/152) [`70ced20`](https://github.com/rohit-gohri/redocusaurus/commit/70ced208484dd9b517ce00aeaa9eb42caded673b) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix nav sometimes hidden when logo is not present
 
-* [#151](https://github.com/rohit-gohri/redocusaurus/pull/151) [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix scrollYOffset warning in server build
+- [#151](https://github.com/rohit-gohri/redocusaurus/pull/151) [`0eff93b`](https://github.com/rohit-gohri/redocusaurus/commit/0eff93bd137a96320b6198ad26357392a3ded4e7) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix scrollYOffset warning in server build
 
 - [#153](https://github.com/rohit-gohri/redocusaurus/pull/153) [`21d76a4`](https://github.com/rohit-gohri/redocusaurus/commit/21d76a45f2827967d35803b0b03773b7709afeca) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix prism re-highlighting all code on load
 
