@@ -51,7 +51,6 @@ jobs:
 
       - name: Create Github Release
         if: |
-          steps.changesets.outputs.published == 'true' && 
           env.github_release == 'yes'
         uses: softprops/action-gh-release@master
         with:
