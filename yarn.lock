@@ -6926,7 +6926,7 @@ __metadata:
     joi: ^17.5.0
     redoc: 2.0.0-rc.72
   peerDependencies:
-    "@docusaurus/utils": ^2.0.0-beta.21
+    "@docusaurus/utils": "*"
   languageName: unknown
   linkType: soft
 
@@ -6952,7 +6952,7 @@ __metadata:
     styled-components: ^5.3.5
     typescript: ^4.6.4
   peerDependencies:
-    "@docusaurus/theme-common": ^2.0.0-beta.21
+    "@docusaurus/theme-common": "*"
   languageName: unknown
   linkType: soft
 
@@ -12906,8 +12906,8 @@ __metadata:
     docusaurus-plugin-redoc: 1.1.2
     docusaurus-theme-redoc: 1.1.3
   peerDependencies:
-    "@docusaurus/theme-common": ^2.0.0-beta.21
-    "@docusaurus/utils": ^2.0.0-beta.21
+    "@docusaurus/theme-common": "*"
+    "@docusaurus/utils": "*"
   languageName: unknown
   linkType: soft
 

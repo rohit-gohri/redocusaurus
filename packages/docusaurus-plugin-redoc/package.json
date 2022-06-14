@@ -38,7 +38,7 @@
     "@docusaurus/utils": "^2.0.0-beta.21"
   },
   "peerDependencies": {
-    "@docusaurus/utils": "^2.0.0-beta.21"
+    "@docusaurus/utils": "*"
   },
   "engines": {
     "node": ">=14"
