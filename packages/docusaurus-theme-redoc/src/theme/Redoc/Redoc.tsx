@@ -29,7 +29,7 @@ function Redoc(
     optionsOverrides,
   );
 
-  const isDevMode = !!process.env.WEBPACK_SERVE;
+  const isDevMode = process.env.NODE_ENV === 'development';
 
   if (isDevMode && specProps.isSpecFile === false) {
     return (
@@ -40,7 +40,7 @@ function Redoc(
           className,
         ])}
       >
-        <RedocStandalone specUrl={specProps.url} />
+        <RedocStandalone specUrl={specProps.url} options={store.rawOptions} />
       </div>
     );
   }
