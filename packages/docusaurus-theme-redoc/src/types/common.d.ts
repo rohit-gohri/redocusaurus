@@ -7,6 +7,7 @@ export type ParsedSpec = OpenAPISpec;
 export interface SpecProps {
   spec: ParsedSpec;
   url?: string;
+  isSpecFile?: boolean;
   themeId?: string;
 }
 

@@ -122,6 +122,7 @@ export default function redocPlugin(
       const data: SpecProps = {
         url,
         themeId,
+        isSpecFile,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         spec: content.converted as any,
       };
@@ -133,7 +134,7 @@ export default function redocPlugin(
           : options.route;
 
         const specProps = await createData(
-          `redocApiSpecV1.1-${options.id || '1'}.json`,
+          `redocApiSpecV1.2-${options.id || '1'}.json`,
           JSON.stringify(data),
         );
         const layoutProps = await createData(
