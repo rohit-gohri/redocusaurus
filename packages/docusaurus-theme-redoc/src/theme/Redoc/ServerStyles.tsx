@@ -58,9 +58,9 @@ export function ServerStyles({
   lightThemeOptions,
   darkThemeOptions,
 }: {
-  specProps: SpecProps,
-  lightThemeOptions: RedocRawOptions,
-  darkThemeOptions: RedocRawOptions,
+  specProps: SpecProps;
+  lightThemeOptions: RedocRawOptions;
+  darkThemeOptions: RedocRawOptions;
 }) {
   const fullUrl = useBaseUrl(specProps.url, { absolute: true });
   const css = {

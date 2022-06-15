@@ -2,6 +2,7 @@ interface SpecProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   spec: import('redoc/typings/types').OpenAPISpec;
   url?: string;
+  isSpecFile?: boolean;
   themeId?: string;
 }
 
