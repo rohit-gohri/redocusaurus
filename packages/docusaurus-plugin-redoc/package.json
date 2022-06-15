@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-redoc",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Redoc Plugin for DocusaurusV2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

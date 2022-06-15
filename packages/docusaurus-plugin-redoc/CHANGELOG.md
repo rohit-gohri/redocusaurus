@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 1.2.1
+
+### Patch Changes
+
+- [#207](https://github.com/rohit-gohri/redocusaurus/pull/207) [`ae43b81`](https://github.com/rohit-gohri/redocusaurus/commit/ae43b81b842952fbe208bdc18d056c046bb24f03) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix reloads in dev mode
+
 ## 1.2.0
 
 ### Minor Changes
