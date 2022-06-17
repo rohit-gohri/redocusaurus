@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.2.2
+
+### Patch Changes
+
+- [#210](https://github.com/rohit-gohri/redocusaurus/pull/210) [`c55d03f`](https://github.com/rohit-gohri/redocusaurus/commit/c55d03fc5b0c896546121a07d85b1e8f4370e187) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix worker.terminate error in SSR
+
 ## 1.2.1
 
 ### Patch Changes
