@@ -88,12 +88,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Add comment
-        uses: mshick/add-pr-comment@v1
         if: ${{ env.publish == 'yes' }}
+        uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
             This pull request is automatically built and it is testable by installing [redocusaurus@v${{ env.package_version }}](https://www.npmjs.com/package/redocusaurus/v/${{ env.package_version }}).
 
 
             For commit [${{ github.sha }}](https://github.com/rohit-gohri/redocusaurus/commit/${{ github.sha }}).
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          comment_includes: 'This pull request is automatically built and it is testable by installing'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
