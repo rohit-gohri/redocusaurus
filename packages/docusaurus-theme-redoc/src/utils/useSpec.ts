@@ -59,9 +59,10 @@ export function useSpec(
       optionsOverrides,
     );
 
-    if (currentStore !== null) {
+    if (currentStore !== null && isBrowser) {
       currentStore.dispose();
     }
+
     currentStore = new AppStore(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       spec as any,
