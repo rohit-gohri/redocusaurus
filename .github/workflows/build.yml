@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'yarn'
@@ -50,3 +50,51 @@ jobs:
           git-config-email: drone@rohit.page
           git-config-name: Drone User
         if: ${{ github.event_name == 'push' }}
+
+  publish-test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' && github.ref_name != 'changeset-release/main' }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies 📦
+        run: yarn install --immutable
+
+      - name: Build Packages 🔨
+        run: yarn build:packages
+
+      - name: Generate snapshot versions
+        run: yarn changeset version --snapshot test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get version
+        run: |
+          yarn workspace redocusaurus exec "sh $PWD/scripts/version.sh" >> $GITHUB_ENV
+
+      - name: Publish
+        run: yarn changeset publish --tag test
+        if: ${{ env.publish == 'yes' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Add comment
+        if: ${{ env.publish == 'yes' }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            This pull request is automatically built and it is testable by installing [redocusaurus@v${{ env.package_version }}](https://www.npmjs.com/package/redocusaurus/v/${{ env.package_version }}).
+
+
+            For commit [${{ github.sha }}](https://github.com/rohit-gohri/redocusaurus/commit/${{ github.sha }}).
+          comment_includes: 'This pull request is automatically built and it is testable by installing'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
