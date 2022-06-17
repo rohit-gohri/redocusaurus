@@ -71,6 +71,8 @@ jobs:
 
       - name: Generate snapshot versions
         run: yarn changeset version --snapshot test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get version
         run: |
