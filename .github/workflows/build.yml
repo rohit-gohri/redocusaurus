@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'yarn'
@@ -56,12 +56,13 @@ jobs:
     if: ${{ github.event_name != 'push' && github.ref_name != 'changeset-release/main' }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies 📦
         run: yarn install --immutable
