@@ -50,3 +50,45 @@ jobs:
           git-config-email: drone@rohit.page
           git-config-name: Drone User
         if: ${{ github.event_name == 'push' }}
+
+  publish-test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' && github.ref_name != 'changeset-release/main' }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      - name: Install Dependencies 📦
+        run: yarn install --immutable
+
+      - name: Build Packages 🔨
+        run: yarn build:packages
+
+      - name: Generate snapshot versions
+        run: yarn changeset version --snapshot test
+
+      - name: Publish
+        run: yarn changeset publish --tag test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Get version
+        run: |
+          yarn workspace redocusaurus exec "sh $PWD/scripts/version.sh" >> $GITHUB_ENV
+
+      - name: Add comment
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            This pull request is automatically built and it is testable by installing [redocusaurus@v${{ env.package_version }}](https://www.npmjs.com/package/redocusaurus/v/${{ env.package_version }}).
+
+
+            For commit [github.sha](https://github.com/rohit-gohri/redocusaurus/commit/${{ github.sha }}).
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
