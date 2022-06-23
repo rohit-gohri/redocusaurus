@@ -127,24 +127,29 @@ function getThemeOptions(
   }
 }
 
-export function getRedocThemes(customTheme: RedocThemeOverrides): {
+export function getRedocThemes(
+  customTheme: RedocThemeOverrides,
+  customDarkTheme: RedocThemeOverrides = customTheme,
+): {
   darkTheme: RedocThemeOverrides;
   lightTheme: RedocThemeOverrides;
 } {
   return {
     lightTheme: getThemeOptions(customTheme, false),
-    darkTheme: getThemeOptions(customTheme, true),
+    darkTheme: getThemeOptions(customDarkTheme, true),
   };
 }
 
 export function getGlobalData({
   primaryColor,
+  primaryColorDark = primaryColor,
   theme: customTheme,
   options,
 }: ThemeOptions): GlobalData {
   const overrides = getDefaultTheme(primaryColor, customTheme);
+  const overridesDark = getDefaultTheme(primaryColorDark, customTheme);
 
-  const { lightTheme, darkTheme } = getRedocThemes(overrides);
+  const { lightTheme, darkTheme } = getRedocThemes(overrides, overridesDark);
 
   return {
     lightTheme,

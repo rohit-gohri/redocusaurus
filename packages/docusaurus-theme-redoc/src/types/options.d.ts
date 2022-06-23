@@ -19,6 +19,12 @@ export interface ThemeOptions {
    */
   primaryColor?: string;
   /**
+   * Primary Color to pass to Redoc Theme in dark mode.
+   * This option is only needed if you want a different primary color in dark
+   * mode, and will default to `primaryColor` if not set.
+   */
+  primaryColorDark?: string;
+  /**
    * Options to pass to redoc
    * @see https://github.com/redocly/redoc#redoc-options-object
    */
