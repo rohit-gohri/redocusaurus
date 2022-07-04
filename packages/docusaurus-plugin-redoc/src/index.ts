@@ -46,6 +46,7 @@ export default function redocPlugin(
     'redocusaurus',
     `${options.id || 'api-spec'}.yaml`,
   );
+  let filesToWatch: string[] = isSpecFile ? [path.resolve(spec)] : [];
 
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
@@ -86,10 +87,15 @@ export default function redocPlugin(
         redoclyConfig = await loadConfig();
       }
 
-      const { bundle: bundledSpec, problems } = await bundle({
+      const {
+        bundle: bundledSpec,
+        problems,
+        fileDependencies,
+      } = await bundle({
         ref: spec,
         config: redoclyConfig,
       });
+      filesToWatch = [...fileDependencies];
 
       if (problems?.length) {
         console.error('[REDOCUSAURUS_PLUGIN] errors while bundling spec', spec);
@@ -181,10 +187,7 @@ export default function redocPlugin(
       fs.writeFileSync(staticFile, bundledYaml);
     },
     getPathsToWatch() {
-      if (!isSpecFile) {
-        return [];
-      }
-      return [path.resolve(spec)];
+      return filesToWatch;
     },
   };
 }
