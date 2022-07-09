@@ -95,7 +95,8 @@ export default function redocPlugin(
         ref: spec,
         config: redoclyConfig,
       });
-      filesToWatch = [...fileDependencies];
+
+      filesToWatch = [path.resolve(spec), ...fileDependencies];
 
       if (problems?.length) {
         console.error('[REDOCUSAURUS_PLUGIN] errors while bundling spec', spec);
@@ -187,6 +188,9 @@ export default function redocPlugin(
       fs.writeFileSync(staticFile, bundledYaml);
     },
     getPathsToWatch() {
+      if (!isSpecFile) {
+        return [];
+      }
       return filesToWatch;
     },
   };
