@@ -131,14 +131,18 @@ html[data-theme='dark']
   margin-bottom: 10px;
 }
 
-/* Code Samples */
+/* 
+ * Code Samples
+ * @see https://github.com/rohit-gohri/redocusaurus/issues/217
+ */
 html:not([data-theme='dark'])
   .redocusaurus
   div[id^='react-tabs']
   > div:nth-child(1)
   > pre:nth-child(2) {
-  background-color: var(--ifm-background-color);
+  background-color: transparent;
 }
+
 /** https://github.com/rohit-gohri/redocusaurus/issues/45 */
 html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
   color: var(--ifm-color-emphasis-0);
