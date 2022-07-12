@@ -1,5 +1,25 @@
 # Redocusaurus
 
+## redocusaurus@1.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`1a13230`](https://github.com/rohit-gohri/redocusaurus/commit/1a13230442b159be73dc15a9fc59898f6e1318aa), [`70d14f9`](https://github.com/rohit-gohri/redocusaurus/commit/70d14f920db3dfa7e4e59a7d657bcd35f25986a2)]:
+  - docusaurus-theme-redoc@1.2.3
+  - docusaurus-plugin-redoc@1.2.3
+
+## docusaurus-plugin-redoc@1.2.3
+
+### Patch Changes
+
+- [#219](https://github.com/rohit-gohri/redocusaurus/pull/219) [`70d14f9`](https://github.com/rohit-gohri/redocusaurus/commit/70d14f920db3dfa7e4e59a7d657bcd35f25986a2) Thanks [@mauris](https://github.com/mauris)! - Update paths to watch for handling multi-file OpenAPI docs
+
+## docusaurus-theme-redoc@1.2.3
+
+### Patch Changes
+
+- [#221](https://github.com/rohit-gohri/redocusaurus/pull/221) [`1a13230`](https://github.com/rohit-gohri/redocusaurus/commit/1a13230442b159be73dc15a9fc59898f6e1318aa) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix code samples background color
+
 ## redocusaurus@1.2.2
 
 ### Patch Changes
