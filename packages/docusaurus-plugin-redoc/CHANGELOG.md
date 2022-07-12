@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 1.2.3
+
+### Patch Changes
+
+- [#219](https://github.com/rohit-gohri/redocusaurus/pull/219) [`70d14f9`](https://github.com/rohit-gohri/redocusaurus/commit/70d14f920db3dfa7e4e59a7d657bcd35f25986a2) Thanks [@mauris](https://github.com/mauris)! - Update paths to watch for handling multi-file OpenAPI docs
+
 ## 1.2.1
 
 ### Patch Changes

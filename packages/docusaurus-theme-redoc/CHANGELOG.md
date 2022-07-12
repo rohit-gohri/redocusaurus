@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.2.3
+
+### Patch Changes
+
+- [#221](https://github.com/rohit-gohri/redocusaurus/pull/221) [`1a13230`](https://github.com/rohit-gohri/redocusaurus/commit/1a13230442b159be73dc15a9fc59898f6e1318aa) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix code samples background color
+
 ## 1.2.2
 
 ### Patch Changes
