@@ -12,7 +12,7 @@ author_url: https://rohit.page
 ```sh
 npm i --save redocusaurus
 # OR
-yarn add redocusaurus
+yarn add redocusaurus babel-plugin-styled-components@^2
 ```
 
 1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:
@@ -82,6 +82,15 @@ yarn add redocusaurus
        // ...
      };
      ```
+
+2. Add `babel-plugin-styled-components` to the plugins array of your `babel.config.js`:
+
+    ```babel.config.js
+    module.exports = {
+      presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+      plugins: ['babel-plugin-styled-components']
+    };
+    ```
 
 The API Doc will be available at the path specific by `route`. To skip adding a
 route altogether just don't set the `route` property. You will still be

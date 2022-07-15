@@ -9,9 +9,9 @@
 1. Install redocusaurus:
 
   ```sh
-  npm i --save redocusaurus
+  npm i --save redocusaurus babel-plugin-styled-components@^2
   # OR
-  yarn add redocusaurus
+  yarn add redocusaurus babel-plugin-styled-components@^2
   ```
 
 1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:
@@ -79,6 +79,15 @@
         ],
       ],
       // ...
+    };
+    ```
+
+2. Add `babel-plugin-styled-components` to the plugins array of your `babel.config.js`:
+
+    ```babel.config.js
+    module.exports = {
+      presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+      plugins: ['babel-plugin-styled-components']
     };
     ```
 
