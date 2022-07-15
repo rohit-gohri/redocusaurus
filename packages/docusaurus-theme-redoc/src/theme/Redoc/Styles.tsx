@@ -20,10 +20,13 @@ export function ServerStyles(_props: {
   }, []);
 
   const styles = useMemo(() => {
-    if (!isFirstRun) {
-      return '';
+    if (isFirstRun) {
+      return (
+        document?.getElementsByClassName('redocusaurus-styles')?.[0]
+          ?.innerHTML ?? ''
+      );
     }
-    return document.getElementsByClassName('redocusaurus-styles')[0].innerHTML;
+    return '';
   }, []);
 
   return (
