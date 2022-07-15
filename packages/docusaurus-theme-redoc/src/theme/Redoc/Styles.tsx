@@ -1,38 +1,18 @@
-import React, { useMemo, useRef, useEffect } from 'react';
+import React from 'react';
+import withHydrationOnDemand from 'react-hydration-on-demand';
 import '../../global';
 import type { RedocRawOptions } from 'redoc';
 
 /**
  * Don't hydrate/replace server styles
- * @see https://github.com/preactjs/preact/issues/2364#issuecomment-966707086
+ * @see https://github.com/facebook/react/issues/10923#issuecomment-338715787
  */
-export function ServerStyles(_props: {
+function ServerStylesComponent(_props: {
   specProps: SpecProps;
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
 }) {
-  const isFirstRun = useRef(true);
-  useEffect(() => {
-    // initialize once
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
-    }
-  }, []);
-
-  const styles = useMemo(() => {
-    if (isFirstRun) {
-      return (
-        document?.getElementsByClassName('redocusaurus-styles')?.[0]
-          ?.innerHTML ?? ''
-      );
-    }
-    return '';
-  }, []);
-
-  return (
-    <div
-      className="redocusaurus-styles"
-      dangerouslySetInnerHTML={{ __html: styles }}
-    ></div>
-  );
+  return <div className="redocusaurus-styles"></div>;
 }
+
+export const ServerStyles = withHydrationOnDemand()(ServerStylesComponent);

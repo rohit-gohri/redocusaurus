@@ -36,6 +36,7 @@
     "copyfiles": "^2.4.1",
     "lodash": "^4.17.21",
     "mobx": "^6.5.0",
+    "react-hydration-on-demand": "^2.1.0",
     "redoc": "2.0.0-rc.72",
     "styled-components": "^5.3.5"
   },
