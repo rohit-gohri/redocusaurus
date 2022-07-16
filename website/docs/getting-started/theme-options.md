@@ -10,6 +10,11 @@ author_url: https://rohit.page
 Convenient way to provide the highlighted color used by Redoc.  
 This value will be used as `colors.primary.main` in the `themes` option. Must be an actual color value and not a css variable.
 
+### primaryColorDark (string, hex/rgba value)
+
+Optional way to change the highlighted color used by Redoc in dark mode. Defaults to `primaryColor` if not set.
+This value will be used as `colors.primary.main` in the `themes` option. Must be an actual color value and not a css variable.
+
 ### options (optional, object)
 
 Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L5-L12).

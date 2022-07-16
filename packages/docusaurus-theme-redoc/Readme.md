@@ -57,6 +57,11 @@ See [here for full example.](../../website/src/pages/examples/custom-page/index.
    */
    primaryColor: '#1890ff',
    /**
+    * Highlight color for docs in dark mode, if different.
+    * Will default to `primaryColor` if not set.
+    */
+   primaryColorDark: '#25c2a0',
+   /**
    * Options to pass to redoc
    * @see https://github.com/redocly/redoc#redoc-options-object
    */
@@ -74,9 +79,14 @@ See [here for full example.](../../website/src/pages/examples/custom-page/index.
 Convenient way to provide the highlighted color used by Redoc.  
 This value will be used as `colors.primary.main` in the `themes` option. Must be an actual color value and not a css variable.
 
+### primaryColorDark (string, hex/rgba value)
+
+Optional way to change the highlighted color used by Redoc in dark mode. Defaults to `primaryColor` if not set.
+This value will be used as `colors.primary.main` in the `themes` option. Must be an actual color value and not a css variable.
+
 ### options (optional, object)
 
-Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](./src/redocData.ts#L5-L12).  
+Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](./src/redocData.ts#L5-L12).
 
 Available properties [here](https://github.com/Redocly/redoc#redoc-options-object).  
 You cannot set theme property using this property, use `theme` option below instead.
