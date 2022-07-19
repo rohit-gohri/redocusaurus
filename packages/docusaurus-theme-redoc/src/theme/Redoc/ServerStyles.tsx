@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../global';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import withHydrationOnDemand from 'react-hydration-on-demand';
 import { AppStore, Redoc, RedocRawOptions } from 'redoc';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
@@ -53,7 +54,7 @@ const prefixCssSelectors = function (rules: string, className: string) {
 const LIGHT_MODE_PREFIX = "html:not([data-theme='dark'])";
 const DARK_MODE_PREFIX = "html([data-theme='dark'])";
 
-export function ServerStyles({
+function ServerStylesComponent({
   specProps,
   lightThemeOptions,
   darkThemeOptions,
@@ -102,3 +103,5 @@ export function ServerStyles({
     </div>
   );
 }
+
+export const ServerStyles = withHydrationOnDemand()(ServerStylesComponent);
