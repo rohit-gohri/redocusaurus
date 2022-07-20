@@ -10,6 +10,11 @@ const redocusaurus = [
         id: 'using-single-yaml',
         spec: 'openapi/single-file/openapi.yaml',
         route: '/examples/using-single-yaml/',
+        config: {
+          'features.openapi': {
+            pagination: 'section',
+          }
+        },
       },
       {
         id: 'using-multi-file-yaml',
