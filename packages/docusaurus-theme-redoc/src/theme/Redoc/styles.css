@@ -197,6 +197,6 @@ html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
 }
 
 /* Authorisation Dropdown background color fix */
-[data-theme='dark'] .redocusaurus .api-content .sc-jQHtVU {
+[data-theme='dark'] .redocusaurus .api-content .sc-jQHtVU:has(span > span > code) {
   background-color: transparent;
 }
