@@ -195,3 +195,8 @@ html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
 .redocusaurus table.security-details tr:nth-child(2n + 1) {
   background-color: var(--ifm-background-surface-color);
 }
+
+/* Authorisation Dropdown background color fix */
+[data-theme='dark'] .redocusaurus .api-content .sc-jQHtVU {
+  background-color: transparent;
+}
