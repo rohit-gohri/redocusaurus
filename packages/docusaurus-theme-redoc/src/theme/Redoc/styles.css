@@ -196,7 +196,7 @@ html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
   background-color: var(--ifm-background-surface-color);
 }
 
-[data-theme='dark'] .redocusaurus .api-content > div h5 + svg polygon {
+[data-theme='dark'] .redocusaurus .api-content div h5 + svg polygon {
   filter: invert(1);
 }
 
