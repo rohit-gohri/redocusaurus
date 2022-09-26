@@ -195,3 +195,8 @@ html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
 .redocusaurus table.security-details tr:nth-child(2n + 1) {
   background-color: var(--ifm-background-surface-color);
 }
+
+[data-theme='dark'] .redocusaurus .api-content div h5 + svg polygon {
+  filter: invert(1);
+}
+
