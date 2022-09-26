@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 1.4.0
+
+### Minor Changes
+
+- [#235](https://github.com/rohit-gohri/redocusaurus/pull/235) [`b40b1b1`](https://github.com/rohit-gohri/redocusaurus/commit/b40b1b143aaafabcdb5f5f292f41d822166cba71) Thanks [@z-hirschtritt](https://github.com/z-hirschtritt)! - Update redoc dependency to v2.0.0
+
 ## 1.2.3
 
 ### Patch Changes
