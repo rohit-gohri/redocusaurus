@@ -9,4 +9,5 @@ Feel free to add your site below by sending a Pull Request! (sort in alphabetica
 - [ChatKitty API Docs](https://chatkitty.com/docs/rest/reference)
 - [Forem API Docs](https://developers.forem.com/api)
 - [Regards OSS](http://regardsoss.github.io/) - [example](http://regardsoss.github.io/docs/development/backend/services/catalog/api-swagger)
+- [Vipps API documentation](https://vippsas.github.io/vipps-developer-docs/)
 - [Wechaty OpenAPI](https://wechaty.js.org/docs/openapi/)
