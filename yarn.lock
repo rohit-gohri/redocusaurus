@@ -3779,9 +3779,9 @@ __metadata:
   linkType: hard
 
 "@sideway/formula@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "@sideway/formula@npm:3.0.1"
-  checksum: e4beeebc9dbe2ff4ef0def15cec0165e00d1612e3d7cea0bc9ce5175c3263fc2c818b679bd558957f49400ee7be9d4e5ac90487e1625b4932e15c4aa7919c57a
+  version: 3.0.0
+  resolution: "@sideway/formula@npm:3.0.0"
+  checksum: 8ae26a0ed6bc84f7310be6aae6eb9d81e97f382619fc69025d346871a707eaab0fa38b8c857e3f0c35a19923de129f42d35c50b8010c928d64aab41578580ec4
   languageName: node
   linkType: hard
 
@@ -14804,9 +14804,9 @@ __metadata:
   linkType: hard
 
 "ua-parser-js@npm:^0.7.30":
-  version: 0.7.31
-  resolution: "ua-parser-js@npm:0.7.31"
-  checksum: e2f8324a83d1715601576af85b2b6c03890699aaa7272950fc77ea925c70c5e4f75060ae147dc92124e49f7f0e3d6dd2b0a91e7f40d267e92df8894be967ba8b
+  version: 0.7.33
+  resolution: "ua-parser-js@npm:0.7.33"
+  checksum: 1510e9ec26fcaf0d8c6ae8f1078a8230e8816f083e1b5f453ea19d06b8ef2b8a596601c92148fd41899e8b3e5f83fa69c42332bd5729b931a721040339831696
   languageName: node
   linkType: hard
 
