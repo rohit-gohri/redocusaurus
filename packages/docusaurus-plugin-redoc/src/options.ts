@@ -1,4 +1,4 @@
-import * as Joi from 'joi';
+import { Joi } from '@docusaurus/utils-validation';
 import type { RawConfig } from '@redocly/openapi-core';
 
 type LayoutProps = {
