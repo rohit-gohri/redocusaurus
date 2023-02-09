@@ -132,6 +132,10 @@ const config = {
               label: 'Custom Layout',
               to: '/examples/custom-layout/',
             },
+            {
+              label: 'Client Only',
+              to: '/examples/client-only/',
+            },
           ],
         },
         {
