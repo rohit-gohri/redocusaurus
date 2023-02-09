@@ -30,15 +30,14 @@
   "homepage": "https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc#readme",
   "dependencies": {
     "@redocly/openapi-core": "1.0.0-beta.102",
-    "joi": "^17.5.0",
     "redoc": "2.0.0"
   },
   "devDependencies": {
-    "@docusaurus/types": "^2.0.0-beta.21",
-    "@docusaurus/utils": "^2.0.0-beta.21"
+    "@docusaurus/types": "^2.3.1",
+    "@docusaurus/utils": "^2.3.1"
   },
   "peerDependencies": {
-    "@docusaurus/utils": "^2.0.0-beta.18"
+    "@docusaurus/utils": "^2.0.0"
   },
   "engines": {
     "node": ">=14"
