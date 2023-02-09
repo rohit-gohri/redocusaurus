@@ -52,4 +52,4 @@ See this issue, [https://github.com/facebook/docusaurus/issues/638](https://gith
 
 ## License
 
-[MIT License. Copyright (c) 2022 Rohit Gohri](./LICENSE)
+[MIT License. Copyright (c) 2023 Rohit Gohri](./LICENSE)

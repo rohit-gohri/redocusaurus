@@ -10,7 +10,7 @@ import ServerRedoc from './ServerRedoc';
 /*!
  * Redocusaurus
  * https://redocusaurus.vercel.app/
- * (c) 2022 Rohit Gohri
+ * (c) 2023 Rohit Gohri
  * Released under the MIT License
  */
 function Redoc(

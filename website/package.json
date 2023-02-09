@@ -16,7 +16,7 @@
     "clear": "docusaurus clear",
     "dev": "docusaurus start",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "NODE_OPTIONS='--inspect' docusaurus build",
     "swizzle": "docusaurus swizzle",
     "serve": "docusaurus serve",
     "test": "percy snapshot snapshots.js"

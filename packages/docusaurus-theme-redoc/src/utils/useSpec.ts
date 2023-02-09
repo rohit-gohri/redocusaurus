@@ -12,8 +12,8 @@ let currentStore: AppStore | null = null;
 
 /**
  * Redocusaurus
- * https://rohit-gohri.github.io/redocusaurus/
- * (c) 2022 Rohit Gohri
+ * https://redocusaurus.vercel.app/
+ * (c) 2023 Rohit Gohri
  * Released under the MIT License
  */
 export function useSpec(
