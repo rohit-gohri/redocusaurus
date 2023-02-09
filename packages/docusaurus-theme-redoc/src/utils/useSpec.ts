@@ -1,7 +1,10 @@
 import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import { usePluginData } from '@docusaurus/useGlobalData';
+import {
+  usePluginData,
+  useAllPluginInstancesData,
+} from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
 import merge from 'lodash/merge';
 import '../global';
@@ -25,10 +28,21 @@ export function useSpec(
   const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
-  const themeOptions = usePluginData(
+  let themeOptions = usePluginData(
     'docusaurus-theme-redoc',
     themeId,
   ) as GlobalData;
+  const defaultThemeOptions = useAllPluginInstancesData(
+    'docusaurus-theme-redoc',
+    {
+      failfast: true,
+    },
+  );
+
+  themeOptions =
+    themeOptions ||
+    defaultThemeOptions['theme-redoc'] ||
+    Object.values(defaultThemeOptions)[0];
 
   const result = useMemo(() => {
     const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
