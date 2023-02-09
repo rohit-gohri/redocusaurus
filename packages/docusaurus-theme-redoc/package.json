@@ -32,12 +32,12 @@
   },
   "homepage": "https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-theme-redoc#readme",
   "dependencies": {
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.1",
     "copyfiles": "^2.4.1",
     "lodash": "^4.17.21",
-    "mobx": "^6.5.0",
+    "mobx": "^6.8.0",
     "redoc": "2.0.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.3.1",
@@ -47,10 +47,9 @@
     "@types/lodash": "^4.14.191",
     "@types/react-dom": "^17.0.18",
     "@types/react-router-dom": "^5.3.3",
-    "@types/rtlcss": "^3.1.4",
     "@types/styled-components": "^5.1.26",
-    "nodemon": "^2.0.16",
-    "typescript": "^4.6.4"
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "@docusaurus/theme-common": "^2.0.0"
