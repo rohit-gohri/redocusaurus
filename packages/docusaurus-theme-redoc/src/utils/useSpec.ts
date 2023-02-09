@@ -1,16 +1,11 @@
 import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import {
-  usePluginData,
-  useAllPluginInstancesData,
-} from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
-import merge from 'lodash/merge';
 import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
-import { GlobalData } from '../types/options';
+import { useSpecOptions } from './useSpecOptions';
 
 // the current store singleton in the app's instance
 let currentStore: AppStore | null = null;
@@ -25,73 +20,24 @@ export function useSpec(
   { spec, url, themeId }: SpecProps,
   optionsOverrides?: RedocRawOptions,
 ) {
+  const specOptions = useSpecOptions(themeId, optionsOverrides);
   const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
-  let themeOptions = usePluginData(
-    'docusaurus-theme-redoc',
-    themeId,
-  ) as GlobalData;
-  const defaultThemeOptions = useAllPluginInstancesData(
-    'docusaurus-theme-redoc',
-    {
-      failfast: true,
-    },
-  );
-
-  themeOptions =
-    themeOptions ||
-    defaultThemeOptions['theme-redoc'] ||
-    Object.values(defaultThemeOptions)[0];
 
   const result = useMemo(() => {
-    const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
-
-    const commonOptions: Partial<RedocRawOptions> = {
-      // Disable offset when server rendering and set to selector
-      scrollYOffset:
-        !isBrowser && typeof redocOptions.scrollYOffset === 'string'
-          ? 0
-          : redocOptions.scrollYOffset,
-    };
-
-    const lightThemeOptions: RedocRawOptions = merge(
-      {
-        ...redocOptions,
-        ...commonOptions,
-        theme: lightTheme,
-      },
-      optionsOverrides,
-    );
-
-    const darkThemeOptions: RedocRawOptions = merge(
-      {
-        ...redocOptions,
-        ...commonOptions,
-        theme: darkTheme,
-      },
-      optionsOverrides,
-    );
-
     if (currentStore !== null && isBrowser) {
       currentStore.dispose();
     }
-
-    currentStore = new AppStore(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      spec as any,
-      fullUrl,
-      isBrowser && isDarkTheme ? darkThemeOptions : lightThemeOptions,
-    );
+    currentStore = new AppStore(spec, fullUrl, specOptions.options);
 
     return {
-      darkThemeOptions,
-      lightThemeOptions,
+      ...specOptions,
       // @ts-expect-error extra prop
       hasLogo: !!spec.info?.['x-logo'],
       store: currentStore,
     };
-  }, [isBrowser, spec, fullUrl, isDarkTheme, themeOptions, optionsOverrides]);
+  }, [isBrowser, spec, fullUrl, specOptions]);
 
   useEffect(() => {
     // to ensure that menu is properly loaded when theme gets changed
