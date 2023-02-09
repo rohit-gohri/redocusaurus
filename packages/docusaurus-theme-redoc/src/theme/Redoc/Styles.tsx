@@ -7,7 +7,9 @@ import type { RedocRawOptions } from 'redoc';
  * @see https://github.com/facebook/react/issues/10923#issuecomment-338715787
  */
 export function ServerStyles(_props: {
-  specProps: SpecProps;
+  specProps: SpecProps & {
+    spec: NonNullable<SpecProps['spec']>;
+  };
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
 }) {

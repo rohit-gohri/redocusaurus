@@ -31,7 +31,7 @@ function Redoc(
 
   const isDevMode = process.env.NODE_ENV === 'development';
 
-  if (isDevMode && specProps.isSpecFile === false) {
+  if ((isDevMode && specProps.isSpecFile === false) || !specProps.spec) {
     return (
       <div
         className={clsx([
@@ -48,7 +48,10 @@ function Redoc(
   return (
     <>
       <ServerStyles
-        specProps={specProps}
+        specProps={{
+          ...specProps,
+          spec: specProps.spec,
+        }}
         lightThemeOptions={lightThemeOptions}
         darkThemeOptions={darkThemeOptions}
       />

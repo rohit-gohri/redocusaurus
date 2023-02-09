@@ -5,7 +5,7 @@ import type { OpenAPISpec } from 'redoc/typings/types';
 export type ParsedSpec = OpenAPISpec;
 
 export interface SpecProps {
-  spec: ParsedSpec;
+  spec?: ParsedSpec;
   url?: string;
   isSpecFile?: boolean;
   themeId?: string;

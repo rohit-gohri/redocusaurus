@@ -58,7 +58,9 @@ export function ServerStyles({
   lightThemeOptions,
   darkThemeOptions,
 }: {
-  specProps: SpecProps;
+  specProps: SpecProps & {
+    spec: NonNullable<SpecProps['spec']>;
+  };
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
 }) {
