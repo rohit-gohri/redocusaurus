@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.5.1
+
+### Patch Changes
+
+- [#266](https://github.com/rohit-gohri/redocusaurus/pull/266) [`4fc1b4c`](https://github.com/rohit-gohri/redocusaurus/commit/4fc1b4cb83cb36056d2b5edb052df90ac5a035f6) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix search being hidden when logo present
+
 ## 1.5.0
 
 ### Minor Changes
