@@ -100,9 +100,10 @@ Pass options to customize the theme, see [theme options](./theme-options.md) for
 
 > type: string
 
-Redocly config to bundle file and provide options to . You can provide a custom path to a `redocly.yaml` file, **if not provided then it will try to load it from the root of your project if it exists**.
+Redocly config to bundle file and provide options to. You can provide a custom path to a `redocly.yaml` file, if not provided then it will try to load it from the root of your project if it exists.
 
-See: <https://redocly.com/docs/cli/configuration/>
+Example: [redocly.yaml](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml)
+Reference: <https://redocly.com/docs/cli/configuration/>. Only supports options marked as "Supported in Redoc CE".
 
 :::important
 When setting the `redocly.yaml` config, you website renders correctly only once it is built and run with the following commands:

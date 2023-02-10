@@ -61,6 +61,9 @@ export default function redocPlugin(
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
       const redoclyConfig = await loadRedoclyConfig(config);
+      if (redoclyConfig.configFile) {
+        filesToWatch.push(redoclyConfig.configFile);
+      }
 
       let bundledSpec: Document, problems: NormalizedProblem[];
 

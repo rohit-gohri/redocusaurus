@@ -17,6 +17,10 @@ This value will be used as `colors.primary.main` in the `themes` option. Must be
 
 ### theme (optional, object)
 
+:::caution
+Deprecated: Use `redocly.yaml` to specify theme. See [example](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml).
+:::
+
 Override the redoc theme object passed to Redoc. See the defaults [here](https://github.com/Redocly/redoc#redoc-theme-object).
 
 :::caution
@@ -26,7 +30,7 @@ Note: You should not override any color using this property, as it will be the s
 ### options (optional, object)
 
 :::caution
-Deprecated: Option moved to root options, this defaults to root config options' `theme.openapi` option.
+Deprecated: Use `redocly.yaml` to specify `theme.options`. See [example](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml).
 :::
 
 Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L5-L12).

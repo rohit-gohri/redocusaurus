@@ -144,14 +144,9 @@ export function getRedocThemes(
 export async function getGlobalData({
   primaryColor,
   primaryColorDark = primaryColor,
-  theme: customTheme,
+  theme: customThemeDeprecated,
   options,
 }: ThemeOptions): Promise<GlobalData> {
-  const overrides = getDefaultTheme(primaryColor, customTheme);
-  const overridesDark = getDefaultTheme(primaryColorDark, customTheme);
-
-  const { lightTheme, darkTheme } = getRedocThemes(overrides, overridesDark);
-
   let redoclyOptions: Config['theme']['openapi'];
 
   if (options) {
@@ -172,6 +167,14 @@ export async function getGlobalData({
   } else {
     redoclyOptions = (await loadConfig()).theme.openapi;
   }
+  const customTheme = {
+    ...redoclyOptions?.theme,
+    ...customThemeDeprecated,
+  };
+  const overrides = getDefaultTheme(primaryColor, customTheme);
+  const overridesDark = getDefaultTheme(primaryColorDark, customTheme);
+
+  const { lightTheme, darkTheme } = getRedocThemes(overrides, overridesDark);
 
   return {
     lightTheme,
