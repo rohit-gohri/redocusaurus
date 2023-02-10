@@ -23,7 +23,7 @@ import {
   PluginOptionsWithDefault,
   DEFAULT_OPTIONS,
 } from './options';
-import { SpecProps, ApiDocProps } from './types/common';
+import type { SpecProps, ApiDocProps } from './types/common';
 import { loadSpecWithConfig } from './loadSpec';
 import { loadRedoclyConfig } from './loadRedoclyConfig';
 

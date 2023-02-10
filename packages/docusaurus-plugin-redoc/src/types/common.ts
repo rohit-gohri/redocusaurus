@@ -1,0 +1,1 @@
+../../../docusaurus-theme-redoc/src/types/common.ts

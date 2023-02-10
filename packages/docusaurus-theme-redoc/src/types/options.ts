@@ -13,6 +13,7 @@ export type RedocThemeOverrides = RecursivePartial<
 >;
 
 export interface ThemeOptions {
+  id?: string;
   /**
    * Primary Color to pass to Redoc Theme,
    * ideally this should be all the customization you need
@@ -26,6 +27,7 @@ export interface ThemeOptions {
   primaryColorDark?: string;
   /**
    * Options to pass to redoc
+   * @deprecated
    * @see https://github.com/redocly/redoc#redoc-options-object
    */
   options?: string | Partial<Omit<RedocRawOptions, 'theme'>>;
@@ -33,6 +35,7 @@ export interface ThemeOptions {
    * Options to pass to override RedocThemeObject if you
    * want to customize the theme yourself.
    * **NOTE:** This will overwrite the dark/light mode fixes added in `redocusaurus`
+   * @deprecated
    * @see https://github.com/Redocly/redoc#redoc-theme-object
    */
   theme?: Partial<RedocRawOptions['theme']>;

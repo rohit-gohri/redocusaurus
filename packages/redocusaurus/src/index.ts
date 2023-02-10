@@ -49,7 +49,7 @@ export default function preset(
         require.resolve('docusaurus-theme-redoc'),
         {
           id: themeId,
-          config,
+          options: config,
           ...theme,
         },
       ],
