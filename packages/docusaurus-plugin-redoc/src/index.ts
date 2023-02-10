@@ -78,7 +78,9 @@ export default function redocPlugin(
 
       if (config) {
         if (typeof config === 'string') {
-          redoclyConfig = await loadConfig(config);
+          redoclyConfig = await loadConfig({
+            configPath: config,
+          });
         } else {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           redoclyConfig = new Config(config as any);
