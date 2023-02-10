@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 1.5.1
+
+### Patch Changes
+
+- [#264](https://github.com/rohit-gohri/redocusaurus/pull/264) [`137373e`](https://github.com/rohit-gohri/redocusaurus/commit/137373e4f7bcd01710504da1bb00756b6c30c563) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Use redoc config while loading spec
+
 ## 1.5.0
 
 ### Patch Changes
