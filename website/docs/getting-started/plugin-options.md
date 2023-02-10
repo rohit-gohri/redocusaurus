@@ -23,3 +23,14 @@ An object to pass as layout props. Useful to set title/description of the page. 
 Redocly config to bundle file. You can provide a custom path to a `redocly.yaml` file, if not provided then it will try to load it from the root of your project if it exists.
 
 See: <https://redocly.com/docs/cli/configuration/configuration-file/>
+
+:::important
+When setting the `redocly.yaml` config, you website renders correctly only once it is built and run with the following commands:
+
+```bash
+$ npm run build
+$ npm run serve
+```
+
+When running the website locally, with `npm start`, some error messages can be displayed.
+:::
