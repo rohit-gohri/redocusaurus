@@ -1,5 +1,15 @@
 # docusaurus-theme-redoc
 
+## 1.6.0
+
+### Minor Changes
+
+- [#269](https://github.com/rohit-gohri/redocusaurus/pull/269) [`bba785a`](https://github.com/rohit-gohri/redocusaurus/commit/bba785ae31176c4405978163db63c89c516d1bc8) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fully support redocly.yaml for setting all theme options
+
+### Patch Changes
+
+- [#269](https://github.com/rohit-gohri/redocusaurus/pull/269) [`bba785a`](https://github.com/rohit-gohri/redocusaurus/commit/bba785ae31176c4405978163db63c89c516d1bc8) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Fix types exports of theme package
+
 ## 1.5.1
 
 ### Patch Changes
