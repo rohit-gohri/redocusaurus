@@ -41,7 +41,7 @@ html[data-theme='dark'] .redocusaurus h2 > a:nth-child(1)::before {
  * Hide Logo as already in navbar
  * @see https://github.com/rohit-gohri/redocusaurus/issues/123
  */
-.redocusaurus-has-logo .menu-content div:first-child {
+.redocusaurus-has-logo .menu-content > div:first-child {
   display: none;
 }
 
@@ -199,4 +199,3 @@ html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
 [data-theme='dark'] .redocusaurus .api-content div h5 + svg polygon {
   filter: invert(1);
 }
-
