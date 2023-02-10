@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredocusaurus_website=self.webpackChunkredocusaurus_website||[]).push([[627],{1981:function(e,t,u){u.r(t),u.d(t,{default:function(){return l}});var n=u(7378),r=u(353),c=u(1627),s=u(2341);function l(){var e=(0,r.Z)().siteConfig;return n.createElement(c.Z,null,n.createElement("h2",null,"Site config"),n.createElement(s.Z,{src:e,collapseDepth:3}))}}}]);
