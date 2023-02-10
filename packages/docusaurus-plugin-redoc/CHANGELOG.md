@@ -1,5 +1,13 @@
 # docusaurus-plugin-redoc
 
+## 1.5.0
+
+### Patch Changes
+
+- [#260](https://github.com/rohit-gohri/redocusaurus/pull/260) [`a15e835`](https://github.com/rohit-gohri/redocusaurus/commit/a15e8359f00954b01dcacf7a8a4b6c0666ac774c) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Update docusaurus dependencies
+
+- [#265](https://github.com/rohit-gohri/redocusaurus/pull/265) [`0de444e`](https://github.com/rohit-gohri/redocusaurus/commit/0de444e63fcee3f71eae225ca3df485aaa12c212) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade dependencies and fix type errors
+
 ## 1.4.0
 
 ### Minor Changes
