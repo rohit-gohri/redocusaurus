@@ -15,6 +15,8 @@ import {
   bundle,
   loadConfig,
   stringifyYaml,
+  Document,
+  NormalizedProblem,
 } from '@redocly/openapi-core';
 
 import {
@@ -24,6 +26,8 @@ import {
   DEFAULT_OPTIONS,
 } from './options';
 import { SpecProps, ApiDocProps } from './types/common';
+import { loadSpecWithConfig } from './loadSpec';
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const version = require('../package.json').version;
 
@@ -57,23 +61,6 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      if (!isSpecFile) {
-        // If spec is a remote url then add it as download url also as a default
-        url = url || spec;
-        if (debug) {
-          console.log('[REDOCUSAURUS_PLUGIN] bundling spec from url', spec);
-        }
-        const converted = await loadAndBundleSpec(spec!);
-        return {
-          converted,
-        };
-      }
-
-      // If local file
-      if (debug) {
-        console.log('[REDOCUSAURUS_PLUGIN] reading file: ', spec);
-      }
-
       let redoclyConfig: Config;
 
       if (config) {
@@ -89,16 +76,34 @@ export default function redocPlugin(
         redoclyConfig = await loadConfig();
       }
 
-      const {
-        bundle: bundledSpec,
-        problems,
-        fileDependencies,
-      } = await bundle({
-        ref: spec,
-        config: redoclyConfig,
-      });
+      let bundledSpec: Document, problems: NormalizedProblem[];
 
-      filesToWatch = [path.resolve(spec), ...fileDependencies];
+      if (!isSpecFile) {
+        // If spec is a remote url then add it as download url also as a default
+        url = url || spec;
+        if (debug) {
+          console.log('[REDOCUSAURUS_PLUGIN] bundling spec from url', spec);
+        }
+        ({ bundle: bundledSpec, problems } = await loadSpecWithConfig(
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          spec!,
+          redoclyConfig,
+        ));
+      } else {
+        // If local file
+        if (debug) {
+          console.log('[REDOCUSAURUS_PLUGIN] reading file: ', spec);
+        }
+
+        const fileBundle = await bundle({
+          ref: spec,
+          config: redoclyConfig,
+        });
+
+        ({ bundle: bundledSpec, problems } = fileBundle);
+
+        filesToWatch = [path.resolve(spec), ...fileBundle.fileDependencies];
+      }
 
       if (problems?.length) {
         console.error('[REDOCUSAURUS_PLUGIN] errors while bundling spec', spec);
@@ -112,6 +117,7 @@ export default function redocPlugin(
       if (debug) {
         console.log('[REDOCUSAURUS_PLUGIN] File Bundled');
       }
+      // Pass again to loader to convert swagger to openapi
       const converted = await loadAndBundleSpec(bundledSpec.parsed);
 
       // If download url is not provided then use bundled yaml as a static file (see `postBuild`)
