@@ -1,4 +1,4 @@
-import type { RedocRawOptions } from 'redoc';
+import type { RedocRawOptions, RedocProps } from 'redoc';
 
 export type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -28,7 +28,7 @@ export interface ThemeOptions {
    * Options to pass to redoc
    * @see https://github.com/redocly/redoc#redoc-options-object
    */
-  options?: Partial<Omit<RedocRawOptions, 'theme'>>;
+  options?: string | Partial<Omit<RedocRawOptions, 'theme'>>;
   /**
    * Options to pass to override RedocThemeObject if you
    * want to customize the theme yourself.
@@ -39,7 +39,7 @@ export interface ThemeOptions {
 }
 
 export type GlobalData = {
-  options: NonNullable<ThemeOptions['options']>;
+  options: RedocProps['store']['rawOptions'];
   darkTheme: Partial<RedocRawOptions['theme']>;
   lightTheme: Partial<RedocRawOptions['theme']>;
 };

@@ -41,7 +41,7 @@ export default function redocTheme(
     },
     async contentLoaded({ actions }) {
       const { setGlobalData } = actions;
-      const globalData = getGlobalData(options);
+      const globalData = await getGlobalData(options);
 
       setGlobalData(globalData);
     },
