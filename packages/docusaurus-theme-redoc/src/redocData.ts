@@ -1,5 +1,6 @@
 import type { RedocRawOptions } from 'redoc';
 import merge from 'lodash/merge';
+import { Config, loadConfig } from '@redocly/openapi-core';
 import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
 const defaultOptions: Partial<RedocRawOptions> = {
@@ -140,12 +141,36 @@ export function getRedocThemes(
   };
 }
 
-export function getGlobalData({
+export async function getGlobalData({
   primaryColor,
   primaryColorDark = primaryColor,
-  theme: customTheme,
+  theme: customThemeDeprecated,
   options,
-}: ThemeOptions): GlobalData {
+}: ThemeOptions): Promise<GlobalData> {
+  let redoclyOptions: Config['theme']['openapi'];
+
+  if (options) {
+    if (typeof options === 'string') {
+      redoclyOptions = (
+        await loadConfig({
+          configPath: options,
+        })
+      ).theme.openapi;
+    } else {
+      redoclyOptions = new Config({
+        theme: {
+          openapi: options,
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any).theme.openapi;
+    }
+  } else {
+    redoclyOptions = (await loadConfig()).theme.openapi;
+  }
+  const customTheme = {
+    ...redoclyOptions?.theme,
+    ...customThemeDeprecated,
+  };
   const overrides = getDefaultTheme(primaryColor, customTheme);
   const overridesDark = getDefaultTheme(primaryColorDark, customTheme);
 
@@ -156,7 +181,7 @@ export function getGlobalData({
     darkTheme,
     options: {
       ...defaultOptions,
-      ...options,
+      ...redoclyOptions,
     },
   };
 }

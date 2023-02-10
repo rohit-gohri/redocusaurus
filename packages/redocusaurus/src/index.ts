@@ -5,6 +5,10 @@ import type { ThemeOptions } from 'docusaurus-theme-redoc';
 export interface PresetOptions {
   id?: string;
   debug?: boolean;
+  /**
+   * Path to the Redocly config file `redocly.yaml`
+   */
+  config?: string;
   specs: PluginOptions[];
   theme?: ThemeOptions;
 }
@@ -19,7 +23,7 @@ export default function preset(
   },
 ) {
   let specsArray: PluginOptions[] = [];
-  const { debug = false, specs, theme = {} } = opts;
+  const { debug = false, specs, theme = {}, config } = opts;
   if (debug) {
     console.error('[REDOCUSAURUS] Options:', opts);
   }
@@ -36,32 +40,43 @@ export default function preset(
   const id = opts.id ? `-${opts.id}` : '';
   const themeId = `theme-redoc${id}`;
 
-  const config = {
+  const resolvedPreset: {
+    themes: readonly (readonly [string, ThemeOptions])[];
+    plugins: readonly (readonly [string, PluginOptions])[];
+  } = {
     themes: [
       [
         require.resolve('docusaurus-theme-redoc'),
         {
           id: themeId,
+          options: config,
           ...theme,
         },
       ],
     ],
     plugins: [
-      ...specsArray.map((pluginOpts, index) => [
-        require.resolve('docusaurus-plugin-redoc'),
-        {
-          ...pluginOpts,
-          themeId,
-          id: pluginOpts.id || `plugin-redoc${id}-${index}`,
-          debug,
-        },
-      ]),
+      ...specsArray.map(
+        (pluginOpts, index) =>
+          [
+            require.resolve('docusaurus-plugin-redoc'),
+            {
+              config,
+              ...pluginOpts,
+              themeId,
+              id: pluginOpts.id || `plugin-redoc${id}-${index}`,
+              debug,
+            },
+          ] as const,
+      ),
     ],
-  };
+  } as const;
 
   if (debug) {
-    console.error('[REDOCUSAURUS] Final:', JSON.stringify(config, null, 2));
+    console.error(
+      '[REDOCUSAURUS] Final:',
+      JSON.stringify(resolvedPreset, null, 2),
+    );
   }
 
-  return config;
+  return resolvedPreset;
 }

@@ -1,3 +1,5 @@
+const  path = require('path');
+
 /**
  * @type {import('redocusaurus').PresetEntry}
  */
@@ -5,6 +7,7 @@ const redocusaurus = [
   'redocusaurus',
   {
     debug: Boolean(process.env.DEBUG || process.env.CI),
+    config: path.join(__dirname, 'redocly.yaml'),
     specs: [
       {
         id: 'using-single-yaml',
@@ -43,16 +46,6 @@ const redocusaurus = [
        * Highlight color for docs
        */
       primaryColor: '#1890ff',
-      /**
-       * Options to pass to redoc
-       * @see https://github.com/redocly/redoc#redoc-options-object
-       */
-      options: { disableSearch: true },
-      /**
-       * Options to pass to override RedocThemeObject
-       * @see https://github.com/Redocly/redoc#redoc-theme-object
-       */
-      theme: {},
     },
   },
 ];

@@ -18,19 +18,10 @@ Route URL at which docs would be available, this will use the theme component `@
 
 An object to pass as layout props. Useful to set title/description of the page. See all properties available [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc/src/options.ts#L3).
 
-### config (optional, string or object: redoclyConfig)
+### config (optional)
 
-Redocly config to bundle file. You can provide a custom path to a `redocly.yaml` file, if not provided then it will try to load it from the root of your project if it exists.
-
-See: <https://redocly.com/docs/cli/configuration/configuration-file/>
-
-:::important
-When setting the `redocly.yaml` config, you website renders correctly only once it is built and run with the following commands:
-
-```bash
-$ npm run build
-$ npm run serve
-```
-
-When running the website locally, with `npm start`, some error messages can be displayed.
+:::caution
+Deprecated: Use `redocly.yaml` to specify theme. See [example](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml).
 :::
+
+Same as config option in [root options](./Installation.md#config-optional) but specific for loading data.

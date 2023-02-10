@@ -6,7 +6,7 @@ import { getGlobalData } from './redocData';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/order
 import webpack from 'webpack';
 
-export { ThemeOptions, GlobalData };
+export type { ThemeOptions, GlobalData };
 
 export default function redocTheme(
   context: LoadContext,
@@ -41,7 +41,7 @@ export default function redocTheme(
     },
     async contentLoaded({ actions }) {
       const { setGlobalData } = actions;
-      const globalData = getGlobalData(options);
+      const globalData = await getGlobalData(options);
 
       setGlobalData(globalData);
     },

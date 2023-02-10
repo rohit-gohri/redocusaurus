@@ -11,9 +11,7 @@ import type { OpenAPISpec } from 'redoc/typings/types';
 import {
   formatProblems,
   getTotals,
-  Config,
   bundle,
-  loadConfig,
   stringifyYaml,
   Document,
   NormalizedProblem,
@@ -25,13 +23,14 @@ import {
   PluginOptionsWithDefault,
   DEFAULT_OPTIONS,
 } from './options';
-import { SpecProps, ApiDocProps } from './types/common';
+import type { SpecProps, ApiDocProps } from './types/common';
 import { loadSpecWithConfig } from './loadSpec';
+import { loadRedoclyConfig } from './loadRedoclyConfig';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const version = require('../package.json').version;
 
-export { PluginOptions };
+export { PluginOptions, loadRedoclyConfig };
 
 export default function redocPlugin(
   context: LoadContext,
@@ -61,19 +60,9 @@ export default function redocPlugin(
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
-      let redoclyConfig: Config;
-
-      if (config) {
-        if (typeof config === 'string') {
-          redoclyConfig = await loadConfig({
-            configPath: config,
-          });
-        } else {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          redoclyConfig = new Config(config as any);
-        }
-      } else {
-        redoclyConfig = await loadConfig();
+      const redoclyConfig = await loadRedoclyConfig(config);
+      if (redoclyConfig.configFile) {
+        filesToWatch.push(redoclyConfig.configFile);
       }
 
       let bundledSpec: Document, problems: NormalizedProblem[];
