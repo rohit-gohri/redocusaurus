@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.6.1
+
+### Patch Changes
+
+- [#276](https://github.com/rohit-gohri/redocusaurus/pull/276) [`42bb731`](https://github.com/rohit-gohri/redocusaurus/commit/42bb731b7bed4f0aaef7558f1af78a5c080ff0fc) Thanks [@JPeer264](https://github.com/JPeer264)! - Prevent rehydrating of client styles
+
 ## 1.6.0
 
 ### Minor Changes
