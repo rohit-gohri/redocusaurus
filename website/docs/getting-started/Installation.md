@@ -7,17 +7,17 @@ author_url: https://rohit.page
 
 1. Install redocusaurus:
 
-![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
+   ![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
 
-```sh
-npm i --save redocusaurus
-# OR
-yarn add redocusaurus
-```
+   ```sh
+   npm i --save redocusaurus
+   # OR
+   yarn add redocusaurus
+   ```
 
-1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:
+1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass the following options:
 
-   - Pass it a path to a local OpenAPI YAML file
+   - Pass the path to the local OpenAPI YAML file.
 
      ```js
      // docusaurus.config.js
@@ -49,7 +49,7 @@ yarn add redocusaurus
      };
      ```
 
-   - Pass it a OpenAPI spec URL
+   - Pass the URL for the OpenAPI spec.
 
      ```js
      // docusaurus.config.js
