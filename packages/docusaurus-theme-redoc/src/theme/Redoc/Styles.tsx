@@ -11,10 +11,5 @@ export function ServerStyles(_props: {
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
 }) {
-  return (
-    <div
-      className="redocusaurus-styles"
-      dangerouslySetInnerHTML={{ __html: '' }}
-    ></div>
-  );
+  return <div className="redocusaurus-styles"></div>;
 }
