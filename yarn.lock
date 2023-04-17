@@ -5946,7 +5946,7 @@ __metadata:
   resolution: "dns-packet@npm:5.4.0"
   dependencies:
     "@leichtgewicht/ip-codec": ^2.0.1
-  checksum: 8/a169963848e8539dfd8a19058562f9e1c15c0f82cbf76fa98942f11c46f3c74e7e7c82e3a8a5182d4c9e6ff19e21be738dbd098a876dde755d3aedd2cc730880
+  checksum: bd5ecfd7d8b9cacd4d0029819699051c4e231d8fa6ed96e1573f7fee4b9147c3406207a260adbd7fb5c6d08a7db7641836467f450fa88e2ec5075f482e39ed77
   languageName: node
   linkType: hard
 
@@ -5981,7 +5981,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"docusaurus-theme-redoc@1.6.1, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
+"docusaurus-theme-redoc@1.6.2, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc"
   dependencies:
@@ -11803,16 +11803,16 @@ __metadata:
     clsx: ^1.2.1
     react: ^17.0.2
     react-dom: ^17.0.2
-    redocusaurus: ^1.6.1
+    redocusaurus: ^1.6.2
   languageName: unknown
   linkType: soft
 
-"redocusaurus@^1.6.1, redocusaurus@workspace:packages/redocusaurus":
+"redocusaurus@^1.6.2, redocusaurus@workspace:packages/redocusaurus":
   version: 0.0.0-use.local
   resolution: "redocusaurus@workspace:packages/redocusaurus"
   dependencies:
     docusaurus-plugin-redoc: 1.6.0
-    docusaurus-theme-redoc: 1.6.1
+    docusaurus-theme-redoc: 1.6.2
   peerDependencies:
     "@docusaurus/theme-common": ^2.0.0
     "@docusaurus/utils": ^2.0.0
@@ -14276,7 +14276,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 8/b01fe0bc2dbca0e10d290ddb0bf81e807a031de48028176e2b21afd696b4d3f25ab9accdad888ef4a1f7c7f4d41f13d5bf2395b7653fdf3e5e3dafa54e56dab2
+  checksum: 9cfc3f5a42d55bfe4fa1b2637ee984aa4455c785b9b3a938de2bdc717dcb9b6222fbc0175f53691b8098aa02db180fdc488a6417cd6a8676da70372d78db8e9f
   languageName: node
   linkType: hard
 
