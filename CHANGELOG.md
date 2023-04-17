@@ -1,5 +1,18 @@
 # Redocusaurus
 
+## redocusaurus@1.6.2
+
+### Patch Changes
+
+- Updated dependencies [[`c0fcd04`](https://github.com/rohit-gohri/redocusaurus/commit/c0fcd0430cde3a02bb513ffefcaabe10c9f19b29)]:
+  - docusaurus-theme-redoc@1.6.2
+
+## docusaurus-theme-redoc@1.6.2
+
+### Patch Changes
+
+- [#288](https://github.com/rohit-gohri/redocusaurus/pull/288) [`c0fcd04`](https://github.com/rohit-gohri/redocusaurus/commit/c0fcd0430cde3a02bb513ffefcaabe10c9f19b29) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Revert "Fix to prevent rehydration of styles" to fix mobile view
+
 ## redocusaurus@1.6.1
 
 ### Patch Changes
