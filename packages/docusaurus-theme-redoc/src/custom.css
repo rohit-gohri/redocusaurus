@@ -11,3 +11,8 @@
   max-width: 4rem;
   max-height: 4rem;
 }
+
+/* Table row color override to match your Docusaurus CSS */
+.redocusaurus table > tbody > tr {
+  background-color: var(--ifm-table-cell-color) !important;
+}
