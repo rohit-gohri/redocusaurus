@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.6.3
+
+### Patch Changes
+
+- [#295](https://github.com/rohit-gohri/redocusaurus/pull/295) [`e5cf828`](https://github.com/rohit-gohri/redocusaurus/commit/e5cf82811d628d22342d128919dabbe74e933faa) Thanks [@kimsauce](https://github.com/kimsauce)! - Add dark mode support to tables inside markdown
+
 ## 1.6.2
 
 ### Patch Changes
