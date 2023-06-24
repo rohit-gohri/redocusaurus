@@ -26,7 +26,6 @@ author_url: https://rohit.page
        // ...
        presets: [
          // .. Your other presets' config 
-         '@docusaurus/preset-classic',
          [
            'redocusaurus',
            {
@@ -58,8 +57,6 @@ author_url: https://rohit.page
        // ...
        presets: [
          // .. Your other presets' config 
-         '@docusaurus/preset-classic',
-         // Redocusaurus config
          [
            'redocusaurus',
            {
