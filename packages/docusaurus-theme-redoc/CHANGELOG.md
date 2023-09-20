@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 1.6.4
+
+### Patch Changes
+
+- [#307](https://github.com/rohit-gohri/redocusaurus/pull/307) [`340c583`](https://github.com/rohit-gohri/redocusaurus/commit/340c583204dc518b535b0c4c0dcbd75a8fa57ee1) Thanks [@tomas-zijdemans-vipps](https://github.com/tomas-zijdemans-vipps)! - fix callback dark mode background
+
 ## 1.6.3
 
 ### Patch Changes
