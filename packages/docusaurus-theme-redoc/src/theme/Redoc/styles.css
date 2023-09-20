@@ -126,6 +126,21 @@ html[data-theme='dark']
   background-color: var(--ifm-background-color);
 }
 
+/* Fixes https://github.com/rohit-gohri/redocusaurus/issues/306 */
+html[data-theme='dark'] 
+  .redocusaurus 
+  div[id^='tag']
+  button:has(span):has(.operation-type) {
+  background-color: var(--ifm-color-gray-800);
+}
+
+html[data-theme='dark'] 
+  .redocusaurus 
+  div[id^='tag'] 
+  button + div {
+  background-color: var(--ifm-color-emphasis-0);
+}
+
 /* Padding above Response Samples heading */
 .redocusaurus .react-tabs__tab-panel--selected {
   margin-bottom: 10px;
