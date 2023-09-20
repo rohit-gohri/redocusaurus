@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-theme-redoc",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Redoc Component for DocusaurusV2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
