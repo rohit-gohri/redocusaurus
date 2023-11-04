@@ -17,19 +17,19 @@ This value will be used as `colors.primary.main` in the `themes` option. Must be
 
 ### theme (optional, object)
 
-:::caution
+:::warning
 Deprecated: Use `redocly.yaml` to specify theme. See [example](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml).
 :::
 
 Override the redoc theme object passed to Redoc. See the defaults [here](https://github.com/Redocly/redoc#redoc-theme-object).
 
-:::caution
+:::warning
 Note: You should not override any color using this property, as it will be the same value for dark and light themes.
 :::
 
 ### options (optional, object)
 
-:::caution
+:::warning
 Deprecated: Use `redocly.yaml` to specify `theme.options`. See [example](https://github.com/rohit-gohri/redocusaurus/blob/main/website/redocly.yaml).
 :::
 

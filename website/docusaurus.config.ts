@@ -1,9 +1,9 @@
-const  path = require('path');
+import path from 'path';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+import type { PresetEntry } from 'redocusaurus';
 
-/**
- * @type {import('redocusaurus').PresetEntry}
- */
-const redocusaurus = [
+const redocusaurus: PresetEntry = [
   'redocusaurus',
   {
     debug: Boolean(process.env.DEBUG || process.env.CI),
@@ -54,26 +54,7 @@ if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
 }
 
-/**
- * @type {Partial<import('@docusaurus/types').DocusaurusConfig>}
- */
-const config = {
-  presets: [
-    /** ************ Your other presets' config  *********** */
-    [
-      '@docusaurus/preset-classic',
-      {
-        debug: Boolean(process.env.DEBUG || process.env.CI),
-        theme: { customCss: [require.resolve('./src/custom.css')] },
-        docs: {
-          routeBasePath: '/docs',
-          editUrl: 'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
-        },
-      },  
-    ],
-    // Redocusaurus Config
-    redocusaurus,
-  ],
+const config: Config = {
   title: 'Redocusaurus',
   tagline: 'OpenAPI solution for Docusaurus docs with Redoc',
   customFields: {
@@ -84,6 +65,22 @@ const config = {
   url: process.env.DEPLOY_PRIME_URL || 'http://localhost:5000', // Your website URL
   baseUrl: process.env.DEPLOY_BASE_URL || '/', // Base URL for your project */
   favicon: 'img/favicon.ico',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        debug: Boolean(process.env.DEBUG || process.env.CI),
+        theme: { customCss: [require.resolve('./src/custom.css')] },
+        docs: {
+          routeBasePath: '/docs',
+          editUrl:
+            'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
+        },
+      },
+    ] satisfies Preset.Options,
+    // Redocusaurus Config
+    redocusaurus,
+  ],
   themeConfig: {
     navbar: {
       title: 'Redocusaurus',
@@ -197,7 +194,7 @@ const config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} <a href="https://rohit.page" target="_blank" rel="noopener noreferrer">Rohit Gohri</a>. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a>`,
     },
-  },
+  } satisfies Preset.ThemeConfig,
 };
 
-module.exports = config;
+export default config;

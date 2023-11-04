@@ -38,5 +38,6 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.rulers": [80, 120],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": ["Redoc", "redocusaurus"]
 }

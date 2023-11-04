@@ -32,10 +32,7 @@ const sections = [
     description: (
       <>
         Support for
-        <a href="/docs/guides/build-time-rendering">
-          {' '}
-          Build Time Rendering!
-        </a>
+        <a href="/docs/guides/build-time-rendering"> Build Time Rendering!</a>
       </>
     ),
   },

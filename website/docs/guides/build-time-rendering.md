@@ -4,7 +4,7 @@ description: Parse the OpenAPI schema at build time and skip the loading screen
 sidebar_position: 3
 ---
 
-:::caution
+:::warning
 **NOTE:** This is now enabled by default for everyone. Please [add your feedback here](https://github.com/rohit-gohri/redocusaurus/discussions/88).
 :::
 
