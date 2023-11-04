@@ -129,7 +129,7 @@ const config: Config = {
           ],
         },
         {
-          label: 'v1',
+          label: 'v1+',
           position: 'right',
           items: [
             {
@@ -137,7 +137,7 @@ const config: Config = {
               href: 'https://redocusaurus-v0.vercel.app/',
             },
             {
-              label: 'v1',
+              label: 'v1+',
               href: 'https://redocusaurus.vercel.app',
             },
           ],
