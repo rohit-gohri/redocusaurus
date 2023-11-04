@@ -9,10 +9,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
-env:
-  YARN_COMPRESSION_LEVEL: 0
-  YARN_ENABLE_GLOBAL_CACHE: true
-
 jobs:
   publish:
     name: Publish
@@ -26,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18.17.1'
           cache: 'yarn'
           registry-url: https://registry.npmjs.org/
 
@@ -57,7 +53,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18.17.1'
           cache: 'yarn'
           registry-url: https://registry.npmjs.org/
 

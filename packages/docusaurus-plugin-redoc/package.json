@@ -34,12 +34,19 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^3.0.0",
-    "@docusaurus/utils": "^3.0.0"
+    "@docusaurus/utils": "^3.0.0",
+    "core-js": "^3.33.2",
+    "mobx": "^6.10.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^6.1.0",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "@docusaurus/utils": "^3.0.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   }
 }
