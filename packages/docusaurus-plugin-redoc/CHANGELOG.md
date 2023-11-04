@@ -1,5 +1,11 @@
 # docusaurus-plugin-redoc
 
+## 2.0.0
+
+### Major Changes
+
+- [#314](https://github.com/rohit-gohri/redocusaurus/pull/314) [`9ecbb1f`](https://github.com/rohit-gohri/redocusaurus/commit/9ecbb1fe3e78357b314c05a60ab6a1e7284d2840) Thanks [@zabomate](https://github.com/zabomate)! - Upgrade to Docusaurus V3
+
 ## 1.6.0
 
 ### Minor Changes
