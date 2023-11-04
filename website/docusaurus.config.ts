@@ -76,8 +76,8 @@ const config: Config = {
           editUrl:
             'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
         },
-      },
-    ] satisfies Preset.Options,
+      } satisfies Preset.Options,
+    ],
     // Redocusaurus Config
     redocusaurus,
   ],
