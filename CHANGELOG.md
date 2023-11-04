@@ -1,5 +1,14 @@
 # Redocusaurus
 
+## redocusaurus@2.0.0
+
+
+## docusaurus-plugin-redoc@2.0.0
+
+
+## docusaurus-theme-redoc@2.0.0
+
+
 ## redocusaurus@1.6.4
 
 ### Patch Changes
