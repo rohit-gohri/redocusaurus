@@ -9,10 +9,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
-env:
-  YARN_COMPRESSION_LEVEL: 0
-  YARN_ENABLE_GLOBAL_CACHE: true
-
 jobs:
   publish:
     name: Publish
