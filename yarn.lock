@@ -6427,6 +6427,7 @@ __metadata:
     typescript: "npm:^5.2.2"
   peerDependencies:
     "@docusaurus/theme-common": ^3.0.0
+    webpack: ^5.0.0
   languageName: unknown
   linkType: soft
 
@@ -13321,6 +13322,7 @@ __metadata:
     docusaurus-plugin-redoc: "npm:2.0.0"
     docusaurus-theme-redoc: "npm:2.0.0"
     typescript: "npm:^5.2.2"
+    webpack: "npm:^5.0.0"
   peerDependencies:
     "@docusaurus/theme-common": ^3.0.0
     "@docusaurus/utils": ^3.0.0
@@ -15836,7 +15838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.88.1":
+"webpack@npm:^5.0.0, webpack@npm:^5.88.1":
   version: 5.89.0
   resolution: "webpack@npm:5.89.0"
   dependencies:
