@@ -1,5 +1,14 @@
 # redocusaurus
 
+## 2.0.1
+
+### Patch Changes
+
+- [#323](https://github.com/rohit-gohri/redocusaurus/pull/323) [`252b9b9`](https://github.com/rohit-gohri/redocusaurus/commit/252b9b9e5708c6f6abc48cb9ac929363fbc0ee3d) Thanks [@zackerydev](https://github.com/zackerydev)! - chore(deps): Add webpack to peer dependencies of redoc theme, this fixes issue #322
+
+- Updated dependencies [[`252b9b9`](https://github.com/rohit-gohri/redocusaurus/commit/252b9b9e5708c6f6abc48cb9ac929363fbc0ee3d)]:
+  - docusaurus-theme-redoc@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
