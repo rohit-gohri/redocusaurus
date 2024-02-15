@@ -2,8 +2,8 @@ import path from 'path';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { PresetEntry } from 'redocusaurus';
-
-const { DOCUSAURUS_VERSION } = require("@docusaurus/utils");
+// Import the Docusaurus version.
+import { DOCUSAURUS_VERSION } from '@docusaurus/utils'
 
 const redocusaurus: PresetEntry = [
   'redocusaurus',
