@@ -2,6 +2,8 @@ import path from 'path';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { PresetEntry } from 'redocusaurus';
+// Import the Docusaurus version.
+import { DOCUSAURUS_VERSION } from '@docusaurus/utils'
 
 const redocusaurus: PresetEntry = [
   'redocusaurus',
@@ -192,7 +194,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://rohit.page" target="_blank" rel="noopener noreferrer">Rohit Gohri</a>. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://rohit.page" target="_blank" rel="noopener noreferrer">Rohit Gohri</a>.<br />Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus v${DOCUSAURUS_VERSION}</a>.`,
     },
   } satisfies Preset.ThemeConfig,
 };
