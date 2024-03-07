@@ -40,5 +40,5 @@
   "editor.rulers": [80, 120],
   "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": ["Redoc", "redocusaurus"]
+  "cSpell.words": ["openapi", "Redoc", "Redocly", "redocusaurus"]
 }
