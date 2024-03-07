@@ -3,9 +3,9 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { DOCUSAURUS_VERSION } from '@docusaurus/utils';
 import type { PresetEntry } from 'redocusaurus';
-// Import the Docusaurus version.
+import packageJson from './package.json';
 
-const redocusaurus: PresetEntry = [
+const redocusaurus = [
   'redocusaurus',
   {
     debug: Boolean(process.env.DEBUG || process.env.CI),
@@ -50,7 +50,7 @@ const redocusaurus: PresetEntry = [
       primaryColor: '#1890ff',
     },
   },
-];
+] satisfies PresetEntry;
 
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
@@ -131,7 +131,7 @@ const config: Config = {
           ],
         },
         {
-          label: 'v1+',
+          label: `v${packageJson.version}`,
           position: 'right',
           items: [
             {

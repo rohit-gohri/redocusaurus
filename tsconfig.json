@@ -5,6 +5,7 @@
     "module": "commonjs",
     "allowJs": true,
     "checkJs": true,
+    "resolveJsonModule": true,
     "jsx": "react",
     "rootDir": "./",
     "moduleResolution": "node",
