@@ -8,7 +8,7 @@
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/rohit-gohri/redocusaurus/main?logo=github)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/fef74697/redocusaurus)
 
-[Redoc](https://github.com/redocly/redoc) for [Docusaurus v2](https://v2.docusaurus.io/).
+[Redoc](https://github.com/redocly/redoc) for [Docusaurus](https://docusaurus.io/).
 
 ## Usage
 
