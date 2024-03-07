@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { DOCUSAURUS_VERSION } from '@docusaurus/utils';
 import type * as Redocusaurus from 'redocusaurus';
-import packageJson from './package.json';
+import packageJson from '../packages/redocusaurus/package.json';
 
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
@@ -136,8 +136,8 @@ const config: Config = {
               href: 'https://redocusaurus-v0.vercel.app/',
             },
             {
-              label: 'v1+',
-              href: 'https://redocusaurus.vercel.app',
+              label: 'v1 | v2',
+              to: '/',
             },
           ],
         },
