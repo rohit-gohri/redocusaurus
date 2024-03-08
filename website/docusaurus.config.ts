@@ -1,56 +1,9 @@
 import path from 'path';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type { PresetEntry } from 'redocusaurus';
-// Import the Docusaurus version.
-import { DOCUSAURUS_VERSION } from '@docusaurus/utils'
-
-const redocusaurus: PresetEntry = [
-  'redocusaurus',
-  {
-    debug: Boolean(process.env.DEBUG || process.env.CI),
-    config: path.join(__dirname, 'redocly.yaml'),
-    specs: [
-      {
-        id: 'using-single-yaml',
-        spec: 'openapi/single-file/openapi.yaml',
-        route: '/examples/using-single-yaml/',
-      },
-      {
-        id: 'using-multi-file-yaml',
-        spec: 'openapi/multi-file/openapi.yaml',
-        route: '/examples/using-multi-file-yaml/',
-      },
-      {
-        id: 'using-swagger-json',
-        spec: 'openapi/swagger/swagger.json',
-        route: '/examples/using-swagger-json/',
-      },
-      {
-        id: 'using-remote-url',
-        // Remote File
-        spec: 'https://redocly.github.io/redoc/openapi.yaml',
-        route: '/examples/using-remote-url/',
-      },
-      {
-        id: 'using-custom-page',
-        spec: 'openapi/single-file/openapi.yaml',
-        // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
-      },
-      {
-        id: 'using-custom-layout',
-        spec: 'openapi/single-file/openapi.yaml',
-        // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
-      },
-    ],
-    theme: {
-      /**
-       * Highlight color for docs
-       */
-      primaryColor: '#1890ff',
-    },
-  },
-];
+import { DOCUSAURUS_VERSION } from '@docusaurus/utils';
+import type * as Redocusaurus from 'redocusaurus';
+import packageJson from '../packages/redocusaurus/package.json';
 
 if (process.env.VERCEL_URL) {
   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
@@ -80,8 +33,52 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
-    // Redocusaurus Config
-    redocusaurus,
+    [
+      'redocusaurus',
+      {
+        debug: Boolean(process.env.DEBUG || process.env.CI),
+        config: path.join(__dirname, 'redocly.yaml'),
+        specs: [
+          {
+            id: 'using-single-yaml',
+            spec: 'openapi/single-file/openapi.yaml',
+            route: '/examples/using-single-yaml/',
+          },
+          {
+            id: 'using-multi-file-yaml',
+            spec: 'openapi/multi-file/openapi.yaml',
+            route: '/examples/using-multi-file-yaml/',
+          },
+          {
+            id: 'using-swagger-json',
+            spec: 'openapi/swagger/swagger.json',
+            route: '/examples/using-swagger-json/',
+          },
+          {
+            id: 'using-remote-url',
+            // Remote File
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/examples/using-remote-url/',
+          },
+          {
+            id: 'using-custom-page',
+            spec: 'openapi/single-file/openapi.yaml',
+            // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
+          },
+          {
+            id: 'using-custom-layout',
+            spec: 'openapi/single-file/openapi.yaml',
+            // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
+          },
+        ],
+        theme: {
+          /**
+           * Highlight color for docs
+           */
+          primaryColor: '#1890ff',
+        },
+      },
+    ] satisfies Redocusaurus.PresetEntry,
   ],
   themeConfig: {
     navbar: {
@@ -131,7 +128,7 @@ const config: Config = {
           ],
         },
         {
-          label: 'v1+',
+          label: `v${packageJson.version}`,
           position: 'right',
           items: [
             {
@@ -139,8 +136,8 @@ const config: Config = {
               href: 'https://redocusaurus-v0.vercel.app/',
             },
             {
-              label: 'v1+',
-              href: 'https://redocusaurus.vercel.app',
+              label: 'v1 | v2',
+              to: '/',
             },
           ],
         },
@@ -153,10 +150,6 @@ const config: Config = {
       ],
     },
     footer: {
-      // logo: {
-      //   alt: 'Redocusaurus Logo',
-      //   src: 'img/logoDark.png',
-      // },
       style: 'dark',
       links: [
         {
