@@ -1,0 +1,38 @@
+{
+  "link.title.NPM Modules": {
+    "message": "NPM Modules",
+    "description": "The title of the footer links column with title=NPM Modules in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Redocusaurus": {
+    "message": "Redocusaurus",
+    "description": "The label of footer link with label=Redocusaurus linking to https://www.npmjs.com/package/redocusaurus/"
+  },
+  "link.item.label.Docusaurus Theme Redoc": {
+    "message": "Docusaurus Theme Redoc",
+    "description": "The label of footer link with label=Docusaurus Theme Redoc linking to https://www.npmjs.com/package/docusaurus-theme-redoc/"
+  },
+  "link.item.label.Docusaurus Plugin Redoc": {
+    "message": "Docusaurus Plugin Redoc",
+    "description": "The label of footer link with label=Docusaurus Plugin Redoc linking to https://www.npmjs.com/package/docusaurus-plugin-redoc/"
+  },
+  "link.item.label.Github": {
+    "message": "Github",
+    "description": "The label of footer link with label=Github linking to https://github.com/rohit-gohri/redocusaurus/"
+  },
+  "link.item.label.Blog Post": {
+    "message": "Blog Post",
+    "description": "The label of footer link with label=Blog Post linking to https://rohit.page/blog/projects/openapi-for-docusaurus/"
+  },
+  "link.item.label.Twitter Discussion": {
+    "message": "Twitter Discussion",
+    "description": "The label of footer link with label=Twitter Discussion linking to https://twitter.com/rohit_gohri/status/1351589213565644801"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 <a class=\"footer-link\" href=\"https://rohit.page\" target=\"_blank\" rel=\"noopener\">Rohit Gohri</a>.<br />Built with <a class=\"footer-link\" href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener\">Docusaurus v3.1.1</a>.",
+    "description": "The footer copyright"
+  }
+}
