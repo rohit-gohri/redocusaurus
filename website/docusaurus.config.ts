@@ -60,6 +60,15 @@ const config: Config = {
       },
     ] satisfies Redocusaurus.PresetEntry,
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'Redocusaurus',
@@ -120,6 +129,10 @@ const config: Config = {
               to: '/',
             },
           ],
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/rohit-gohri/redocusaurus',
