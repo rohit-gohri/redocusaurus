@@ -2,27 +2,48 @@
 
 ## redocusaurus@2.0.2
 
+- [#335](https://github.com/rohit-gohri/redocusaurus/pull/335) [`c5e534f`](https://github.com/rohit-gohri/redocusaurus/commit/c5e534f4562f2f6ae5ab804c03b933d869a30d9f) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade dependencies
+
+- Updated dependencies [[`c5e534f`](https://github.com/rohit-gohri/redocusaurus/commit/c5e534f4562f2f6ae5ab804c03b933d869a30d9f)]:
+  - docusaurus-plugin-redoc@2.0.2
+  - docusaurus-theme-redoc@2.0.2
 
 ## docusaurus-plugin-redoc@2.0.2
 
+- [#335](https://github.com/rohit-gohri/redocusaurus/pull/335) [`c5e534f`](https://github.com/rohit-gohri/redocusaurus/commit/c5e534f4562f2f6ae5ab804c03b933d869a30d9f) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade dependencies
 
 ## docusaurus-theme-redoc@2.0.2
 
+- [#335](https://github.com/rohit-gohri/redocusaurus/pull/335) [`c5e534f`](https://github.com/rohit-gohri/redocusaurus/commit/c5e534f4562f2f6ae5ab804c03b933d869a30d9f) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade dependencies
 
 ## redocusaurus@2.0.1
 
+- [#323](https://github.com/rohit-gohri/redocusaurus/pull/323) [`252b9b9`](https://github.com/rohit-gohri/redocusaurus/commit/252b9b9e5708c6f6abc48cb9ac929363fbc0ee3d) Thanks [@zackerydev](https://github.com/zackerydev)! - chore(deps): Add webpack to peer dependencies of redoc theme, this fixes issue #322
+
+- Updated dependencies [[`252b9b9`](https://github.com/rohit-gohri/redocusaurus/commit/252b9b9e5708c6f6abc48cb9ac929363fbc0ee3d)]:
+  - docusaurus-theme-redoc@2.0.1
 
 ## docusaurus-theme-redoc@2.0.1
 
+- [#323](https://github.com/rohit-gohri/redocusaurus/pull/323) [`252b9b9`](https://github.com/rohit-gohri/redocusaurus/commit/252b9b9e5708c6f6abc48cb9ac929363fbc0ee3d) Thanks [@zackerydev](https://github.com/zackerydev)! - chore(deps): Add webpack to peer dependencies of redoc theme, this fixes issue #322
 
 ## redocusaurus@2.0.0
 
+- [#314](https://github.com/rohit-gohri/redocusaurus/pull/314) [`9ecbb1f`](https://github.com/rohit-gohri/redocusaurus/commit/9ecbb1fe3e78357b314c05a60ab6a1e7284d2840) Thanks [@zabomate](https://github.com/zabomate)! - Upgrade to Docusaurus V3
+
+### Patch Changes
+
+- Updated dependencies [[`9ecbb1f`](https://github.com/rohit-gohri/redocusaurus/commit/9ecbb1fe3e78357b314c05a60ab6a1e7284d2840)]:
+  - docusaurus-plugin-redoc@2.0.0
+  - docusaurus-theme-redoc@2.0.0
 
 ## docusaurus-plugin-redoc@2.0.0
 
+- [#314](https://github.com/rohit-gohri/redocusaurus/pull/314) [`9ecbb1f`](https://github.com/rohit-gohri/redocusaurus/commit/9ecbb1fe3e78357b314c05a60ab6a1e7284d2840) Thanks [@zabomate](https://github.com/zabomate)! - Upgrade to Docusaurus V3
 
 ## docusaurus-theme-redoc@2.0.0
 
+- [#314](https://github.com/rohit-gohri/redocusaurus/pull/314) [`9ecbb1f`](https://github.com/rohit-gohri/redocusaurus/commit/9ecbb1fe3e78357b314c05a60ab6a1e7284d2840) Thanks [@zabomate](https://github.com/zabomate)! - Upgrade to Docusaurus V3
 
 ## redocusaurus@1.6.4
 
@@ -287,7 +308,7 @@
 
 - [#194](https://github.com/rohit-gohri/redocusaurus/pull/194) [`57ad685`](https://github.com/rohit-gohri/redocusaurus/commit/57ad6857b795799d4040a4e7e2631810d1a619f2) Thanks [@baptisteArno](https://github.com/baptisteArno)! - fix(theme): Use heading specific CSS variables
 
-- [#198](https://github.com/rohit-gohri/redocusaurus/pull/198) [`f3cca29`](https://github.com/rohit-gohri/redocusaurus/commit/f3cca29b7567a5d29f66589466ca33ab13af7d98) Thanks [@mauris](https://github.com/mauris )! - Dark and light AppStore menu fix
+- [#198](https://github.com/rohit-gohri/redocusaurus/pull/198) [`f3cca29`](https://github.com/rohit-gohri/redocusaurus/commit/f3cca29b7567a5d29f66589466ca33ab13af7d98) Thanks [@mauris](https://github.com/mauris)! - Dark and light AppStore menu fix
 
 ## redocusaurus@1.1.2
 
