@@ -21,6 +21,7 @@ import {
   PluginOptionSchema,
   PluginOptions,
   PluginOptionsWithDefault,
+  PluginDirectUsageOptions,
   DEFAULT_OPTIONS,
 } from './options';
 import type { SpecProps, ApiDocProps } from './types/common';
@@ -30,7 +31,7 @@ import { loadRedoclyConfig } from './loadRedoclyConfig';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const version = require('../package.json').version;
 
-export { PluginOptions, loadRedoclyConfig };
+export { PluginOptions, PluginDirectUsageOptions, loadRedoclyConfig };
 
 export default function redocPlugin(
   context: LoadContext,
@@ -41,7 +42,7 @@ export default function redocPlugin(
 }> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, url: downloadUrl, config } = options;
+  const { debug, spec, url: downloadUrl, config, themeId } = options;
 
   let url = downloadUrl;
   const isSpecFile = fs.existsSync(spec);
@@ -56,7 +57,6 @@ export default function redocPlugin(
     console.error('[REDOCUSAURUS_PLUGIN] Options:', options);
   }
 
-  const { themeId } = options;
   return {
     name: 'docusaurus-plugin-redoc',
     async loadContent() {
@@ -185,9 +185,6 @@ export default function redocPlugin(
       fs.writeFileSync(staticFile, bundledYaml);
     },
     getPathsToWatch() {
-      if (!isSpecFile) {
-        return [];
-      }
       return filesToWatch;
     },
   };

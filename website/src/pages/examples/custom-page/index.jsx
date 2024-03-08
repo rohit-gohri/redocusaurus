@@ -3,7 +3,7 @@ import ApiDoc from '@theme/ApiDoc';
 import useSpecData from '@theme/useSpecData';
 
 function CustomPage() {
-  const specData = useSpecData('using-custom-page');
+  const specData = useSpecData('using-single-yaml');
 
   return (
     <ApiDoc

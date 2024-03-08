@@ -1,45 +1,76 @@
+import path from 'path';
 import type { LoadContext } from '@docusaurus/types';
+import { Globby, createSlugger } from '@docusaurus/utils';
 import type { PluginOptions } from 'docusaurus-plugin-redoc';
 import type { ThemeOptions } from 'docusaurus-theme-redoc';
+import type { PresetEntry, PresetOptions, SpecOptions } from './types';
 
-export interface PresetOptions {
-  id?: string;
-  debug?: boolean;
-  /**
-   * Path to the Redocly config file `redocly.yaml`
-   */
-  config?: string;
-  specs: PluginOptions[];
-  theme?: ThemeOptions;
-}
+export type { PresetEntry, PresetOptions };
 
-export type PresetEntry = ['redocusaurus', PresetOptions];
-
-export default function preset(
+export default async function preset(
   context: LoadContext,
   opts: PresetOptions = {
-    specs: [],
     theme: {},
   },
 ) {
-  let specsArray: PluginOptions[] = [];
-  const { debug = false, specs, theme = {}, config } = opts;
+  const { debug = false, openapi, specs, theme = {}, config } = opts;
   if (debug) {
     console.error('[REDOCUSAURUS] Options:', opts);
   }
 
-  if (Array.isArray(specs)) {
-    specsArray = specs;
-  } else if (specs) {
-    specsArray = [specs];
+  const id = opts.id ? `-${opts.id}` : '';
+  const themeId = `theme-redoc${id}`;
+  if (debug) {
+    console.error('[REDOCUSAURUS] ID Suffix:', id);
+  }
+
+  const specsArray: SpecOptions[] = [];
+
+  if (specs) {
+    if (debug) {
+      console.error('[REDOCUSAURUS] Specs Files:', specs);
+    }
+    specsArray.push(...(Array.isArray(specs) ? specs : [specs]));
+  }
+  if (!specs || openapi) {
+    // Load folder if no specs provided or folder specifically provided
+    const folder = openapi?.folder || 'openapi';
+    const resolvedFolder = path.resolve(folder);
+    if (debug) {
+      console.error('[REDOCUSAURUS] Loading Folder:', {
+        folder,
+        resolvedFolder,
+      });
+    }
+    const specFiles = await Globby([
+      `${folder}/**/*.openapi.{yaml,json}`,
+      `${folder}/**/openapi.{yaml,json}`,
+    ]);
+    if (debug) {
+      console.error('[REDOCUSAURUS] Found openapi files:', specFiles);
+    }
+    const slugger = createSlugger();
+    specsArray.push(
+      ...specFiles.map((specFile): SpecOptions => {
+        const spec = path.resolve(specFile);
+        const fileRoute = path
+          .relative(resolvedFolder, spec)
+          .replace(/(\/index)?\.openapi\.(yaml|json)$/, '')
+          .replace(/\/*$/, '');
+
+        const docRoute = `${openapi?.routeBasePath ?? ''}/${fileRoute}`;
+        return {
+          id: slugger.slug(fileRoute),
+          spec: spec,
+          route: docRoute,
+        };
+      }),
+    );
   }
 
   if (debug) {
-    console.error('[REDOCUSAURUS] Specs:', specsArray);
+    console.error('[REDOCUSAURUS] All specs:', specsArray);
   }
-  const id = opts.id ? `-${opts.id}` : '';
-  const themeId = `theme-redoc${id}`;
-
   const resolvedPreset: {
     themes: readonly (readonly [string, ThemeOptions])[];
     plugins: readonly (readonly [string, PluginOptions])[];
