@@ -29,6 +29,13 @@ const config: Config = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: packageJson.version,
+              path: '',
+            },
+          },
           editUrl:
             'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
         },
@@ -117,18 +124,10 @@ const config: Config = {
           ],
         },
         {
-          label: `v${packageJson.version}`,
+          type: 'docsVersionDropdown',
           position: 'right',
-          items: [
-            {
-              label: 'v0',
-              href: 'https://redocusaurus-v0.vercel.app/',
-            },
-            {
-              label: 'v1 | v2',
-              to: '/',
-            },
-          ],
+          dropdownActiveClassDisabled: true,
+          // 'https://redocusaurus-v0.vercel.app/',
         },
         {
           type: 'localeDropdown',
