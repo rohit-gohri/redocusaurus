@@ -24,7 +24,10 @@ const sections = [
   {
     title: <>📑 Schema Definitions</>,
     description: (
-      <>Use individual schema definitions directly in your MDX docs</>
+      <>
+        Use individual schema definitions{' '}
+        <a href="/docs/guides/schema-imports">directly in your MDX docs</a>
+      </>
     ),
   },
   {
@@ -63,7 +66,26 @@ function Docs() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Redocusaurus</h1>
-          <p>OpenAPI solution for Docusaurus docs using Redoc</p>
+          <p>
+            OpenAPI solution for{' '}
+            <a
+              className={clsx(styles.link)}
+              target="_blank"
+              rel="noopener"
+              href="https://docusaurus.io/"
+            >
+              Docusaurus
+            </a>{' '}
+            docs using{' '}
+            <a
+              className={clsx(styles.link)}
+              target="_blank"
+              rel="noopener"
+              href="https://redocly.com/redoc/"
+            >
+              Redoc
+            </a>
+          </p>
           <span>
             <iframe
               src="https://ghbtns.com/github-btn.html?user=rohit-gohri&amp;repo=redocusaurus&amp;type=star&amp;count=true&amp;size=large"

@@ -39,3 +39,11 @@
   height: 200px;
   width: 200px;
 }
+
+.link {
+  color: white;
+  font-weight: bold;
+}
+.link:hover {
+  color: white;
+}

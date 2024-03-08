@@ -12,9 +12,11 @@ author_url: https://rohit.page
    ![npm](https://img.shields.io/npm/v/redocusaurus?style=flat-square)
 
    ```sh
-   npm i --save redocusaurus
-   # OR
    yarn add redocusaurus
+   # OR
+   pnpm add redocusaurus
+   # OR
+   npm i --save redocusaurus
    ```
 
 1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:

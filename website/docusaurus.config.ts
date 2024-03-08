@@ -187,7 +187,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://rohit.page" target="_blank" rel="noopener noreferrer">Rohit Gohri</a>.<br />Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus v${DOCUSAURUS_VERSION}</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a class="footer-link" href="https://rohit.page" target="_blank" rel="noopener">Rohit Gohri</a>.<br />Built with <a class="footer-link" href="https://docusaurus.io/" target="_blank" rel="noopener">Docusaurus v${DOCUSAURUS_VERSION}</a>.`,
     },
   } satisfies Preset.ThemeConfig,
 };
