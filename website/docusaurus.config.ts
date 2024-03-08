@@ -38,37 +38,16 @@ const config: Config = {
       {
         debug: Boolean(process.env.DEBUG || process.env.CI),
         config: path.join(__dirname, 'redocly.yaml'),
+        openapi: {
+          folder: 'openapi',
+          routeBasePath: '/examples',
+        },
         specs: [
-          {
-            id: 'using-single-yaml',
-            spec: 'openapi/single-file/openapi.yaml',
-            route: '/examples/using-single-yaml/',
-          },
-          {
-            id: 'using-multi-file-yaml',
-            spec: 'openapi/multi-file/openapi.yaml',
-            route: '/examples/using-multi-file-yaml/',
-          },
-          {
-            id: 'using-swagger-json',
-            spec: 'openapi/swagger/swagger.json',
-            route: '/examples/using-swagger-json/',
-          },
           {
             id: 'using-remote-url',
             // Remote File
             spec: 'https://redocly.github.io/redoc/openapi.yaml',
             route: '/examples/using-remote-url/',
-          },
-          {
-            id: 'using-custom-page',
-            spec: 'openapi/single-file/openapi.yaml',
-            // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
-          },
-          {
-            id: 'using-custom-layout',
-            spec: 'openapi/single-file/openapi.yaml',
-            // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
           },
         ],
         theme: {
