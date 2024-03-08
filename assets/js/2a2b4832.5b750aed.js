@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredocusaurus_website=self.webpackChunkredocusaurus_website||[]).push([[647],{22848:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-redoc","id":"using-single-yaml"}')}}]);
