@@ -1,9 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import '../../global';
-import { RedocStandalone, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../../types/common';
-import { useSpecOptions } from '../../utils/useSpecOptions';
+import { RedocStandalone } from 'redoc';
+import { RedocProps } from '../../types/common';
+import useSpecOptions from '../../utils/useSpecOptions';
 import './styles.css';
 import ServerRedoc from './ServerRedoc';
 
@@ -13,12 +13,7 @@ import ServerRedoc from './ServerRedoc';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-function Redoc(
-  props: Partial<SpecProps> & {
-    className?: string;
-    optionsOverrides?: RedocRawOptions;
-  },
-): JSX.Element {
+function Redoc(props: RedocProps): JSX.Element {
   const { className, optionsOverrides, spec, url, themeId, isSpecFile } = props;
   const { options } = useSpecOptions(themeId, optionsOverrides);
   const isDevMode = process.env.NODE_ENV === 'development';

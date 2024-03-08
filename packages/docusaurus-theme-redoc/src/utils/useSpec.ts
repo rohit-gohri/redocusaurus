@@ -5,7 +5,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 import { SpecProps } from '../types/common';
-import { useSpecOptions } from './useSpecOptions';
+import useSpecOptions from './useSpecOptions';
+import useSpecData from './useSpecData';
 
 // the current store singleton in the app's instance
 let currentStore: AppStore | null = null;
@@ -16,10 +17,11 @@ let currentStore: AppStore | null = null;
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-export function useSpec(
-  { spec, url, themeId }: SpecProps,
+export default function useSpec(
+  specInfo: SpecProps,
   optionsOverrides?: RedocRawOptions,
 ) {
+  const { spec, url, themeId } = useSpecData(specInfo);
   const specOptions = useSpecOptions(themeId, optionsOverrides);
   const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();

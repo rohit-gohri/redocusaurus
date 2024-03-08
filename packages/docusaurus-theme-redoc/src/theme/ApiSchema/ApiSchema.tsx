@@ -3,20 +3,17 @@ import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import '../../global';
 import { SchemaDefinition } from 'redoc';
-import { useSpec } from '../../utils/useSpec';
-import { useSpecData } from '../useSpecData';
+import useSpec from '../../utils/useSpec';
 import { ApiSchemaProps as Props } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
 
 const ApiSchema: React.FC<Props> = ({
-  id,
-  example,
+  showExample,
   pointer,
   ...rest
 }: Props): JSX.Element => {
-  const specProps = useSpecData(id);
-  const { store } = useSpec(specProps);
+  const { store } = useSpec(rest);
 
   useEffect(() => {
     /**
@@ -31,13 +28,14 @@ const ApiSchema: React.FC<Props> = ({
         className={clsx([
           'redocusaurus',
           'redocusaurus-schema',
-          example ? null : 'hide-example',
+          showExample ? null : 'hide-example',
         ])}
       >
         <SchemaDefinition
           parser={store.spec.parser}
           options={store.options}
           schemaRef={pointer}
+          showExample={showExample}
           {...rest}
         />
       </div>
@@ -46,7 +44,7 @@ const ApiSchema: React.FC<Props> = ({
 };
 
 ApiSchema.defaultProps = {
-  example: false,
+  showExample: false,
 };
 
 export default ApiSchema;

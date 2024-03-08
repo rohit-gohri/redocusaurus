@@ -24,7 +24,7 @@ import {
   PluginDirectUsageOptions,
   DEFAULT_OPTIONS,
 } from './options';
-import type { SpecProps, ApiDocProps } from './types/common';
+import type { SpecPropsWithUrl, ApiDocProps } from './types/common';
 import { loadSpecWithConfig } from './loadSpec';
 import { loadRedoclyConfig } from './loadRedoclyConfig';
 
@@ -32,6 +32,10 @@ import { loadRedoclyConfig } from './loadRedoclyConfig';
 const version = require('../package.json').version;
 
 export { PluginOptions, PluginDirectUsageOptions, loadRedoclyConfig };
+
+function getIsExternalUrl(url = '') {
+  return ['http://', 'https://'].some((protocol) => url.startsWith(protocol));
+}
 
 export default function redocPlugin(
   context: LoadContext,
@@ -45,12 +49,13 @@ export default function redocPlugin(
   const { debug, spec, url: downloadUrl, config, themeId } = options;
 
   let url = downloadUrl;
-  const isSpecFile = fs.existsSync(spec);
+  const isExternalUrl = getIsExternalUrl(url);
+
   const fileName = path.join(
     'redocusaurus',
     `${options.id || 'api-spec'}.yaml`,
   );
-  let filesToWatch: string[] = isSpecFile ? [path.resolve(spec)] : [];
+  let filesToWatch: string[] = !isExternalUrl ? [path.resolve(spec)] : [];
 
   if (debug) {
     console.error('[REDOCUSAURUS_PLUGIN] Opts Input:', opts);
@@ -67,7 +72,7 @@ export default function redocPlugin(
 
       let bundledSpec: Document, problems: NormalizedProblem[];
 
-      if (!isSpecFile) {
+      if (isExternalUrl) {
         // If spec is a remote url then add it as download url also as a default
         url = url || spec;
         if (debug) {
@@ -123,10 +128,9 @@ export default function redocPlugin(
         throw new Error(`[Redocusaurus] Spec could not be parsed: ${spec}`);
       }
 
-      const data: SpecProps = {
+      const data: SpecPropsWithUrl = {
         url,
         themeId,
-        isSpecFile,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         spec: content.converted as any,
       };
@@ -165,7 +169,7 @@ export default function redocPlugin(
       }
     },
     async postBuild({ content }) {
-      if (!isSpecFile || downloadUrl) {
+      if (isExternalUrl || downloadUrl) {
         return;
       }
       // Create a static file from bundled spec

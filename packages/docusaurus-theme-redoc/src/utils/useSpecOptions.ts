@@ -17,7 +17,7 @@ import { GlobalData } from '../types/options';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-export function useSpecOptions(
+export default function useSpecOptions(
   themeId: SpecProps['themeId'] = 'theme-redoc',
   optionsOverrides?: RedocRawOptions,
 ) {
