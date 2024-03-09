@@ -2,11 +2,10 @@ import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
-import '../global';
+import useSpecData from '@theme/useSpecData';
+import useSpecOptions from '@theme/useSpecOptions';
+import '../../global';
 import { AppStore, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../types/common';
-import useSpecOptions from './useSpecOptions';
-import useSpecData from './useSpecData';
 
 // the current store singleton in the app's instance
 let currentStore: AppStore | null = null;
@@ -17,11 +16,15 @@ let currentStore: AppStore | null = null;
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-export default function useSpec(
+export function useSpec(
   specInfo: SpecProps,
   optionsOverrides?: RedocRawOptions,
-) {
-  const { spec, url, themeId } = useSpecData(specInfo);
+): SpecResult {
+  const { spec, url, themeId } = useSpecData(
+    specInfo.id,
+    specInfo.spec,
+    specInfo.themeId,
+  );
   const specOptions = useSpecOptions(themeId, optionsOverrides);
   const fullUrl = useBaseUrl(url, { absolute: true });
   const isBrowser = useIsBrowser();
@@ -38,6 +41,7 @@ export default function useSpec(
       // @ts-expect-error extra prop
       hasLogo: !!spec.info?.['x-logo'],
       store: currentStore,
+      spec,
     };
   }, [isBrowser, spec, fullUrl, specOptions]);
 

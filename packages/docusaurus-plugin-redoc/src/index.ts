@@ -24,7 +24,7 @@ import {
   PluginDirectUsageOptions,
   DEFAULT_OPTIONS,
 } from './options';
-import type { SpecPropsWithUrl, ApiDocProps } from './types/common';
+import type { SpecDataResult, ApiDocProps } from './types/common';
 import { loadSpecWithConfig } from './loadSpec';
 import { loadRedoclyConfig } from './loadRedoclyConfig';
 
@@ -128,7 +128,7 @@ export default function redocPlugin(
         throw new Error(`[Redocusaurus] Spec could not be parsed: ${spec}`);
       }
 
-      const data: SpecPropsWithUrl = {
+      const data: SpecDataResult = {
         url,
         themeId,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any

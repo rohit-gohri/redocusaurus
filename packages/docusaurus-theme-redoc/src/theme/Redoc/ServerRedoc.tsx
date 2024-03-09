@@ -1,9 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import '../../global';
-import { Redoc as RedocComponent, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../../types/common';
-import useSpec from '../../utils/useSpec';
+import { Redoc as RedocComponent } from 'redoc';
+import useSpec from '@theme/useSpec';
 import { ServerStyles } from './Styles';
 import './styles.css';
 
@@ -13,22 +12,22 @@ import './styles.css';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-function ServerRedoc(
-  props: SpecProps & {
-    className?: string;
-    optionsOverrides?: RedocRawOptions;
-  },
-): JSX.Element {
-  const { className, optionsOverrides, ...specProps } = props;
-  const { store, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
-    specProps,
+function ServerRedoc(props: RedocProps): JSX.Element {
+  const { className, optionsOverrides, url, id, themeId } = props;
+  const { store, spec, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
+    {
+      spec: props.spec,
+      themeId,
+      id,
+    },
     optionsOverrides,
   );
 
   return (
     <>
       <ServerStyles
-        specProps={specProps}
+        spec={spec}
+        url={url}
         lightThemeOptions={lightThemeOptions}
         darkThemeOptions={darkThemeOptions}
       />

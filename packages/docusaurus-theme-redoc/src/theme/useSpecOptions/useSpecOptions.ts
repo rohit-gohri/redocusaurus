@@ -6,10 +6,10 @@ import {
 } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
 import merge from 'lodash/merge';
-import '../global';
+import '../../global';
 import { RedocRawOptions } from 'redoc';
-import { SpecProps } from '../types/common';
-import { GlobalData } from '../types/options';
+import { SpecProps } from '../../types/common';
+import { GlobalData } from '../../types/options';
 
 /**
  * Redocusaurus
@@ -17,7 +17,7 @@ import { GlobalData } from '../types/options';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-export default function useSpecOptions(
+export function useSpecOptions(
   themeId: SpecProps['themeId'] = 'theme-redoc',
   optionsOverrides?: RedocRawOptions,
 ) {

@@ -1,6 +1,6 @@
 import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
 import type { OpenAPISpec } from 'redoc/typings/types';
-import { SpecProps, SpecPropsWithUrl } from '../types/common';
+import { SpecDataResult } from '../../types/common';
 
 export type ParsedSpec = OpenAPISpec;
 
@@ -13,17 +13,23 @@ export type ParsedSpec = OpenAPISpec;
  * @param providedSpec spec data
  * @returns Spec Data of ID or first one if ID is not provided
  */
-export default function useSpecData(providedSpec: SpecProps): SpecPropsWithUrl {
+export function useSpecData(
+  id?: string,
+  spec?: OpenAPISpec,
+  themeId?: string,
+): SpecDataResult {
   const allData = useAllPluginInstancesData('docusaurus-plugin-redoc');
-  if (providedSpec.spec) {
+  if (spec) {
     // return provided spec when already defined
-    return providedSpec as SpecPropsWithUrl;
+    return {
+      spec,
+      themeId,
+    };
   } else {
     // retrieve spec from docusaurus conf
-    const id = providedSpec.id;
     const apiData = id
       ? allData?.[id as string]
       : Object.values(allData ?? {})?.[0];
-    return apiData as SpecPropsWithUrl;
+    return apiData as SpecDataResult;
   }
 }

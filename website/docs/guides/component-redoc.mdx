@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 
 import Redoc from '@theme/Redoc';
-import openApi from '../../openapi/single-json-file/api-with-examples.json'
+import openApi from '../../openapi/using-single-json.openapi.json'
 
 # Redoc
 
@@ -29,7 +29,7 @@ import Redoc from '@theme/Redoc';
 | spec | OpenAPI spec | A JSON content spec to use          |
 | url  | String       | External URL to load spec file from |
 
-## Example
+## Examples
 
 ### External URL example
 
@@ -44,7 +44,7 @@ import Redoc from '@theme/Redoc';
 ### Webpack loader example
 
 You can provide a JSON spec to the component like this. Webpack will load the file directly,
-you don't need to use docusaurus configuration.
+you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
 
 ```tsx
 import Redoc from '@theme/Redoc';

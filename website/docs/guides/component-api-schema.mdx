@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 import ApiSchema from '@theme/ApiSchema';
-import openApi from '../../openapi/single-json-file/api-with-examples.json'
+import openApi from '../../openapi/using-single-json.openapi.json'
 
 # ApiSchema
 
@@ -32,7 +32,7 @@ import ApiSchema from '@theme/ApiSchema';
 | spec        | OpenAPI spec | A JSON content spec to use                                                                           |
 | themeId     | String       | redocusaurus theme to use - default to `theme-redoc`                                                 |
 
-## Example
+## Examples
 
 
 ### Basic example
@@ -69,33 +69,21 @@ const config = {
     [
       'redocusaurus',
       {
+        openapi: {
+          path: 'openapi',
+          routeBasePath: '/examples',
+        },
         specs: [
-          {
-            id: 'using-single-yaml',
-            spec: 'openapi/single-file/openapi.yaml',
-            route: '/examples/using-single-yaml/',
-          },
           {
             id: 'using-remote-url',
             spec: 'https://redocly.github.io/redoc/openapi.yaml',
             route: '/examples/using-remote-url/',
           },
         ],
-        theme: {
-          /**
-           * Highlight color for docs
-           */
-          primaryColor: '#1890ff',
-          /**
-           * Options to pass to redoc
-           * @see https://github.com/redocly/redoc#redoc-options-object
-           */
-          options: { disableSearch: true },
-        },
+        [...]
       },
     ],
   ],
-  title: 'Redocusaurus',
 };
 ```
 
@@ -117,7 +105,7 @@ import ApiSchema from '@theme/ApiSchema';
 ### Webpack loader example
 
 You can provide a JSON spec to the component like this. Webpack will load the file directly,
-you don't need to use docusaurus configuration.
+you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
 
 ```tsx
 import ApiSchema from '@theme/ApiSchema';

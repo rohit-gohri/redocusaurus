@@ -3,17 +3,25 @@ import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import '../../global';
 import { SchemaDefinition } from 'redoc';
-import useSpec from '../../utils/useSpec';
-import { ApiSchemaProps as Props } from '../../types/common';
+import useSpec from '@theme/useSpec';
 import '../Redoc/styles.css';
 import './styles.css';
 
-const ApiSchema: React.FC<Props> = ({
+const ApiSchema: React.FC<ApiSchemaProps> = ({
   showExample,
   pointer,
+  id,
+  spec,
+  optionsOverrides,
   ...rest
-}: Props): JSX.Element => {
-  const { store } = useSpec(rest);
+}: ApiSchemaProps): JSX.Element => {
+  const { store } = useSpec(
+    {
+      id,
+      spec,
+    },
+    optionsOverrides,
+  );
 
   useEffect(() => {
     /**
