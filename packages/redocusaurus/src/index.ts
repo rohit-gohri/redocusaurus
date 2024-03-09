@@ -7,6 +7,11 @@ import type { PresetEntry, PresetOptions, SpecOptions } from './types';
 
 export type { PresetEntry, PresetOptions };
 
+const DEFAULT_OPENAPI_OPTIONS = {
+  path: 'openapi',
+  routeBasePath: '/api',
+} satisfies NonNullable<PresetOptions['openapi']>;
+
 export default async function preset(
   context: LoadContext,
   opts: PresetOptions = {
@@ -34,7 +39,11 @@ export default async function preset(
   }
   if (!specs || openapi) {
     // Load folder if no specs provided or folder specifically provided
-    const folder = openapi?.folder || 'openapi';
+    const { path: folder, routeBasePath } = {
+      ...DEFAULT_OPENAPI_OPTIONS,
+      ...openapi,
+    };
+
     const resolvedFolder = path.resolve(folder);
     if (debug) {
       console.error('[REDOCUSAURUS] Loading Folder:', {
@@ -42,6 +51,7 @@ export default async function preset(
         resolvedFolder,
       });
     }
+
     const specFiles = await Globby([
       `${folder}/**/*.openapi.{yaml,json}`,
       `${folder}/**/openapi.{yaml,json}`,
@@ -49,7 +59,9 @@ export default async function preset(
     if (debug) {
       console.error('[REDOCUSAURUS] Found openapi files:', specFiles);
     }
+
     const slugger = createSlugger();
+    const baseRoute = routeBasePath.replace(/\/*$/, '');
     specsArray.push(
       ...specFiles.map((specFile): SpecOptions => {
         const spec = path.resolve(specFile);
@@ -58,7 +70,7 @@ export default async function preset(
           .replace(/(\/index)?\.openapi\.(yaml|json)$/, '')
           .replace(/\/*$/, '');
 
-        const docRoute = `${openapi?.routeBasePath ?? ''}/${fileRoute}`;
+        const docRoute = `${baseRoute}/${fileRoute}`;
         return {
           id: slugger.slug(fileRoute),
           spec: spec,

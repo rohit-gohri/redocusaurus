@@ -6,17 +6,23 @@ import type { ThemeOptions } from 'docusaurus-theme-redoc';
 
 interface FolderOptions {
   /**
-   * Default is `openapi`. This is similar to how
+   * Path to the openapi specs directory on the file system, relative to site
+   * directory.
+   * @default openapi
    * Will load all YAML or JSON files in the folder
    * that are named `openapi` or end with `.openapi`, like:
    *   - `index.openapi.yaml`
    *   - `swagger.openapi.yaml`
    *   - `swagger.openapi.json`
+   * The folder is not going to be live-reloaded
+   * but any changes to specs loaded at start will be watched and will trigger live-reload
    */
-  folder?: string;
+  path?: string;
   /**
-   * The path at which the files will be rendered,
-   * if the file is called `index.openapi.yaml` it will be rendered at base path itself
+   * URL route for the api docs section of your site. **DO NOT** include a
+   * trailing slash. Use `/` for shipping api docs without base path.
+   * @default /api
+   * If the file is called `index.openapi.yaml` it will be rendered at base path itself
    * Otherwise the name of the file path from the base folder will be used as the url path
    */
   routeBasePath?: string;
@@ -33,10 +39,6 @@ export type PresetOptions = {
    */
   config?: string;
   specs?: SpecOptions[];
-  /**
-   * The folder is not going to be hot-reloaded
-   * but any changes to specs loaded at start will trigger live-reload
-   */
   openapi?: FolderOptions;
   theme?: Omit<ThemeOptions, 'id'>;
 };

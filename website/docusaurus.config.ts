@@ -27,6 +27,7 @@ const config: Config = {
         debug: Boolean(process.env.DEBUG || process.env.CI),
         theme: { customCss: [require.resolve('./src/custom.css')] },
         docs: {
+          path: 'docs',
           routeBasePath: '/docs',
           editUrl:
             'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
@@ -39,7 +40,7 @@ const config: Config = {
         debug: Boolean(process.env.DEBUG || process.env.CI),
         config: path.join(__dirname, 'redocly.yaml'),
         openapi: {
-          folder: 'openapi',
+          path: 'openapi',
           routeBasePath: '/examples',
         },
         specs: [
