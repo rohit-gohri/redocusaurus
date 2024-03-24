@@ -72,7 +72,7 @@ author_url: https://rohit.page
    ```
 
 The API Doc will be available at the path specific by `route`. To skip adding a route altogether just don't set the `route` property.
-You will still be able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports) or create Custom React Pages using the data and theme components.
+You will still be able to reference schema elements manually using [Schema Imports](/docs/guides/component-api-schema) or create Custom React Pages using the data and theme components.
 If you have a [`redocly.yaml`](https://redocly.com/docs/cli/configuration/) it will be loaded automatically.
 
 ## Options
