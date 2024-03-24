@@ -1,5 +1,5 @@
 ---
-title: Migrating to V1
+title: Migrating from v0
 sidebar_position: 4
 ---
 
