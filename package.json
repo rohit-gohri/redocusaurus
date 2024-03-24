@@ -79,5 +79,8 @@
     "printWidth": 80,
     "tabWidth": 2
   },
-  "packageManager": "yarn@4.0.1"
+  "packageManager": "yarn@4.0.1",
+  "volta": {
+    "node": "18.12.0"
+  }
 }

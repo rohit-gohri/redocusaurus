@@ -6,10 +6,10 @@ import {
 } from '@docusaurus/useGlobalData';
 import { useColorMode } from '@docusaurus/theme-common';
 import merge from 'lodash/merge';
-import '../global';
+import '../../global';
 import { RedocRawOptions } from 'redoc';
-import { SpecProps } from '../types/common';
-import { GlobalData } from '../types/options';
+import { SpecProps } from '../../types/common';
+import { GlobalData } from '../../types/options';
 
 /**
  * Redocusaurus
