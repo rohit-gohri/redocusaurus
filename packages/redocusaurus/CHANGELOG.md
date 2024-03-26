@@ -1,5 +1,16 @@
 # redocusaurus
 
+## 2.1.0
+
+### Minor Changes
+
+- [#342](https://github.com/rohit-gohri/redocusaurus/pull/342) [`646c5e1`](https://github.com/rohit-gohri/redocusaurus/commit/646c5e1eb7b5541513186ee507642a105140efdf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for auto-loading folder
+
+### Patch Changes
+
+- Updated dependencies [[`646c5e1`](https://github.com/rohit-gohri/redocusaurus/commit/646c5e1eb7b5541513186ee507642a105140efdf)]:
+  - docusaurus-plugin-redoc@2.1.0
+
 ## 2.0.2
 
 ### Patch Changes

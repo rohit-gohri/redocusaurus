@@ -1,5 +1,11 @@
 # Redocusaurus
 
+## redocusaurus@2.1.0
+
+
+## docusaurus-plugin-redoc@2.1.0
+
+
 ## redocusaurus@2.0.2
 
 - [#335](https://github.com/rohit-gohri/redocusaurus/pull/335) [`c5e534f`](https://github.com/rohit-gohri/redocusaurus/commit/c5e534f4562f2f6ae5ab804c03b933d869a30d9f) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Upgrade dependencies
