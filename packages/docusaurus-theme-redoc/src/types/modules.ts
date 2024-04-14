@@ -12,6 +12,10 @@ interface SpecProps {
    * docusaurus theme to use
    */
   themeId?: string;
+  /**
+   * Public path to the spec file used, used by Redoc as download url
+   */
+  downloadSpecUrl?: string;
 }
 interface SpecResult {
   hasLogo: boolean;
@@ -85,12 +89,7 @@ declare module '@theme/ApiSchema' {
 }
 
 declare module '@theme/useSpecData' {
-  type SpecDataResult = Omit<SpecProps, 'id'> & {
-    /**
-     * Public path to the spec file used, used by Redoc as download url
-     */
-    url?: string;
-  };
+  type SpecDataResult = Omit<SpecProps, 'id'>;
 
   /**
    * Load redocusaurus plugin data by ID
