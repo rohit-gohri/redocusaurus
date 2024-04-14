@@ -11,6 +11,7 @@ const ApiSchema: React.FC<ApiSchemaProps> = ({
   showExample,
   pointer,
   id,
+  themeId,
   spec,
   optionsOverrides,
   ...rest
@@ -18,6 +19,7 @@ const ApiSchema: React.FC<ApiSchemaProps> = ({
   const { store } = useSpec(
     {
       id,
+      themeId,
       spec,
     },
     optionsOverrides,
