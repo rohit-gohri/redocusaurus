@@ -33,7 +33,7 @@ jobs:
         run: sleep 60
 
       - name: Wait for Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@main
         id: vercel-preview
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
