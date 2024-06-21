@@ -26,7 +26,7 @@ A Docusaurus Preset that combines the below 2 packages to easily add API doc(s) 
 
 ### [Docusaurus Theme Redoc](./packages/docusaurus-theme-redoc)
 
-A wrapper around `RedocStandalone` to make it match the Dcousaurus Theme with added support for Dark Mode.
+A wrapper around `RedocStandalone` to make it match the Docusaurus Theme with added support for Dark Mode.
 
 ### [Docusaurus Plugin Redoc](./packages/docusaurus-plugin-redoc)
 

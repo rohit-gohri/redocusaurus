@@ -95,7 +95,7 @@ Example: [redocly.yaml](https://github.com/rohit-gohri/redocusaurus/blob/main/we
 Reference: [https://redocly.com/docs/cli/configuration/](https://redocly.com/docs/cli/configuration/). Only supports options marked as "Supported in Redoc CE".
 
 :::important
-When setting the `redocly.yaml` config, you website renders correctly only once it is built and run with the following commands:
+When setting the `redocly.yaml` config, your website renders correctly only once it is built and run with the following commands:
 
 ```bash
 npm run build
