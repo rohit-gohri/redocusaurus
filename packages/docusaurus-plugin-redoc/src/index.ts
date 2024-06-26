@@ -33,10 +33,6 @@ const version = require('../package.json').version;
 
 export { PluginOptions, PluginDirectUsageOptions, loadRedoclyConfig };
 
-function getIsExternalUrl(url = '') {
-  return ['http://', 'https://'].some((protocol) => url.startsWith(protocol));
-}
-
 export default function redocPlugin(
   context: LoadContext,
   opts: PluginOptions,
@@ -49,7 +45,7 @@ export default function redocPlugin(
   const { debug, spec, url: downloadUrl, config, themeId } = options;
 
   let url = downloadUrl;
-  const isExternalUrl = getIsExternalUrl(url);
+  const isExternalUrl = !!url;
 
   const fileName = path.join(
     'redocusaurus',
@@ -129,7 +125,7 @@ export default function redocPlugin(
       }
 
       const data: SpecDataResult = {
-        url,
+        downloadSpecUrl: url,
         themeId,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         spec: content.converted as any,

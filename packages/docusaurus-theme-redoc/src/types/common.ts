@@ -15,14 +15,13 @@ export interface SpecProps {
    * docusaurus theme to use
    */
   themeId?: string;
-}
-
-export type SpecDataResult = Omit<SpecProps, 'id'> & {
   /**
    * Public path to the spec file used, used by Redoc as download url
    */
-  url?: string;
-};
+  downloadSpecUrl?: string;
+}
+
+export type SpecDataResult = Omit<SpecProps, 'id'>;
 
 export interface MdxProps {
   /**

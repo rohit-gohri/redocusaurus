@@ -13,11 +13,12 @@ import './styles.css';
  * Released under the MIT License
  */
 function ServerRedoc(props: RedocProps): JSX.Element {
-  const { className, optionsOverrides, url, id, themeId } = props;
+  const { className, optionsOverrides, id, themeId, downloadSpecUrl } = props;
   const { store, spec, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
     {
       spec: props.spec,
       themeId,
+      downloadSpecUrl,
       id,
     },
     optionsOverrides,
@@ -27,7 +28,7 @@ function ServerRedoc(props: RedocProps): JSX.Element {
     <>
       <ServerStyles
         spec={spec}
-        url={url}
+        url={downloadSpecUrl}
         lightThemeOptions={lightThemeOptions}
         darkThemeOptions={darkThemeOptions}
       />

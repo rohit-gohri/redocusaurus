@@ -20,13 +20,17 @@ export function useSpec(
   specInfo: SpecProps,
   optionsOverrides?: RedocRawOptions,
 ): SpecResult {
-  const { spec, url, themeId } = useSpecData(
+  const { spec, downloadSpecUrl, themeId } = useSpecData(
     specInfo.id,
     specInfo.spec,
     specInfo.themeId,
   );
   const specOptions = useSpecOptions(themeId, optionsOverrides);
-  const fullUrl = useBaseUrl(url, { absolute: true });
+  // build download URL by using downloadSpecUrl, fallback to useSpecData result
+  const fullDownloadSpecUrl = useBaseUrl(
+    specInfo.downloadSpecUrl || downloadSpecUrl,
+    { absolute: true },
+  );
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
 
@@ -34,7 +38,7 @@ export function useSpec(
     if (currentStore !== null && isBrowser) {
       currentStore.dispose();
     }
-    currentStore = new AppStore(spec, fullUrl, specOptions.options);
+    currentStore = new AppStore(spec, fullDownloadSpecUrl, specOptions.options);
 
     return {
       ...specOptions,
@@ -43,7 +47,7 @@ export function useSpec(
       store: currentStore,
       spec,
     };
-  }, [isBrowser, spec, fullUrl, specOptions]);
+  }, [isBrowser, spec, fullDownloadSpecUrl, specOptions]);
 
   useEffect(() => {
     // to ensure that menu is properly loaded when theme gets changed
