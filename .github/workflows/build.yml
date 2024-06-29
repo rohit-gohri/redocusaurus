@@ -11,6 +11,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,7 +32,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies 📦
-        run: yarn install --immutable
+        run: |
+          yarn install --immutable
+          yarn manypkg check
 
       - name: Build Packages 🔨
         run: yarn build:packages
@@ -105,5 +108,5 @@ jobs:
 
 
             For commit [${{ github.sha }}](https://github.com/rohit-gohri/redocusaurus/commit/${{ github.sha }}).
-          comment_includes: 'This pull request is automatically built and it is testable by installing'
+          comment_tag: 'automatically-publish'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

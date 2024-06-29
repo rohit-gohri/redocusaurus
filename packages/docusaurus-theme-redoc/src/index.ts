@@ -26,6 +26,9 @@ export default function redocTheme(
               process.versions.node || '0.0.0',
             ),
             'process.platform': JSON.stringify(''),
+            // IMPORTANT: To fix debug library‘s bug #236
+            // {}.DEBUG = namespaces; // SyntaxError: Unexpected token '.'
+            'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
             'process.env': JSON.stringify({}),
           }),
           ...(isServer

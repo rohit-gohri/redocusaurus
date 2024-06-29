@@ -22,18 +22,18 @@
     "test": "percy snapshot snapshots.js"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.1.1",
-    "@docusaurus/preset-classic": "^3.1.1",
-    "@docusaurus/theme-common": "^3.1.1",
-    "@docusaurus/utils": "^3.1.1",
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0",
+    "@docusaurus/theme-common": "^3.4.0",
+    "@docusaurus/utils": "^3.4.0",
     "clsx": "^1.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "redocusaurus": "^2.1.0"
   },
   "devDependencies": {
-    "@percy/cli": "^1.27.4",
-    "@types/react": "^18.2.64"
+    "@percy/cli": "^1.28.8",
+    "@types/react": "^18.3.3"
   },
   "browserslist": {
     "production": [
