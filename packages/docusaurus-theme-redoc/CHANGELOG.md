@@ -1,5 +1,13 @@
 # docusaurus-theme-redoc
 
+## 2.1.1
+
+### Patch Changes
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - update dependencies
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add webpack define for DEBUG env var
+
 ## 2.0.2
 
 ### Patch Changes
