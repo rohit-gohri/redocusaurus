@@ -52,7 +52,9 @@
     "node": ">=14"
   },
   "devDependencies": {
-    "typescript": "^5.4.2",
-    "webpack": "^5.90.3"
+    "@docusaurus/theme-common": "^3.4.0",
+    "@docusaurus/utils": "^3.4.0",
+    "typescript": "^5.5.2",
+    "webpack": "^5.92.1"
   }
 }

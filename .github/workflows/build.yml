@@ -32,7 +32,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies 📦
-        run: yarn install --immutable
+        run: |
+          yarn install --immutable
+          yarn manypkg check
 
       - name: Build Packages 🔨
         run: yarn build:packages
