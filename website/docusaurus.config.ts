@@ -69,7 +69,7 @@ const config: Config = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de'],
+    locales: ['en', 'de','zh-Hant'],
     localeConfigs: {
       en: {
         htmlLang: 'en-GB',
