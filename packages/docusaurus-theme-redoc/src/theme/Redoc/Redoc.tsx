@@ -1,11 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
 import '../../global';
-import { RedocStandalone, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../../types/common';
-import { useSpecOptions } from '../../utils/useSpecOptions';
+import { RedocStandalone } from 'redoc';
+import useSpecOptions from '@theme/useSpecOptions';
 import './styles.css';
 import ServerRedoc from './ServerRedoc';
+
+function getIsExternalUrl(url = '') {
+  return ['http://', 'https://'].some((protocol) => url.startsWith(protocol));
+}
 
 /*!
  * Redocusaurus
@@ -13,17 +16,11 @@ import ServerRedoc from './ServerRedoc';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-function Redoc(
-  props: Partial<SpecProps> & {
-    className?: string;
-    optionsOverrides?: RedocRawOptions;
-  },
-): JSX.Element {
-  const { className, optionsOverrides, spec, url, themeId, isSpecFile } = props;
+function Redoc(props: RedocProps): JSX.Element {
+  const { className, optionsOverrides, url, themeId } = props;
   const { options } = useSpecOptions(themeId, optionsOverrides);
-  const isDevMode = process.env.NODE_ENV === 'development';
 
-  if ((isDevMode && isSpecFile === false) || !spec) {
+  if (getIsExternalUrl(url)) {
     return (
       <div className={clsx(['redocusaurus', className])}>
         <RedocStandalone specUrl={url} options={options} />
@@ -31,7 +28,7 @@ function Redoc(
     );
   }
 
-  return <ServerRedoc {...props} spec={spec} />;
+  return <ServerRedoc {...props} />;
 }
 
 export default Redoc;
