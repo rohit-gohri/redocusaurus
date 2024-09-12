@@ -127,16 +127,16 @@ html[data-theme='dark']
 }
 
 /* Fixes https://github.com/rohit-gohri/redocusaurus/issues/306 */
-html[data-theme='dark'] 
-  .redocusaurus 
+html[data-theme='dark']
+  .redocusaurus
   div[id^='tag']
   button:has(span):has(.operation-type) {
   background-color: var(--ifm-color-gray-800);
 }
 
-html[data-theme='dark'] 
-  .redocusaurus 
-  div[id^='tag'] 
+html[data-theme='dark']
+  .redocusaurus
+  div[id^='tag']
   button + div {
   background-color: var(--ifm-color-emphasis-0);
 }
@@ -146,20 +146,22 @@ html[data-theme='dark']
   margin-bottom: 10px;
 }
 
-/* 
+/*
  * Code Samples
  * @see https://github.com/rohit-gohri/redocusaurus/issues/217
  */
 html:not([data-theme='dark'])
   .redocusaurus
-  div[id^='react-tabs']
-  > div:nth-child(1)
-  > pre:nth-child(2) {
+  [role='tabpanel']
+  pre {
   background-color: transparent;
 }
 
 /** https://github.com/rohit-gohri/redocusaurus/issues/45 */
-html:not([data-theme='dark']) .redocusaurus div[id^='react-tabs'] code {
+html:not([data-theme='dark'])
+  .redocusaurus
+  [role='tabpanel']
+  code {
   color: var(--ifm-color-emphasis-0);
 }
 
