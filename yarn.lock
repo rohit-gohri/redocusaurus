@@ -3725,6 +3725,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/postcss-prefix-selector@npm:^1":
+  version: 1.16.3
+  resolution: "@types/postcss-prefix-selector@npm:1.16.3"
+  dependencies:
+    postcss: "npm:^8.4.27"
+  checksum: c0ece88bf7f5adfdcbf1f44436ce3e78d5fe0431fd84dce4040e53c03af2ca71fd3f1a36d127e1402c085c5507d5403fe461577670252c311556c102d7dc948d
+  languageName: node
+  linkType: hard
+
 "@types/prismjs@npm:^1.26.0":
   version: 1.26.2
   resolution: "@types/prismjs@npm:1.26.2"
@@ -6357,6 +6366,7 @@ __metadata:
     "@docusaurus/types": "npm:^3.4.0"
     "@redocly/openapi-core": "npm:1.16.0"
     "@types/lodash": "npm:^4.14.200"
+    "@types/postcss-prefix-selector": "npm:^1"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-is": "npm:^18.3.0"
@@ -6368,6 +6378,8 @@ __metadata:
     lodash: "npm:^4.17.21"
     mobx: "npm:^6.12.4"
     nodemon: "npm:^3.1.0"
+    postcss: "npm:^8.4.45"
+    postcss-prefix-selector: "npm:^1.16.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-is: "npm:^18.3.1"
@@ -12402,6 +12414,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-prefix-selector@npm:^1.16.1":
+  version: 1.16.1
+  resolution: "postcss-prefix-selector@npm:1.16.1"
+  peerDependencies:
+    postcss: ">4 <9"
+  checksum: e6a138f2c2f4be38013e778d0242f7fced1468759b508b3f85349ec1a5cd0bd6e7194998749508edb7a987fff9d4f3ee89b7d4f34e5df34dbf65130bf3bc680c
+  languageName: node
+  linkType: hard
+
 "postcss-reduce-idents@npm:^6.0.3":
   version: 6.0.3
   resolution: "postcss-reduce-idents@npm:6.0.3"
@@ -12504,6 +12525,17 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.2.0"
   checksum: 6e44a7ed835ffa9a2b096e8d3e5dfc6bcf331a25c48aeb862dd54e3aaecadf814fa22be224fd308f87d08adf2299164f88c5fd5ab1c4ef6cbd693ceb295377f4
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.27, postcss@npm:^8.4.45":
+  version: 8.4.45
+  resolution: "postcss@npm:8.4.45"
+  dependencies:
+    nanoid: "npm:^3.3.7"
+    picocolors: "npm:^1.0.1"
+    source-map-js: "npm:^1.2.0"
+  checksum: 7eaf7346d04929ee979548ece5e34d253eae6f175346e298b2c4621ad6f4ee00adfe7abe72688640e910c0361ae50537c5dda3e35fd1066491282c342b3ee5c8
   languageName: node
   linkType: hard
 
