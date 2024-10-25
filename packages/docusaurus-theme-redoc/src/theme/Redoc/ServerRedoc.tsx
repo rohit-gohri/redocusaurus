@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import '../../global';
 import { Redoc as RedocComponent, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../../types/common';
+import type { SpecProps } from '../../types/common';
 import { useSpec } from '../../utils/useSpec';
 import { ServerStyles } from './Styles';
 import './styles.css';
