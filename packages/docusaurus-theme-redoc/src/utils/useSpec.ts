@@ -4,7 +4,7 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
 import '../global';
 import { AppStore, RedocRawOptions } from 'redoc';
-import { SpecProps } from '../types/common';
+import type { SpecProps } from '../types/common';
 import { useSpecOptions } from './useSpecOptions';
 
 // the current store singleton in the app's instance

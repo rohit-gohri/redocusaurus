@@ -1,7 +1,7 @@
 import type { RedocRawOptions } from 'redoc';
 import merge from 'lodash/merge';
 import { Config, loadConfig } from '@redocly/openapi-core';
-import { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
+import type { GlobalData, RedocThemeOverrides, ThemeOptions } from './types/options';
 
 const defaultOptions: Partial<RedocRawOptions> = {
   scrollYOffset: 'nav.navbar',

@@ -1,6 +1,6 @@
 import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
-import { ThemeOptions, GlobalData } from './types/options';
+import type { ThemeOptions, GlobalData } from './types/options';
 import { getGlobalData } from './redocData';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/order
