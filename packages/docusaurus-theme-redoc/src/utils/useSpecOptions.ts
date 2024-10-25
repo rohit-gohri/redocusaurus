@@ -8,7 +8,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import merge from 'lodash/merge';
 import '../global';
 import type { RedocRawOptions } from 'redoc';
-import {type  SpecProps } from '../types/common';
+import type { SpecProps } from '../types/common';
 import { GlobalData } from '../types/options';
 
 /**
