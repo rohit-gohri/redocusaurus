@@ -11,15 +11,7 @@ if (process.env.VERCEL_URL) {
 
 const config: Config = {
   future: {
-    // experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true',
-    experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true' ? {
-      rspackBundler: true,
-      swcJsLoader: false, // TODO :S
-      swcHtmlMinimizer: true,
-      swcJsMinimizer: true,
-      lightningCssMinimizer: true,
-      mdxCrossCompilerCache: true,
-    } : false,
+    experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true',
   },
   title: 'Redocusaurus',
   tagline: 'OpenAPI solution for Docusaurus docs with Redoc',
