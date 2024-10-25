@@ -42,10 +42,10 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.4.0",
-    "@docusaurus/theme-classic": "^3.4.0",
-    "@docusaurus/theme-common": "^3.4.0",
-    "@docusaurus/types": "^3.4.0",
+    "@docusaurus/module-type-aliases": "3.5.2-canary-6122",
+    "@docusaurus/theme-classic": "3.5.2-canary-6122",
+    "@docusaurus/theme-common": "3.5.2-canary-6122",
+    "@docusaurus/types": "3.5.2-canary-6122",
     "@types/lodash": "^4.14.200",
     "@types/postcss-prefix-selector": "^1",
     "@types/react": "^18.3.3",
