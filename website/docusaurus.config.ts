@@ -11,7 +11,8 @@ if (process.env.VERCEL_URL) {
 
 const config: Config = {
   future: {
-    experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true',
+    // See https://docusaurus.io/blog/releases/3.6
+    experimental_faster: true,
   },
   title: 'Redocusaurus',
   tagline: 'OpenAPI solution for Docusaurus docs with Redoc',
