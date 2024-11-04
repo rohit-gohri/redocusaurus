@@ -22,11 +22,11 @@
     "test": "percy snapshot snapshots.js"
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2-canary-6125",
-    "@docusaurus/faster": "3.5.2-canary-6125",
-    "@docusaurus/preset-classic": "3.5.2-canary-6125",
-    "@docusaurus/theme-common": "3.5.2-canary-6125",
-    "@docusaurus/utils": "3.5.2-canary-6125",
+    "@docusaurus/core": "3.6.0",
+    "@docusaurus/faster": "3.6.0",
+    "@docusaurus/preset-classic": "3.6.0",
+    "@docusaurus/theme-common": "3.6.0",
+    "@docusaurus/utils": "3.6.0",
     "clsx": "^1.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
