@@ -5,7 +5,7 @@ import '../../global';
 import { SchemaDefinition } from 'redoc';
 import { useSpec } from '../../utils/useSpec';
 import { useSpecData } from '../useSpecData';
-import { ApiSchemaProps as Props } from '../../types/common';
+import type { ApiSchemaProps as Props } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
 

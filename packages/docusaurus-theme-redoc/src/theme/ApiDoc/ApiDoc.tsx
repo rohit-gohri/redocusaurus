@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Redoc from '@theme/Redoc';
-import { ApiDocProps as Props } from '../../types/common';
+import type { ApiDocProps as Props } from '../../types/common';
 
 function ApiDoc({ layoutProps, specProps }: Props): JSX.Element {
   const defaultTitle = specProps.spec?.info?.title || 'API Docs';

@@ -1,5 +1,5 @@
 import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
-import { SpecProps } from '../types/common';
+import type { SpecProps } from '../types/common';
 
 /**
  *

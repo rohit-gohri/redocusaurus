@@ -1,10 +1,9 @@
 import path from 'path';
 import type { LoadContext, Plugin } from '@docusaurus/types';
-import { ThemeOptions, GlobalData } from './types/options';
+import type { ThemeOptions, GlobalData } from './types/options';
 import { getGlobalData } from './redocData';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/order
-import webpack from 'webpack';
 
 export type { ThemeOptions, GlobalData };
 
@@ -14,14 +13,15 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    configureWebpack(_config, isServer) {
+    configureWebpack(_config, isServer,{currentBundler}) {
+      const bundler = currentBundler.instance ?? require("webpack")
       return {
         plugins: [
-          new webpack.NormalModuleReplacementPlugin(
+          new bundler.NormalModuleReplacementPlugin(
             /^tty$/,
             require.resolve('./tty'),
           ),
-          new webpack.DefinePlugin({
+          new bundler.DefinePlugin({
             'process.versions.node': JSON.stringify(
               process.versions.node || '0.0.0',
             ),
@@ -33,7 +33,7 @@ export default function redocTheme(
           }),
           ...(isServer
             ? [
-                new webpack.NormalModuleReplacementPlugin(
+                new bundler.NormalModuleReplacementPlugin(
                   /theme\/Redoc\/Styles/,
                   path.join(__dirname, 'theme', 'Redoc', 'ServerStyles.js'),
                 ),

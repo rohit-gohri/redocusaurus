@@ -139,3 +139,5 @@ static/openapi
 .pnp.*
 
 website/version.json
+
+.idea

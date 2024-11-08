@@ -33,8 +33,8 @@
     "redoc": "2.1.5"
   },
   "devDependencies": {
-    "@docusaurus/types": "^3.4.0",
-    "@docusaurus/utils": "^3.4.0",
+    "@docusaurus/types": "^3.6.0",
+    "@docusaurus/utils": "^3.6.0",
     "core-js": "^3.36.0",
     "mobx": "^6.12.4",
     "react": "^18.3.1",
