@@ -3250,7 +3250,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/core@npm:3.6.0":
+"@docusaurus/core@npm:3.6.0, @docusaurus/core@npm:^3.6.0":
   version: 3.6.0
   resolution: "@docusaurus/core@npm:3.6.0"
   dependencies:
@@ -3319,7 +3319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/faster@npm:3.6.0":
+"@docusaurus/faster@npm:^3.6.0":
   version: 3.6.0
   resolution: "@docusaurus/faster@npm:3.6.0"
   dependencies:
@@ -3560,7 +3560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/preset-classic@npm:3.6.0":
+"@docusaurus/preset-classic@npm:^3.6.0":
   version: 3.6.0
   resolution: "@docusaurus/preset-classic@npm:3.6.0"
   dependencies:
@@ -14950,11 +14950,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "redocusaurus-website@workspace:website"
   dependencies:
-    "@docusaurus/core": "npm:3.6.0"
-    "@docusaurus/faster": "npm:3.6.0"
-    "@docusaurus/preset-classic": "npm:3.6.0"
-    "@docusaurus/theme-common": "npm:3.6.0"
-    "@docusaurus/utils": "npm:3.6.0"
+    "@docusaurus/core": "npm:^3.6.0"
+    "@docusaurus/faster": "npm:^3.6.0"
+    "@docusaurus/preset-classic": "npm:^3.6.0"
+    "@docusaurus/theme-common": "npm:^3.6.0"
+    "@docusaurus/utils": "npm:^3.6.0"
     "@percy/cli": "npm:^1.28.8"
     "@types/react": "npm:^18.3.3"
     clsx: "npm:^1.2.1"
