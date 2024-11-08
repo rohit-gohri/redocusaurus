@@ -1,5 +1,11 @@
 # Redocusaurus
 
+## redocusaurus@2.2.0
+
+
+## docusaurus-theme-redoc@2.2.0
+
+
 ## redocusaurus@2.1.2
 
 

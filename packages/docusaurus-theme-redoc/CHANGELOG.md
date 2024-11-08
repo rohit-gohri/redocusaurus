@@ -1,5 +1,11 @@
 # docusaurus-theme-redoc
 
+## 2.2.0
+
+### Minor Changes
+
+- [#385](https://github.com/rohit-gohri/redocusaurus/pull/385) [`a986be6`](https://github.com/rohit-gohri/redocusaurus/commit/a986be6ee8f9b342efb783e620bec394f193f150) Thanks [@slorber](https://github.com/slorber)! - Upgrade Docusaurus - add support for Docusaurus Faster (RsPack)
+
 ## 2.1.2
 
 ### Patch Changes
