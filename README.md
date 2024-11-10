@@ -12,7 +12,7 @@
 
 ## Usage
 
-Check the [documentation on the website](https://redocusaurus.vercel.app/docs).
+Check the [documentation on the website](https://redocusaurus.vercel.app/docs)
 
 ## Demo
 
