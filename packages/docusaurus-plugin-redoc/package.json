@@ -44,7 +44,7 @@
     "typescript": "^5.5.2"
   },
   "peerDependencies": {
-    "@docusaurus/utils": "^3.0.0"
+    "@docusaurus/utils": "^3.6.0"
   },
   "engines": {
     "node": ">=18"

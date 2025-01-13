@@ -45,8 +45,8 @@
     "docusaurus-theme-redoc": "2.2.0"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "^3.0.0",
-    "@docusaurus/utils": "^3.0.0"
+    "@docusaurus/theme-common": "^3.6.0",
+    "@docusaurus/utils": "^3.6.0"
   },
   "engines": {
     "node": ">=14"
