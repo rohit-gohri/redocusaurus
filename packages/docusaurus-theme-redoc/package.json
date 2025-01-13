@@ -63,7 +63,7 @@
     "webpack": "^5.94.0"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "^3.0.0",
+    "@docusaurus/theme-common": "^3.6.0",
     "webpack": "^5.0.0"
   },
   "engines": {
