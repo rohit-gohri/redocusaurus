@@ -1,5 +1,15 @@
 # redocusaurus
 
+## 2.2.1
+
+### Patch Changes
+
+- [#394](https://github.com/rohit-gohri/redocusaurus/pull/394) [`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Update peer deps
+
+- Updated dependencies [[`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493)]:
+  - docusaurus-plugin-redoc@2.2.1
+  - docusaurus-theme-redoc@2.2.1
+
 ## 2.2.0
 
 ### Patch Changes
