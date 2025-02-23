@@ -1,5 +1,25 @@
 /* stylelint-disable docusaurus/copyright-header */
 
+:root {
+  --ifm-color-primary: #552e85;
+  --ifm-color-primary-dark: #4c2978;
+  --ifm-color-primary-darker: #482771;
+  --ifm-color-primary-darkest: #3b205d;
+  --ifm-color-primary-light: #5d3392;
+  --ifm-color-primary-lighter: #623599;
+  --ifm-color-primary-lightest: #6e3cad;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ededed;
+  --ifm-color-primary-dark: #d5d5d5;
+  --ifm-color-primary-darker: #c9c9c9;
+  --ifm-color-primary-darkest: #a6a6a6;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+}
+
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.

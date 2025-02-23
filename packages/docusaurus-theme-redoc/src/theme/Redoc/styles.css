@@ -1,3 +1,23 @@
+:root {
+  --ifm-color-primary: #552e85;
+  --ifm-color-primary-dark: #4c2978;
+  --ifm-color-primary-darker: #482771;
+  --ifm-color-primary-darkest: #3b205d;
+  --ifm-color-primary-light: #5d3392;
+  --ifm-color-primary-lighter: #623599;
+  --ifm-color-primary-lightest: #6e3cad;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ededed;
+  --ifm-color-primary-dark: #d5d5d5;
+  --ifm-color-primary-darker: #c9c9c9;
+  --ifm-color-primary-darkest: #a6a6a6;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+}
+
 .redocusaurus-styles {
   display: none;
 }
@@ -134,10 +154,7 @@ html[data-theme='dark']
   background-color: var(--ifm-color-gray-800);
 }
 
-html[data-theme='dark']
-  .redocusaurus
-  div[id^='tag']
-  button + div {
+html[data-theme='dark'] .redocusaurus div[id^='tag'] button + div {
   background-color: var(--ifm-color-emphasis-0);
 }
 
@@ -150,18 +167,12 @@ html[data-theme='dark']
  * Code Samples
  * @see https://github.com/rohit-gohri/redocusaurus/issues/217
  */
-html:not([data-theme='dark'])
-  .redocusaurus
-  [role='tabpanel']
-  pre {
+html:not([data-theme='dark']) .redocusaurus [role='tabpanel'] pre {
   background-color: transparent;
 }
 
 /** https://github.com/rohit-gohri/redocusaurus/issues/45 */
-html:not([data-theme='dark'])
-  .redocusaurus
-  [role='tabpanel']
-  code {
+html:not([data-theme='dark']) .redocusaurus [role='tabpanel'] code {
   color: var(--ifm-color-emphasis-0);
 }
 
