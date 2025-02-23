@@ -8,6 +8,7 @@
   --ifm-color-primary-light: #2d3bae;
   --ifm-color-primary-lighter: #2f3eb6;
   --ifm-color-primary-lightest: #3748cb;
+  --ifm-color-docusaurus-content-link: #359962;
 }
 
 [data-theme='dark'] {
@@ -61,9 +62,9 @@
 }
 
 .link {
-  color: #359962;
+  color: var(--ifm-color-docusaurus-content-link);
   font-weight: bold;
 }
 .link:hover {
-  color: #359962;
+  color: var(--ifm-color-docusaurus-content-link);
 }
