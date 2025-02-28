@@ -1,18 +1,31 @@
 import type { Props as LayoutProps } from '@theme/Layout';
 import type { ObjectDescriptionProps } from 'redoc';
-import type { OpenAPISpec } from 'redoc/typings/types';
-
-export type ParsedSpec = OpenAPISpec;
 
 export interface SpecProps {
-  spec: ParsedSpec;
-  url?: string;
-  isSpecFile?: boolean;
+  /**
+   * Spec to use, already loaded previously
+   */
+  spec: import('redoc/typings/types').OpenAPISpec;
+  /**
+   * When spec not provided, load the spec from docusaurus config
+   * fallback to first configuration if not provided
+   */
+  id?: string;
+  /**
+   * docusaurus theme to use
+   */
   themeId?: string;
+  /**
+   * Option to disable normalization of spec download URLs
+   */
   normalizeUrl?: boolean;
+  /**
+   * Public path to the spec file used, used by Redoc as download url
+   */
+  downloadSpecUrl?: string;
 }
 
-export type RedocProps = SpecProps;
+export type SpecDataResult = Omit<SpecProps, 'id'>;
 
 export interface MdxProps {
   /**
@@ -21,21 +34,6 @@ export interface MdxProps {
    */
   id?: string;
 }
-
-export type ApiSchemaProps = Omit<
-  ObjectDescriptionProps,
-  'parser' | 'options' | 'schemaRef'
-> &
-  MdxProps & {
-    /**
-     * Show the example or not
-     */
-    example?: boolean;
-    /**
-     * Ref to the schema
-     */
-    pointer: ObjectDescriptionProps['schemaRef'];
-  };
 
 export type ApiDocProps = {
   specProps: SpecProps;

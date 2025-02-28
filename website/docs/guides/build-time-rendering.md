@@ -1,7 +1,7 @@
 ---
 title: Build Time Rendering
 description: Parse the OpenAPI schema at build time and skip the loading screen
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 :::warning

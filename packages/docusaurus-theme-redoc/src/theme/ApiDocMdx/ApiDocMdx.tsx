@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import Redoc from '@theme/Redoc';
 import useSpecData from '@theme/useSpecData';
-import type { MdxProps as Props } from '../../types/common';
+import type { MdxProps } from '../../types/common';
 import '../ApiSchema/styles.css';
 
-const ApiDocMdx: React.FC<Props> = ({ id }: Props): JSX.Element => {
+const ApiDocMdx: React.FC<MdxProps> = ({ id }: MdxProps): JSX.Element => {
   const specProps = useSpecData(id);
   const optionsOverrides = useMemo(() => {
     return {

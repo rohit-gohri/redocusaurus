@@ -2,10 +2,10 @@ import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
-import '../global';
+import useSpecData from '@theme/useSpecData';
+import useSpecOptions from '@theme/useSpecOptions';
+import '../../global';
 import { AppStore, RedocRawOptions } from 'redoc';
-import type { SpecProps } from '../types/common';
-import { useSpecOptions } from './useSpecOptions';
 
 // the current store singleton in the app's instance
 let currentStore: AppStore | null = null;
@@ -17,12 +17,19 @@ let currentStore: AppStore | null = null;
  * Released under the MIT License
  */
 export function useSpec(
-  { spec, url, themeId, normalizeUrl }: SpecProps,
+  specInfo: SpecProps,
   optionsOverrides?: RedocRawOptions,
-) {
+): SpecResult {
+  const { spec, downloadSpecUrl, themeId, normalizeUrl } = useSpecData(
+    specInfo.id,
+    specInfo.spec,
+    specInfo.themeId,
+  );
   const specOptions = useSpecOptions(themeId, optionsOverrides);
+  const url = specInfo.downloadSpecUrl || downloadSpecUrl;
+  // build download URL by using downloadSpecUrl, fallback to useSpecData result
   const absoluteUrl = useBaseUrl(url, { absolute: true });
-  const fullUrl = normalizeUrl ? absoluteUrl : url;
+  const fullDownloadSpecUrl = normalizeUrl ? absoluteUrl : url;
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
 
@@ -30,15 +37,16 @@ export function useSpec(
     if (currentStore !== null && isBrowser) {
       currentStore.dispose();
     }
-    currentStore = new AppStore(spec, fullUrl, specOptions.options);
+    currentStore = new AppStore(spec, fullDownloadSpecUrl, specOptions.options);
 
     return {
       ...specOptions,
       // @ts-expect-error extra prop
       hasLogo: !!spec.info?.['x-logo'],
       store: currentStore,
+      spec,
     };
-  }, [isBrowser, spec, fullUrl, specOptions]);
+  }, [isBrowser, spec, fullDownloadSpecUrl, specOptions]);
 
   useEffect(() => {
     // to ensure that menu is properly loaded when theme gets changed

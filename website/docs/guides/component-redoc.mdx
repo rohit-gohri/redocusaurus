@@ -1,0 +1,102 @@
+---
+title: Component Redoc
+sidebar_position: 1
+---
+
+import Redoc from '@theme/Redoc';
+import openApi from '../../openapi/using-single-json.openapi.json'
+
+# Redoc
+
+You can display the whole OpenAPI documentation using a React component
+
+:::info File format
+You cannot import a React component inside a `.md` file.  
+Change your file extension to `.mdx` before importing the React Component.  
+Read more [here about MDX in Docusaurus](https://docusaurus.io/docs/markdown-features/react).
+:::
+
+## Import
+
+```tsx
+import Redoc from '@theme/Redoc';
+```
+
+## Props
+
+| Name            | Type         | Description                                                                                 |
+|-----------------|--------------|---------------------------------------------------------------------------------------------|
+| id              | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined |
+| spec            | OpenAPI spec | A JSON content spec to use                                                                  |
+| url             | String       | External URL to load spec file from                                                         |
+| themeId         | String       | redocusaurus theme to use - default to `theme-redoc`                                        |
+| downloadSpecUrl | String       | Public path to the spec file used, used by Redoc as download url                            |
+
+## Examples
+
+### Basic example
+
+It displays here the first element of the redocusaurus configuration.
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc />
+```
+
+<Redoc />
+
+### External URL example
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc url="https://redocly.github.io/redoc/openapi.yaml"/>
+```
+
+<Redoc url="https://redocly.github.io/redoc/openapi.yaml"/>
+
+### Specific id example
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc id="using-single-yaml" />
+```
+
+<Redoc id="using-single-yaml" />
+
+### Download url example
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc id="using-single-yaml" downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml" />
+```
+
+<Redoc id="using-single-yaml" downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml" />
+
+### Webpack loader example
+
+You can provide a JSON spec to the component like this. Webpack will load the file directly,
+you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
+
+```tsx
+import Redoc from '@theme/Redoc';
+import openApi from './api-with-examples.json'
+
+<Redoc spec={openApi} />
+```
+
+<Redoc spec={openApi} />
+
+:::info YAML support
+You cannot load yaml file like this:
+
+```tsx
+import openApi from './api-with-examples.yaml'
+```
+
+Without the right webpack configuration to handle such file format.
+:::
+

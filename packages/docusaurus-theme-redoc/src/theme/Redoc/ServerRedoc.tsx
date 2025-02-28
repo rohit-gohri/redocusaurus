@@ -1,10 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import '../../global';
-import { IMenuItem, Redoc as RedocComponent, RedocRawOptions } from 'redoc';
+import { IMenuItem, Redoc as RedocComponent } from 'redoc';
 import type { SpecProps } from '../../types/common';
-import { useSpec } from '../../utils/useSpec';
 import useBrokenLinks, { BrokenLinks } from '@docusaurus/useBrokenLinks';
+import useSpec from '@theme/useSpec';
 import { ServerStyles } from './Styles';
 import './styles.css';
 
@@ -14,15 +14,15 @@ import './styles.css';
  * (c) 2024 Rohit Gohri
  * Released under the MIT License
  */
-function ServerRedoc(
-  props: SpecProps & {
-    className?: string;
-    optionsOverrides?: RedocRawOptions;
-  },
-): JSX.Element {
-  const { className, optionsOverrides, ...specProps } = props;
-  const { store, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
-    specProps,
+function ServerRedoc(props: RedocProps): JSX.Element {
+  const { className, optionsOverrides, id, themeId, downloadSpecUrl } = props;
+  const { store, spec, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
+    {
+      spec: props.spec,
+      themeId,
+      downloadSpecUrl,
+      id,
+    },
     optionsOverrides,
   );
 
@@ -32,7 +32,8 @@ function ServerRedoc(
   return (
     <>
       <ServerStyles
-        specProps={specProps}
+        spec={spec}
+        url={downloadSpecUrl}
         lightThemeOptions={lightThemeOptions}
         darkThemeOptions={darkThemeOptions}
       />

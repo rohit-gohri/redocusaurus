@@ -2,6 +2,7 @@ import React from 'react';
 import '../../global';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { AppStore, Redoc, RedocRawOptions } from 'redoc';
+import type { OpenAPISpec } from 'redoc/typings/types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
@@ -31,25 +32,31 @@ const renderCss = function (store: AppStore): string {
 const LIGHT_MODE_PREFIX = "html:not([data-theme='dark'])";
 const DARK_MODE_PREFIX = "html([data-theme='dark'])";
 
-export function ServerStyles({
-  specProps,
-  lightThemeOptions,
-  darkThemeOptions,
-}: {
-  specProps: SpecProps;
+export type ServerStylesProps = {
+  spec: OpenAPISpec;
+  url?: string;
+  normalizeUrl?: boolean;
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
-}) {
-  const absoluteUrl = useBaseUrl(specProps.url, { absolute: true });
-  const fullUrl = specProps.normalizeUrl ? absoluteUrl : specProps.url;
+};
+
+export function ServerStyles({
+  spec,
+  url,
+  normalizeUrl,
+  lightThemeOptions,
+  darkThemeOptions,
+}: ServerStylesProps) {
+  const absoluteUrl = useBaseUrl(url, { absolute: true });
+  const fullUrl = normalizeUrl ? absoluteUrl : url;
 
   const lightCss = prefixCssSelectors(
-    renderCss(new AppStore(specProps.spec, fullUrl, lightThemeOptions)),
+    renderCss(new AppStore(spec, fullUrl, lightThemeOptions)),
     LIGHT_MODE_PREFIX,
   );
 
   const darkCss = prefixCssSelectors(
-    renderCss(new AppStore(specProps.spec, fullUrl, darkThemeOptions)),
+    renderCss(new AppStore(spec, fullUrl, darkThemeOptions)),
     DARK_MODE_PREFIX,
   );
 
