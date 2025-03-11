@@ -21,7 +21,7 @@ export function useSpec(
   optionsOverrides?: RedocRawOptions,
 ) {
   const specOptions = useSpecOptions(themeId, optionsOverrides);
-  const fullUrl = useBaseUrl(url, { absolute: true });
+  const fullUrl = useBaseUrl(url, { absolute: false });
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
 
