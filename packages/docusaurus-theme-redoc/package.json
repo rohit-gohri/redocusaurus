@@ -34,6 +34,7 @@
   "dependencies": {
     "@redocly/openapi-core": "1.16.0",
     "clsx": "^1.2.1",
+    "husky": "^9.1.7",
     "lodash": "^4.17.21",
     "mobx": "^6.12.4",
     "postcss": "^8.4.45",
@@ -59,7 +60,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
-    "typescript": "^5.5.2",
+    "typescript": "^5.8.2",
     "webpack": "^5.94.0"
   },
   "peerDependencies": {

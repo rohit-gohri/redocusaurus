@@ -20,7 +20,7 @@ function ServerRedoc(
   },
 ): JSX.Element {
   const { className, optionsOverrides, ...specProps } = props;
-  const { store, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
+  const { store, darkThemeOptions, lightThemeOptions, hasLogo, absolute } = useSpec(
     specProps,
     optionsOverrides,
   );
@@ -31,6 +31,7 @@ function ServerRedoc(
         specProps={specProps}
         lightThemeOptions={lightThemeOptions}
         darkThemeOptions={darkThemeOptions}
+        absolute={absolute}
       />
       <div
         className={clsx([
