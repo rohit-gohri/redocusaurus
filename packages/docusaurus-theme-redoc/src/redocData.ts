@@ -148,7 +148,7 @@ export function getRedocThemes(
 export async function getGlobalData({
   primaryColor,
   primaryColorDark = primaryColor,
-  absolute = true,
+  //normalizeUrl = true,
   theme: customThemeDeprecated,
   options,
 }: ThemeOptions): Promise<GlobalData> {
@@ -182,7 +182,6 @@ export async function getGlobalData({
   const { lightTheme, darkTheme } = getRedocThemes(overrides, overridesDark);
 
   return {
-    absolute,
     lightTheme,
     darkTheme,
     options: {

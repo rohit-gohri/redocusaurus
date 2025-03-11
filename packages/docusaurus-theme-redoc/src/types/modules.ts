@@ -4,6 +4,7 @@ interface SpecProps {
   url?: string;
   isSpecFile?: boolean;
   themeId?: string;
+  normalizeUrl?: boolean;
 }
 
 declare module '@theme/Redoc' {

@@ -35,14 +35,13 @@ export function ServerStyles({
   specProps,
   lightThemeOptions,
   darkThemeOptions,
-  absolute
 }: {
   specProps: SpecProps;
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
   absolute: boolean
 }) {
-  const fullUrl = useBaseUrl(specProps.url, { absolute: absolute });
+  const fullUrl = specProps.normalizeUrl ? useBaseUrl(specProps.url, { absolute: true }) : specProps.url;
 
   const lightCss = prefixCssSelectors(
     renderCss(new AppStore(specProps.spec, fullUrl, lightThemeOptions)),

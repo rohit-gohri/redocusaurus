@@ -25,7 +25,6 @@ export interface ThemeOptions {
    * mode, and will default to `primaryColor` if not set.
    */
   primaryColorDark?: string;
-  absolute?: boolean;
   /**
    * Options to pass to redoc
    * @deprecated
@@ -46,5 +45,4 @@ export type GlobalData = {
   options: RedocProps['store']['rawOptions'];
   darkTheme: Partial<RedocRawOptions['theme']>;
   lightTheme: Partial<RedocRawOptions['theme']>;
-  absolute: boolean;
 };

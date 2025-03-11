@@ -10,7 +10,6 @@ export function ServerStyles(_props: {
   specProps: SpecProps;
   lightThemeOptions: RedocRawOptions;
   darkThemeOptions: RedocRawOptions;
-  absolute: boolean;
 }) {
   return <div className="redocusaurus-styles"></div>;
 }

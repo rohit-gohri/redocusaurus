@@ -35,7 +35,7 @@ export function useSpecOptions(
     Object.values(defaultThemeOptions)[0];
 
   const result = useMemo(() => {
-    const { absolute, lightTheme, darkTheme, options: redocOptions } = themeOptions;
+    const { lightTheme, darkTheme, options: redocOptions } = themeOptions;
 
     const commonOptions: Partial<RedocRawOptions> = {
       // Disable offset when server rendering and set to selector
@@ -70,7 +70,6 @@ export function useSpecOptions(
       options,
       darkThemeOptions,
       lightThemeOptions,
-      absolute
     };
   }, [isBrowser, isDarkTheme, themeOptions, optionsOverrides]);
 

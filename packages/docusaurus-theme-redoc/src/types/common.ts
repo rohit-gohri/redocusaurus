@@ -9,6 +9,7 @@ export interface SpecProps {
   url?: string;
   isSpecFile?: boolean;
   themeId?: string;
+  normalizeUrl?: boolean;
 }
 
 export type RedocProps = SpecProps;
