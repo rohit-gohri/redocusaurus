@@ -62,8 +62,8 @@ author_url: https://rohit.page
              // Change with your site colors
              primaryColor: '#1890ff',
            },
-         },
-       ] satisfies Redocusaurus.PresetEntry,
+         }, satisfies Redocusaurus.PresetEntry,
+       ]
      ],
      // ... Rest of your config
    };
