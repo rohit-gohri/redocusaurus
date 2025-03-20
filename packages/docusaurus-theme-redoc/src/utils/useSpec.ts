@@ -22,7 +22,7 @@ export function useSpec(
 ) {
   const specOptions = useSpecOptions(themeId, optionsOverrides);
   const absoluteUrl = useBaseUrl(url, { absolute: true });
-  const fullUrl = specProps.normalizeUrl ? absoluteUrl : url;
+  const fullUrl = normalizeUrl ? absoluteUrl : url;
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
 
