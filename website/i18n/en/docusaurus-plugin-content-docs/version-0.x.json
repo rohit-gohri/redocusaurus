@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "0.x",
+    "description": "The label for version 0.x"
+  },
+  "sidebar.defaultSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar defaultSidebar"
+  }
+}
