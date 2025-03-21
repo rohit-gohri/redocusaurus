@@ -1,5 +1,13 @@
 # redocusaurus
 
+## 2.2.2
+
+### Patch Changes
+
+- Updated dependencies [[`ba2bd9c`](https://github.com/rohit-gohri/redocusaurus/commit/ba2bd9c5964df7f88ce1b5e7c08d2fcf5cd889f3)]:
+  - docusaurus-plugin-redoc@2.2.2
+  - docusaurus-theme-redoc@2.2.2
+
 ## 2.2.1
 
 ### Patch Changes
