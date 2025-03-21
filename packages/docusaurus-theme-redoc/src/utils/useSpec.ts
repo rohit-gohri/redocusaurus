@@ -17,11 +17,12 @@ let currentStore: AppStore | null = null;
  * Released under the MIT License
  */
 export function useSpec(
-  { spec, url, themeId }: SpecProps,
+  { spec, url, themeId, normalizeUrl }: SpecProps,
   optionsOverrides?: RedocRawOptions,
 ) {
   const specOptions = useSpecOptions(themeId, optionsOverrides);
-  const fullUrl = useBaseUrl(url, { absolute: true });
+  const absoluteUrl = useBaseUrl(url, { absolute: true });
+  const fullUrl = normalizeUrl ? absoluteUrl : url;
   const isBrowser = useIsBrowser();
   const isDarkTheme = useColorMode().colorMode === 'dark';
 

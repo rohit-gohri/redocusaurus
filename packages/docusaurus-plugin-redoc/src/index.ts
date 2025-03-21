@@ -42,7 +42,7 @@ export default function redocPlugin(
 }> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, url: downloadUrl, config, themeId } = options;
+  const { debug, spec, url: downloadUrl, config, themeId, normalizeUrl: normalizeDownloadUrl } = options;
 
   let url = downloadUrl;
   const isSpecFile = fs.existsSync(spec);
@@ -127,6 +127,7 @@ export default function redocPlugin(
         url,
         themeId,
         isSpecFile,
+        normalizeUrl: normalizeDownloadUrl,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         spec: content.converted as any,
       };

@@ -35,6 +35,7 @@ export interface PluginOptions extends PluginDirectUsageOptions {
   spec: string;
   url?: string;
   route?: string;
+  normalizeUrl?: boolean;
 }
 
 export interface PluginOptionsWithDefault extends PluginOptions {
@@ -44,6 +45,7 @@ export interface PluginOptionsWithDefault extends PluginOptions {
 export const DEFAULT_OPTIONS = {
   layout: {},
   debug: false,
+  normalizeUrl: true,
 } satisfies Omit<PluginOptions, 'spec'>;
 
 export const PluginOptionSchema = Joi.object<PluginOptions>({
@@ -56,6 +58,7 @@ export const PluginOptionSchema = Joi.object<PluginOptions>({
   // Basic
   spec: Joi.string(),
   url: Joi.string().uri({ allowRelative: true }).optional(),
+  normalizeUrl: Joi.boolean().default(DEFAULT_OPTIONS.normalizeUrl),
   route: Joi.string().uri({ relativeOnly: true }).optional(),
   layout: Joi.any().default(DEFAULT_OPTIONS.layout),
 });

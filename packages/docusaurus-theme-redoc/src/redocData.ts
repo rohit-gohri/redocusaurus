@@ -30,7 +30,7 @@ const getDefaultTheme = (
         prism: {
           additionalLanguages: ['scala'],
         },
-      },
+      }
     },
     customTheme,
   );
@@ -148,6 +148,7 @@ export function getRedocThemes(
 export async function getGlobalData({
   primaryColor,
   primaryColorDark = primaryColor,
+  //normalizeUrl = true,
   theme: customThemeDeprecated,
   options,
 }: ThemeOptions): Promise<GlobalData> {
