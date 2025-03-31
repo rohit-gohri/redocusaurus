@@ -30,7 +30,7 @@
   "homepage": "https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc#readme",
   "dependencies": {
     "@redocly/openapi-core": "1.16.0",
-    "redoc": "2.1.5"
+    "redoc": "2.4.0"
   },
   "devDependencies": {
     "@docusaurus/types": "^3.6.0",

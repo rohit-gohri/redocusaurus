@@ -38,7 +38,7 @@
     "mobx": "^6.12.4",
     "postcss": "^8.4.45",
     "postcss-prefix-selector": "^1.16.1",
-    "redoc": "2.1.5",
+    "redoc": "2.4.0",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
