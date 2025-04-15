@@ -1,0 +1,38 @@
+{
+  "link.title.NPM Modules": {
+    "message": "NPM 模組",
+    "description": "頁腳中標題為 NPM 模組的連結欄位標題"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "頁腳中標題為更多的連結欄位標題"
+  },
+  "link.item.label.Redocusaurus": {
+    "message": "Redocusaurus",
+    "description": "頁腳連結的標籤為 Redocusaurus，連結到 https://www.npmjs.com/package/redocusaurus/"
+  },
+  "link.item.label.Docusaurus Theme Redoc": {
+    "message": "Docusaurus 主題 Redoc",
+    "description": "頁腳連結的標籤為 Docusaurus 主題 Redoc，連結到 https://www.npmjs.com/package/docusaurus-theme-redoc/"
+  },
+  "link.item.label.Docusaurus Plugin Redoc": {
+    "message": "Docusaurus 插件 Redoc",
+    "description": "頁腳連結的標籤為 Docusaurus 插件 Redoc，連結到 https://www.npmjs.com/package/docusaurus-plugin-redoc/"
+  },
+  "link.item.label.Github": {
+    "message": "Github",
+    "description": "頁腳連結的標籤為 Github，連結到 https://github.com/rohit-gohri/redocusaurus/"
+  },
+  "link.item.label.Blog Post": {
+    "message": "部落格文章",
+    "description": "頁腳連結的標籤為部落格文章，連結到 https://rohit.page/blog/projects/openapi-for-docusaurus/"
+  },
+  "link.item.label.Twitter Discussion": {
+    "message": "Twitter 討論",
+    "description": "頁腳連結的標籤為 Twitter 討論，連結到 https://twitter.com/rohit_gohri/status/1351589213565644801"
+  },
+  "copyright": {
+    "message": "版權所有 © 2024 <a class=\"footer-link\" href=\"https://rohit.page\" target=\"_blank\" rel=\"noopener\">Rohit Gohri</a>.<br />由 <a class=\"footer-link\" href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener\">Docusaurus v3.1.1</a> 構建。",
+    "description": "頁腳版權聲明"
+  }
+}
