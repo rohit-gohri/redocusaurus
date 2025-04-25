@@ -37,6 +37,18 @@ export type ApiSchemaProps = Omit<
     pointer: ObjectDescriptionProps['schemaRef'];
   };
 
+export type ApiOperationProps = MdxProps & {
+  /**
+   * Show the example or not
+   */
+  example?: boolean;
+
+  /**
+   * Ref to the operation
+   */
+  pointer: string;
+};
+
 export type ApiDocProps = {
   specProps: SpecProps;
   layoutProps?: Omit<LayoutProps, 'children'>;
