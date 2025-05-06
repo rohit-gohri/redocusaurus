@@ -216,3 +216,7 @@ html:not([data-theme='dark'])
 [data-theme='dark'] .redocusaurus .api-content div h5 + svg polygon {
   filter: invert(1);
 }
+
+[data-theme='dark'] .redocusaurus .api-content div:has(> span > span > i + code) {
+  background: var(--ifm-color-emphasis-0);
+}
