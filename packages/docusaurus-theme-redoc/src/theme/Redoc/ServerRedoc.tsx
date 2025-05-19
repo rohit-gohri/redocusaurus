@@ -4,7 +4,7 @@ import '../../global';
 import { IMenuItem, Redoc as RedocComponent, RedocRawOptions } from 'redoc';
 import type { SpecProps } from '../../types/common';
 import { useSpec } from '../../utils/useSpec';
-import useBrokenLinks from '@docusaurus/useBrokenLinks';
+import useBrokenLinks, { BrokenLinks } from '@docusaurus/useBrokenLinks';
 import { ServerStyles } from './Styles';
 import './styles.css';
 
@@ -26,7 +26,8 @@ function ServerRedoc(
     optionsOverrides,
   );
 
-  collectMenuItemAnchors(store.menu.items);
+  const collector = useBrokenLinks();
+  collectMenuItemAnchors(collector, store.menu.items);
 
   return (
     <>
@@ -48,21 +49,21 @@ function ServerRedoc(
   );
 }
 
-function collectMenuItemAnchors(menuItems: IMenuItem[], parentAnchor = "") {
+function collectMenuItemAnchors(collector: BrokenLinks, menuItems: IMenuItem[], parentAnchor = "") {
   menuItems.forEach((menuItem) => {
     // Register anchor for menu item
-    useBrokenLinks().collectAnchor(menuItem.id);
+    collector.collectAnchor(menuItem.id);
 
     // If this is a child menu item, register a shortened anchor as well
     // This may not be necessary in all cases, but definitely needed for
     // menuItems of the form `tag/<Tag ID>/operation/<Operation ID>`.
     if (parentAnchor != "") {
       const childAnchor = menuItem.id.replace(`${parentAnchor}/`, "")
-      useBrokenLinks().collectAnchor(childAnchor);
+      collector.collectAnchor(childAnchor);
     }
 
     if (menuItem.items.length > 0) {
-      collectMenuItemAnchors(menuItem.items, menuItem.id)
+      collectMenuItemAnchors(collector, menuItem.items, menuItem.id)
     }
   })
 }
