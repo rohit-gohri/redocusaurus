@@ -1,7 +1,7 @@
 {
   "name": "redocusaurus-monorepo",
   "version": "0.0.0",
-  "description": "Redoc for Docusaurus@3",
+  "description": "Redoc for Docusaurus",
   "scripts": {
     "build": "yarn build:packages && yarn build:website",
     "build:packages": "yarn workspaces foreach --from redocusaurus -tpvR run build",
