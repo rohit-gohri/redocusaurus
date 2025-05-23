@@ -71,6 +71,29 @@ declare module '@theme/ApiSchema' {
   export default ApiSchema;
 }
 
+declare module '@theme/ApiOperation' {
+  interface ApiOperationProps {
+    /**
+     * If you have multiple apis, then add a `id` field in the specs array
+     * And pass the same here
+     */
+    id?: string;
+
+    /**
+     * Show the example or not
+     */
+    example?: boolean;
+
+    /**
+     * Ref to the operation
+     */
+    pointer: string;
+  }
+
+  const ApiOperation: (props: ApiOperationProps) => JSX.Element;
+  export default ApiOperation;
+}
+
 declare module '@theme/useSpecData' {
   /**
    * Load redocusaurus plugin data by ID

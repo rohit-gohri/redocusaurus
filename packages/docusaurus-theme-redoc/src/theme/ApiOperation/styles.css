@@ -1,0 +1,14 @@
+.redocusaurus-operation.hide-example > div > div > div:nth-child(2) {
+  display: none;
+}
+.redocusaurus-operation.hide-example > div > div > div:nth-child(1) {
+  width: 100%;
+}
+
+.redocusaurus-operation h3 {
+  color: var(--ifm-color-white);
+}
+
+.redocusaurus-operation > div:last-child {
+  min-height: 0;
+}
