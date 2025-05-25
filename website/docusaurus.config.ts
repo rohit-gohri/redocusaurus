@@ -51,6 +51,7 @@ const config: Config = {
           {
             id: 'using-remote-url',
             // Remote File
+            url: 'https://redocly.github.io/redoc/openapi.yaml',
             spec: 'https://redocly.github.io/redoc/openapi.yaml',
             route: '/examples/using-remote-url/',
           },
