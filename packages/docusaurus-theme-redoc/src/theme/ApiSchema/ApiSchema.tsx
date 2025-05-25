@@ -3,18 +3,18 @@ import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import '../../global';
 import { SchemaDefinition } from 'redoc';
-import useSpec from '@theme/useSpec';
+import useSpec from '../useSpec';
 import '../Redoc/styles.css';
 import './styles.css';
 
 const ApiSchema: React.FC<ApiSchemaProps> = ({
-  showExample,
+  example,
   pointer,
   id,
   themeId,
   spec,
   optionsOverrides,
-  ...rest
+  ...schemaProps
 }: ApiSchemaProps): JSX.Element => {
   const { store } = useSpec(
     {
@@ -38,15 +38,15 @@ const ApiSchema: React.FC<ApiSchemaProps> = ({
         className={clsx([
           'redocusaurus',
           'redocusaurus-schema',
-          showExample ? null : 'hide-example',
+          example ? null : 'hide-example',
         ])}
       >
         <SchemaDefinition
           parser={store.spec.parser}
           options={store.options}
           schemaRef={pointer}
-          showExample={showExample}
-          {...rest}
+          showExample={example}
+          {...schemaProps}
         />
       </div>
     </ThemeProvider>
@@ -54,7 +54,7 @@ const ApiSchema: React.FC<ApiSchemaProps> = ({
 };
 
 ApiSchema.defaultProps = {
-  showExample: false,
+  example: false,
 };
 
 export default ApiSchema;

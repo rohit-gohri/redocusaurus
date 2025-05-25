@@ -2,8 +2,8 @@ import { useMemo, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
-import useSpecData from '@theme/useSpecData';
-import useSpecOptions from '@theme/useSpecOptions';
+import useSpecData from '../useSpecData';
+import useSpecOptions from '../useSpecOptions';
 import '../../global';
 import { AppStore, RedocRawOptions } from 'redoc';
 

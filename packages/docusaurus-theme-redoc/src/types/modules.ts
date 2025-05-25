@@ -41,7 +41,7 @@ type RedocProps = SpecProps & {
 
 type ApiSchemaProps = Omit<
   import('redoc/typings').ObjectDescriptionProps,
-  'parser' | 'options' | 'schemaRef'
+  'parser' | 'options' | 'schemaRef' | 'showExample'
 > &
   SpecProps & {
     /**
@@ -49,6 +49,12 @@ type ApiSchemaProps = Omit<
      */
     pointer: import('redoc/typings').ObjectDescriptionProps['schemaRef'];
     optionsOverrides?: import('redoc/typings').RedocRawOptions;
+
+    /**
+     * In redocusaurus, we define a prop named example that refers to 
+     * showExample 
+     */
+    example?: boolean;
   };
 
 declare module '@theme/Redoc' {

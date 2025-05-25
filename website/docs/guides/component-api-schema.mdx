@@ -27,7 +27,7 @@ import ApiSchema from '@theme/ApiSchema';
 | Name        | Type         | Description                                                                                          |
 |-------------|--------------|------------------------------------------------------------------------------------------------------|
 | pointer     | String       | the redoc reference to display in [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer) format |
-| showExample | boolean      | (default: false) allow to display example                                                            |
+| example     | boolean      | (default: false) allow to display example                                                            |
 | id          | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined          |
 | spec        | OpenAPI spec | A JSON content spec to use                                                                           |
 | themeId     | String       | redocusaurus theme to use - default to `theme-redoc`                                                 |
@@ -53,10 +53,10 @@ import ApiSchema from '@theme/ApiSchema';
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema showExample pointer="#/components/schemas/Pet" />
+<ApiSchema example pointer="#/components/schemas/Pet" />
 ```
 
-<ApiSchema showExample pointer="#/components/schemas/Pet" />
+<ApiSchema example pointer="#/components/schemas/Pet" />
 
 ### Multiple OpenAPI schemas example
 
