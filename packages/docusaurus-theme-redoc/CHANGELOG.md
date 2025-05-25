@@ -1,5 +1,15 @@
 # docusaurus-theme-redoc
 
+## 2.3.0
+
+### Minor Changes
+
+- [#419](https://github.com/rohit-gohri/redocusaurus/pull/419) [`fe84a58`](https://github.com/rohit-gohri/redocusaurus/commit/fe84a58a82f0e7fd3e704dbe979cf88520e72bc6) Thanks [@ctreatma](https://github.com/ctreatma)! - Register Redoc anchors with Docusaurus
+
+### Patch Changes
+
+- [#418](https://github.com/rohit-gohri/redocusaurus/pull/418) [`406fd2e`](https://github.com/rohit-gohri/redocusaurus/commit/406fd2e8664edd8c92bffe5e2dc1c2d759236913) Thanks [@adityawkhare](https://github.com/adityawkhare)! - fix authorization dropdown contrast issue in dark mode
+
 ## 2.2.3
 
 ### Patch Changes
