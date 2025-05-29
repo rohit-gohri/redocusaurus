@@ -1,6 +1,6 @@
 ---
 title: Migrating to V1
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 ## Options Changed
