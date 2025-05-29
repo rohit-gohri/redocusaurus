@@ -35,6 +35,33 @@ export interface MdxProps {
   id?: string;
 }
 
+export type ApiSchemaProps = Omit<
+  ObjectDescriptionProps,
+  'parser' | 'options' | 'schemaRef'
+> &
+  MdxProps & {
+    /**
+     * Show the example or not
+     */
+    example?: boolean;
+    /**
+     * Ref to the schema
+     */
+    pointer: ObjectDescriptionProps['schemaRef'];
+  };
+
+export type ApiOperationProps = MdxProps & {
+  /**
+   * Show the example or not
+   */
+  example?: boolean;
+
+  /**
+   * Ref to the operation
+   */
+  pointer: string;
+};
+
 export type ApiDocProps = {
   specProps: SpecProps;
   layoutProps?: Omit<LayoutProps, 'children'>;
