@@ -1,10 +1,10 @@
 ---
-title: Component ApiSchema
-sidebar_position: 2
+title: Schema Imports
+sidebar_position: 1.2
 ---
 
 import ApiSchema from '@theme/ApiSchema';
-import openApi from '../../openapi/using-single-json.openapi.json'
+import openApi from '../../openapi/using-single-json.openapi.json';
 
 # ApiSchema
 
@@ -24,16 +24,15 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Props
 
-| Name        | Type         | Description                                                                                          |
-|-------------|--------------|------------------------------------------------------------------------------------------------------|
-| pointer     | String       | the redoc reference to display in [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer) format |
-| example     | boolean      | (default: false) allow to display example                                                            |
-| id          | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined          |
-| spec        | OpenAPI spec | A JSON content spec to use                                                                           |
-| themeId     | String       | redocusaurus theme to use - default to `theme-redoc`                                                 |
+| Name    | Type         | Description                                                                                          |
+| ------- | ------------ | ---------------------------------------------------------------------------------------------------- |
+| pointer | String       | the redoc reference to display in [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer) format |
+| example | boolean      | (default: false) allow to display example                                                            |
+| id      | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined          |
+| spec    | OpenAPI spec | A JSON content spec to use                                                                           |
+| themeId | String       | redocusaurus theme to use - default to `theme-redoc`                                                 |
 
 ## Examples
-
 
 ### Basic example
 
@@ -43,7 +42,7 @@ It displays here the first element of the redocusaurus configuration.
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema pointer="#/components/schemas/Pet" />
+<ApiSchema pointer="#/components/schemas/Pet" />;
 ```
 
 <ApiSchema pointer="#/components/schemas/Pet" />
@@ -53,7 +52,7 @@ import ApiSchema from '@theme/ApiSchema';
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/Pet" />
+<ApiSchema example pointer="#/components/schemas/Pet" />;
 ```
 
 <ApiSchema example pointer="#/components/schemas/Pet" />
@@ -109,17 +108,19 @@ you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
 
 ```tsx
 import ApiSchema from '@theme/ApiSchema';
-import openApi from './api-with-examples.json'
+import openApi from './api-with-examples.json';
 
-<ApiSchema spec={openApi} pointer="#/components/schemas/Pet" />
+<ApiSchema spec={openApi} pointer="#/components/schemas/Pet" />;
 ```
 
 <ApiSchema spec={openApi} pointer="#/components/schemas/Pet" />
 
 :::info YAML support
 You cannot load yaml file like this:
+
 ```tsx
-import openApi from './api-with-examples.yaml'
+import openApi from './api-with-examples.yaml';
 ```
+
 Without the right webpack configuration to handle such file format.
 :::

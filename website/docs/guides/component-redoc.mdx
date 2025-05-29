@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 
 import Redoc from '@theme/Redoc';
-import openApi from '../../openapi/using-single-json.openapi.json'
+import openApi from '../../openapi/using-single-json.openapi.json';
 
 # Redoc
 
@@ -25,7 +25,7 @@ import Redoc from '@theme/Redoc';
 ## Props
 
 | Name            | Type         | Description                                                                                 |
-|-----------------|--------------|---------------------------------------------------------------------------------------------|
+| --------------- | ------------ | ------------------------------------------------------------------------------------------- |
 | id              | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined |
 | spec            | OpenAPI spec | A JSON content spec to use                                                                  |
 | url             | String       | External URL to load spec file from                                                         |
@@ -41,7 +41,7 @@ It displays here the first element of the redocusaurus configuration.
 ```tsx
 import Redoc from '@theme/Redoc';
 
-<Redoc />
+<Redoc />;
 ```
 
 <Redoc />
@@ -51,17 +51,17 @@ import Redoc from '@theme/Redoc';
 ```tsx
 import Redoc from '@theme/Redoc';
 
-<Redoc url="https://redocly.github.io/redoc/openapi.yaml"/>
+<Redoc url="https://redocly.github.io/redoc/openapi.yaml" />;
 ```
 
-<Redoc url="https://redocly.github.io/redoc/openapi.yaml"/>
+<Redoc url="https://redocly.github.io/redoc/openapi.yaml" />
 
 ### Specific id example
 
 ```tsx
 import Redoc from '@theme/Redoc';
 
-<Redoc id="using-single-yaml" />
+<Redoc id="using-single-yaml" />;
 ```
 
 <Redoc id="using-single-yaml" />
@@ -71,10 +71,16 @@ import Redoc from '@theme/Redoc';
 ```tsx
 import Redoc from '@theme/Redoc';
 
-<Redoc id="using-single-yaml" downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml" />
+<Redoc
+  id="using-single-yaml"
+  downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml"
+/>;
 ```
 
-<Redoc id="using-single-yaml" downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml" />
+<Redoc
+  id="using-single-yaml"
+  downloadSpecUrl="https://redocly.github.io/redoc/openapi.yaml"
+/>
 
 ### Webpack loader example
 
@@ -83,9 +89,9 @@ you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
 
 ```tsx
 import Redoc from '@theme/Redoc';
-import openApi from './api-with-examples.json'
+import openApi from './api-with-examples.json';
 
-<Redoc spec={openApi} />
+<Redoc spec={openApi} />;
 ```
 
 <Redoc spec={openApi} />
@@ -94,9 +100,8 @@ import openApi from './api-with-examples.json'
 You cannot load yaml file like this:
 
 ```tsx
-import openApi from './api-with-examples.yaml'
+import openApi from './api-with-examples.yaml';
 ```
 
 Without the right webpack configuration to handle such file format.
 :::
-
