@@ -13,8 +13,8 @@ export default function redocTheme(
 ): Plugin<null> {
   return {
     name: 'docusaurus-theme-redoc',
-    configureWebpack(_config, isServer,{currentBundler}) {
-      const bundler = currentBundler.instance ?? require("webpack")
+    configureWebpack(_config, isServer, { currentBundler }) {
+      const bundler = currentBundler.instance ?? require('webpack');
       return {
         plugins: [
           new bundler.NormalModuleReplacementPlugin(
