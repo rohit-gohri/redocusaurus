@@ -22,16 +22,6 @@ Read more [here about MDX in Docusaurus](https://docusaurus.io/docs/markdown-fea
 import ApiSchema from '@theme/ApiSchema';
 ```
 
-## Props
-
-| Name    | Type         | Description                                                                                          |
-| ------- | ------------ | ---------------------------------------------------------------------------------------------------- |
-| pointer | String       | the redoc reference to display in [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer) format |
-| example | boolean      | (default: false) allow to display example                                                            |
-| id      | String       | When spec not provided, load the spec from docusaurus config. Use first spec if not defined          |
-| spec    | OpenAPI spec | A JSON content spec to use                                                                           |
-| themeId | String       | redocusaurus theme to use - default to `theme-redoc`                                                 |
-
 ## Examples
 
 ### Basic example
@@ -45,6 +35,8 @@ import ApiSchema from '@theme/ApiSchema';
 <ApiSchema pointer="#/components/schemas/Pet" />;
 ```
 
+#### Results
+
 <ApiSchema pointer="#/components/schemas/Pet" />
 
 ### Display example
@@ -54,6 +46,8 @@ import ApiSchema from '@theme/ApiSchema';
 
 <ApiSchema example pointer="#/components/schemas/Pet" />;
 ```
+
+#### Results
 
 <ApiSchema example pointer="#/components/schemas/Pet" />
 
@@ -68,11 +62,12 @@ const config = {
     [
       'redocusaurus',
       {
-        openapi: {
-          path: 'openapi',
-          routeBasePath: '/examples',
-        },
         specs: [
+          {
+            id: 'using-single-yaml',
+            spec: 'openapi/single-file/openapi.yaml',
+            route: '/examples/using-single-yaml/',
+          },
           {
             id: 'using-remote-url',
             spec: 'https://redocly.github.io/redoc/openapi.yaml',
@@ -101,7 +96,7 @@ import ApiSchema from '@theme/ApiSchema';
 
 <ApiSchema id="using-remote-url" pointer="#/components/schemas/Order" />
 
-### Webpack loader example
+### Pass JSON Spec Directly
 
 You can provide a JSON spec to the component like this. Webpack will load the file directly,
 you don't need to use redocusaurus configuration inside `docusaurus.config.js`.
