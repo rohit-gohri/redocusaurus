@@ -4,28 +4,39 @@ sidebar_position: 1.5
 ---
 
 import ApiOperation from '@theme/ApiOperation';
+import openApi from '../../openapi/using-single-json.openapi.json';
 
-# Operation Imports
+# ApiOperation
 
-You can import operation definitions from your API schema and render them in your Docusaurus Docs. You'll need to create an `.mdx` file and import the React Component. Read more [here about MDX in Docusaurus](https://docusaurus.io/docs/markdown-features/react).
+You can import operation definitions from your API schema and render them in your Docusaurus Docs.
 
-# Import Operation Model in Docs
+:::info File format
+You cannot import a React component inside a `.md` file.  
+Change your file extension to `.mdx` before importing the React Component.  
+Read more [here about MDX in Docusaurus](https://docusaurus.io/docs/markdown-features/react).
+:::
 
-The `pointer` prop is passed on to [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer).
-
-Note that `/` is escaped as `~1`.
+## Import
 
 ```tsx
 import ApiOperation from '@theme/ApiOperation';
-
-<ApiOperation pointer="#/paths/~1pet/post" />;
 ```
 
-### Results
+## Examples
+
+### Basic example
+
+The `pointer` prop is passed on to [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer). Note that `/` is escaped as `~1`.
+
+```tsx
+<ApiOperation pointer="#/paths/~1pet/post" />
+```
+
+#### Results
 
 <ApiOperation pointer="#/paths/~1pet/post" />
 
-## Import Operation Model (with example) in Docs
+### Display with "examples"
 
 ```tsx
 import ApiOperation from '@theme/ApiOperation';
@@ -33,11 +44,11 @@ import ApiOperation from '@theme/ApiOperation';
 <ApiOperation example pointer="#/paths/~1pet/post" />;
 ```
 
-### Results
+#### Results
 
 <ApiOperation example pointer="#/paths/~1pet/post" />
 
-## Importing Operation Model with multiple OpenAPI schemas
+### Multiple OpenAPI schemas
 
 If you have multiple APIs loaded with redocusaurus, then it is recommended to add `id`s to the config so that you can refer them when loading operation models.
 
@@ -60,17 +71,6 @@ const config = {
             route: '/examples/using-remote-url/',
           },
         ],
-        theme: {
-          /**
-           * Highlight color for docs
-           */
-          primaryColor: '#1890ff',
-          /**
-           * Options to pass to redoc
-           * @see https://github.com/redocly/redoc#redoc-options-object
-           */
-          options: { disableSearch: true },
-        },
       },
     ],
   ],
@@ -85,12 +85,33 @@ import ApiOperation from '@theme/ApiOperation';
 <ApiOperation id="using-remote-url" pointer="#/paths/~1pet/post" />
 ```
 
-### Results
-
-#### For ID `id="using-single-yaml"`
+#### Results for ID `id="using-single-yaml"`
 
 <ApiOperation id="using-single-yaml" pointer="#/paths/~1pet/post" />
 
-#### For ID `id="using-remote-url"`
+#### Results for ID `id="using-remote-url"`
 
 <ApiOperation id="using-remote-url" pointer="#/paths/~1pet/post" />
+
+### Pass JSON Spec Directly
+
+You can also provide a JSON spec to the component like this. Docusaurus will load the file directly during build time, but the file will not undergo any pre-processing at build time and so some features might be missing.
+
+```tsx
+import ApiOperation from '@theme/ApiOperation';
+import openApi from './api-with-examples.json';
+
+<ApiOperation spec={openApi} pointer="#/paths/~1pet/post" />;
+```
+
+<ApiOperation spec={openApi} pointer="#/paths/~1pet/post" />;
+
+:::info YAML support
+You cannot load yaml file like this:
+
+```tsx
+import openApi from './api-with-examples.yaml';
+```
+
+Without the right webpack configuration to handle such file format.
+:::

@@ -31,15 +31,17 @@ const renderCss = function (store: AppStore): string {
 const LIGHT_MODE_PREFIX = "html:not([data-theme='dark'])";
 const DARK_MODE_PREFIX = "html([data-theme='dark'])";
 
+export type ServerStylesProps = {
+  specProps: SpecProps;
+  lightThemeOptions: RedocRawOptions;
+  darkThemeOptions: RedocRawOptions;
+};
+
 export function ServerStyles({
   specProps,
   lightThemeOptions,
   darkThemeOptions,
-}: {
-  specProps: SpecProps;
-  lightThemeOptions: RedocRawOptions;
-  darkThemeOptions: RedocRawOptions;
-}) {
+}: ServerStylesProps) {
   const absoluteUrl = useBaseUrl(specProps.url, { absolute: true });
   const fullUrl = specProps.normalizeUrl ? absoluteUrl : specProps.url;
 

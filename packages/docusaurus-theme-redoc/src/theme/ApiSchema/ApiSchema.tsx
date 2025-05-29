@@ -5,17 +5,19 @@ import '../../global';
 import { SchemaDefinition } from 'redoc';
 import { useSpec } from '../../utils/useSpec';
 import { useSpecData } from '../useSpecData';
-import type { ApiSchemaProps as Props } from '../../types/common';
+import type { ApiSchemaProps } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
 
-const ApiSchema: React.FC<Props> = ({
+const ApiSchema: React.FC<ApiSchemaProps> = ({
   id,
-  example,
+  spec,
   pointer,
+  showExample = false,
+  example = showExample,
   ...rest
-}: Props): JSX.Element => {
-  const specProps = useSpecData(id);
+}: ApiSchemaProps): JSX.Element => {
+  const specProps = useSpecData(id, spec);
   const { store } = useSpec(specProps);
 
   useEffect(() => {
@@ -38,15 +40,12 @@ const ApiSchema: React.FC<Props> = ({
           parser={store.spec.parser}
           options={store.options}
           schemaRef={pointer}
+          showExample={example}
           {...rest}
         />
       </div>
     </ThemeProvider>
   );
-};
-
-ApiSchema.defaultProps = {
-  example: false,
 };
 
 export default ApiSchema;

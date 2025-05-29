@@ -18,7 +18,7 @@ export default async function preset(
     theme: {},
   },
 ) {
-  const { debug = false, openapi, specs, theme = {}, config } = opts;
+  const { debug = false, openapi, specs = [], theme = {}, config } = opts;
   if (debug) {
     console.error('[REDOCUSAURUS] Options:', opts);
   }
@@ -37,7 +37,7 @@ export default async function preset(
     }
     specsArray.push(...(Array.isArray(specs) ? specs : [specs]));
   }
-  if (!specs || openapi) {
+  if (!specsArray.length || openapi) {
     // Load folder if no specs provided or folder specifically provided
     const { path: folder, routeBasePath } = {
       ...DEFAULT_OPENAPI_OPTIONS,
@@ -62,6 +62,7 @@ export default async function preset(
 
     const slugger = createSlugger();
     const baseRoute = routeBasePath.replace(/\/*$/, '');
+
     specsArray.push(
       ...specFiles.map((specFile): SpecOptions => {
         const spec = path.resolve(specFile);
