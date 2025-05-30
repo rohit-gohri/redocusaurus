@@ -19,6 +19,28 @@ author_url: https://rohit.page
    npm i --save redocusaurus
    ```
 
+1. Create an `openapi` folder in your docusaurus project and add your OpenAPI docs to the folder. Name the main file `index.openapi.yaml`.
+
+   :::info Multi File
+
+   Multi-file setups are supported and all files will be merged at build time using [@redocly/openapi-core](https://www.npmjs.com/package/@redocly/openapi-core).
+
+   :::
+
+     <pre>
+       ├── docs
+       │   ├── ...
+       │   └── ...
+       ├── openapi 🆕
+       │   └── example 🆕
+       │       ├── components
+       │       │   └── pets.yaml
+       │       └── index.openapi.yaml
+       ├── docusaurus.config.ts
+       └── package.json
+   
+     </pre>
+
 1. Add it as a preset to your docusaurus config along with [@docusaurus/preset-classic](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) and pass options:
 
    ```js
@@ -32,7 +54,7 @@ author_url: https://rohit.page
      presets: [
        // .. Your other presets' config
        [
-        '@docusaurus/preset-classic',
+         '@docusaurus/preset-classic',
          {
            googleAnalytics: {
              trackingID: 'XXXXXX',
@@ -43,20 +65,26 @@ author_url: https://rohit.page
        [
          'redocusaurus',
          {
-           // Plugin Options for loading OpenAPI files
+           openapi: {
+             // Folder to scan for *.openapi.yaml files
+             path: 'openapi',
+             routeBasePath: '/api',
+           },
            specs: [
-             // Pass it a path to a local OpenAPI YAML file
+            // Optionally provide individual files/urls to load
              {
-               // Redocusaurus will automatically bundle your spec into a single file during the build
-               spec: 'openapi/index.yaml',
-               route: '/api/',
+               // Pass it a path to a local OpenAPI YAML file
+               spec: 'api.yaml',
+               id: 'from-manual-file',
+               route: '/api/from-manual-file',
              },
-             // You can also pass it a OpenAPI spec URL
+             // You can also pass it an OpenAPI spec URL
              {
                spec: 'https://redocly.github.io/redoc/openapi.yaml',
-               route: '/openapi/',
+               id: 'from-remote-file',
+               route: '/api/from-remote-file',
              },
-           ],
+           ]
            // Theme Options for modifying how redoc renders them
            theme: {
              // Change with your site colors
@@ -71,19 +99,26 @@ author_url: https://rohit.page
    export default config;
    ```
 
-The API Doc will be available at the path specific by `route`. To skip adding a route altogether just don't set the `route` property.
-You will still be able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports) or create Custom React Pages using the data and theme components.
-If you have a [`redocly.yaml`](https://redocly.com/docs/cli/configuration/) it will be loaded automatically.
+The API Docs will be available at `/api` + the folder name inside `openapi`, i.e. `/api/example` for the example above. If any manual `specs` are specified then they will also be available at the specified routes.
+
+You will now also be able to reference schema elements manually using [Schema Imports](/docs/guides/schema-imports), [Operation Imports](/docs/guides/operation-imports) or create Custom React Pages using the data and theme components.
 
 ## Options
 
+If you have a [`redocly.yaml`](https://redocly.com/docs/cli/configuration/) file in the project folder it will be loaded automatically and applied.
+
+### openapi
+
+- `path`: Specify folder name to scan for `.openapi.{yaml,json}` files
+- `routeBasePath`: Common route prefix to use for generated pages
+
 ### specs
 
-An **array** of plugin options, see [plugin options](./plugin-options.md) for individual option details.
+Manually specify an **array** of OpenAPI files/urls to load, see [plugin options](./plugin-options.md) for more details.
 
 ### theme
 
-Pass options to customize the theme, see [theme options](./theme-options.md) for individual option details.
+Pass options to customize the theme, see [theme options](./theme-options.md) for more details.
 
 ### config (optional)
 
@@ -102,5 +137,5 @@ npm run build
 npm run serve
 ```
 
-When running the website locally, with `npm start`, some error messages can be displayed.
+When running the website locally, with `npm start`, some error messages might be displayed.
 :::

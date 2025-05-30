@@ -42,10 +42,18 @@ export default function redocPlugin(
 }> {
   const { baseUrl } = context.siteConfig;
   const options: PluginOptionsWithDefault = { ...DEFAULT_OPTIONS, ...opts };
-  const { debug, spec, url: downloadUrl, config, themeId, normalizeUrl: normalizeDownloadUrl } = options;
+  const {
+    debug,
+    spec,
+    url: downloadUrl,
+    config,
+    themeId,
+    normalizeUrl: normalizeDownloadUrl,
+  } = options;
 
   let url = downloadUrl;
   const isSpecFile = fs.existsSync(spec);
+
   const fileName = path.join(
     'redocusaurus',
     `${options.id || 'api-spec'}.yaml`,

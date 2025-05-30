@@ -5,6 +5,8 @@ author: Rohit Gohri
 author_url: https://rohit.page
 ---
 
+These can be passed to the `theme` options object.
+
 ### primaryColor (string, hex/rgba value)
 
 Convenient way to provide the highlighted color used by Redoc.  
@@ -35,7 +37,7 @@ Deprecated: Use `redocly.yaml` to specify `theme.options`. See [example](https:/
 
 Override redoc options passed to [RedocStandalone](https://redoc.ly/docs/redoc/quickstart/react/) component. See the defaults [here](https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc/src/redocData.ts#L5-L12).
 
-Available properties [here](https://redocly.com/docs/redoc/config/).  
+Available properties [here](https://redocly.com/docs/redoc/config/).
 
 You cannot set theme property using this property, use `theme` option above instead.
 

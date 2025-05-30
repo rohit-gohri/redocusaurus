@@ -1,0 +1,78 @@
+---
+title: Component Usage
+sidebar_position: 1
+---
+
+import Redoc from '@theme/Redoc';
+import openApi from '../../openapi/using-single-json.openapi.json';
+
+# Component Usage
+
+You can also display the whole OpenAPI documentation using a React component to do custom layouts like [Nested views](/docs/guides/multiple-apis) or to manually pass API files.
+
+:::info File format
+You cannot import a React component inside a `.md` file.  
+Change your file extension to `.mdx` before importing the React Component.  
+Read more [here about MDX in Docusaurus](https://docusaurus.io/docs/markdown-features/react).
+:::
+
+## Import
+
+```tsx
+import Redoc from '@theme/Redoc';
+```
+
+## Examples
+
+### Basic example
+
+It displays here the first element of the redocusaurus configuration.
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc />;
+```
+
+### External URL example
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc url="https://redocly.github.io/redoc/openapi.yaml" />;
+```
+
+### Specific id example
+
+The id is used to look for the OpenAPI spec defined in `docusaurus.config`.
+
+```tsx
+import Redoc from '@theme/Redoc';
+
+<Redoc id="using-single-yaml" />;
+```
+
+### Pass JSON Spec Directly
+
+You can also provide a JSON spec to the component like this. Docusaurus will load the file directly during build time, but the file will not undergo any pre-processing at build time and so some features might be missing.
+
+```tsx
+import Redoc from '@theme/Redoc';
+import openApi from './api-with-examples.json';
+
+<Redoc spec={openApi} />;
+```
+
+:::info YAML support
+You cannot load yaml file like this:
+
+```tsx
+import openApi from './api-with-examples.yaml';
+```
+
+Without the right Docusaurus configuration to handle such file format.
+:::
+
+### Results
+
+<Redoc spec={openApi} />

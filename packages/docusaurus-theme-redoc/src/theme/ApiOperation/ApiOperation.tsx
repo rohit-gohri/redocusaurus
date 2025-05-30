@@ -1,21 +1,22 @@
 import React, { useEffect } from 'react';
+import useSpecData from '@theme/useSpecData';
 import clsx from 'clsx';
 import { ThemeProvider } from 'styled-components';
 import '../../global';
 import { Operation, OperationModel, Section } from 'redoc';
 import { useSpec } from '../../utils/useSpec';
-import { useSpecData } from '../useSpecData';
-import type { ApiOperationProps as Props } from '../../types/common';
+import type { ApiOperationProps } from '../../types/common';
 import '../Redoc/styles.css';
 import './styles.css';
 
-const ApiOperation: React.FC<Props> = ({
+const ApiOperation: React.FC<ApiOperationProps> = ({
   id,
-  example,
+  spec,
+  example = false,
   pointer,
   ...rest
-}: Props): JSX.Element => {
-  const specProps = useSpecData(id);
+}: ApiOperationProps): JSX.Element => {
+  const specProps = useSpecData(id, spec);
   const { store } = useSpec(specProps);
 
   // The # at the start is not included
@@ -54,10 +55,6 @@ const ApiOperation: React.FC<Props> = ({
       </div>
     </ThemeProvider>
   );
-};
-
-ApiOperation.defaultProps = {
-  example: false,
 };
 
 export default ApiOperation;
