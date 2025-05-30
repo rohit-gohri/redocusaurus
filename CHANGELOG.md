@@ -2,9 +2,16 @@
 
 ## redocusaurus@2.4.0
 
+### Patch Changes
+
+-   Updated dependencies \[[`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0)]:
+    -   docusaurus-theme-redoc@2.4.0
 
 ## docusaurus-theme-redoc@2.4.0
 
+### Minor Changes
+
+-   [#416](https://github.com/rohit-gohri/redocusaurus/pull/416) [`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0) Thanks [@svenkonings](https://github.com/svenkonings)! - Add ApiOperation component to import and display the definitions of API operations within your Docusaurus docs
 
 ## redocusaurus@2.3.0
 
