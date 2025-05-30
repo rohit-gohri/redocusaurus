@@ -16,7 +16,7 @@ const ApiSchema: React.FC<ApiSchemaProps> = ({
   showExample = false,
   example = showExample,
   ...rest
-}: ApiSchemaProps): JSX.Element => {
+}: ApiSchemaProps): React.JSX.Element => {
   const specProps = useSpecData(id, spec);
   const { store } = useSpec(specProps);
 
