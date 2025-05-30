@@ -4,74 +4,163 @@
 
 ### Patch Changes
 
--   Updated dependencies \[[`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0)]:
-    -   docusaurus-theme-redoc@2.4.0
+- Updated dependencies [[`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0)]:
+  - docusaurus-theme-redoc@2.4.0
+
 
 ## docusaurus-theme-redoc@2.4.0
 
 ### Minor Changes
 
--   [#416](https://github.com/rohit-gohri/redocusaurus/pull/416) [`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0) Thanks [@svenkonings](https://github.com/svenkonings)! - Add ApiOperation component to import and display the definitions of API operations within your Docusaurus docs
+- [#416](https://github.com/rohit-gohri/redocusaurus/pull/416) [`f7f5467`](https://github.com/rohit-gohri/redocusaurus/commit/f7f5467a5bf5c42d9d88b716ccc2de56b158b5f0) Thanks [@svenkonings](https://github.com/svenkonings)! - Add ApiOperation component to import and display the definitions of API operations within your Docusaurus docs
 
 ## redocusaurus@2.3.0
 
+### Patch Changes
+
+- Updated dependencies [[`fe84a58`](https://github.com/rohit-gohri/redocusaurus/commit/fe84a58a82f0e7fd3e704dbe979cf88520e72bc6), [`406fd2e`](https://github.com/rohit-gohri/redocusaurus/commit/406fd2e8664edd8c92bffe5e2dc1c2d759236913)]:
+  - docusaurus-theme-redoc@2.3.0
 
 ## docusaurus-theme-redoc@2.3.0
 
+### Minor Changes
+
+- [#419](https://github.com/rohit-gohri/redocusaurus/pull/419) [`fe84a58`](https://github.com/rohit-gohri/redocusaurus/commit/fe84a58a82f0e7fd3e704dbe979cf88520e72bc6) Thanks [@ctreatma](https://github.com/ctreatma)! - Register Redoc anchors with Docusaurus
+
+### Patch Changes
+
+- [#418](https://github.com/rohit-gohri/redocusaurus/pull/418) [`406fd2e`](https://github.com/rohit-gohri/redocusaurus/commit/406fd2e8664edd8c92bffe5e2dc1c2d759236913) Thanks [@adityawkhare](https://github.com/adityawkhare)! - fix authorization dropdown contrast issue in dark mode
 
 ## redocusaurus@2.2.3
 
+### Patch Changes
+
+- Updated dependencies [[`011048f`](https://github.com/rohit-gohri/redocusaurus/commit/011048fd7c54788f3790ac1c3ccb0fbad7bf9f2e)]:
+  - docusaurus-plugin-redoc@2.2.3
+  - docusaurus-theme-redoc@2.2.3
 
 ## docusaurus-plugin-redoc@2.2.3
 
+### Patch Changes
+
+- [#410](https://github.com/rohit-gohri/redocusaurus/pull/410) [`011048f`](https://github.com/rohit-gohri/redocusaurus/commit/011048fd7c54788f3790ac1c3ccb0fbad7bf9f2e) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump redoc from 2.1.5 to 2.4.0
 
 ## docusaurus-theme-redoc@2.2.3
 
+### Patch Changes
+
+- [#410](https://github.com/rohit-gohri/redocusaurus/pull/410) [`011048f`](https://github.com/rohit-gohri/redocusaurus/commit/011048fd7c54788f3790ac1c3ccb0fbad7bf9f2e) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump redoc from 2.1.5 to 2.4.0
 
 ## redocusaurus@2.2.2
 
+### Patch Changes
+
+- Updated dependencies [[`ba2bd9c`](https://github.com/rohit-gohri/redocusaurus/commit/ba2bd9c5964df7f88ce1b5e7c08d2fcf5cd889f3)]:
+  - docusaurus-plugin-redoc@2.2.2
+  - docusaurus-theme-redoc@2.2.2
 
 ## docusaurus-plugin-redoc@2.2.2
 
+### Patch Changes
+
+- [#402](https://github.com/rohit-gohri/redocusaurus/pull/402) [`ba2bd9c`](https://github.com/rohit-gohri/redocusaurus/commit/ba2bd9c5964df7f88ce1b5e7c08d2fcf5cd889f3) Thanks [@ctreatma](https://github.com/ctreatma)! - Add support for relative spec download URLs
 
 ## docusaurus-theme-redoc@2.2.2
 
+### Patch Changes
+
+- [#402](https://github.com/rohit-gohri/redocusaurus/pull/402) [`ba2bd9c`](https://github.com/rohit-gohri/redocusaurus/commit/ba2bd9c5964df7f88ce1b5e7c08d2fcf5cd889f3) Thanks [@ctreatma](https://github.com/ctreatma)! - Add support for relative spec download URLs
 
 ## redocusaurus@2.2.1
 
+### Patch Changes
+
+- [#394](https://github.com/rohit-gohri/redocusaurus/pull/394) [`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Update peer deps
+
+- Updated dependencies [[`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493)]:
+  - docusaurus-plugin-redoc@2.2.1
+  - docusaurus-theme-redoc@2.2.1
 
 ## docusaurus-plugin-redoc@2.2.1
 
+### Patch Changes
+
+- [#394](https://github.com/rohit-gohri/redocusaurus/pull/394) [`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Update peer deps
 
 ## docusaurus-theme-redoc@2.2.1
 
+### Patch Changes
+
+- [#394](https://github.com/rohit-gohri/redocusaurus/pull/394) [`d6fec91`](https://github.com/rohit-gohri/redocusaurus/commit/d6fec91af502b3c61d2e038aa24f3d63a101a493) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Update peer deps
 
 ## redocusaurus@2.2.0
 
+### Patch Changes
+
+- [#385](https://github.com/rohit-gohri/redocusaurus/pull/385) [`a986be6`](https://github.com/rohit-gohri/redocusaurus/commit/a986be6ee8f9b342efb783e620bec394f193f150) Thanks [@slorber](https://github.com/slorber)! - Upgrade Docusaurus - add support for Docusaurus Faster (RsPack)
+
+- Updated dependencies [[`a986be6`](https://github.com/rohit-gohri/redocusaurus/commit/a986be6ee8f9b342efb783e620bec394f193f150)]:
+  - docusaurus-theme-redoc@2.2.0
 
 ## docusaurus-theme-redoc@2.2.0
 
+### Minor Changes
+
+- [#385](https://github.com/rohit-gohri/redocusaurus/pull/385) [`a986be6`](https://github.com/rohit-gohri/redocusaurus/commit/a986be6ee8f9b342efb783e620bec394f193f150) Thanks [@slorber](https://github.com/slorber)! - Upgrade Docusaurus - add support for Docusaurus Faster (RsPack)
 
 ## redocusaurus@2.1.2
 
+### Patch Changes
+
+- Updated dependencies [[`0415860`](https://github.com/rohit-gohri/redocusaurus/commit/04158605637dbdb6f0a7bf69a842fe1076cd3c99)]:
+  - docusaurus-theme-redoc@2.1.2
 
 ## docusaurus-theme-redoc@2.1.2
 
+### Patch Changes
+
+- [#378](https://github.com/rohit-gohri/redocusaurus/pull/378) [`0415860`](https://github.com/rohit-gohri/redocusaurus/commit/04158605637dbdb6f0a7bf69a842fe1076cd3c99) Thanks [@a-ignatov-parc](https://github.com/a-ignatov-parc)! - Fixes incorrect CSS prefixing that breaks layout on mobile devices and resolves reintroduced issues with incorrect background color for code samples
 
 ## redocusaurus@2.1.1
 
+### Patch Changes
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - update dependencies
+
+- Updated dependencies [[`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a), [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a)]:
+  - docusaurus-plugin-redoc@2.1.1
+  - docusaurus-theme-redoc@2.1.1
 
 ## docusaurus-plugin-redoc@2.1.1
 
+### Patch Changes
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - update dependencies
 
 ## docusaurus-theme-redoc@2.1.1
 
+### Patch Changes
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - update dependencies
+
+- [#369](https://github.com/rohit-gohri/redocusaurus/pull/369) [`45483d8`](https://github.com/rohit-gohri/redocusaurus/commit/45483d8a7f5338297f38bdf88c5c49bdfab4ce3a) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add webpack define for DEBUG env var
 
 ## redocusaurus@2.1.0
 
+### Minor Changes
+
+- [#342](https://github.com/rohit-gohri/redocusaurus/pull/342) [`646c5e1`](https://github.com/rohit-gohri/redocusaurus/commit/646c5e1eb7b5541513186ee507642a105140efdf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for auto-loading folder
+
+### Patch Changes
+
+- Updated dependencies [[`646c5e1`](https://github.com/rohit-gohri/redocusaurus/commit/646c5e1eb7b5541513186ee507642a105140efdf)]:
+  - docusaurus-plugin-redoc@2.1.0
 
 ## docusaurus-plugin-redoc@2.1.0
 
+### Minor Changes
+
+- [#342](https://github.com/rohit-gohri/redocusaurus/pull/342) [`646c5e1`](https://github.com/rohit-gohri/redocusaurus/commit/646c5e1eb7b5541513186ee507642a105140efdf) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - Add support for auto-loading folder
 
 ## redocusaurus@2.0.2
 
