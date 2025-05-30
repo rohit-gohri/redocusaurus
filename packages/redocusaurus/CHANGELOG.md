@@ -1,5 +1,17 @@
 # redocusaurus
 
+## 2.5.0
+
+### Patch Changes
+
+- [#424](https://github.com/rohit-gohri/redocusaurus/pull/424) [`5be48fc`](https://github.com/rohit-gohri/redocusaurus/commit/5be48fc0481abd94a1f5a25948960a585d1246b3) Thanks [@serut](https://github.com/serut)! - feat: add support for passing `spec` directly to all components
+
+  Update docs to add various missing things.
+
+- Updated dependencies [[`5be48fc`](https://github.com/rohit-gohri/redocusaurus/commit/5be48fc0481abd94a1f5a25948960a585d1246b3)]:
+  - docusaurus-plugin-redoc@2.5.0
+  - docusaurus-theme-redoc@2.5.0
+
 ## 2.4.0
 
 ### Patch Changes
