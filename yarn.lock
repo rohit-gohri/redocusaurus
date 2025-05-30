@@ -6589,7 +6589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-redoc@npm:2.2.3, docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc":
+"docusaurus-plugin-redoc@npm:2.5.0, docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-plugin-redoc@workspace:packages/docusaurus-plugin-redoc"
   dependencies:
@@ -6609,7 +6609,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"docusaurus-theme-redoc@npm:2.4.0, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
+"docusaurus-theme-redoc@npm:2.5.0, docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc":
   version: 0.0.0-use.local
   resolution: "docusaurus-theme-redoc@workspace:packages/docusaurus-theme-redoc"
   dependencies:
@@ -13489,11 +13489,11 @@ __metadata:
     clsx: "npm:^1.2.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    redocusaurus: "npm:^2.4.0"
+    redocusaurus: "npm:^2.5.0"
   languageName: unknown
   linkType: soft
 
-"redocusaurus@npm:^2.4.0, redocusaurus@workspace:packages/redocusaurus":
+"redocusaurus@npm:^2.5.0, redocusaurus@workspace:packages/redocusaurus":
   version: 0.0.0-use.local
   resolution: "redocusaurus@workspace:packages/redocusaurus"
   dependencies:
@@ -13501,8 +13501,8 @@ __metadata:
     "@docusaurus/utils": "npm:^3.6.0"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
-    docusaurus-plugin-redoc: "npm:2.2.3"
-    docusaurus-theme-redoc: "npm:2.4.0"
+    docusaurus-plugin-redoc: "npm:2.5.0"
+    docusaurus-theme-redoc: "npm:2.5.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     typescript: "npm:^5.5.2"
