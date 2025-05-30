@@ -1,5 +1,4 @@
 ---
-"redocusaurus-website": minor
 "docusaurus-plugin-redoc": minor
 "docusaurus-theme-redoc": minor
 "redocusaurus": patch
