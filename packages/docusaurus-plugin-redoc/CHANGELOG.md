@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- [#424](https://github.com/rohit-gohri/redocusaurus/pull/424) [`5be48fc`](https://github.com/rohit-gohri/redocusaurus/commit/5be48fc0481abd94a1f5a25948960a585d1246b3) Thanks [@rohit-gohri](https://github.com/rohit-gohri)! - feat: add support for passing `spec` directly to all components
+- [#424](https://github.com/rohit-gohri/redocusaurus/pull/424) [`5be48fc`](https://github.com/rohit-gohri/redocusaurus/commit/5be48fc0481abd94a1f5a25948960a585d1246b3) Thanks [@serut](https://github.com/serut)! - feat: add support for passing `spec` directly to all components
 
   Update docs to add various missing things.
 
