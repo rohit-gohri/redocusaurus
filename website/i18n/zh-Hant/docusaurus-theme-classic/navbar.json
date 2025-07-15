@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "Redocusaurus",
+    "description": "導航列中的標題"
+  },
+  "item.label.Docs": {
+    "message": "文件",
+    "description": "導航列項目，標籤為文件"
+  },
+  "item.label.Examples": {
+    "message": "範例",
+    "description": "導航列項目，標籤為範例"
+  },
+  "item.label.All": {
+    "message": "全部",
+    "description": "導航列項目，標籤為全部"
+  },
+  "item.label.Using Single YAML": {
+    "message": "使用單一 YAML",
+    "description": "導航列項目，標籤為使用單一 YAML"
+  },
+  "item.label.Using Remote URL": {
+    "message": "使用遠端 URL",
+    "description": "導航列項目，標籤為使用遠端 URL"
+  },
+  "item.label.Using Multiple YAMLs": {
+    "message": "使用多個 YAML",
+    "description": "導航列項目，標籤為使用多個 YAML"
+  },
+  "item.label.Using Swagger": {
+    "message": "使用 Swagger",
+    "description": "導航列項目，標籤為使用 Swagger"
+  },
+  "item.label.Custom Page": {
+    "message": "自訂頁面",
+    "description": "導航列項目，標籤為自訂頁面"
+  },
+  "item.label.Custom Layout": {
+    "message": "自訂佈局",
+    "description": "導航列項目，標籤為自訂佈局"
+  },
+  "item.label.Client Only": {
+    "message": "僅客戶端",
+    "description": "導航列項目，標籤為僅客戶端"
+  }
+}

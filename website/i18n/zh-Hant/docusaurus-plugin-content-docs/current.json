@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "2.0.2",
+    "description": "當前版本的標籤"
+  },
+  "sidebar.defaultSidebar.category.Getting Started": {
+    "message": "入門指南",
+    "description": "側邊欄 defaultSidebar 中類別「入門指南」的標籤"
+  },
+  "sidebar.defaultSidebar.category.Guides": {
+    "message": "指南",
+    "description": "側邊欄 defaultSidebar 中類別「指南」的標籤"
+  },
+  "sidebar.defaultSidebar.category.Nested Docs Example": {
+    "message": "嵌套文檔範例",
+    "description": "側邊欄 defaultSidebar 中類別「嵌套文檔範例」的標籤"
+  }
+}
