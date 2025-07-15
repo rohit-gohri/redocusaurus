@@ -76,7 +76,7 @@ type ApiOperationProps = MdxProps & {
 };
 
 declare module '@theme/Redoc' {
-  const Redoc: (props: RedocProps) => JSX.Element;
+  const Redoc: (props: RedocProps) => React.JSX.Element;
   export default Redoc;
 }
 
@@ -94,22 +94,22 @@ declare module '@theme/ApiDoc' {
     layoutProps?: Omit<LayoutProps, 'children'>;
   }
 
-  const ApiDoc: (props: ApiDocProps) => JSX.Element;
+  const ApiDoc: (props: ApiDocProps) => React.JSX.Element;
   export default ApiDoc;
 }
 
 declare module '@theme/ApiDocMdx' {
-  const ApiDocMdx: (props: MdxProps) => JSX.Element;
+  const ApiDocMdx: (props: MdxProps) => React.JSX.Element;
   export default ApiDocMdx;
 }
 
 declare module '@theme/ApiSchema' {
-  const ApiSchema: (props: ApiSchemaProps) => JSX.Element;
+  const ApiSchema: (props: ApiSchemaProps) => React.JSX.Element;
   export default ApiSchema;
 }
 
 declare module '@theme/ApiOperation' {
-  const ApiOperation: (props: ApiOperationProps) => JSX.Element;
+  const ApiOperation: (props: ApiOperationProps) => React.JSX.Element;
   export default ApiOperation;
 }
 

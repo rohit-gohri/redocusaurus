@@ -16,7 +16,7 @@ const isDevMode = process.env.NODE_ENV === 'development';
  * (c) 2025 Rohit Gohri
  * Released under the MIT License
  */
-function Redoc(initProps: RedocProps): JSX.Element {
+function Redoc(initProps: RedocProps): React.JSX.Element {
   // eslint-disable-next-line react/destructuring-assignment
   const specProps = useSpecData(initProps.id, initProps.spec);
   const finalProps = {
