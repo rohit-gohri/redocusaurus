@@ -34,7 +34,7 @@
   "dependencies": {
     "@redocly/openapi-core": "1.16.0",
     "clsx": "^1.2.1",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "mobx": "^6.12.4",
     "postcss": "^8.4.45",
     "postcss-prefix-selector": "^1.16.1",
