@@ -46,6 +46,7 @@ const DOCUSAURUS = {
     primaryText: '#f5f6f7',
     secondaryText: 'rgba(255, 255, 255, 1)',
     backgroundColor: 'rgb(24, 25, 26)',
+    surface: 'rgb(36, 37, 38)',
   },
 };
 
@@ -99,8 +100,8 @@ const DARK_THEME_OPTIONS: RedocThemeOverrides = {
       secondary: DOCUSAURUS.dark.secondaryText,
     },
     gray: {
-      50: '#FAFAFA',
-      100: '#F5F5F5',
+      50: DOCUSAURUS.dark.backgroundColor,
+      100: DOCUSAURUS.dark.surface,
     },
     border: {
       dark: '#ffffff',
