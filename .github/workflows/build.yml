@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '18.17.1'
           cache: 'yarn'
@@ -46,7 +46,7 @@ jobs:
           DEPLOY_BASE_URL: /redocusaurus/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: website/build
         if: ${{ github.event_name == 'push' }}
@@ -61,16 +61,16 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   publish-test:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'push' && github.head_ref != 'changeset-release/main' }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '18.17.1'
           cache: 'yarn'
@@ -101,7 +101,7 @@ jobs:
 
       - name: Add comment
         if: ${{ env.publish == 'yes' }}
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           message: |
             This pull request is automatically built and it is testable by installing [redocusaurus@v${{ env.package_version }}](https://www.npmjs.com/package/redocusaurus/v/${{ env.package_version }}).
