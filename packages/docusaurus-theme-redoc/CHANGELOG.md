@@ -1,5 +1,13 @@
 # docusaurus-theme-redoc
 
+## 2.5.1
+
+### Patch Changes
+
+- [#440](https://github.com/rohit-gohri/redocusaurus/pull/440) [`6211399`](https://github.com/rohit-gohri/redocusaurus/commit/6211399bb7983093f67390032f673d0b20a0efe1) Thanks [@AlbertBrand](https://github.com/AlbertBrand)! - Fixes "ReferenceError: Prism is not defined" when using @docusaurus/faster with additionalLanguages
+
+- [#438](https://github.com/rohit-gohri/redocusaurus/pull/438) [`c58ec45`](https://github.com/rohit-gohri/redocusaurus/commit/c58ec45fd27634b02d0ee778d0339836454610e5) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Fix scroll-spy URL updates when loading a page directly.
+
 ## 2.5.0
 
 ### Minor Changes
