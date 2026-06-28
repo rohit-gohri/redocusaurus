@@ -13496,11 +13496,11 @@ __metadata:
     clsx: "npm:^1.2.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    redocusaurus: "npm:^2.5.1"
+    redocusaurus: "npm:^2.5.2"
   languageName: unknown
   linkType: soft
 
-"redocusaurus@npm:^2.5.1, redocusaurus@workspace:packages/redocusaurus":
+"redocusaurus@npm:^2.5.2, redocusaurus@workspace:packages/redocusaurus":
   version: 0.0.0-use.local
   resolution: "redocusaurus@workspace:packages/redocusaurus"
   dependencies:
