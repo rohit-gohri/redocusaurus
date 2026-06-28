@@ -84,7 +84,7 @@ author_url: https://rohit.page
                id: 'from-remote-file',
                route: '/api/from-remote-file',
              },
-           ]
+           ],
            // Theme Options for modifying how redoc renders them
            theme: {
              // Change with your site colors
