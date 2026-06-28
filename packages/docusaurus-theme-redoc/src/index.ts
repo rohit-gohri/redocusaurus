@@ -17,6 +17,9 @@ export default function redocTheme(
       const bundler = currentBundler.instance ?? require("webpack")
       return {
         plugins: [
+          new bundler.ProvidePlugin({
+            Prism: ['prismjs'],
+          }),
           new bundler.NormalModuleReplacementPlugin(
             /^tty$/,
             require.resolve('./tty'),
