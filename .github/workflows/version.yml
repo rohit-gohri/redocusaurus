@@ -15,14 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18.17.1'
+          node-version: '26'
           cache: 'yarn'
           registry-url: https://registry.npmjs.org/
 
@@ -38,22 +38,22 @@ jobs:
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
   version:
     name: Version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18.17.1'
+          node-version: '26'
           cache: 'yarn'
           registry-url: https://registry.npmjs.org/
 
@@ -67,7 +67,7 @@ jobs:
       - name: Create Github Release
         if: |
           env.github_release == 'yes'
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v3
         with:
           body_path: latest-CHANGELOG.md
           tag_name: v${{ env.package_version }}
