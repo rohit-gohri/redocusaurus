@@ -28,7 +28,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '18.17.1'
+          node-version: '26'
           cache: 'yarn'
 
       - name: Install Dependencies 📦
@@ -72,7 +72,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '18.17.1'
+          node-version: '26'
           cache: 'yarn'
           registry-url: 'https://registry.npmjs.org'
 
