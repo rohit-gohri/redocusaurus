@@ -1,5 +1,11 @@
 # redocusaurus
 
+## 2.5.2
+
+### Patch Changes
+
+- [#450](https://github.com/rohit-gohri/redocusaurus/pull/450) [`b84704a`](https://github.com/rohit-gohri/redocusaurus/commit/b84704ad2473a90e43f0aef5a0ca1f54c0c2328c) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - chore: upgrade Yarn, Node.js, and GitHub Actions
+
 ## 2.5.1
 
 ### Patch Changes
