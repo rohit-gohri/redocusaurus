@@ -14,7 +14,7 @@ import './styles.css';
  * (c) 2025 Rohit Gohri
  * Released under the MIT License
  */
-function ServerRedoc(props: ServerRedocProps): JSX.Element {
+function ServerRedoc(props: ServerRedocProps): React.JSX.Element {
   const { className, optionsOverrides, ...specProps } = props;
   const { store, darkThemeOptions, lightThemeOptions, hasLogo } = useSpec(
     specProps,

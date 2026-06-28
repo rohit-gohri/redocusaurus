@@ -10,10 +10,6 @@ if (process.env.VERCEL_URL) {
 }
 
 const config: Config = {
-  future: {
-    // See https://docusaurus.io/blog/releases/3.6
-    experimental_faster: true,
-  },
   title: 'Redocusaurus',
   tagline: 'OpenAPI solution for Docusaurus docs with Redoc',
   customFields: {
@@ -24,6 +20,12 @@ const config: Config = {
   url: process.env.DEPLOY_PRIME_URL || 'http://localhost:5000', // Your website URL
   baseUrl: process.env.DEPLOY_BASE_URL || '/', // Base URL for your project */
   favicon: 'img/favicon.ico',
+  future: {
+    v4: true,
+    // See https://docusaurus.io/blog/releases/3.6
+    experimental_faster: true,
+  },
+  onBrokenAnchors: 'throw',
   presets: [
     [
       '@docusaurus/preset-classic',

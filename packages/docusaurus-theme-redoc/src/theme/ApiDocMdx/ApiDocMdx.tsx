@@ -4,7 +4,7 @@ import useSpecData from '@theme/useSpecData';
 import type { MdxProps } from '../../types/common';
 import '../ApiSchema/styles.css';
 
-const ApiDocMdx: React.FC<MdxProps> = ({ id, spec }: MdxProps): JSX.Element => {
+const ApiDocMdx: React.FC<MdxProps> = ({ id, spec }: MdxProps): React.JSX.Element => {
   const specProps = useSpecData(id, spec);
   const optionsOverrides = useMemo(() => {
     return {

@@ -15,7 +15,7 @@ const ApiOperation: React.FC<ApiOperationProps> = ({
   example = false,
   pointer,
   ...rest
-}: ApiOperationProps): JSX.Element => {
+}: ApiOperationProps): React.JSX.Element => {
   const specProps = useSpecData(id, spec);
   const { store } = useSpec(specProps);
 
