@@ -208,6 +208,14 @@ html:not([data-theme='dark'])
   color: var(--ifm-font-color-secondary);
 }
 
+/* Fixes https://github.com/rohit-gohri/redocusaurus/issues/382 */
+/* Fix polymorphic (oneOf/anyOf) dropdown background and text in dark mode */
+html[data-theme='dark'] .redocusaurus :has(> select.dropdown-select) {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-toc-border-color);
+}
+
 /* Authentication tables */
 .redocusaurus table.security-details tr:nth-child(2n + 1) {
   background-color: var(--ifm-background-surface-color);
