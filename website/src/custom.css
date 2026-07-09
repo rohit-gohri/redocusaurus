@@ -1,3 +1,23 @@
+:root {
+  --ifm-color-primary: #552e85;
+  --ifm-color-primary-dark: #4c2978;
+  --ifm-color-primary-darker: #482771;
+  --ifm-color-primary-darkest: #3b205d;
+  --ifm-color-primary-light: #5d3392;
+  --ifm-color-primary-lighter: #623599;
+  --ifm-color-primary-lightest: #6e3cad;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ededed;
+  --ifm-color-primary-dark: #d5d5d5;
+  --ifm-color-primary-darker: #c9c9c9;
+  --ifm-color-primary-darkest: #a6a6a6;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+}
+
 .header-github-logo:before {
   content: '';
   width: 24px;
@@ -13,9 +33,9 @@ html[data-theme='dark'] .header-github-logo:before {
 }
 
 .footer-link {
-  color: white;
+  color: var(--ifm-color-primary-lightest);
   font-weight: bold;
 }
 .footer-link:hover {
-  color: white;
+  color: var(--ifm-color-primary-lightest);
 }

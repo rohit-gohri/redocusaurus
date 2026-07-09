@@ -1,5 +1,26 @@
 /* stylelint-disable docusaurus/copyright-header */
 
+:root {
+  --ifm-color-primary: #29369e;
+  --ifm-color-primary-dark: #25318e;
+  --ifm-color-primary-darker: #232e86;
+  --ifm-color-primary-darkest: #1d266f;
+  --ifm-color-primary-light: #2d3bae;
+  --ifm-color-primary-lighter: #2f3eb6;
+  --ifm-color-primary-lightest: #3748cb;
+  --ifm-color-docusaurus-content-link: #359962;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ededed;
+  --ifm-color-primary-dark: #d5d5d5;
+  --ifm-color-primary-darker: #c9c9c9;
+  --ifm-color-primary-darkest: #a6a6a6;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+}
+
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
@@ -41,9 +62,9 @@
 }
 
 .link {
-  color: white;
+  color: var(--ifm-color-docusaurus-content-link);
   font-weight: bold;
 }
 .link:hover {
-  color: white;
+  color: var(--ifm-color-docusaurus-content-link);
 }
