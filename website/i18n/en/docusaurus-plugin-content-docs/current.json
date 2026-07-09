@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "2.0.2",
+    "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Nested Docs Example": {
+    "message": "Nested Docs Example",
+    "description": "The label for category Nested Docs Example in sidebar defaultSidebar"
+  }
+}

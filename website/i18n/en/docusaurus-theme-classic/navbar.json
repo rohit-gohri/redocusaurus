@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "Redocusaurus",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Examples": {
+    "message": "Examples",
+    "description": "Navbar item with label Examples"
+  },
+  "item.label.All": {
+    "message": "All",
+    "description": "Navbar item with label All"
+  },
+  "item.label.Using Single YAML": {
+    "message": "Using Single YAML",
+    "description": "Navbar item with label Using Single YAML"
+  },
+  "item.label.Using Remote URL": {
+    "message": "Using Remote URL",
+    "description": "Navbar item with label Using Remote URL"
+  },
+  "item.label.Using Multiple YAMLs": {
+    "message": "Using Multiple YAMLs",
+    "description": "Navbar item with label Using Multiple YAMLs"
+  },
+  "item.label.Using Swagger": {
+    "message": "Using Swagger",
+    "description": "Navbar item with label Using Swagger"
+  },
+  "item.label.Custom Page": {
+    "message": "Custom Page",
+    "description": "Navbar item with label Custom Page"
+  },
+  "item.label.Custom Layout": {
+    "message": "Custom Layout",
+    "description": "Navbar item with label Custom Layout"
+  },
+  "item.label.Client Only": {
+    "message": "Client Only",
+    "description": "Navbar item with label Client Only"
+  }
+}

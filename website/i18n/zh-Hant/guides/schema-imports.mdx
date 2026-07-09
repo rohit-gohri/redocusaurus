@@ -1,0 +1,94 @@
+---
+title: Schema 匯入
+sidebar_position: 1
+---
+
+import ApiSchema from '@theme/ApiSchema';
+
+# Schema 匯入
+
+您可以從 API schema 中匯入模型定義並在 Docusaurus 文檔中渲染它們。您需要創建一個 `.mdx` 文件並導入 React 組件。更多信息請參見 [Docusaurus 中的 MDX](https://docusaurus.io/docs/markdown-features/react)。
+
+# 在文檔中匯入 Schema 模型
+
+`pointer` prop 傳遞給 [Redoc](https://redoc.ly/docs/resources/ref-guide/#pointer)。
+
+```tsx
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema pointer="#/components/schemas/Pet" />;
+```
+
+### 結果
+
+<ApiSchema pointer="#/components/schemas/Pet" />
+
+## 在文檔中匯入 Schema 模型（含範例）
+
+```tsx
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/Pet" />;
+```
+
+### 結果
+
+<ApiSchema example pointer="#/components/schemas/Pet" />
+
+## 匯入多個 OpenAPI schema 的 Schema 模型
+
+如果您已經使用 redocusaurus 載入了多個 API，則建議在配置中添加 `id`，以便在載入 schema 模型時可以引用它們。
+
+```js title="docusaurus.config.js"
+const config = {
+  presets: [
+    '@docusaurus/preset-classic',
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'using-single-yaml',
+            spec: 'openapi/single-file/openapi.yaml',
+            route: '/examples/using-single-yaml/',
+          },
+          {
+            id: 'using-remote-url',
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/examples/using-remote-url/',
+          },
+        ],
+        theme: {
+          /**
+           * 文檔的高亮顏色
+           */
+          primaryColor: '#1890ff',
+          /**
+           * 傳遞給 redoc 的選項
+           * @see https://github.com/redocly/redoc#redoc-options-object
+           */
+          options: { disableSearch: true },
+        },
+      },
+    ],
+  ],
+  title: 'Redocusaurus',
+};
+```
+
+```tsx
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="using-single-yaml" pointer="#/components/schemas/Pet" />;
+<ApiSchema id="using-remote-url" pointer="#/components/schemas/Pet" />;
+```
+
+### 結果
+
+#### 對於 ID `id="using-single-yaml"`
+
+<ApiSchema id="using-single-yaml" pointer="#/components/schemas/Pet" />
+
+#### 對於 ID `id="using-remote-url"`
+
+<ApiSchema id="using-remote-url" pointer="#/components/schemas/Pet" />

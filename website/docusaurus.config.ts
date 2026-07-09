@@ -33,6 +33,13 @@ const config: Config = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: packageJson.version,
+              path: '',
+            },
+          },
           editUrl:
             'https://github.com/rohit-gohri/redocusaurus/edit/main/website/',
         },
@@ -64,6 +71,15 @@ const config: Config = {
       },
     ] satisfies Redocusaurus.PresetEntry,
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de','zh-Hant'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'Redocusaurus',
@@ -112,18 +128,14 @@ const config: Config = {
           ],
         },
         {
-          label: `v${packageJson.version}`,
+          type: 'docsVersionDropdown',
           position: 'right',
-          items: [
-            {
-              label: 'v0',
-              href: 'https://redocusaurus-v0.vercel.app/',
-            },
-            {
-              label: 'v1 | v2',
-              to: '/',
-            },
-          ],
+          dropdownActiveClassDisabled: true,
+          // 'https://redocusaurus-v0.vercel.app/',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/rohit-gohri/redocusaurus',
